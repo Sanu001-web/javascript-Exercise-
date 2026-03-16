@@ -23,3 +23,7 @@ if (age >=10 && age<=20) {
 else{
   console.log("The Age is not between 10 and 20")
 }
+
+// ternary operator prectice exe
+let age = prompt("Hey enter your age:")
+console.log(age<18? 'cant drive':'drive')
