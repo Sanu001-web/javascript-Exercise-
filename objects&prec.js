@@ -15,3 +15,11 @@ console.log(person ['age'])
 console.log(person.address)
 // exces the object
 console.log(person)
+// age checher prectice
+let age = 11;
+if (age >=10 && age<=20) {
+  console.log("Age between 10 and 20")
+}
+else{
+  console.log("The Age is not between 10 and 20")
+}
