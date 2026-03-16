@@ -43,3 +43,12 @@ console.log("comp1<comp2 is:",comp1<comp2)
 console.log("comp1>comp2 is:",comp1>comp2)
 console.log("comp1>=comp2 is:",comp1>=comp2)
 console.log("comp1<=comp2 is:",comp1<=comp2)
+
+// Logical Operators
+console.log("Logical Operators:")
+let d=15;
+let e=18;
+let f=18;
+console.log("And Oprator Output is:" ,d>e && e==f)
+console.log("Or Oprator Output is:" ,d<e || e==f)
+console.log("Not Oprator Output is:",!false)
