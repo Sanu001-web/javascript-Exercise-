@@ -28,3 +28,18 @@ a*=20
 console.log("a*=:" ,a)
 a/=20
 console.log("a/=:",a)
+
+// comparison operator
+
+console.log("comparison Operators:")
+let comp1 =10;
+let comp2 =20;
+console.log("comp1==comp2 is:",comp1==comp2)
+console.log("comp1!=comp2 is:",comp1!=comp2)
+console.log("comp1===comp2 is:",comp1===comp2)
+console.log("comp1!==comp2 is:",comp1!==comp2)
+
+console.log("comp1<comp2 is:",comp1<comp2)
+console.log("comp1>comp2 is:",comp1>comp2)
+console.log("comp1>=comp2 is:",comp1>=comp2)
+console.log("comp1<=comp2 is:",comp1<=comp2)
