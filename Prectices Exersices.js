@@ -61,3 +61,16 @@ switch(age){
   console.log("Invailide Age you entered")
 
 }
+
+// Check the any number divisible by 2 and 3
+
+let num = prompt("Enter number");
+// num = Number.parseInt(num)
+console.log(typeof num);
+if(num%2==0 && num%3==0)
+{
+  console.log("Number is  Divisible by 2 and 3")
+}
+else{
+  console.log("Number is not divisible by 2 and 3")
+}
