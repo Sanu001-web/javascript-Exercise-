@@ -37,3 +37,27 @@ if (age>10 && age<20)
 else{
   console.log("your age is not between 10 and 20")
 }
+
+// switch case update
+
+let age = prompt("Enter your Age");
+switch(age){
+  case '5':
+  console.log("your age is 5")
+  break
+  case '11':
+  console.log("your age is 5")
+  break
+  case '51':
+  console.log("your age is 5")
+  break
+  case '45':
+  console.log("your age is 5")
+  break
+  case '13':
+  console.log("your age is 5")
+  break
+  default:
+  console.log("Invailide Age you entered")
+
+}
