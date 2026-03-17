@@ -28,6 +28,12 @@ else{
 let age = prompt("Hey enter your age:")
 console.log(age<18? 'cant drive':'drive')
 
+// user input
+
+let b = 2
+let a = b > 18?'you can drive':'you can not drive'
+console.log(a)
+
 // Find age between 10 and 20
 let age = prompt("Enter your Age");
 if (age>10 && age<20)
