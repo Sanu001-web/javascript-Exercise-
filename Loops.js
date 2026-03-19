@@ -30,3 +30,15 @@ for(let c in zk){
 for(let b of "Sadhika"){
   console.log(b)
 }
+// this is example of " while loop"
+let n =prompt("Enter the value of n: ")
+n=Number.parseInt(n);
+let sum=0;
+let i=0;
+while(i<=n)
+{
+  sum  +=i;
+  i++;
+  console.log(i)
+}
+  console.log("number are :",sum)
