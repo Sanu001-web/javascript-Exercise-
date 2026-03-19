@@ -42,3 +42,17 @@ while(i<=n)
   console.log(i)
 }
   console.log("number are :",sum)
+
+// this is example of "do while" loop
+
+let n =prompt("Enter the value of n: ")
+n=Number.parseInt(n);
+let sum=0;
+let i=0;
+do{
+  sum  +=i;
+  i++;
+  console.log(i)
+}
+while(i<=n)
+  console.log("number are :",sum)
