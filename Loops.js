@@ -67,3 +67,15 @@ do{
   i++
 }
 while(i<n)
+
+
+// reverse number print
+
+let n =prompt("Enter the value of n:")
+n=Number.parseInt(n)
+console.log("For loop")
+for(let i=10;i>=1;i--)
+{
+  console.log("number are:"+i)
+}
+
