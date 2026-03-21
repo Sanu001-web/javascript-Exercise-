@@ -78,4 +78,16 @@ for(let i=10;i>=1;i--)
 {
   console.log("number are:"+i)
 }
-
+// Sum and average of natural number
+let n =prompt("Enter the value of n:")
+n=Number.parseInt(n)
+let sum =0;
+let avg=0;
+for(let i=1; i<=n; i++)
+{
+  sum+=i;
+  avg =sum/i
+  console.log("The Number is : "+i)
+}
+console.log("Sum of " + n + " number is: " +sum);
+console.log("Average of " +sum+ " is: "+avg)
