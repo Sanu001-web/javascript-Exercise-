@@ -91,3 +91,14 @@ for(let i=1; i<=n; i++)
 }
 console.log("Sum of " + n + " number is: " +sum);
 console.log("Average of " +sum+ " is: "+avg)
+
+// Cube of Numbers Up to an Integer
+let n =prompt("Enter the value of n:")
+n=Number.parseInt(n)
+let cube =0
+for(let i=1;i <= n ;i++)
+{
+  cube= i * i * i
+}
+console.log("cube of " + n + " number is: " +cube);
+
