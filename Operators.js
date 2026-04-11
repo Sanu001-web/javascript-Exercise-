@@ -52,3 +52,11 @@ let f=18;
 console.log("And Oprator Output is:" ,d>e && e==f)
 console.log("Or Oprator Output is:" ,d<e || e==f)
 console.log("Not Oprator Output is:",!false)
+
+// Ternary Operators
+// let grade=85;
+let grade = prompt("Enter Your Grade :")
+grade= parseInt(grade)
+
+let result = grade >=33 ? "Pass":"Fail";
+console.log("Result :" ,result);
