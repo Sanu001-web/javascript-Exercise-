@@ -102,3 +102,16 @@ for(let i=1;i <= n ;i++)
 }
 console.log("cube of " + n + " number is: " +cube);
 
+
+// do while loop new example
+console.log("do while loop start from here!")
+
+let n=prompt("Enter the Number:");
+n=Number.parseInt(n);
+console.log(typeof n)
+do{
+  console.log(n)
+  n++;
+}
+while(n<=20)
+
