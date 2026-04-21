@@ -115,3 +115,54 @@ do{
 }
 while(n<=20)
 
+
+// used of in type in 'for loop'
+
+console.log("in loop in for loop")
+let obj ={
+  name:'shaan',
+  age:22,
+  id:32154,
+  address:'Sarni'
+}
+// let a;
+for(let a in obj)
+{
+  console.log("the value of" ,a, "for shaan is :" ,obj[a])
+}
+
+let n=prompt("Enter the Value of n: ")
+n=Number.parseInt(n);
+console.log(typeof n)
+for(let i=0;i<=n;i++)
+{
+  if (i%2===0)
+  {
+    continue;
+  }
+  console.log("number is: " ,i)
+}
+
+// function in Js
+
+console.log("JavaScript Fuctions")
+function abd(a,b)
+{
+  let sum=a+b;
+  let average=sum/2;
+  let onePluse=average+1;
+  return onePluse;
+}
+// let a=8
+// let b=4
+console.log(abd(8,4))
+console.log(abd(16,20))
+console.log(abd(116,201))
+
+function act(name)
+{
+  console.log("Hello JavaScript" + name)
+  console.log("Bonjour" +name)
+}
+act(" shaan");
+act(' shaan');
