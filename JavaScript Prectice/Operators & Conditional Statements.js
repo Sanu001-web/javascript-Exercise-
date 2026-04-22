@@ -172,3 +172,30 @@ else if(time<23)
 else{
   console.log("Invalid Time please re-enter!")
 }
+
+// Write a program that calculates the Body Mass Index (BMI) and categorizes it. The formula for BMI is: weight / (height * height).
+
+let weight = Number(prompt("Enter your weight (kg):"));
+let height = Number(prompt("Enter your height (meters):"));
+
+if ( weight <= 0 || height <= 0) {
+  console.log("Please enter valid values");
+}
+else {
+  let bmi = weight / (height * height);
+
+  console.log("Your BMI is:", bmi);
+
+  if (bmi < 18.5) {
+    console.log("Category: Underweight");
+  }
+  else if (bmi < 25) {
+    console.log("Category: Normal weight");
+  }
+  else if (bmi < 30) {
+    console.log("Category: Overweight");
+  }
+  else {
+    console.log("Category: Obese");
+  }
+}
