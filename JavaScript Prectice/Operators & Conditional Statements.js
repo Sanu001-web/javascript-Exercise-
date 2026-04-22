@@ -142,3 +142,33 @@ else{
   console.log("please purchase more iteams!")
 }
 
+// Write a program that greets the user based on the time of day. Display good morning, good afternnon or good evening based on the time of day when you run the code.
+
+const now = new Date()
+const year = now.getFullYear() // return year
+const month = now.getMonth() + 1 // return month(0 - 11)
+const date = now.getDate() // return date (1 - 31)
+const hours = now.getHours() // return number (0 - 23)
+const minutes = now.getMinutes() // return number (0 -59)
+
+console.log(`${date}/${month}/${year} ${hours}:${minutes}`) // 4/1/2020 0:56
+
+
+let time=prompt("Enter the time:")
+time=Number.parseFloat(time)
+
+if(time<12)
+{
+  console.log("Good Morning!")
+}
+else if(time<18)
+{
+  console.log("Good Afternon!")
+}
+else if(time<23)
+{
+  console.log("Good Evening")
+}
+else{
+  console.log("Invalid Time please re-enter!")
+}
