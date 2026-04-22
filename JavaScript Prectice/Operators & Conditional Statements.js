@@ -123,5 +123,22 @@ else {
   console.log(year, "is NOT a leap year!");
 }
 
+// Write a program that calculates a discount based on the purchase amount.
 
+let price =prompt("Enter the total ammount:")
+price =Number.parseFloat(price)
+
+console.log("Your Total Ammount is:",price)
+
+if(price>=100)
+{
+  console.log("Congratulation you got ₹20 off")
+}
+else if(price>=50)
+{
+  console.log("Congratulation you got ₹10 off")
+}
+else{
+  console.log("please purchase more iteams!")
+}
 
