@@ -33,3 +33,37 @@ else if(a>=b){
 else{
   console.log(a +" is not grater & than equals to",+b)
 }
+
+// Write a program that transforms a numerical grade to a letter grade (e.g grade 10 should display “A”).
+
+let grade = prompt("Enter the obtained grade:");
+grade = Number.parseFloat(grade);
+
+if (grade >= 0 && grade <= 10) {
+
+  if (grade >= 9 && grade <= 10) {
+    console.log("Obtained grade:", grade, "O - Outstanding");
+  }
+  else if (grade >= 8 && grade < 9) {
+    console.log("Obtained grade:", grade, "A+ - Excellent");
+  }
+  else if (grade >= 7 && grade < 8) {
+    console.log("Obtained grade:", grade, "A - Very Good");
+  }
+  else if (grade >= 6 && grade < 7) {
+    console.log("Obtained grade:", grade, "B - Good");
+  }
+  else if (grade >= 5 && grade < 6) {
+    console.log("Obtained grade:", grade, "C - Satisfactory");
+  }
+  else if (grade >= 4 && grade < 5) {
+    console.log("Obtained grade:", grade, "D - Pass");
+  }
+  else {
+    console.log("Obtained grade:", grade, "F - Fail");
+  }
+
+} 
+else {
+  console.log("Please enter a valid grade (0–10)");
+}
