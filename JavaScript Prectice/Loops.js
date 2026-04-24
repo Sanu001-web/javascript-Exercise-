@@ -36,3 +36,23 @@ for(let i=1;i<=45;i++)
     console.log("Buzz")
   }
 }
+
+// Sum of First N Natural Numbers Using While Loop in JavaScript
+let n=parseInt(prompt("Enter the value of n:"))
+let i=1
+let sum=0;
+if(n>0)
+{
+
+while(i<=n)
+{
+  sum+=i;
+  i++;
+}
+console.log("sum of natural number:",+sum)
+}
+else{
+  console.log("Please enter the valid number!")
+}
+
+
