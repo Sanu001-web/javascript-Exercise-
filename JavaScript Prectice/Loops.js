@@ -9,6 +9,13 @@ if(i%2==0) //if(i%2!=2) this for 'odd nummber'
 }
 }
 
+// Print the EVEN numbers from 10 to -20
+for (var i = 10; i >= -20; i--) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+}
+
  // Iterate through all numbers from 1 to 45. Print the following:
 // For multiples of 3 print “Fizz”
 // For multiples of 5 print “Buzz”
