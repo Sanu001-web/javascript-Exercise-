@@ -56,3 +56,26 @@ else{
 }
 
 
+// Find factorial of given number
+let num=parseInt(prompt("Enter the Number:"))
+let fac=1;
+
+
+if(num>=0)
+{
+  while(num>1)
+  {
+    fac*=num;
+    num--;
+  }
+  console.log("Factorial:" ,fac)
+}
+else
+{
+  console.log("Enter the valid number!")
+}
+
+
+
+
+// https://medium.com/@francesco-saviano/10-exercises-with-while-loops-in-javascript-8cfb2bd81a71
