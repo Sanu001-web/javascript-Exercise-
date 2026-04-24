@@ -201,3 +201,24 @@ else
 }
 console.log("your report:",bmi.toFixed(2))
 console.log("Category:" ,category)
+
+// Write a simple number guessing game. Provide a secret number and a guess. Based on those numbers give players clues if their guess is higher, lower or correct.
+
+let guessNum = prompt("Enter your Guessed Number: ")
+guessNum =Number.parseFloat(guessNum)
+let secretNum =78;
+
+if(guessNum===secretNum)
+{
+  console.log("Congratulation! You guessed the right number:",secretNum)
+}
+
+else if(guessNum<=secretNum)
+{
+  console.log("Try guess higher number than:",guessNum)
+}
+else if(guessNum>=secretNum)
+{
+  console.log("Try guess less number than:",guessNum)
+}
+
