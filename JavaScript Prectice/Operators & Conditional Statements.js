@@ -175,27 +175,29 @@ else{
 
 // Write a program that calculates the Body Mass Index (BMI) and categorizes it. The formula for BMI is: weight / (height * height).
 
-let weight = Number(prompt("Enter your weight (kg):"));
-let height = Number(prompt("Enter your height (meters):"));
+// Your JavaScript code here
+let weight = prompt("Enter your weight (in kg): ")
+weight =Number.parseFloat(weight)
+let height = prompt("Enter your height (meter): ")
+height =Number.parseFloat(height)
+let bmi= weight/(height*height);
+let category;
 
-if ( weight <= 0 || height <= 0) {
-  console.log("Please enter valid values");
+if(bmi<18.5)
+{
+  category = "Underweight"
 }
-else {
-  let bmi = weight / (height * height);
-
-  console.log("Your BMI is:", bmi);
-
-  if (bmi < 18.5) {
-    console.log("Category: Underweight");
-  }
-  else if (bmi < 25) {
-    console.log("Category: Normal weight");
-  }
-  else if (bmi < 30) {
-    console.log("Category: Overweight");
-  }
-  else {
-    console.log("Category: Obese");
-  }
+else if(bmi< 24.9)
+{
+  category ="Healthy Weight"
 }
+else if(bmi< 29.9)
+{
+  category ="Overweight"
+}
+else
+{
+  category ="Obesity"
+}
+console.log("your report:",bmi.toFixed(2))
+console.log("Category:" ,category)
