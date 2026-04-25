@@ -99,5 +99,26 @@ else {
   console.log("Please enter the valid value of n!", n)
 }
 
+ // Reverse a Number Using While Loop in JavaScript
 
+let num = parseInt(prompt("Enter the number:"))
+let reversed = 0;
+
+if( num>=0)
+{
+console.log("Number:",num)
+
+
+while (num > 0) {
+    let digit = num % 10;
+    reversed = reversed * 10 + digit;
+    num = Math.floor(num / 10);
+}
+
+console.log("Reversed number:",reversed); 
+}
+else
+{
+  console.log("Please enter valid value of num!:",num)
+}
 
