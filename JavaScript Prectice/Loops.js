@@ -1,3 +1,5 @@
+// https://medium.com/@francesco-saviano/10-exercises-with-while-loops-in-javascript-8cfb2bd81a71
+
 
  // Print the ODD & Even numbers from 7 to 31 
 let i=7
@@ -75,7 +77,27 @@ else
   console.log("Enter the valid number!")
 }
 
+// Fibonacci Sequence up to N Terms Using While Loop in JavaScript
+let n = parseInt(prompt("Enter the value of n:"));
+let a = 0;
+let b = 1;
+let nextTerm;
+let count = 1;
+console.log(a)
+if (n > 0) {
+  
+  while (count < n) {
+    console.log(b)
+    nextTerm = a + b;
+    a = b;
+    b = nextTerm;
+    count++;
+  }
+}
+else {
+
+  console.log("Please enter the valid value of n!", n)
+}
 
 
 
-// https://medium.com/@francesco-saviano/10-exercises-with-while-loops-in-javascript-8cfb2bd81a71
