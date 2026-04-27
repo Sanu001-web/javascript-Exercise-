@@ -122,3 +122,16 @@ else
   console.log("Please enter valid value of num!:",num)
 }
 
+// Summing the Digits of a Number with While Loop?
+
+let number=parseInt(prompt("Enter the number:"))
+let originalNumber=1;
+let sum=0
+originalNumber=number;
+while (originalNumber !== 0) {
+    let digit = originalNumber % 10; // Extract the last digit
+    sum += digit; // Add the digit to the sum
+    originalNumber = Math.floor(originalNumber / 10); // Remove the last digit
+}
+
+console.log("The sum of the digits of " + number + " is: " + sum);
