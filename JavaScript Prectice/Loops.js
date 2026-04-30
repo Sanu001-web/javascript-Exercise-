@@ -144,3 +144,14 @@ let n=parseInt(prompt("Enter the value of n:"));
 for (let i = n; i >= 1; i--) {
   console.log("revers number:", i)
 }
+
+// Count how many numbers are divisible by 3 (1–50)
+let n=parseInt(prompt("Enter the value of n:"))
+let zk=0;
+for(let i=1;i<=n;i++)
+{
+  if(i%3===0){
+    zk++;
+  }
+}
+    console.log("Number that divisilbe by 3:",zk)
