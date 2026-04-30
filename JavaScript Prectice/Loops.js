@@ -135,3 +135,12 @@ while (originalNumber !== 0) {
 }
 
 console.log("The sum of the digits of " + number + " is: " + sum);
+
+
+
+// Print numbers in reverse (10 to 1)
+let n=parseInt(prompt("Enter the value of n:"));
+
+for (let i = n; i >= 1; i--) {
+  console.log("revers number:", i)
+}
