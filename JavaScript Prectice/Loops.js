@@ -155,3 +155,13 @@ for(let i=1;i<=n;i++)
   }
 }
     console.log("Number that divisilbe by 3:",zk)
+
+
+// Reverse a string
+let str =prompt("Enter the word:")
+// let str="hello";
+let reverse="";
+for (let i= str.length-1; i >=0; i--) {
+  reverse+=str[i];
+}
+console.log("Length of word is:" ,reverse)
