@@ -166,3 +166,13 @@ function act(name)
 }
 act(" shaan");
 act(' shaan');
+
+// different way of writing function
+const OnePlus=(a,b)=>
+{
+let sum=a+b;
+let avg=sum/2;
+let avgOnePlus=avg+1;
+return avgOnePlus;
+}
+console.log("calculation are:",OnePlus(7,5))
