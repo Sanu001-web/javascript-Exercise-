@@ -7,13 +7,13 @@ function run(a,b){
 }
 run(4,8);
 run(78,8);
-run(7,8);
+run(70,8);
 run(7,7);
 
 // new way to write a function code
 const rty =()=>
 {
   let age=23;
-  console.log("Hello ",age)
+  console.log("Hello and",age)
 }
 rty();
