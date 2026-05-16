@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word to uppercase.
+function uppercase(str) {
+  // Split the input string into an array of words
+  var array1 = str.split(' ');
+
+  // Initialize an empty array to store the modified words
+  var newarray1 = [];
+
+  // Iterate through each word in the array
+  for (var x = 0; x < array1.length; x++) {
+    // Push the word with its first letter capitalized and the rest of the letters unchanged
+    newarray1.push(array1[x].charAt(0).toUpperCase() + array1[x].slice(1));
+  }
+
+  // Join the modified words into a single string, separated by spaces
+  return newarray1.join(' ');
+}
+
+// Log the result of calling uppercase with the input string "the quick brown fox" to the console
+console.log(uppercase("change the world")); 
+
+
+function greet(name){
+  console.log("Hello World " +name);
+}
+greet("Shaan");
+
+function sum(a,b){
+  return a+b;
+}
+console.log(sum(55,487));
+
+
+
+  </script>
+  <style>
+    h1{
+      color: rgb(149, 1, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hello</h1>
+  
+</body>
+</html>
