@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Resume — Sanu Kayda | CS Fresher</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #1a1a1a;
+    --mid: #444;
+    --soft: #777;
+    --line: #e2e2e2;
+    --bg: #ffffff;
+    --accent: #0a0a0a;
+    --tag-bg: #f2f2f2;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f5f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 32px 16px;
+    color: var(--dark);
+  }
+
+  .page {
+    background: var(--bg);
+    width: 794px;
+    max-width: 100%;
+    padding: 52px 56px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header { border-bottom: 2px solid var(--black); padding-bottom: 20px; margin-bottom: 24px; }
+  .name { font-size: 34px; font-weight: 700; letter-spacing: -1px; color: var(--black); line-height: 1; }
+  .title-line { font-size: 13px; font-weight: 500; color: var(--soft); letter-spacing: 2px; text-transform: uppercase; margin: 6px 0 14px; }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--mid); font-family: 'DM Mono', monospace; }
+  .contact-row a { color: var(--mid); text-decoration: none; }
+  .contact-row a:hover { color: var(--black); }
+  .contact-dot { color: var(--line); }
+
+  /* ── LAYOUT ── */
+  .body { display: grid; grid-template-columns: 1fr 220px; gap: 40px; }
+  .left {}
+  .right {}
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 26px; }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--black); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+  /* ── SUMMARY ── */
+  .summary { font-size: 13px; line-height: 1.75; color: var(--mid); }
+  .summary strong { color: var(--dark); font-weight: 600; }
+
+  /* ── PROJECTS ── */
+  .project { margin-bottom: 18px; }
+  .project:last-child { margin-bottom: 0; }
+  .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
+  .project-name { font-size: 14px; font-weight: 600; color: var(--black); }
+  .project-link { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--soft); }
+  .project-stack { font-size: 11px; color: var(--soft); font-family: 'DM Mono', monospace; margin-bottom: 5px; }
+  .project-desc { font-size: 12.5px; color: var(--mid); line-height: 1.65; }
+  .project-desc li { margin-left: 14px; margin-bottom: 2px; }
+
+  /* ── EDUCATION ── */
+  .edu-item { margin-bottom: 14px; }
+  .edu-name { font-size: 13.5px; font-weight: 600; color: var(--black); }
+  .edu-sub { font-size: 12px; color: var(--mid); margin-top: 2px; }
+  .edu-meta { font-size: 11px; color: var(--soft); font-family: 'DM Mono', monospace; margin-top: 2px; }
+
+  /* ── SKILLS (right column) ── */
+  .skill-group { margin-bottom: 16px; }
+  .skill-group-label { font-size: 11px; font-weight: 600; color: var(--black); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    font-size: 11px; font-family: 'DM Mono', monospace;
+    background: var(--tag-bg); color: var(--dark);
+    padding: 3px 8px; border-radius: 3px;
+  }
+  .tag.ai { background: var(--black); color: #fff; }
+
+  /* ── CERTS & ACHIEVEMENTS ── */
+  .list-item { font-size: 12.5px; color: var(--mid); line-height: 1.6; margin-bottom: 6px; display: flex; gap: 8px; }
+  .list-item::before { content: '▸'; color: var(--black); font-size: 10px; margin-top: 3px; flex-shrink: 0; }
+
+  /* ── LINKS ── */
+  .link-item { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--mid); margin-bottom: 6px; display: flex; gap: 6px; align-items: center; }
+  .link-item span { color: var(--soft); font-size: 10px; }
+  .link-item a { color: var(--dark); text-decoration: none; word-break: break-all; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; padding: 40px 48px; }
+  }
+  @media (max-width: 600px) {
+    .page { padding: 28px 20px; }
+    .body { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="name">Sanu Kayda</div>
+    <div class="title-line">Computer Science Graduate &nbsp;·&nbsp; AI-Ready Software Developer</div>
+    <div class="contact-row">
+      <a href="mailto:sanukayda@gmail.com">sanukayda@gmail.com</a>
+      <span class="contact-dot">·</span>
+      <span>+91 9399488131</span>
+      <span class="contact-dot">·</span>
+      <span>Betul, India</span>
+      <span class="contact-dot">·</span>
+      <a href="https://linkedin.com/in/sanu-kayda" target="_blank">linkedin.com/in/sanukayda</a>
+      <span class="contact-dot">·</span>
+      <a href="https://github.com/Sanu001-web" target="_blank">github.com/Sanu001-web</a>
+    </div>
+  </header>
+
+  <div class="body">
+    <!-- LEFT COLUMN -->
+    <div class="left">
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <div class="section-label">Profile</div>
+        <p class="summary">
+          Motivated CS fresher with hands-on experience building <strong>AI-integrated web applications</strong> and full-stack projects. Proficient in <strong>Python, JavaScript, and REST APIs</strong>, with active use of AI tools including <strong>ChatGPT, GitHub Copilot, and prompt engineering</strong> to accelerate development. Fast learner with a product-thinking mindset, seeking roles in software development, AI-assisted engineering, or web development.
+        </p>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-label">Projects</div>
+
+        <div class="project">
+          <div class="project-top">
+            <div class="project-name">AI Image Caption Generator</div>
+            <div class="project-link">github.com/sanukayda/ai-caption</div>
+          </div>
+          <div class="project-stack">Python · OpenAI GPT-4 Vision API · Flask · HTML/CSS</div>
+          <ul class="project-desc">
+            <li>Built a web app that generates descriptive captions for uploaded images using GPT-4 Vision API</li>
+            <li>Reduced manual captioning effort by 90% with real-time AI-generated output</li>
+            <li>Integrated drag-and-drop UI and responsive design for seamless UX</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <div class="project-name">AI Quote Generator (Claude API)</div>
+            <div class="project-link">github.com/sanukayda/ai-quotes</div>
+          </div>
+          <div class="project-stack">JavaScript · Anthropic Claude API · HTML/CSS · Fetch API</div>
+          <ul class="project-desc">
+            <li>Developed a dynamic quote generator using Claude API with mood-based prompt engineering</li>
+            <li>Implemented category filters (motivation, philosophy, tech) with real-time API calls</li>
+            <li>Deployed on GitHub Pages — 200+ visits in the first week</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <div class="project-name">Multi-Page Blog Website</div>
+            <div class="project-link">github.com/sanukayda/blog-site</div>
+          </div>
+          <div class="project-stack">HTML5 · CSS3 · JavaScript · Responsive Design</div>
+          <ul class="project-desc">
+            <li>Built a fully responsive 5-page blog site with dark mode, search, and tag filtering</li>
+            <li>Achieved 95+ Lighthouse performance score with optimized asset loading</li>
+            <li>Used CSS Grid/Flexbox — zero frameworks, pure hand-coded CSS</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <div class="project-name">CGPA Calculator Web App</div>
+            <div class="project-link">github.com/sanukayda/cgpa-calc</div>
+          </div>
+          <div class="project-stack">React.js · JavaScript · CSS Modules</div>
+          <ul class="project-desc">
+            <li>Created a dynamic CGPA calculator using the Σ(Cᵢ × AGPA) / ΣCᵢ formula with live breakdown</li>
+            <li>Supports unlimited semesters, grade reference, and percentage estimation</li>
+            <li>Used by 50+ students in college for academic tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-label">Education</div>
+        <div class="edu-item">
+          <div class="edu-name">Bachelor of Engineering — Computer Science</div>
+          <div class="edu-sub">Devi Ahilya Vishwavidyalaya (DAVV), Indore</div>
+          <div class="edu-meta">2022 – 2025 &nbsp;·&nbsp; CGPA: 7.77 / 10</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">Class XII — PCM with Computer Science</div>
+          <div class="edu-sub">MP Board</div>
+          <div class="edu-meta">2022 &nbsp;·&nbsp; 82%</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frameworks & Tools</div>
+          <div class="tags">
+            <span class="tag">React.js</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Postman</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">AI Tools</div>
+          <div class="tags">
+            <span class="tag ai">ChatGPT</span>
+            <span class="tag ai">Claude API</span>
+            <span class="tag ai">Copilot</span>
+            <span class="tag ai">Prompt Eng.</span>
+            <span class="tag ai">OpenAI API</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Concepts</div>
+          <div class="tags">
+            <span class="tag">DSA (Basic)</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">API Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-label">Certifications</div>
+        <div class="list-item">Responsive Web Design — freeCodeCamp (2024)</div>
+        <div class="list-item">Python for Everybody — Coursera / University of Michigan (2024)</div>
+        <div class="list-item">AI For Everyone — Andrew Ng, Coursera (2023)</div>
+        <div class="list-item">Git & GitHub Essentials — Udemy (2023)</div>
+      </div>
+
+      <!-- ACHIEVEMENTS -->
+      <div class="section">
+        <div class="section-label">Achievements</div>
+        <div class="list-item">Solved 150+ DSA problems on LeetCode and GeeksforGeeks</div>
+        <div class="list-item">Built 10+ frontend projects — all open-sourced on GitHub</div>
+        <div class="list-item">Selected for college-level web dev project showcase (2024)</div>
+        <div class="list-item">Self-taught React & AI APIs within 6-month roadmap</div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="section">
+        <div class="section-label">Links</div>
+        <div class="link-item"><span>GH</span> <a href="https://github.com/in/sanukayda">github.com/Sanu001-web</a></div>
+        <div class="link-item"><span>LI</span> <a href="https://linkedin.com/in/sanukayda">linkedin.com/in/sanukayda</a></div>
+        <div class="link-item"><span>WB</span> <a href="https://sanukayda.dev">sanukayda.dev</a></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
