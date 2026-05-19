@@ -8,8 +8,12 @@ body{
 }
 h1{
   color: rgb(50, 30, 9);
+  margin: 100px;
+  margin-bottom: 0;
 }
 p{
+  margin: 100px;
+  margin-top: 0;
   color: rgb(5, 87, 119);
   font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
