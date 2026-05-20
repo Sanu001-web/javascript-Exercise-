@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Practice C4</title>
+    <link rel="stylesheet" href="lesson-4-prac.css">
+  </head>
+  <body>
+    <!-- 4a -->
+    <button>Click</button>
+    <br>
+    <br>
+    <!-- 4b -->
+    <button>Shaan</button>
+    <button>Creatine</button>
+    <!-- 4c -->
+    <p>Hello , Dostooooooo!</p>
+    <!-- 4d -->
+    <p>
+      Hello,Dostooo!
+      <br>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+    <!-- 4e -->
+    <button class="add-cart-btn">Add to cart</button>
+    <button class="buy-btn">Buy Now</button>
+    <br>
+    <br>
+    <br>
+    <!-- 4i,for 4j add onclick attributes -->
+    <p>Adults Plain Cotton T-shirt</p>
+    <p>Price:$7.99</p>
+    <button class="add-cart-btn" onclick="
+  console.log('Added on cart');
+  alert('Added')">Add to cart</button>
+    <button class="buy-btn" onclick="
+  console.log('Loading...');
+  alert('Purchased');">Buy Now</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn" onclick="console.log(`Cart quantity: ${cartQuantity}`)">Show Quantity</button>
+
+    <button class="btn" 
+    onclick="
+    cartQuantity ++;
+    console.log(`Cart quantity: ${cartQuantity}`)">
+    Add to Cart
+  </button>
+
+
+    <button class="btn"
+    onclick=" cartQuantity+=2;
+    console.log(`Cart quantity: ${cartQuantity}`)
+    "
+    >
+      +2
+    </button>
+    <button class="btn"
+     onclick=" cartQuantity+=3;
+    console.log(`Cart quantity: ${cartQuantity}`)
+    ">
+    +3
+  </button>
+    <button class="btn"
+    onclick="cartQuantity=0;
+    console.log('Cart was reset');
+    console.log(`Cart quantity: ${cartQuantity}`)
+    "
+    >Reset Cart</button>
+
+    </button>
+
+    <script>
+    // 4h
+          console.log('Welcome!');
+
+
+          let cartQuantity=0;
+  </script>
+  </body>
+</html>

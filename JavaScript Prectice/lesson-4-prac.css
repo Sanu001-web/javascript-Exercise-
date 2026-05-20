@@ -1,0 +1,16 @@
+.add-cart-btn{
+  background-color: yellow;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+.btn{
+  background-color: rgb(221, 221, 211);
+  padding: 2px 5px;
+  border: 1 solid black;
+  border-radius: 4px;
+}
+.buy-btn{
+  background-color: orange;
+  padding: 5px 10px;
+  font-weight: 600;
+}
