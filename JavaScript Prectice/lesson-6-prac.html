@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greetiong</title>
+</head>
+<body>
+  <script>
+
+    const hour = parseInt(prompt("What is the current hour?"));
+    // let name = "";
+    if(hour < 12){
+      greet = "Good Morning";
+    } else if(hour < 17){
+      greet = "Good Afternoon";
+    } else if(hour < 20){
+      greet = "Good Evening";
+    }
+    else{
+      greet = "Good Night";
+    }
+
+    console.log(`Hello,\n${greet}!`);
+  </script>
+  
+</body>
+</html>
