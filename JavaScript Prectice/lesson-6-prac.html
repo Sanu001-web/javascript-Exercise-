@@ -10,6 +10,10 @@
 
     const hour = parseInt(prompt("What is the current hour?"));
     // let name = "";
+    let greet='';
+    if( hour >0 && hour <=24)
+  {
+
     if(hour < 12){
       greet = "Good Morning";
     } else if(hour < 17){
@@ -20,8 +24,13 @@
     else{
       greet = "Good Night";
     }
+    console.log(`Hello,\n${greet}`);
+  }
 
-    console.log(`Hello,\n${greet}!`);
+  else{
+    console.log("Plaese enter valid Time !")
+  }
+
   </script>
   
 </body>
