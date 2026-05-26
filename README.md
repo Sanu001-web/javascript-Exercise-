@@ -117,13 +117,13 @@ This repository is created for:
 ## 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/sanu001-web/javascript-exercise-.git
 ```
 
 ## 2️⃣ Open project folder
 
 ```bash
-cd your-repository-name
+cd javascript-exercise.git
 ```
 
 ## 3️⃣ Run HTML files in browser
