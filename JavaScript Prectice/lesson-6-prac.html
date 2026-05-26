@@ -4,10 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greetiong</title>
+    <style>
+      button{
+        color: rgb(1, 73, 73);
+        background-color: rgb(227, 198, 142);
+        padding: 5px 10px;
+        border: 1px solid rgb(218, 178, 178);
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover{
+        background-color: rgb(1, 73, 73);
+        color: rgb(227, 198, 142);
+      }
+      button:active{
+        background-color: rgb(1, 37, 37);
+      }
+    </style>
   </head>
   <body>
-    <script>
+    <button onclick="cartQuantity;
+    console.log(`Show Quantity: ${cartQuantity}`)
+    ">
+      Show Quantity</button>
 
+    <button onclick="
+    if(cartQuantity+1 >10)
+    {
+      alert('The cart is full')
+    }
+    else{
+      cartQuantity++
+      console.log(`Show Quantity: ${cartQuantity}`)
+    }
+
+      ">Add to cart
+    </button>
+    <br>
+    <br>
+    <button onclick="
+    if(cartQuantity+2 >10)
+    {
+      alert('The cart is full')
+    }
+    else{
+      cartQuantity+=2
+      console.log(`Show Quantity: ${cartQuantity}`)
+    }">
+      +2
+    </button>
+
+    <button onclick="
+    if(cartQuantity+3 >10)
+    {
+      alert('The cart is full')
+    }
+    else{
+      cartQuantity+=3
+      console.log(`Show Quantity: ${cartQuantity}`)
+    }">
+      +3
+    </button>
+
+    <button onclick=" if(cartQuantity+4 >10)
+    {
+      alert('The cart is full')
+    }
+    else{
+      cartQuantity+=4
+      console.log(`Show Quantity: ${cartQuantity}`)
+    }">
+      +4
+    </button>
+
+    <button onclick=" if(cartQuantity+5 >10)
+    {
+      alert('The cart is full')
+    }
+    else{
+      cartQuantity+=5
+      console.log(`Show Quantity: ${cartQuantity}`)
+    }">
+      +5
+    </button>
+    <br>
+    <br>
+    <button onclick="cartQuantity=0;
+    console.log(`Show Quantity: ${cartQuantity}`)">
+      Reset Quantity
+    </button>
+    <br>
+    <br>
+    <button onclick="
+    if (cartQuantity-1<0) {
+      alert(`Not enough items in the cart`)
+    }
+    else{
+       cartQuantity--;
+      console.log(`Show Quantity: ${cartQuantity}`);
+    }
+">Remove from cart</button>
+
+    <button onclick=";
+      if (cartQuantity-2<0) {
+      alert(`Not enough items in the cart`);
+    }
+    else{
+      cartQuantity-=2;
+      console.log(`Show Quantity: ${cartQuantity}`);
+    }
+">
+      -2
+    </button>
+    <button onclick="
+      if (cartQuantity-3<0) {
+      alert(`Not enough items in the cart`);
+    }
+    else{
+      cartQuantity-=3;
+      console.log(`Show Quantity: ${cartQuantity}`);
+    }">
+      -3
+    </button>
+
+    <script>
+     let cartQuantity=0;
     /*
     let name = "shaan";
     let greet='';
@@ -42,7 +165,7 @@
      else{
       console.log(age,'No discount')
      }
-      */
+      
     
       //  6e
     let age =parseFloat(prompt("Enter your age:"))
@@ -54,8 +177,30 @@
      else{
       console.log(age,'No discount')
      }
+*/
+    //  6k solution 
 
-  </script>
+//ternary operator short of if else
+
+    const result= 58 ? 'oh yehh':'no' 
+    console.log(result)
+
+/*&& guard operator
+stop early and doesn't need on right side code
+*/
+    const age= parseInt(prompt('enter your age'));
+    console.log(typeof age);
+     age>=18 && console.log("can drive");
+
+    //  default operator
+
+    const number = parseInt(prompt('enter any number:'));
+    number >100 || console.log(`${number} is lesser than 100`);
+
+    const currency = 'USD' ||'Rupee';
+    console.log(currency);
+    
+    </script>
 
   </body>
 </html>
