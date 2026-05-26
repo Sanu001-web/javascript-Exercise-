@@ -30,12 +30,24 @@
   else{
     console.log("Plaese enter valid Time !")
   }
-*/
+
   //6d solution 
 
   let age =parseFloat(prompt("Enter your age:"))
-     console.log(typeof age);
+     
      if(age<=6 || age >=65)
+     {
+      console.log(age,'Discount !')
+     }
+     else{
+      console.log(age,'No discount')
+     }
+      */
+    
+      //  6e
+    let age =parseFloat(prompt("Enter your age:"))
+    const Holiday=true;
+     if( Holiday && (age<=6 || age >=65))
      {
       console.log(age,'Discount !')
      }
