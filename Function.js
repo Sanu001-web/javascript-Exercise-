@@ -1,4 +1,4 @@
-function run(a,b){
+/*function run(a,b){
   let sum =a+b;
   let average=sum/2;
   let averagePlusOne=average+1;
@@ -17,3 +17,15 @@ const rty =()=>
   console.log("Hello and",age)
 }
 rty();
+*/
+function greet(name) {
+  console.log(`Hello, ${name} !`);
+}
+
+
+function taxCalculator(amount, taxRate) {
+  const tax = amount * taxRate;
+  return tax;
+}
+console.log(taxCalculator(100, 0.1)); // Returns 15
+console.log(taxCalculator(200, 0.1));  // Returns 40

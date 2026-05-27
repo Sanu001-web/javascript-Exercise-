@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word to uppercase.
-function uppercase(str) {
-  // Split the input string into an array of words
-  var array1 = str.split(' ');
-
-  // Initialize an empty array to store the modified words
-  var newarray1 = [];
-
-  // Iterate through each word in the array
-  for (var x = 0; x < array1.length; x++) {
-    // Push the word with its first letter capitalized and the rest of the letters unchanged
-    newarray1.push(array1[x].charAt(0).toUpperCase() + array1[x].slice(1));
-  }
-
-  // Join the modified words into a single string, separated by spaces
-  return newarray1.join(' ');
-}
-
-// Log the result of calling uppercase with the input string "the quick brown fox" to the console
-console.log(uppercase("change the world")); 
-
-
-function greet(name){
-  console.log("Hello World " +name);
-}
-greet("Shaan");
-
-function sum(a,b){
-  return a+b;
-}
-console.log(sum(55,487));
-
-
-alert("Welcome to JavaScript Functions!");
-  </script>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
     h1{
       color: rgb(149, 1, 1);
+      text-decoration: wavy underline rgb(91, 36, 36);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+    }
+    p{
+      color: rgb(0, 0, 0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    button{
+      background-color: rgb(164, 44, 44);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
     }
   </style>
-</head>
-<body>
+    <script src="Function.js"></script>
+  </head>
+  <body>
+    <h1>Functions</h1>
+    <p>Functions are reusable code blocks designed for particular tasks
+      Functions are executed when they are called or invoked
+      Functions are fundamental in all programming languages</p>
 
-  <h1>Hello</h1>
-  
-</body>
+    <button onclick="greet('John')">Greet John</button>
+    <button onclick="greet('shaan')">Greet shaan</button>
+    <button onclick="greet('Alice')">Greet Alice</button>
+
+  </body>
 </html>
