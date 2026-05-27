@@ -40,9 +40,42 @@
     </p>
     <button onclick="
  const computerChoice = pickComputerMove()
+playGame('rock');
+">Rock</button>
 
-  let result = '';
-    if(computerChoice === 'rock'){
+    <button
+      onclick="
+const computerChoice = pickComputerMove()
+ playGame('paper');
+">Paper</button>
+
+    <button
+      onclick="
+    playGame('scissors');
+">Scissors</button>
+    <script>
+
+    function playGame(playerChoice) {
+        const computerChoice = pickComputerMove()
+        let result = '';
+
+        if(playerChoice === 'scissors') {
+        if(computerChoice === 'rock'){
+        result = 'You lose!';
+        }
+        else if(computerChoice ==='paper'){
+          result = 'You win!';
+        }
+        else if(computerChoice === 'scissors'){
+          result = 'Tie';
+        }
+        else{
+          console.log('Error: Invalid computer choice');
+        }
+      }
+      else if(playerChoice === 'rock') {
+
+ if(computerChoice === 'rock'){
     result = 'Tie!';
     }
     else if(computerChoice ==='paper'){
@@ -54,14 +87,10 @@
     else{
       console.log('Error: Invalid computer choice');
     }
-    alert(`You pick: Rock🪨\nComputer Choice: ${computerChoice}\nResult: ${result}`);
-">Rock</button>
+      }
 
-    <button
-    onclick="
-const computerChoice = pickComputerMove()
- let result = '';
-  if(computerChoice === 'rock'){
+      else if(playerChoice === 'paper') {
+         if(computerChoice === 'rock'){
   result = 'You win!';
   }
   else if(computerChoice ==='paper'){
@@ -73,31 +102,11 @@ const computerChoice = pickComputerMove()
   else{
     console.log('Error: Invalid computer choice');
   }
-  alert(`You pick: Paper📄\nComputer Choice: ${computerChoice}\nResult: ${result}`);
-"
-    >Paper</button>
+      }
+        alert(`You pick : ${playerChoice}\nComputer Choice: ${computerChoice}\nResult: ${result}`);
+          }
 
 
-    <button 
-     onclick="
-  const computerChoice = pickComputerMove()
- let result = '';
-  if(computerChoice === 'rock'){
-  result = 'You lose!';
-  }
-  else if(computerChoice ==='paper'){
-    result = 'You win!';
-  }
-  else if(computerChoice === 'scissors'){
-    result = 'Tie';
-  }
-  else{
-    console.log('Error: Invalid computer choice');
-  }
-  alert(`You pick: Scissors ✂\nComputer Choice: ${computerChoice}\nResult: ${result}`);
-">Scissors</button>
-
-    <script>
 
       function pickComputerMove(){
         let computerChoice= '';
