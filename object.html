@@ -13,24 +13,72 @@
       font-family: monospace;
       font-size: 18px;
     }
+    #dottty{
+      background-color: aqua;
+      border-radius: 2px;
+    }
   </style>
 </head>
 <body>
   <h1>Objects</h1>
   <p>Objects are a fundamental data structure in JavaScript that allow you to store and access data in a structured way. An object is a collection of key-value pairs, where each key is a string (or symbol) and each value can be any data type, including other objects.</p>
-  <p>Here's an example of how to create and use an object in JavaScript:</p>
+  <p>Here's an example of how to create and use an object in JavaScript <span id="dottty">:</span></p>
 
 
   <script>
+    /*
     personal_info={
       name:'Shaan',
       city:'indore',
       profession:'web-engineer',
       mob:9399488131,
-      linkenIn_Id:'shaan-web001'
-    }
+      linkenIn_Id:'shaan-web001',
+      address:'Siddharth Nagar 452201'
+    };
+
+    
     console.log(personal_info.name);
+    
+    personal_info.name = 'shaan sk'
+    console.log(personal_info.name);
+    
+    console.log(personal_info.mob);
+    
+    personal_info.mob = 8602134897;
+    console.log(personal_info.mob);
+    
     console.log(personal_info);
-  </script>
+    
+    console.log(personal_info.address)
+    delete personal_info.address;
+    */
+    
+    
+    const product={
+      'product-name': 't-shirt',
+       price: '$50',
+      'shope-location':'Anand Nagar 451254',
+      'gst-number': 'N87-748-S6-W789',
+      rating:{
+            shoe:4.5,
+            beg:3.5
+      },
+      objfunc: function obfunc(a,b)
+      { let reslt=0;
+        reslt=a+b;
+        console.log('hello objet');
+        console.log(reslt);
+      }
+    };
+
+    console.log(product)
+    console.log(product.price)
+    console.log(product['product-name'])
+    console.log(product['shope-location'])
+    console.log(product['gst-number'])
+    console.log(product.rating.shoe)
+    product.objfunc(45,24);
+    
+    </script>
 </body>
 </html>
