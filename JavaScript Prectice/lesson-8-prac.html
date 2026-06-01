@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson 8 Object</title>
+    <style>
+      h1{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration:wavy underline rgb(83, 151, 210);
+      }
+      p{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 18px;
+      }
+      img{
+        height: 82vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Amazon cart</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+      blanditiis adipisci totam, maxime quisquam minus ex enim veniam. Possimus,
+      sequi. Necessitatibus accusamus odit exercitationem explicabo unde
+      corporis esse, aliquid aperiam, vero possimus dignissimos suscipit, sunt
+      quasi molestias perspiciatis laborum. Ea sit maxime placeat eum odio
+      consequuntur numquam. Ut, temporibus molestiae!</p>
+    <img src="https://user-images.githubusercontent.com/70604577/229874144-fc148193-4e66-4312-9b6b-46e431b6dbf9.png" alt="">
+    <img
+      src="https://user-images.githubusercontent.com/70604577/229874138-1d9f2261-00c2-4a41-9dff-dd33e49a450d.png"
+      alt>
+    <script>
+
+      // Solution of 8a
+      
+      const product={
+        productName:'basketball',
+        price:2095,
+      }
+      console.log(product);
+      // Solution of 8b
+    product.price+=500;
+    console.log(product);
+    
+    // Solution of 8c  vvvvv--vvvv----vvv
+    product['delivery-time']=[ '3 days']
+    console.log(product);
+
+       // Solution of 8d  vvvvv--vvvv----vvv
+
+
+       const product1={
+         productName:'basketball',
+         price:2095,
+        }
+        const product2 ={
+          productName:'mouse',
+          price:'1599'
+        }
+        const product3 ={
+          productName:'mouse',
+          price:'1599'
+        }
+        function comaperePrice(product1,product2) {
+          if(product1.price < product2.price)
+          {
+            return product1;
+          }
+          else{
+            return product2
+          }
+        }
+      console.log(comaperePrice(product1,product2));
+
+   // Solution of 8e vvvvv--vvvv----vvv
+   function isSameProduct(product1,product2) {
+    if (product1.productName===product2.productName && product1.price===product2.price) 
+    {
+      return true
+    }
+    else{
+      return false
+    }
+    
+   }
+     
+   console.log(isSameProduct(product1,product3));
+   console.log(isSameProduct(product2,product3));
+      
+   // 8f vvvvv--vvvv----vvv
+    const text = 'Hellll0 & Wellcome Friends!';
+    const result = text.toLowerCase();
+
+    console.log(result); // 'good morning'
+   // 8g vvvvv--vvvv----vvv
+    
+    const str = "test";
+    const repeatedStr = str.repeat(2);
+
+    console.log(repeatedStr); // Output: "testtest"
+
+ const a ='Hello';
+ const repeata=a.repeat(5);
+ console.log(repeata );
+
+      
+  </script>
+  </body>
+</html>
