@@ -58,17 +58,27 @@ playGame('rock');
   score.wins=0;
   score.loses=0;
   score.ties=0;
+  localStorage.removeItem('score');
   console.log('Reset Score');
   alert('Reset Score');
 ">Rest Score</button>
 
     <script>
 
-      const score = {
+      let score = JSON.parse(localStorage.getItem('score')) || {
         wins:0,
-        loses:0,
-        ties:0
+    loses:0,
+    ties:0
       };
+/*
+if (score===null) {
+  score ={
+    wins:0,
+    loses:0,
+    ties:0
+  };
+}
+  */
       function playGame(playerChoice) {
         const computerChoice = pickComputerMove()
         let result = '';
@@ -132,6 +142,7 @@ playGame('rock');
           score.ties +=1
         }
 
+        localStorage.setItem('score',JSON.stringify(score));
         alert(`You pick : ${playerChoice}\nComputer Choice: ${computerChoice}\nResult: ${result}\nscore: wins:${score.wins} loses:${score.loses} Ties:${score.ties}`);
           }
 

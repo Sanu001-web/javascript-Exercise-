@@ -51,7 +51,7 @@
     
     console.log(personal_info.address)
     delete personal_info.address;
-    */
+    
     
     
     const product={
@@ -61,7 +61,7 @@
       'gst-number': 'N87-748-S6-W789',
       rating:{
             shoe:4.5,
-            beg:3.5
+            count: 5784
       },
       objfunc: function obfunc(a,b)
       { let reslt=0;
@@ -71,14 +71,30 @@
       }
     };
 
-    console.log(product)
-    console.log(product.price)
-    console.log(product['product-name'])
-    console.log(product['shope-location'])
-    console.log(product['gst-number'])
-    console.log(product.rating.shoe)
+    console.log(product);
+    console.log(product.price);
+    console.log(product['product-name']);
+    console.log(product['shope-location']);
+    console.log(product['gst-number']);
+    console.log(product.rating.shoe);
     product.objfunc(45,24);
+    console.log(product);
+    product['name-shann'] = 'shaan sk'
+    product['shope-name'] = 'shaan computers'
+    console.log(product['shope-name'])
+    */
     
+
+    const objts ={
+      name:'shaan',
+      'mob-number':'321654987'
+    };
+    // console.log(objts.name)
+    // const name=Objts.message;
+    const{name} = objts;
+    objts.name='shaanana';
+    console.log(objts.name)
+    console.log(name)
     </script>
 </body>
 </html>
