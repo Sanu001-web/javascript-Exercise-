@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coin-flip</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #flipButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      width: 100px;
+      height: 100px;
+    }
+    button{
+      border:none;
+      background-color:transparent;
+      transition: transform 0.7s;
+    }
+    button:active{
+      transform: rotateX(360deg);
+    }
+    .move-btn{
+      border: 1px solid black;
+      padding: 10px 20px;
+      font-size: 22px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .move-btn:hover{
+      background-color: rgb(186, 214, 239);
+      color: rgb(114, 114, 7);
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Coin Flip</h1>
+
+    <!-- <button id="flipButton" onclick="
+  const randomNumber=Math.random();
+  const result=(randomNumber<0.5 ? 'heads':'tails');
+  // console.log('Random number:',randomNumber)
+
+  console.log('Result:',result);
+  
+  const guess =prompt('Enter your guess move:');
+  console.log('Your guessed move:',guess);
+  console.log( (result===guess?'You win!' : 'You lose'))
+  
+  "> 
+  <img id="flipButton" src="https://cdn-icons-png.flaticon.com/128/9382/9382189.png">  
+</button> -->
+<!-- <br>
+<br> -->
+<button class="move-btn" onclick="playGame('heads')"> Heads</button>
+<button class="move-btn" onclick="playGame('tails')"> Tails</button>
+<button class="move-btn" onclick="
+  score.wins=0;
+  score.losses=0;
+  alert('Cleared!')
+  localStorage.removeItem('score');">Rest </button>
+<script>
+
+  const score = JSON.parse(localStorage.getItem('score')) ||{wins: 0, losses: 0};
+
+  function playGame(guess){
+    const randomNumber=Math.random();
+    const result=(randomNumber<0.5 ? 'heads':'tails');
+    console.log( (guess===result?'You win!' : 'You lose!'))
+    if(guess===result){
+      score.wins++;
+    }
+    else{
+      score.losses++;
+    }
+    
+    localStorage.setItem('score',JSON.stringify(score));
+    console.log(score);
+  }
+
+  </script>
+  </body>
+</html>
