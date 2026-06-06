@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    button{
+      cursor: pointer;
+      margin: 55px;
+      padding: 20px;
+      font-weight: 600;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      transition: background-color 1s, transform 0.30s ease-in-out;
+    }
+    button:hover{
+      background-color:rgb(226, 222, 222);
+      transform: scale(1.1);
+    }
+    button:active{
+      background-color:rgb(247, 245, 245);
+    }
+  </style>
+  </head>
+  <body>
+    <h1>DOM Manipulation</h1>
+    <p>DOM (Document Object Model) manipulation is the process of using
+      JavaScript to interact with and modify the structure, style, and content
+      of a web page. The DOM represents the HTML document as a tree-like
+      structure, where each element is a node that can be accessed and
+      manipulated using JavaScript.</p>
+      <button> click here!</button>
+      <button class="secnd-btn"> 2nd time</button>
+    <script>
+
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button').innerHTML = 'hello'
+      console.log(document.querySelector('button').innerHTML);
+      console.log(document.querySelector('.secnd-btn'));
+      console.log(document.querySelector('.secnd-btn').innerHTML);
+      const buttonElm = document.querySelector('.secnd-btn');
+      console.log(buttonElm);
+      
+      
+      /*
+      document.body.style.backgroundColor = 'lightblue'; 
+      document.body.innerHTML = "<button>click me!</button>";
+    document.title = "Document-Objects-Model";
+    document.body.style.color ='rgb(15,20,50)';
+    document.body.style.fontSize = '20px';
+    console.log(document.title);
+    console.log(document.body);
+    console.log(document.body.innerHTML);
+    */
+  </script>
+
+  </body>
+</html>
