@@ -69,9 +69,10 @@ playGame('rock');
   updateScoreElement();
 ">Rest Score</button>
 
-    <p class="js-score"> </p>
-    <p class="js-result"></p>
-    <p class="js-move"></p>
+<p class="js-result"></p>
+<p class="js-move"></p>
+<p class="js-show-result"></p>
+<p class="js-score"> </p>
 
     <script>
 
@@ -154,6 +155,9 @@ if (score===null) {
         }
 
         updateScoreElement();
+        document.querySelector('.js-show-result').innerHTML
+        =result;
+
         document.querySelector('.js-result').innerHTML 
         = result;
         
@@ -164,10 +168,9 @@ if (score===null) {
         localStorage.setItem('score',JSON.stringify(score));
         alert(`You pick : ${playerChoice}\nComputer Choice: ${computerChoice}\nResult: ${result}\nscore: wins:${score.wins} loses:${score.loses} Ties:${score.ties}`);
           }
-
       function updateScoreElement() {
        document.querySelector('.js-score')
-         .innerHTML =`wins:${score.wins} loses:${score.loses} Ties:${score.ties}`
+         .innerHTML=`wins:${score.wins} loses:${score.loses} Ties:${score.ties}`
       }
 
       function pickComputerMove()
