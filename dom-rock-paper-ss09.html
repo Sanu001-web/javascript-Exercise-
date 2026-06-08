@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolean Values</title>
+    <title>Rock Paper And Scissors</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet">
@@ -60,6 +60,11 @@ playGame('rock');
     playGame('scissors');
 ">Scissors</button>
 
+
+<p class="js-result"></p>
+<p class="js-show-result"></p>
+<p class="js-move"></p>
+<p class="js-score"> </p>
     <button onclick="
   score.wins=0;
   score.loses=0;
@@ -69,15 +74,10 @@ playGame('rock');
   updateScoreElement();
 ">Rest Score</button>
 
-<p class="js-result"></p>
-<p class="js-move"></p>
-<p class="js-show-result"></p>
-<p class="js-score"> </p>
-
     <script>
 
       let score = JSON.parse(localStorage.getItem('score')) || {
-        wins:0,
+    wins:0,
     loses:0,
     ties:0
       };
@@ -166,7 +166,7 @@ if (score===null) {
 
 
         localStorage.setItem('score',JSON.stringify(score));
-        alert(`You pick : ${playerChoice}\nComputer Choice: ${computerChoice}\nResult: ${result}\nscore: wins:${score.wins} loses:${score.loses} Ties:${score.ties}`);
+        // alert(`You pick : ${playerChoice}\nComputer Choice: ${computerChoice}\nResult: ${result}\nscore: wins:${score.wins} loses:${score.loses} Ties:${score.ties}`);
           }
       function updateScoreElement() {
        document.querySelector('.js-score')

@@ -32,7 +32,7 @@
       /* padding-top:54px; */
       margin-top: 50px;
     }
-    .cost-input{
+    .js-cost-input{
       padding: 5px 10px;
       font-size: 18px;
       cursor: pointer;
@@ -50,21 +50,46 @@
     <h2>Youtube Subscribe Button</h2>
     <button onclick="
      subscribe();
-     "  class="js-subs-btn">Subscribe</button>
+     " class="js-subs-btn">Subscribe</button>
     <p>Rock Paper Scissors</p>
-    <a href="https://supersimple.dev/projects/dom-rock-paper-scissors/">Click here</a>
+    <a href="dom-rock-paper-ss09.html">Click here</a>
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE shipping. </p>
-    <input class="cost-input" type="text" placeholder="Cost of order">
-    <button class="cal-btn">Calculate</button>
+    <input onkeydown="
+    handleCostKeydown(event);
+    " class="js-cost-input" type="text" placeholder="Cost of order">
+    <button onclick=" 
+     calculateTotal();
+    " class="cal-btn">Calculate</button>
+    <p class="js-show-value"></p>
     <br>
     <p class="css-model-container">
-      <a class="css-model" href="https://supersimple.dev/projects/dom-with-css/">CSS version of these projects</a>
+      <a class="css-model"
+        href="https://supersimple.dev/projects/dom-with-css/">CSS version of
+        these projects</a>
     </p>
 
-
     <script>
+
+        function handleCostKeydown(event){
+            if(event.key === 'Enter')
+          {
+            calculateTotal();
+          }
+        }
+
+      function calculateTotal(){
+            const innerInput = document.querySelector('.js-cost-input');
+            let cost = Number(innerInput.value);
+
+            if( cost < 40){
+              cost = cost + 10;
+            }
+            document.querySelector('.js-show-value').
+            innerHTML = `$${cost}`;
+          
+      }
       function subscribe(){
           const jsBtnElem = document.querySelector('.js-subs-btn');
         //  console.log(jsBtnElem);
