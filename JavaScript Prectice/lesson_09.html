@@ -1,0 +1,56 @@
+<img src="https://user-images.githubusercontent.com/70604577/229875491-f86ea15b-a04f-4ccd-b253-d5dec831528f.png" alt="exercise-que">
+<p>9a,9b,9c solution</p>
+<!-- 9a solution  -->
+<button class="anine">9a</button>
+
+<!-- 9b solution  -->
+<button class="bnine"></button>
+
+<br>
+<br>
+<!-- 9c solution  -->
+<button onclick="
+ document.querySelector('.js-choice')
+        .innerHTML = 'You chose: heads';"
+ class="head-btn">head</button>
+
+<button onclick="
+ document.querySelector('.js-choice')
+        .innerHTML = 'You chose: tails';"
+class="tails-btn">tails</button>
+
+<p class="js-choice"></p>
+
+<img src="https://user-images.githubusercontent.com/70604577/229875495-a7f86dda-952b-4a03-970d-a3b96a8bcc10.png" alt="">
+
+<!-- 9d,e,f skip already make function solution / -->
+<p>9d,e,f skip already make function solution</p>
+<input onkeydown="
+handleNameKeydown(event);
+"
+ type="text" class="js-name-text">
+<button onclick="
+showName();
+" >Submit</button>
+<p class="js-name-show"></p>
+
+<img src="https://user-images.githubusercontent.com/70604577/229875499-1cb39540-f487-437d-93b1-ce93926ecc87.png" alt="">
+
+<!-- 9g,9h solution -->
+<p>9g,9h solution</p>
+<!-- 9g solution -->
+ <input onkeydown="
+    handleCostKeydown(event);
+    " class="js-cost-input" type="text" placeholder="Cost of order">
+    <button onclick=" 
+     calculateTotal();
+    " class="cal-btn">Calculate</button>
+    <p class="js-show-value"></p>
+
+<!-- 9h solution -->
+    <input placeholder="Type something" class="js-input"
+      onkeyup="
+       typeName(value);
+      ">
+
+    <p class="js-message"></p>
