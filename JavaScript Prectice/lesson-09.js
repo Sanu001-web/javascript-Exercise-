@@ -36,10 +36,54 @@ function calculateTotal() {
 
 }
 
+function typeName() {
+  const inputElement = document.querySelector('.js-input');
+  document.querySelector('.js-message')
+    .innerHTML = inputElement.value;
+}
 
-function typeName(value){
 
-  const innerInput = document.querySelector('.js-input');
-  document.querySelector('.js-message').innerInput = `${
-    innerInput.value
+
+
+
+let cartQuantity = 0;
+displayCartQuantity();
+function updateCartQuantity(change) {
+  if (cartQuantity + change > 10) {
+    alert('The cart is full');
+    return;
+  }
+  if (cartQuantity + change < 0) {
+    alert('Not enough items in the cart');
+    return;
+  }
+
+  cartQuantity += change;
+  // console.log(`Cart Quantity : ${cartQuantity}`);
+  displayCartQuantity();
+}
+
+function displayCartQuantity() {
+  document.querySelector('.js-cart-quantit').innerHTML
+    = `Cart Quantity : ${cartQuantity}`
+}
+
+
+
+let calculation = localStorage.getItem('calculation') || '';
+
+function updateCalculation(value) {
+  calculation += value;
+  calculationBar();
+  localStorage.setItem('calculation', calculation);
+}
+
+// Optional: you can also create a function in order
+// to reuse this code.
+function saveCalculation() {
+  localStorage.setItem('calculation', calculation);
+}
+
+function calculationBar(){
+ document.querySelector('.js-calcution-bar').innerHTML =`${calculation}`;
 }
