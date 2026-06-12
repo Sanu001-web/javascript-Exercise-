@@ -1,0 +1,35 @@
+* {
+  font-family: 'roboto';
+  background-color: rgb(24,24,24);
+  color: rgb(250,250,250);
+}
+
+h2 {
+  text-transform: uppercase;
+  text-decoration: underline rgb(221, 118, 118);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  font-weight: 600;
+  margin: 5px;
+  border: 2px solid rgb(250, 250, 250);
+  border-radius: 100px;
+  cursor: pointer;
+  margin-right: 20px;
+  /* background-color: rgb(94, 165, 141); */
+}
+
+.js-score {
+  margin-left: 10px;
+}
+.hand-move{
+  background-color: transparent;
+  height: 50px;
+}
