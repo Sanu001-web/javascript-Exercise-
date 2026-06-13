@@ -1,0 +1,41 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+
+<!-- <img src="https://user-images.githubusercontent.com/70604577/229875879-802764d3-8e21-4f7a-8981-367470faa772.png" alt="exersice-que" class="exer-ques">
+<img src="https://user-images.githubusercontent.com/70604577/229875870-02b45e2f-dd8e-46d3-b03e-5d02fdf45aab.png" alt="exersice-que"
+class="exer-ques"> -->
+
+<p class="exer-heading">10a,10b,10c:-</p>
+<!-- 10a,10b,10c comments -->
+<button class="amazon-add-btn"> Add to Cart</button>
+<div class="uber-btn-contianer">
+  <button class="uber-rqst-btn element">Request now</button>
+  <button class="uber-schedule-btn">Schedule for later</button>
+</div>
+<button class="text-btn element">Test</button>
+
+<p class="exer-heading">10d,10e,10f</p>
+
+<button onclick="gameToggle();" class="g-game random-btn">Gaming</button>
+
+<div class="muli-btn">
+  <button onclick="multiSwitches('.switch-btn')" class="random-btn element switch-btn">Gaming</button>
+  <button onclick="multiSwitches('.switch-btn1');" class="random-btn element switch-btn1">Tech</button>
+
+  <button onclick="multiSwitches('.switch-btn2');" class="random-btn element switch-btn2">Music</button>
+</div>
+
+<p class="amazon-cals-title">Amazon Shipping Calculator</p>
+<p class="amazon-cals-title">Orders under $40 = +$10 shipping.</p>
+<p class="amazon-cals-title">Orders over $40 = FREE shipping. </p>
+<input onkeydown="
+    handleCostKeydown(event);
+    " class="js-cost-input" type="text" placeholder="Cost of order">
+<button onclick=" 
+     calculateTotal();
+    " class="cal-btn">Calculate</button>
+<p class="js-show-value"></p>
+<p class="invailid-value"></p>
