@@ -1,0 +1,30 @@
+*{
+  font-family: 'roboto';
+}
+.js-input{
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid rgb(4, 102, 102);
+  border-radius: 10px;
+}
+button{
+  padding: 10px;
+  font-size: 15.5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(250,250,250);
+  background-color: rgb(4, 102, 102);
+  border: none;
+  border-radius: 10px;
+}
+.todo-css{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 2vw;
+  background-color: rgb(51, 69, 175);
+  color: rgb(250,250,250);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+}
