@@ -36,25 +36,29 @@ function handleCostKeydown(event) {
     calculateTotal();
   }
 }
+
+
 function calculateTotal() {
   const inputElement = document.querySelector('.js-cost-input');
   let cost = Number(inputElement.value);
 
-  
 
-  if(cost <=0){
+  document.querySelector('.js-show-value')
+    .innerHTML = '';
+  document.querySelector('.invailid-value')
+    .innerHTML = '';
+
+
+  if (cost <= 0) {
     document.querySelector('.invailid-value')
-    .innerHTML = `Error:cost cannot be less than $0`
+      .innerHTML = `Error:cost cannot be less than $${cost}`
     return;
   }
-
   if (cost < 40) {
     cost = cost + 10;
   }
-  
-
   document.querySelector('.js-show-value')
-  .innerHTML = `$${cost}`;
+    .innerHTML = `$${cost}`;
 }
 
 
