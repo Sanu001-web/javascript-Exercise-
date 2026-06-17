@@ -19,3 +19,11 @@ let i = 5;
 while(i>=0){
     console.log(i);
     i--;
+
+    // 11g solution
+    const nums = [1,2,3]
+const rslt=[];
+for (let i = 0; i < nums.length; i++) {
+    rslt.push(nums[i]+1)
+}
+console.log(rslt);
