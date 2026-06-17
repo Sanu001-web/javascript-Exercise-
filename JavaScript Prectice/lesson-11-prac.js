@@ -27,3 +27,16 @@ for (let i = 0; i < nums.length; i++) {
     rslt.push(nums[i]+1)
 }
 console.log(rslt);
+
+    // 11h solutionis
+
+    function addOne(array) {
+    const reslt=[];
+    for (let i = 0; i < array.length; i++) {
+    reslt.push(array[i]+1)
+}
+return reslt;
+    
+}
+console.log(addOne([1,2,3]));
+console.log(addOne([-2,-1,0,99]));
