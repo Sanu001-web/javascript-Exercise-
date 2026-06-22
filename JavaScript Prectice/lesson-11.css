@@ -1,0 +1,40 @@
+body {
+  padding: 10px;
+  margin: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  width: 50vw;
+}
+
+p {
+  font-size: 20px;
+}
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* text-align: center; */
+}
+
+button:hover {
+  width: 50px;
+  height: 50px;
+  border: 3.3333333333333335px solid rgba(78, 205, 196, 0.3);
+  border-top-color: #4ecdc4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+ cursor: pointer;
+}
+
+/* .loader {
+   
+} */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
