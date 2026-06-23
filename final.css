@@ -1,0 +1,67 @@
+*{
+  font-family: 'roboto','arial';
+ }
+ 
+.todocontainer{
+  width: 50vw;
+  padding: 50px;
+  overflow:hidden;
+}
+.js-input{
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid rgb(6, 15, 1);
+  border-radius: 5px;
+  width: 100%;
+  max-width: 21vw;
+}
+.date-box{
+  padding: 10px;
+  border: 1px solid rgb(4, 102, 102);
+  border-radius: 5px;
+  width: 100%;
+  max-width: 18vw;
+  font-size: 17px;
+}
+.add-btn{
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  color: rgb(250,250,250);
+  background-color: #2C5EAD;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.30s;
+}
+.add-btn:hover{
+  background-color: #4274c4;
+}
+.js-delete-btn{
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(250,250,250);
+  background-color: #2C5EAD;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.30s;
+}
+.js-delete-btn:hover{
+  background-color: #3b6cbb;
+} 
+.todo-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  row-gap: 10px;
+  padding: 10px;
+  margin-top: 2vw;
+  /* background-color: #C4E2F5; */
+  color: #0d7bc0;
+  border-radius: 10px;
+  max-width: 460px;
+  width: 100%;
+  font-size: 20px; 
+}
+
