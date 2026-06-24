@@ -29,6 +29,10 @@ button:hover {
  cursor: pointer;
 }
 
+.exe-img{
+  height: 380px;
+}
+
 /* .loader {
    
 } */
