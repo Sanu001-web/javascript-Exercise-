@@ -231,7 +231,46 @@ function countWords(words) {
 }
 console.log(countWords(['apple','apple','grape','banana','banana']));
 
+// part(II)
 
+let words = ['hello', 'world', 'search', 'good'];
+
+// Set the index to -1 at the start (so we'll assume
+// the string 'search' doesn't exist in the array).
+// If we find the string 'search' in the array, we
+// will update the index.
+let index = -1;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === 'search') {
+    index = i;
+  }
+}
+
+console.log(index);
+
+// this is second 
+
+words = ['not', 'found'];
+index = -1;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === 'search') {
+    index = i;
+  }
+}
+
+console.log(index);
+
+words = ['mine', 'me', 'myslef', 'l']
+index = -1;
+
+for(let i=0;i<words.length;i++){
+  if(words[i]==='l'){
+    index =i;
+  }
+}
+console.log(index);
 
 
 
