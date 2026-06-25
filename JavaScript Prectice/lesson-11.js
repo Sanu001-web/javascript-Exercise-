@@ -290,6 +290,7 @@ function findIndex(array, word) {
 
 
 
+// 11-R solution vvvvvvvvvvvvvvvvvvv-vvvvvvvvvvvvvvvvvv-------------vvvvvvvvvvvv
 console.log('11-R solution');
 function removeEgg(foods) {
   const result = [];
@@ -304,6 +305,23 @@ function removeEgg(foods) {
 }
 console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'banana']));
 
+// 11-S solution vvvvvvvvvvvvvvvvvvv-vvvvvvvvvvvvvvvvvv-------------vvvvvvvvvvvv
 console.log('11-S solution');
+function removeEgg(foods) {
+  const result = [];
+  let eggsRovome =0;
+  for (let i = 0; i < foods.length; i++)
+  {
+    if(foods[i]==='egg' && eggsRovome<2){
+      eggsRovome++;
+      continue;
+    }
+    result.push(foods[i]);
+  }
+  return result;
+}
+
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'banana']));
+
 
 
