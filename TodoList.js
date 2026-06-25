@@ -1,4 +1,4 @@
-const todoList = [{
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [{
   name: 'Drink food',
   dueDate: '27-06-26'
 },{
@@ -20,6 +20,7 @@ function randderTodoList() {
     <button onclick=
     "todoList.splice(${i},1)
     randderTodoList();
+    saveToStorage()
     " class="js-delete-btn">
     Delete
     </button>
@@ -52,4 +53,9 @@ function addTodo() {
   document.querySelector('.displayTodos').innerHTML =
     '';
   randderTodoList();
+  saveToStorage()
+}
+
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 }
