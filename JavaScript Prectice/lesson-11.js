@@ -341,3 +341,25 @@ function removeEgg(foods) {
 }
 
 console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'banana']));
+
+
+// 11-U solution vvvvvvvvvvvvvvvvvvv-vvvvvvvvvvvvvvvvvv-------------vvvvvvvvvvvv
+console.log('11-U solution');
+function removeEgg(foods) {
+  const copyRevomeEgg = foods.slice();
+  const reversedFoods = copyRevomeEgg.reverse();
+  const result = [];
+  let eggsRovome = 0;
+  for (let i = 0; i < reversedFoods.length; i++) {
+    if (reversedFoods[i] === 'egg' && eggsRovome < 2) {
+      eggsRovome++;
+      continue;
+    }
+    result.push(reversedFoods[i]);
+  }
+  return result.reverse();
+}
+
+const foods = ['egg', 'apple', 'egg', 'egg', 'banana'];
+console.log(removeEgg(foods));
+console.log(foods);
