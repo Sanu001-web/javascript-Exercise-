@@ -231,14 +231,11 @@ function countWords(words) {
 }
 console.log(countWords(['apple','apple','grape','banana','banana']));
 
+
+//  11-Q solution vvvvvvvvvvvvvvv---vvvvvvvvvvvv----
 // part(II)
-
+console.log(11-O,P);
 let words = ['hello', 'world', 'search', 'good'];
-
-// Set the index to -1 at the start (so we'll assume
-// the string 'search' doesn't exist in the array).
-// If we find the string 'search' in the array, we
-// will update the index.
 let index = -1;
 
 for (let i = 0; i < words.length; i++) {
@@ -257,6 +254,7 @@ index = -1;
 for (let i = 0; i < words.length; i++) {
   if (words[i] === 'search') {
     index = i;
+      break;
   }
 }
 
@@ -268,11 +266,27 @@ index = -1;
 for(let i=0;i<words.length;i++){
   if(words[i]==='l'){
     index =i;
+      break; //11-P
   }
 }
 console.log(index);
 
+//  11-Q solution vvvvvvvvvvvvvvv---vvvvvvvvvvvv----
+console.log('11-Q solution');
+function findIndex(array, word) {
 
+  let index = -1;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === word) {
+      index = i;
+      break;
+    }
+  }
+  console.log(index);
+}
+
+(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
 
 
 
