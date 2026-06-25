@@ -363,3 +363,21 @@ function removeEgg(foods) {
 const foods = ['egg', 'apple', 'egg', 'egg', 'banana'];
 console.log(removeEgg(foods));
 console.log(foods);
+
+// 11-V solution vvvvvvvvvvvvvvvvvvv-vvvvvvvvvvvvvvvvvv-------------vvvvvvvvvvvv
+console.log('11-V solution');
+ for(let i=1; i<20; i++){
+   if(i%3===0 && i%5===0){
+    console.log('Fizzbuzz');
+    continue;
+  }
+  if(i%3===0){
+    console.log('fizz');
+    continue;
+  }
+   if(i%5===0){
+    console.log('buzz');
+    continue;
+  }
+  console.log(i);
+ }
