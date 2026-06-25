@@ -290,3 +290,20 @@ function findIndex(array, word) {
 
 
 
+console.log('11-R solution');
+function removeEgg(foods) {
+  const result = [];
+  for (let i = 0; i < foods.length; i++) {
+    if (foods[i] === 'egg') {
+
+      continue;
+    }
+    result.push(foods[i]);
+  }
+  return result;
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'banana']));
+
+console.log('11-S solution');
+
+
