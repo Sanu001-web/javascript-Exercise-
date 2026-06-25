@@ -381,3 +381,28 @@ console.log('11-V solution');
   }
   console.log(i);
  }
+
+// 11-W solution vvvvvvvvvvvvvvvvvvv-vvvvvvvvvvvvvvvvvv-------------vvvvvvvvvvvv
+
+console.log('11-W solution');
+function findIndex(array, word) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === word) {
+      return i;
+    }
+  }
+  return -1;
+}
+function unique(array) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+      const word = array[i];
+    if (findIndex(result, word) === -1) {
+      result.push(word);
+    }
+  }
+  return result;
+}
+
+console.log(unique(['green', 'red', 'blue', 'red'], 'red'));
+console.log(unique(['red', 'green', 'green', 'red']));
