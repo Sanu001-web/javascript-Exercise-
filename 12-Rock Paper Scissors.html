@@ -1,0 +1,49 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+
+
+
+
+<h2>Rock Paper Scissors:</h2>
+<p>
+  In the game of rock-paper-scissors, players choose one of three options:
+  rock, paper, or scissors. The rules are simple: rock beats scissors,
+  scissors beats paper, and paper beats rock. If both players choose the
+  same option, it's a tie. The game is often used as a decision-making tool
+  or as a fun way to pass the time.
+</p>
+<button onclick="
+        computerChoice = pickComputerMove()
+        playGame('rock');">
+       <img class="hand-move" src="https://github.com/SuperSimpleDev/javascript-course/blob/main/2-copy-of-code/images/rock-emoji.png?raw=true" alt="hand-move">
+    </button>
+
+<button onclick="
+      computerChoice = pickComputerMove()
+      playGame('paper');">
+      <img class="hand-move" src="https://github.com/SuperSimpleDev/javascript-course/blob/main/2-copy-of-code/images/paper-emoji.png?raw=true" alt="hand-move"> 
+ </button>
+
+<button
+        onclick="
+        playGame('scissors');">
+        <img class="hand-move" src="https://github.com/SuperSimpleDev/javascript-course/blob/main/2-copy-of-code/images/scissors-emoji.png?raw=true" alt="">
+  </button>
+
+
+<p class="js-result"></p>
+<p class="js-show-result"></p>
+<p class="js-move"></p>
+<p class="js-score"> </p>
+<button onclick="
+  score.wins=0;
+  score.loses=0;
+  score.ties=0;
+  localStorage.removeItem('score');
+  console.log('Reset Score');
+  updateScoreElement();"
+  class="reset-btn">
+Rest Score</button>
+
+<button class="auto-btn" onclick="autoPlay();">Auto Play</button>
