@@ -16,19 +16,21 @@ function randderTodoList() {
     const html = `
     <div>${name}</div>
     <div>${dueDate}</div>
-    <button onclick=
-    "todoList.splice(${index},1)
-    randderTodoList();
-    saveToStorage();
-    " class="js-delete-btn">
-    Delete
-    </button>
-    `;
+    <button class="js-delete-todo-btn delete-todo-btn">
+     Delete
+    </button>`;
     todoHtml += html;
   })
   // console.log(todoHtml);
 
   document.querySelector('.displayTodos').innerHTML = todoHtml;
+
+  document.querySelectorAll('.js-delete-todo-btn').forEach((deleteButton, index) => {
+    deleteButton.addEventListener('click', () => {
+      todoList.splice(index, 1)
+      randderTodoList();
+    })
+  })
 }
 
 document.querySelector('.js-add-btn')
