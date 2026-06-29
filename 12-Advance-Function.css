@@ -4,3 +4,19 @@
 h1{
   text-decoration: underline dotted rgb(58, 58, 13);
 }
+.click-btn{
+  background-color: rgb(149, 200, 245);
+  color: rgb(0,0,0);
+  border: none;
+  padding: 5px 12px;
+  font-size: 18px;
+  border-radius:5px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.click-btn:hover{
+   background-color: rgb(172, 214, 250);
+}
+.click-btn:active{
+   background-color: rgb(70, 161, 241);
+}
