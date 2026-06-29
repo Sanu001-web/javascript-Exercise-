@@ -9,24 +9,23 @@ randderTodoList();
 function randderTodoList() {
 
   let todoHtml = '';
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
-    // const name = todoObject.name;
+
+  todoList.forEach((todoObject,index)=>{
     const { name, dueDate } = todoObject;
     // const {dueDate} = todoObject;
     const html = `
     <div>${name}</div>
     <div>${dueDate}</div>
     <button onclick=
-    "todoList.splice(${i},1)
+    "todoList.splice(${index},1)
     randderTodoList();
-    saveToStorage()
+    saveToStorage();
     " class="js-delete-btn">
     Delete
     </button>
-    `
+    `;
     todoHtml += html;
-  }
+  })
   // console.log(todoHtml);
 
   document.querySelector('.displayTodos').innerHTML = todoHtml;
