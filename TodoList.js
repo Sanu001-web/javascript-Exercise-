@@ -1,7 +1,7 @@
 const todoList = JSON.parse(localStorage.getItem('todoList')) || [{
   name: 'Drink food',
   dueDate: '27-06-26'
-},{
+}, {
   name: 'Play water',
   dueDate: '25-06-26'
 }];
@@ -10,7 +10,7 @@ function randderTodoList() {
 
   let todoHtml = '';
 
-  todoList.forEach((todoObject,index)=>{
+  todoList.forEach((todoObject, index) => {
     const { name, dueDate } = todoObject;
     // const {dueDate} = todoObject;
     const html = `
@@ -31,6 +31,15 @@ function randderTodoList() {
   document.querySelector('.displayTodos').innerHTML = todoHtml;
 }
 
+document.querySelector('.js-add-btn')
+  .addEventListener('click', () => {
+    addTodo();
+  });
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    addTodo();
+  }
+})
 function addTodo() {
   const todoElement = document.querySelector('.js-input');
   const dueDateElement = document.querySelector('.js-dates');
