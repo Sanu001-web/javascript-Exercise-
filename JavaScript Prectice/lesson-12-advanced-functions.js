@@ -1,5 +1,5 @@
-//comments it before run it...................
-// 12-A Solution:
+
+//12-A Solution:
 const add = function () {
   console.log(2 + 3);
 }
@@ -7,7 +7,7 @@ add();
 add();
 
 console.log('12-B Solution:');
-// 12-B Solution:
+//12-B Solution:
 function runTwice(fun) {
   fun();
   fun();
@@ -17,18 +17,23 @@ runTwice(add);
 
 
 console.log('12-C Solution on screen');
-function updateBtn() {
-  const button = document.querySelector('.js-saved-btn');
-   
-  // setTimeout(()=>{...same code *12P*...})
-  setTimeout(function () {
-    button.innerHTML = 'Finished!'
-  }, 1000);
-}
+
+document.querySelector('.js-saved-btn')
+  .addEventListener('click', () => {
+    const button = document.querySelector('.js-saved-btn');
+
+    //setTimeout(()=>{...same code *12P*...})
+    setTimeout(() => {
+      button.innerHTML = 'Finished!'
+    }, 1000);
+  });
 
 
- console.log('12-D Solution on screen');
-function updateBtnTwo() {
+console.log('12-D Solution on screen');
+
+
+document.querySelector('.js-saved-btn-two')
+.addEventListener('click', () => {
   const button = document.querySelector('.js-saved-btn-two');
   button.innerHTML = 'Loading...'
 
@@ -36,17 +41,22 @@ function updateBtnTwo() {
   setTimeout(function () {
     button.innerHTML = 'Finished!'
   }, 1000);
-}
- console.log('12-E Solution on screen');
- function randderMsg(){
+});
+
+
+console.log('12-E Solution on screen');
+
+document.querySelector('.randderMsg')
+.addEventListener('click', () => {
   const randderMsg = document.querySelector('.randderMsg')
 
   //setTimeout(()=>{...same code *12P*...})
-  setTimeout(function(){
+  setTimeout(function () {
     randderMsg.innerHTML = 'Added on cart';
-  },1000)
- }
- 
+  }, 1000)
+});
+
+
 console.log('12-F Solution on screen');
 let timeOutid;
 function randderMsg() {
@@ -118,10 +128,10 @@ console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'hamburger']));
 
 console.log('12-O-Solution:');
 function removeEgg(foods) {
-  let eggsRemoved=0;
+  let eggsRemoved = 0;
 
   return foods.filter((food) => {
-    if(food ==='egg' && eggsRemoved <2){
+    if (food === 'egg' && eggsRemoved < 2) {
       eggsRemoved++;
       return false;
     }
@@ -131,3 +141,12 @@ function removeEgg(foods) {
 console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'hamburger']));
 
 console.log('12-P,Q-Solution is 12c-12i refector')
+
+
+
+
+
+
+
+
+
