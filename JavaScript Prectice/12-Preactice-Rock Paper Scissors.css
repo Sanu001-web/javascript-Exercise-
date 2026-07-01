@@ -1,0 +1,72 @@
+* {
+  font-family: 'roboto';
+  background-color: rgb(24,24,24);
+  color: rgb(250,250,250);
+}
+
+h2 {
+  text-transform: uppercase;
+  text-decoration: underline rgb(221, 118, 118);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.rock-btn,.paper-btn,.scissors-btn {
+  font-size: 22px;
+  padding: 20px;
+  font-weight: 600;
+  margin: 5px;
+  border: 2px solid rgb(250, 250, 250);
+  border-radius: 100px;
+  cursor: pointer;
+  margin-right: 20px;
+  /* background-color: rgb(94, 165, 141); */
+}
+.reset-btn,.auto-btn{
+  font-size: 15px;
+  padding: 10px 15px;
+  font-weight: 600;
+  margin: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 20px;
+  background-color: rgb(250, 250, 250);
+  color: rgb(0,0,0);
+}
+.auto-btn:hover{
+  background-color: rgb(207, 205, 205);
+}
+.auto-btn:active{
+  background-color: rgb(245, 243, 243);
+}
+
+.js-score {
+  margin-left: 10px;
+}
+.hand-move{
+  background-color: transparent;
+  height: 70px;
+  width: 75px;
+}
+.conformation{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  height: 10vh;
+}
+
+.yes-btn,.no-btn{
+background-color:rgb(241, 240, 240);
+color: rgb(0,0,0);
+padding: 10px 20px;
+border: none;
+border-radius: 2px;
+font-weight: 600;
+cursor: pointer;
+}
