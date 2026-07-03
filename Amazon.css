@@ -16,19 +16,16 @@ body {
 .logo-container {
   position: relative;
   margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .amazon-logo {
   width: 90px;
   padding: 0;
   display: inline-block;
-}
-
-.domen {
-  position: absolute;
-  right: -18px;
-  top: 0;
-  bottom: 15px;
+  cursor: pointer;
 }
 
 .navbar {
@@ -116,7 +113,7 @@ body {
 }
 
 .catogaries-container:hover {
-  background-color: rgba(0, 0, 0);
+  background-color: rgb(209, 206, 206);
 }
 
 option {
@@ -206,7 +203,9 @@ option {
 
 .cart {
   display: flex;
+  position: relative;
   align-items: center;
+  cursor: pointer;
 }
 
 .cart-icon {
@@ -660,9 +659,10 @@ h2 {
   .big-container-second {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .amazon-mobile-logo {
-  display: none;
-}
+    display: none;
+  }
 
 }
 
@@ -680,28 +680,35 @@ h2 {
   .final-footer {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .amazon-mobile-logo {
-  display: none;
-}
+    display: none;
+  }
 
 }
 
 
 @media(max-width:575px) {
   .navbar {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #E3E6E6; */
   }
 
-  .left-navbar,
-  .middle-navbar,
-  .Right-navbar {
+  .middle-navbar {
     width: 100%;
   }
 
-  .amazon-mobile-logo {
-    display: block;
-    height: 35px;
-    margin-top: 5px;
+  .left-navbar,
+  .Right-navbar {
+    width: 100%;
+    max-width: 20px;
+  }
+
+  .sign-acc-list,
+  .retrn-ordr,
+  .location-container {
+    display: none;
   }
 
   .big-container,
@@ -722,7 +729,7 @@ h2 {
     flex-direction: column;
   }
 
-.amazon-logo {
+  .amazon-logo {
     display: none;
   }
 
@@ -868,6 +875,14 @@ input:focus {
   margin-bottom: 17px;
 }
 
+.cart-quantity {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  color: #eb921f;
+  font-weight: 800;
+}
+
 .product-spacer {
   flex: 1;
 }
@@ -973,4 +988,13 @@ select {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  transition: all 0.30s;
+}
+
+.button-primary:hover {
+  background-color: rgb(243, 208, 31);
+  ;
+}
+.button-primary:active{
+  background-color: #fcb656;
 }
