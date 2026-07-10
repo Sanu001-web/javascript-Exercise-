@@ -26,6 +26,19 @@
       </div>
   
 <script>
+      document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          // const productId = button.dataset.productId; so , use destructuring method 13h,13g 
+          const {productId} = button.dataset;
+          let matchingItem;
+      
+          cart.forEach((item) => {
+      if (productId === item.productId) {
+        matchingItem = item;
+      }
+    });
+
+  
     const quantitySelector = document.querySelector(
       `.js-quantity-selector-${productId}`
     );
@@ -37,9 +50,10 @@
       matchingItem.quantity += quantity;
     } else {
       cart.push({
-        productId: productId,
+         // productId:productId, so use shorhand method 13h,13g
+        productId,
         // quantity: 1
-          quantity: quantity
+        quantity
       });
     }
 </script>
