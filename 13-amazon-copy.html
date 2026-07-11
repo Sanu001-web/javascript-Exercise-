@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Amazon.com</title>
+</head>
+
+<body>
+
+
+
+
+  <div class="navbar">
+    <div class="left-navbar">
+
+      <div class="logo-container">
+        <img class="amazon-logo" src="https://www.pngall.com/wp-content/uploads/15/Amazon-Logo-White-Transparent.png">
+        <!-- <div class="domen">.in </div> -->
+        <img class="amazon-mobile-logo" src="https://tinyurl.com/y5r82dt2" alt="a-mobile-logo">
+      </div>
+      <div class="location-container">
+        <div>
+          <img class="location-icon" src="https://img.icons8.com/?size=24&id=HfA2whHXTQ4L&format=png">
+        </div>
+        <div class="location">
+          <div class="current-loca">
+            Delivering to indore 452016
+          </div>
+          <div class="update-loca">
+            Update location
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="middle-navbar">
+      <div class="srch-btn-container">
+        <select class="catogaries-container">
+
+              <option>
+                All
+              </option>
+              <option>
+                all catogaries
+              </option>
+              <option>
+                Alexa Skills
+              </option>
+              <option>
+                Amazon Devices
+              </option>
+              <option>
+                Amazon Fashion
+              </option><option>
+                Amazon Pharmacy
+              </option>
+              <option>
+                Books
+              </option>
+              
+            </select>
+
+        <input class="srch" type="text" placeholder="Search Amazon.in">
+
+
+        <button class="srch-btn">
+                <img class="srch-icon" src="https://img.icons8.com/?size=50&id=132&format=png"
+              </button>
+      </div>
+    </div>
+
+
+
+    <div class="Right-navbar">
+
+      <div class="sign-acc-list">
+        <p class="Greeting">
+          Hello,sign in
+        </p>
+        <p class="acc-list">
+          Account & Lists
+        </p>
+      </div>
+      <div class="retrn-ordr">
+        <p class="retrn">
+          Returns
+        </p>
+        <p class="ordr">
+          & Orders
+        </p>
+      </div>
+      <div class="cart">
+        <img class="cart-icon" src="https://tinyurl.com/4ncm2exz">
+        <div class="cart-quantity js-cart-quantity">0</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="nav-main">
+    <div class="hamburger-menu-container">
+      <img class="hamburger-menu-icon" src="data:image/png;base64,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">
+      <div class=hamburger-menu-text>
+        All
+      </div>
+
+    </div>
+
+    <div class="content-box">
+      <ul>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              MX Player
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Sell
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Bestsellers
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Mobiles
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Today's Deals
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Customer Service
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Prime
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Fashion
+            </a>
+
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              New Releases
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Amazon Pay
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Electronics
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Home & Kitchen
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Computers
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Books
+            </a>
+          </div>
+        </li>
+        <li class="nav-li">
+          <div class="nav-div">
+            <a href="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">
+              Gift Cards
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <img class="amazon-bg" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG25/Sports/December/GW/hero/BAU/1/5298_Sports_-_Dec_BAU_hero_PC_3000X1200._CB776259284_.jpg">
+
+  <div class="main">
+    <div class="products-grid js-products-grid"></div>
+  </div>
+
+  <div class="big-container">
+
+
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+
+
+
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+    <div class="sign-in">
+      <h2>
+        Sign in for your best experience
+      </h2>
+      <button class="sign-btn">
+      Sign in securely
+    </button>
+    </div>
+
+  </div>
+
+
+  <!--this is the second row of items-->
+
+
+
+  <div class="big-container-second">
+
+
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+
+
+
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+    <div class="main-container">
+      <div class="heading">
+        <h2>
+          Bulk order discounts + Up to 18% GST savings
+        </h2>
+      </div>
+      <div class="amaz-card">
+        <div class="first-row">
+          <div class="item-1">
+            <img class="item-img-1" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/Laptops_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 45% off | laptops</p>
+          </div>
+          <div class="item-2">
+            <img class="item-img-2" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/KitchenAppliances_186_116_10._SY116_CB777673831_.jpg">
+            <p> Up to 60% off | Kitchen appliances</p>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="item-3">
+            <img class="item-img-3" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/nov/bau/ain/gw/OfficeChairs_186_116_10._SY116_CB777673831_.jpg">
+            <p> min 50% off | Office Furnitures</p>
+          </div>
+          <div class="item-4">
+            <img class="item-img-4" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonBusiness/img25/dec/bau/ain/gw/ABdelivery_186_116._SY116_CB776314701_.jpg">
+            <p> Register using GST, Udyam, FSSAI, BPAN</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="explore-title"> Explore all</p>
+    </div>
+
+
+
+  </div>
+
+
+  <div class="sign-recomd">
+    <div class="inner-sign-border">
+      <h2 class="recommd-title"> See personalized recommendations</h2>
+
+      <button class="sign-btn-2">
+      Sign in
+    </button>
+      <div class="new-customer">
+        New customer? <a
+          href="https://www.amazon.in/ap/register?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fref%3Drhf_sign_in&openid.assoc_handle=inflex">
+          Start here.</a>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#">
+    <div class="Back-btn">Back to top</div>
+  </a>
+
+  <div class="outer-footer">
+
+    <div class="footer">
+      <div class="get-know">
+        Get to Know Us
+        <p>About Amazon</p>
+        <p>Careers</p>
+        <p>Press Releases</p>
+        <p>Amazon Science</p>
+      </div>
+      <div class="Connect">
+        Connect with us
+        <p>Facebook</p>
+        <p>Twitter</p>
+        <p>Instagram</p>
+      </div>
+      <div class="Business-idea">
+        Make Money with Us
+        <p>Sell on Amazon </p>
+        <p> Sell under Amazon Accelerator </p>
+        <p>Protect and Build Your Brand</p>
+        <p>Amazon Global Selling</p>
+        <p>Supply to Amazon</p>
+        <p>Become an Affiliate</p>
+        <p>Fulfilment by Amazon</p>
+        <p>Advertise Your Products</p>
+        <p>Amazon Pay on Merchants</p>
+      </div>
+      <div class="Help">
+        Let Us Help You
+
+        <p>Your Account</p>
+        <p>Returns Centre</p>
+        <p>Recalls and Product Safety Alerts</p>
+        <p>100% Purchase Protection</p>
+        <p>Amazon App Download</p>
+        <p>Help</p>
+      </div>
+
+
+
+    </div>
+    <hr class="hr-line">
+
+    <div class="footer-2">
+
+
+      <img class="amz-logo-2" src="https://www.pngall.com/wp-content/uploads/15/Amazon-Logo-White-Transparent.png">
+
+
+      <div class="selec-language">
+        <select>
+       <option> English</option>
+       <option> Hindi</option>
+       <option> Marathi</option>
+       <option> Urdu</option>
+       <option> Gujarati</option>
+   </select>
+      </div>
+      <div class="selec-country"> India</div>
+    </div>
+  </div>
+  <div class="final-footer">
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        AbeBooks
+      </h5>
+      <p class="art-book-collect">
+        Books,art
+        <br>
+              & collectibles
+      </p>
+    </div>
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        Amazon Web Sevices
+      </h5>
+      <p class="art-book-collect">
+        Scalable Cloud
+        <br>
+              Computing Services
+      </p>
+    </div>
+
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        Audible
+      </h5>
+      <p class="art-book-collect">
+        Download
+        <br>
+              Audio Books
+      </p>
+    </div>
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        IMDb
+      </h5>
+      <p class="art-book-collect">
+        Movies,Tv
+        <br>
+              & Celebrities
+      </p>
+    </div>
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        Shopbop
+      </h5>
+      <p class="art-book-collect">
+        Designer
+        <br>
+              Fashion Brands
+      </p>
+    </div>
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        Amazon Business
+      </h5>
+      <p class="art-book-collect">
+        Everything For
+        <br>
+              Your Business
+      </p>
+    </div>
+    <div class="books">
+
+      <h5 class="footer-hadder">
+        Amazon Prime Music
+      </h5>
+      <p class="art-book-collect">
+        100 million songs, ad-free
+        <br>
+              Over 15 million podcast episodes
+      </p>
+    </div>
+  </div>
+  <div class="Tarms-Conditions">
+    <ul>
+      <li>Conditions of Use & Sale</li>
+      <li>Privacy Notice</li>
+      <li>Interest-Based Ads</li>
+    </ul>
+    <div class="copyright"> © 1996-2026, Amazon.com, Inc. or its affiliates</div>
+  </div>
+
+
+  <!-- <script src="cart.js"></script> -->
+  <script src="products.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
