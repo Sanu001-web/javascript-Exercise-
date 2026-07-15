@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "https://supersimple.dev/projects/amazon/images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -692,6 +692,38 @@ const products = [
       count: 3157
     },
     priceCents: 2400,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
+  },{
+    id: "15c6bd2c-8233-4ef0-b185-d1b9b858eef6",
+    image: "https://tinyurl.com/4bdaf9rt",
+    name: "Start Bussiness with amazon",
+    rating: {
+      starsImg: 'https://tinyurl.com/8krsstx3',
+      stars: 3,
+      count: 550557
+    },
+    priceCents: 78,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
+  },{
+    id: "c6682264-b0c3-467f-b52b-f236a662ea8e",
+    image: "https://tinyurl.com/3tjtszje",
+    name: "Dell laptop 16.5 Inch display",
+    rating: {
+      starsImg: 'https://tinyurl.com/8krsstx3',
+      stars: 3,
+      count: 250557
+    },
+    priceCents: 9745,
     keywords: [
       "sweaters",
       "hoodies",
