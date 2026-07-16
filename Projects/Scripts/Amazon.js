@@ -87,11 +87,6 @@ document.querySelectorAll('.js-add-to-cart-button')
       addToCart(productId);
       updateCartQuantity();
 
-
-
-
-
-
       const addedMessage = document.querySelector(
         `.js-added-to-cart-${productId}`
       );
