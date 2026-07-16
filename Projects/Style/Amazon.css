@@ -747,6 +747,7 @@ h2 {
     display: block;
     height: 35px;
     margin-top: 5px;
+    cursor: pointer;
   }
 
 }
@@ -888,7 +889,7 @@ input:focus {
 .cart-quantity {
   position: absolute;
   top: 0;
-  left: 25px;
+  left: 27px;
   color: #eb921f;
   font-weight: 800;
 }
