@@ -66,12 +66,23 @@ export function removeFromCart(productId) {
 
 
 export function calculateCartQuantity() {
-let cartQuantity=0;
+  let cartQuantity = 0;
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
 
-return cartQuantity;
+  return cartQuantity;
 
 }
 
+export function upadteQuantity(productId, newQuantity) {
+
+  let matchingItem;
+  cart.forEach((cartItem)=>{
+    if(productId === cartItem.productId){
+      matchingItem = cartItem;
+    }
+    matchingItem.quantity=newQuantity;
+  });
+saveTOLocalStorage();
+}
