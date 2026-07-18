@@ -1044,6 +1044,9 @@ select {
      in the grid from stretching vertically. */
   align-items: start;
 }
+.quantity-input{
+  width: 30px;
+}
 
 @media (max-width: 1000px) {
   .main {
