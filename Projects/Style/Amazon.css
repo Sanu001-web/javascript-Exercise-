@@ -29,7 +29,7 @@ body {
 }
 
 .navbar {
-  background-color: #000000;
+  background-color: #222326;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -889,7 +889,7 @@ input:focus {
 .cart-quantity {
   position: absolute;
   top: 4px;
-  left: 25px;
+  left: 22px;
   color: #eb921f;
   font-weight: 800;
 }
@@ -1176,6 +1176,7 @@ select {
   grid-template-columns: 24px 1fr;
   margin-bottom: 12px;
   cursor: pointer;
+  gap: 10px;
 }
 
 .delivery-option-input {
