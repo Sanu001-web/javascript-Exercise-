@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  <style type="text/css" media="all">
+    body{
+  padding: 25px;
+  background-color: rgb(219, 217, 217);
+}
+.delivery-date,.delivery-months,.delivery-date-sub,.delivery-date-week{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    padding: 20px 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.container{
+    transition: box-shadow 0.30s;
+    overflow: hidden;
+}
+.container:hover{
+     box-shadow: 3px 5px 10px 
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        
+  <div class="js-delivery-date delivery-date"></div>
+  <div class="js-delivery-months delivery-months"></div>
+  <div class="js-delivery-date-sub delivery-date-sub"></div>
+  <div class="js-delivery-date-week delivery-date-week"></div>
+    </div>
+  <!-- <script type="module" src="script.js"></script> -->
+
+  <script type="text/javascript" charset="utf-8">
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+/*
+//15a solution:
+const today = dayjs();
+const deliveryDate = today.add(5, 'days')
+const formatDated = deliveryDate.format('MMMM D')
+console.log(formatDated);
+document.querySelector('.js-delivery-date').innerHTML = formatDated;
+
+//15b solution:
+const months = dayjs();
+const deliveryMonths = months.add(1, 'months')
+const formatMonths = deliveryMonths.format('MMMM D')
+console.log(formatMonths);
+document.querySelector('.js-delivery-months').innerHTML = formatMonths;
+
+
+//15c solution:
+const todaySub = dayjs();
+const deliveryDateSub = todaySub.subtract(1, 'months')
+const formatDatedSub = deliveryDateSub.format('MMMM D YYYY')
+document.querySelector('.js-delivery-date-sub').innerHTML = formatDatedSub;
+
+//15d solution:
+const date = dayjs();
+const formatDatedWeek = date.format('dddd')
+document.querySelector('.js-delivery-date-week').innerHTML = formatDatedWeek;
+*/
+
+//15e solution:
+
+function isWeekend(date) {
+    const dayOfWeek = date.format('dddd')
+    return dayOfWeek=== 'Saturday' || dayOfWeek ==='Sunday';
+}
+let date = dayjs();
+console.log(date.format('dddd, MMMM D'));
+console.log(isWeekend(date));
+
+date =dayjs().add(2,'days');
+console.log(date.format('dddd, MMMM D'));
+console.log(isWeekend(date));
+
+date =dayjs().add(4,'days');
+console.log(date.format('dddd, MMMM D'));
+console.log(isWeekend(date));
+
+date =dayjs().add(10,'days');
+console.log(date.format('dddd, MMMM D'));
+console.log(isWeekend(date));
+
+
+
+
+  </script>
+</body>
+</html>
