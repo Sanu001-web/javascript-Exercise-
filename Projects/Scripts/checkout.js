@@ -1,38 +1,22 @@
 import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption } from '/data/cart.js';
-import { products } from '/data/products.js';
+import { products, getProduct } from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import { deliveryOptions } from '/data/deliveryOptions.js';
+import { deliveryOptions, getDeliveryOption } from '/data/deliveryOptions.js';
+import { randderPaymentSummary } from '/checkoutss/paymentSummary.js'
 
-
-function radderOrderSummary() {
+export function radderOrderSummary() {
 
   let cartSummaryHTML = '';
 
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
 
-    let matchingProduct;
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-
-    });
-
-
-    // console.log(matchingProduct);
-
+    const matchingProduct = getProduct(productId);
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-    let deliveryOption = '';
 
-    deliveryOptions.forEach((option) => {
-      if (option.id === deliveryOptionId) {
-        deliveryOption = option;
-      }
-    })
-
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
 
     const today = dayjs();
     const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
@@ -53,7 +37,7 @@ function radderOrderSummary() {
                       ${matchingProduct.name}
                     </div>
                     <div class="product-price">
-                    ${formatCurrency(matchingProduct.priceCents)}
+                    $${formatCurrency(matchingProduct.priceCents)}
                     </div>
                     <div class="product-quantity">
                       <span>
@@ -122,6 +106,7 @@ function radderOrderSummary() {
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`);
       container.remove();
+      randderPaymentSummary();
       updateCartQuantity();
     });
 
@@ -182,6 +167,7 @@ function radderOrderSummary() {
       );
       quantityLabel.innerHTML = newQuantity;
       updateCartQuantity();
+      randderPaymentSummary();
     });
   });
 
@@ -192,15 +178,16 @@ function radderOrderSummary() {
   const today = dayjs();
   const deliveryDate = today.add(5, 'days');
   const formatdate = deliveryDate.format('dddd, MMMM, D')
-  console.log(formatdate);
 
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
     element.addEventListener('click', () => {
       const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryOption(productId, deliveryOptionId)
+      updateDeliveryOption(productId, deliveryOptionId);
       radderOrderSummary();
+      randderPaymentSummary();
     });
   });
 }
 
 radderOrderSummary();
+randderPaymentSummary();
