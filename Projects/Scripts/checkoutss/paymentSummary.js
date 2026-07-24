@@ -20,7 +20,13 @@ export function randderPaymentSummary() {
   const estimatedTax = totalBeforeTax * 0.1;
 
   const orderTotal = totalBeforeTax + estimatedTax;
-  console.log(orderTotal / 100);
+
+
+
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
 
 
 
@@ -30,7 +36,7 @@ export function randderPaymentSummary() {
           </div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${cartQuantity}):</div>
             <div class="payment-summary-money">$${formatCurrency(productPriceCents)}</div>
           </div>
 
@@ -59,6 +65,6 @@ export function randderPaymentSummary() {
           </button>
 `;
 
-document.querySelector('.js-payment-summary').innerHTML=paymentSummaryHTML;
+  document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML;
 }
 randderPaymentSummary();
