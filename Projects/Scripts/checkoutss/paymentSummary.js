@@ -60,7 +60,11 @@ export function randderPaymentSummary() {
             <div class="payment-summary-money">$${formatCurrency(orderTotal)}</div>
           </div>
 
-          <button class="place-order-button button-primary">
+          <div class="added-to-cart js-place-order-button">
+              <img src="https://tinyurl.com/y9uhfv8f">
+              Order successfully placed
+          </div>
+          <button class="place-order-button  button-primary">
             Place your order
           </button>
 `;
@@ -68,3 +72,24 @@ export function randderPaymentSummary() {
   document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML;
 }
 randderPaymentSummary();
+
+
+
+
+addEventListener('click', () => {
+
+  let addedMessageTimeoutId;
+  let addedMessage = document.querySelector('.js-place-order-button');
+
+  addedMessage.classList.add('added-to-cart-visible');
+  if (addedMessageTimeoutId) {
+    clearTimeout(addedMessageTimeoutId);
+  }
+
+  const timeoutId = setTimeout(() => {
+    addedMessage.classList.remove('added-to-cart-visible');
+  }, 1500);
+
+  // Save the timeoutId so we can stop it later.
+  addedMessageTimeoutId = timeoutId;
+});
