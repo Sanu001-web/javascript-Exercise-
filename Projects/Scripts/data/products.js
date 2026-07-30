@@ -1,14 +1,41 @@
-export function getProduct(productId){
-   let matchingProduct;
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
+import {formatCurrency} from '/utils/money.js'
 
-    });
+
+export function getProduct(productId) {
+  let matchingProduct;
+  products.forEach((product) => {
+    if (product.id === productId) {
+      matchingProduct = product;
+    }
+
+  });
 
   return matchingProduct;
 }
+
+class Product {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name;
+    this.rating = productDetails.rating;
+    this.priceCents = productDetails.priceCents;
+  }
+  getStarsUrl() {
+    return `${this.rating.starsImg}`;
+  }
+  getPrice() {
+    return `$${formatCurrency(this.priceCents)}`;
+  }
+}
+
+
 
 export const products = [
   {
@@ -710,7 +737,7 @@ export const products = [
       "apparel",
       "mens"
     ]
-  },{
+  }, {
     id: "15c6bd2c-8233-4ef0-b185-d1b9b858eef6",
     image: "https://tinyurl.com/4bdaf9rt",
     name: "Start Bussiness with amazon",
@@ -726,7 +753,7 @@ export const products = [
       "apparel",
       "mens"
     ]
-  },{
+  }, {
     id: "c6682264-b0c3-467f-b52b-f236a662ea8e",
     image: "https://tinyurl.com/3tjtszje",
     name: "Dell laptop 16.5 Inch display",
@@ -743,4 +770,6 @@ export const products = [
       "mens"
     ]
   }
-];
+].map((productDetails) => {
+  return new Product(productDetails);
+});
