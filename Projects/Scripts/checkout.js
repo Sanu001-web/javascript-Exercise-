@@ -5,6 +5,8 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions, getDeliveryOption,calculateDeliveryDate } from '/data/deliveryOptions.js';
 import { randderPaymentSummary } from '/checkoutss/paymentSummary.js';
 import { renderCheckoutHeader } from '/checkoutss/checkoutHeader.js';
+// import '/data/cartOop.js';
+import '/data/cartClass.js';
 
 export function radderOrderSummary() {
 
