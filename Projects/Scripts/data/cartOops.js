@@ -3,6 +3,7 @@
 
 function Cart(localStorageKey) {
   const cart = {
+
     cartItem: [],
     loadFromStorage() {
       this.cartItem = JSON.parse(localStorage.getItem(localStorageKey));
@@ -19,11 +20,12 @@ function Cart(localStorageKey) {
             quantity: 1,
             deliveryOptionId: '2'
           }];
+          this.saveTOLocalStorage();
       }
     },
     saveTOLocalStorage() {
-      localStorage.setItem('cart-oops', JSON.stringify(this.cartItem));
-      return cart.length;
+      localStorage.setItem(localStorageKey, JSON.stringify(this.cartItem));
+      // return cart.length;
     },
 
 
@@ -118,15 +120,17 @@ function Cart(localStorageKey) {
   return cart;
 }
 
+
 const cart = Cart('cart-oop');
 const businessCart = Cart('cart-business');
 
-businessCart.addToCart('8c9c52b5-5a19-4bcb-a5d1-158a74287c53');
 
-cart.loadFromStorage();
-businessCart.loadFromStorage();
-
+cart.loadFromStorage();  
+businessCart.loadFromStorage();  
+console.log('this is normal cart')
 console.log(cart);
+console.log('this is business cart--------------------------------------------')
 console.log(businessCart);
+
 
 
