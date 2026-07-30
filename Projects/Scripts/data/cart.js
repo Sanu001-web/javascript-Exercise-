@@ -1,10 +1,11 @@
-// import { deliveryOptions } from '/data/deliveryOptions.js';
+// export let cart = Array.isArray(storedCart) ? storedCart : [];
+// let storedCart = JSON.parse(localStorage.getItem('cart'));
 
-let storedCart = JSON.parse(localStorage.getItem('cart'));
+export let cart;
+cart = JSON.parse(localStorage.getItem('cart'));
 
-export let cart = Array.isArray(storedCart) ? storedCart : [];
 
-if (!cart.length === 0) {
+if (!cart) {
   cart = [
     {
       productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
@@ -18,10 +19,8 @@ if (!cart.length === 0) {
     }
   ];
 
-  saveTOLocalStorage();
 }
-
-
+  // saveTOLocalStorage();
 
 
 function saveTOLocalStorage() {
