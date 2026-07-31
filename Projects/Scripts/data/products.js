@@ -1,4 +1,4 @@
-import {formatCurrency} from '/utils/money.js'
+import { formatCurrency } from '/utils/money.js'
 
 
 export function getProduct(productId) {
@@ -33,8 +33,46 @@ class Product {
   getPrice() {
     return `$${formatCurrency(this.priceCents)}`;
   }
+  extraInfoHTML(){
+    return '';
+  }
 }
 
+
+class Clothing extends Product {
+  sizeChartLink;
+
+  constructor(productDetails) {
+    super(productDetails);
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+  extraInfoHTML(){
+    return `<a class="tshirt-sizeChartLink" href="${this.sizeChartLink} target="_black">size chart</a>`
+  }
+
+}
+
+const tshirt = new Clothing({
+  id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+  image: "https://supersimple.dev/projects/amazon/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
+  name: "Adults Plain Cotton T-Shirt - 2 Pack",
+  rating: {
+    starsImg: 'https://tinyurl.com/3ypcm837',
+    stars: 4.5,
+    count: 56
+  },
+  priceCents: 799,
+  keywords: [
+    "tshirts",
+    "apparel",
+    "mens"
+  ],
+  type: "clothing",
+  sizeChartLink: "https://cdn.shopify.com/s/files/1/2028/4467/files/shirt-size-chart-tripr-india.jpg?v=1769779745"
+});
+
+console.log(tshirt);
+console.log(tshirt.getPrice())
 
 
 export const products = [
@@ -85,7 +123,7 @@ export const products = [
       "mens"
     ],
     type: "clothing",
-    sizeChartLink: "images/clothing-size-chart.png"
+    sizeChartLink: "https://cdn.shopify.com/s/files/1/2028/4467/files/shirt-size-chart-tripr-india.jpg?v=1769779745"
   },
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
@@ -771,5 +809,8 @@ export const products = [
     ]
   }
 ].map((productDetails) => {
+  if(productDetails.type === 'clothing'){
+    return new Clothing(productDetails);
+  }
   return new Product(productDetails);
 });
