@@ -53,29 +53,6 @@ class Clothing extends Product {
 
 }
 
-const tshirt = new Clothing({
-  id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
-  image: "https://supersimple.dev/projects/amazon/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-  name: "Adults Plain Cotton T-Shirt - 2 Pack",
-  rating: {
-    starsImg: 'https://tinyurl.com/3ypcm837',
-    stars: 4.5,
-    count: 56
-  },
-  priceCents: 799,
-  keywords: [
-    "tshirts",
-    "apparel",
-    "mens"
-  ],
-  type: "clothing",
-  sizeChartLink: "https://cdn.shopify.com/s/files/1/0768/5331/3822/files/adult-Tshirt-size-chart.jpg?v=1738406095"
-});
-
-console.log(tshirt);
-console.log(tshirt.getPrice())
-
-
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
