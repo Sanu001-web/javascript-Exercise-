@@ -47,6 +47,7 @@ class Clothing extends Product {
     this.sizeChartLink = productDetails.sizeChartLink;
   }
   extraInfoHTML(){
+    // super.extraInfoHTML(); to access the extraInfoHTML
     return `<a class="tshirt-sizeChartLink" href="${this.sizeChartLink} target="_black">size chart</a>`
   }
 
@@ -68,7 +69,7 @@ const tshirt = new Clothing({
     "mens"
   ],
   type: "clothing",
-  sizeChartLink: "https://cdn.shopify.com/s/files/1/2028/4467/files/shirt-size-chart-tripr-india.jpg?v=1769779745"
+  sizeChartLink: "https://cdn.shopify.com/s/files/1/0768/5331/3822/files/adult-Tshirt-size-chart.jpg?v=1738406095"
 });
 
 console.log(tshirt);
@@ -123,8 +124,9 @@ export const products = [
       "mens"
     ],
     type: "clothing",
-    sizeChartLink: "https://cdn.shopify.com/s/files/1/2028/4467/files/shirt-size-chart-tripr-india.jpg?v=1769779745"
+    sizeChartLink: "https://cdn.shopify.com/s/files/1/0768/5331/3822/files/adult-Tshirt-size-chart.jpg?v=1738406095"
   },
+  
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
     image: "https://supersimple.dev/projects/amazon/images/products/black-2-slot-toaster.jpg",
