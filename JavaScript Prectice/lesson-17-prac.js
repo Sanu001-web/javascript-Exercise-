@@ -1,6 +1,6 @@
 class Car {
-  brand;
-  model;
+  #brand;
+  #model;
 
   // You can set a default value for a property
   // here, or in the constructor. They do the
@@ -9,19 +9,23 @@ class Car {
   isTrunkOpen = false;
 
   constructor(carDetails) {
-    this.brand = carDetails.brand;
+    this.#brand = carDetails.brand;
+    this.#model = carDetails.model;
+
+    // You can set a default value for a property
+    // here or directly in the property above.
+    // this.speed = 0;
   }
 
   displayInfo() {
     const trunkStatus = this.isTrunkOpen ? 'open' : 'closed';
 
     console.log(
-      `${this.brand} ${this.model}, Speed: ${this.speed} km/h, Trunk: ${trunkStatus}`
+      `${this.#brand} ${this.#model}, Speed: ${this.speed} km/h, Trunk: ${trunkStatus}`
     );
   }
 
   go() {
-    this.speed += 5;
     if (!this.isTrunkOpen) {
       this.speed += 5;
     }
@@ -52,6 +56,31 @@ class Car {
   }
 }
 
+class RaceCar extends Car {
+  acceleration;
+
+  constructor(carDetails) {
+    super(carDetails);
+    this.acceleration = carDetails.acceleration;
+  }
+
+  go() {
+    this.speed += this.acceleration;
+
+    if (this.speed > 300) {
+      this.speed = 300;
+    }
+  }
+
+  openTrunk() {
+    console.log('Race cars do not have a trunk.');
+  }
+
+  closeTrunk() {
+    console.log('Race cars do not have a trunk.');
+  }
+}
+
 const car1 = new Car({
   brand: 'Toyota',
   model: 'Corolla'
@@ -59,6 +88,11 @@ const car1 = new Car({
 const car2 = new Car({
   brand: 'Tesla',
   model: 'Model 3'
+});
+const raceCar = new RaceCar({
+  brand: 'McLaren',
+  model: 'F1',
+  acceleration: 20
 });
 
 console.log(car1);
@@ -86,3 +120,11 @@ car2.openTrunk();
 // Car should not go since the trunk is open.
 car2.go();
 car2.displayInfo();
+
+raceCar.go();
+raceCar.go();
+raceCar.go();
+raceCar.displayInfo();
+raceCar.openTrunk();
+raceCar.displayInfo();
+raceCar.brake();
