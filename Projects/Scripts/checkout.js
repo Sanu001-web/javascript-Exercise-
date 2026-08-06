@@ -1,5 +1,5 @@
 import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption, loadCart } from '/data/cart.js';
-import { products, getProduct, loadProducts } from '/data/products.js';
+import { products, getProduct, loadProducts, loadProductsFetch} from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '/data/deliveryOptions.js';
@@ -194,13 +194,7 @@ export function radderOrderSummary() {
 //this is a Promise all method & better way to write all the promiss
 
 Promise.all([
-  new Promise((resolve) => {
-
-    loadProducts(() => {
-      resolve('1234');
-    });
-
-  }),
+  loadProductsFetch(),
   new Promise((resolve) => {
     loadCart(() => {
       resolve('1458');
@@ -216,7 +210,7 @@ Promise.all([
 
 
 /*
-this is a Promise method ,to handle nested callback hell
+this is a Promise method ,to handle nested callback *****
 new Promise((resolve) => {
 
   loadProducts(() => {
