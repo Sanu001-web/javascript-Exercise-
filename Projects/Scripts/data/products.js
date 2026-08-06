@@ -62,9 +62,9 @@ class Appliances extends Product {
   }
   extraInfoHTML() {
     return `
-    <a href="${this.instructionsLink}" target ="_black">Instructions</a>
+    <a href="${this.instructionsLink}" target="_blank">Instructions</a>
     <br>
-    <a href="${this.warrantyLink}" target ="_black">Warranty</a>
+    <a href="${this.warrantyLink}" target="_blank">Warranty</a>
     `;
   }
 
@@ -79,6 +79,30 @@ console.log(date.toLocaleTimeString());
 console.log(date.toUTCString());
 */
 
+
+export let products = [];
+
+export function loadProducts(abcd) {
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('load', () => {
+    products = JSON.parse(xhr.response).map((productDetails) => {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails);
+      } else if (productDetails.type === 'appliances') {
+        return new Appliances(productDetails);
+      }
+      return new Product(productDetails);
+    });
+    console.log('load products');
+    abcd();
+  });
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -833,3 +857,4 @@ export const products = [
   }
   return new Product(productDetails);
 });
+*/
