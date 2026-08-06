@@ -116,7 +116,7 @@ export function loadProducts(abcd) {
       }
       return new Product(productDetails);
     });
-    console.log('load products');
+    // console.log('load products');
     abcd();
   });
   xhr.open('GET', 'https://supersimplebackend.dev/products');
