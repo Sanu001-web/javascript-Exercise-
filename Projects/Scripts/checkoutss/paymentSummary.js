@@ -8,13 +8,19 @@ import { formatCurrency } from '/utils/money.js';
 export function randderPaymentSummary() {
   let productPriceCents = 0;
   let shippingPriceCents = 0;
+
   cart.forEach((cartItem) => {
     const product = getProduct(cartItem.productId);
+    if (!product) {
+      return;
+    }
+
     productPriceCents += product.priceCents * cartItem.quantity;
 
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
     shippingPriceCents += deliveryOption.priceCents;
   });
+
   const totalBeforeTax = productPriceCents + shippingPriceCents;
 
   const estimatedTax = totalBeforeTax * 0.1;
@@ -72,8 +78,6 @@ export function randderPaymentSummary() {
   document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML;
 }
 randderPaymentSummary();
-
-
 
 
 addEventListener('click', () => {
