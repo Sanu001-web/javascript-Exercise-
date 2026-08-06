@@ -1,4 +1,4 @@
-import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption } from '/data/cart.js';
+import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption, loadCart } from '/data/cart.js';
 import { products, getProduct, loadProducts } from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
@@ -191,10 +191,65 @@ export function radderOrderSummary() {
   });
 }
 
+//this is a Promise all method & better way to write all the promiss
 
-loadProducts(() => {
+Promise.all([
+  new Promise((resolve) => {
+
+    loadProducts(() => {
+      resolve('1234');
+    });
+
+  }),
+  new Promise((resolve) => {
+    loadCart(() => {
+      resolve('1458');
+    });
+  }),
+
+]).then((values) => {
+  console.log(values);
   radderOrderSummary();
   randderPaymentSummary();
   renderCheckoutHeader();
+});
+
+
+/*
+this is a Promise method ,to handle nested callback hell
+new Promise((resolve) => {
+
+  loadProducts(() => {
+    resolve();
+  });
+
+}).then(() => {
+  return new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+
+}).then(() => {
+  radderOrderSummary();
+  randderPaymentSummary();
+  renderCheckoutHeader();
+});
+*/
+
+
+
+/*
+this is a callback function method;
+
+loadProducts(() => {
+  loadCart(() => {
+
+    radderOrderSummary();
+    randderPaymentSummary();
+    renderCheckoutHeader();
+
+  });
 
 });
+*/
