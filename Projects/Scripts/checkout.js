@@ -1,8 +1,8 @@
 import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption } from '/data/cart.js';
-import { products, getProduct } from '/data/products.js';
+import { products, getProduct, loadProducts } from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import { deliveryOptions, getDeliveryOption,calculateDeliveryDate } from '/data/deliveryOptions.js';
+import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '/data/deliveryOptions.js';
 import { randderPaymentSummary } from '/checkoutss/paymentSummary.js';
 import { renderCheckoutHeader } from '/checkoutss/checkoutHeader.js';
 // import '/data/cartClass.js';
@@ -15,6 +15,9 @@ export function radderOrderSummary() {
     const productId = cartItem.productId;
 
     const matchingProduct = getProduct(productId);
+    if (!matchingProduct) {
+      return;
+    }
 
     const deliveryOptionId = cartItem.deliveryOptionId;
 
@@ -142,7 +145,6 @@ export function radderOrderSummary() {
 
 
 
-
       const quantityInput = document.querySelector(
         `.js-quantity-input-${productId}`
       );
@@ -188,6 +190,11 @@ export function radderOrderSummary() {
     });
   });
 }
-renderCheckoutHeader();
-radderOrderSummary();
-randderPaymentSummary();
+
+
+loadProducts(() => {
+  radderOrderSummary();
+  randderPaymentSummary();
+  renderCheckoutHeader();
+
+});
