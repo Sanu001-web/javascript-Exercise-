@@ -155,13 +155,21 @@ export function radderOrderSummary() {
 }
 
 async function loadPage() {
-  await loadProductsFetch();
+  try {
+    // throw 'error404';
+    await loadProductsFetch();
 
-  await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('1458');
+    await new Promise((resolve,reject) => {
+      // throw 'error502';
+      loadCart(() => {
+        resolve();
+        // reject('error745');
+      });
     });
-  });
+  } catch (error) {
+    console.log("Unexpected error. Please try again later.",error);
+
+  }
 
   radderOrderSummary();
   randderPaymentSummary();
