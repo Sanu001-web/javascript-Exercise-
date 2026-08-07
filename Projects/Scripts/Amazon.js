@@ -1,21 +1,18 @@
 import { cart, addToCart, calculateCartQuantity } from '/data/cart.js';
-import { products,loadProducts } from '/data/products.js';
+import { products, loadProducts } from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 
 loadProducts(renderProductGrid);
 
-function renderProductGrid(){
+function renderProductGrid() {
+  let productsHTML = '';
 
-
-let productsHTML = '';
-
-products.forEach((product) => {
-  productsHTML +=
-    `
+  products.forEach((product) => {
+    productsHTML += `
 <div class="product-container">
       <div class="product-image-container">
         <img class="product-image"
-              src="${product.image}">
+              src="${product.getImageUrl()}">
       </div>
 
       <div class="product-name limit-text-to-2-lines">
@@ -35,7 +32,7 @@ products.forEach((product) => {
           </div>
 
           <div class="product-quantity-container">
-            <select class ="js-quantity-selector-${product.id}">
+            <select class="js-quantity-selector-${product.id}">
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -60,50 +57,35 @@ products.forEach((product) => {
             Add to Cart
           </button>
     </div>
-`
-});
+`;
+  });
 
+  document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-document.querySelector('.js-products-grid')
-  .innerHTML = productsHTML;
+  function updateCartQuantity() {
+    const cartQuantity = calculateCartQuantity();
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+  }
+  updateCartQuantity();
 
-
-function updateCartQuantity() {
-
-  const cartQuantity = calculateCartQuantity();
-
-  document.querySelector(".js-cart-quantity")
-    .innerHTML = cartQuantity;
-}
-updateCartQuantity();
-
-
-document.querySelectorAll('.js-add-to-cart-button')
-  .forEach((button) => {
+  document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
     let addedMessageTimeoutId;
 
     button.addEventListener('click', () => {
-      // const productId = button.dataset.productId; so , use destructuring method
       const { productId } = button.dataset;
       addToCart(productId);
       updateCartQuantity();
 
-      const addedMessage = document.querySelector(
-        `.js-added-to-cart-${productId}`
-      );
-
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
       addedMessage.classList.add('added-to-cart-visible');
+
       if (addedMessageTimeoutId) {
         clearTimeout(addedMessageTimeoutId);
       }
 
-      const timeoutId = setTimeout(() => {
+      addedMessageTimeoutId = setTimeout(() => {
         addedMessage.classList.remove('added-to-cart-visible');
       }, 1500);
-
-      // Save the timeoutId so we can stop it later.
-      addedMessageTimeoutId = timeoutId;
-
     });
   });
 }
