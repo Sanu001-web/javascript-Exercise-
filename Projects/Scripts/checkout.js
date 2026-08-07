@@ -5,24 +5,19 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '/data/deliveryOptions.js';
 import { randderPaymentSummary } from '/checkoutss/paymentSummary.js';
 import { renderCheckoutHeader } from '/checkoutss/checkoutHeader.js';
-// import '/data/cartClass.js';
 
 export function radderOrderSummary() {
-
   let cartSummaryHTML = '';
 
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
-
     const matchingProduct = getProduct(productId);
     if (!matchingProduct) {
       return;
     }
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-
     const dateString = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML += `
@@ -33,7 +28,7 @@ export function radderOrderSummary() {
 
                 <div class="cart-item-details-grid">
                   <img class="product-image"
-                    src="${matchingProduct.image}">
+                    src="${matchingProduct.getImageUrl()}">
 
                   <div class="cart-item-details">
                     <div class="product-name">
@@ -44,13 +39,13 @@ export function radderOrderSummary() {
                     </div>
                     <div class="product-quantity">
                       <span>
-                        Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id} ">${cartItem.quantity}</span>
+                        Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
                       </span>
                       <span class="update-quantity-link link-primary js-update-quantity-link" data-product-id="${matchingProduct.id}">
                         Update
                       </span>
-                      <input class = "quantity-input js-quantity-input-${matchingProduct.id}">
-                      <span class ="link-primary save-quantity-link js-save-link" data-product-id="${matchingProduct.id}">Save</span>
+                      <input class="quantity-input js-quantity-input-${matchingProduct.id}">
+                      <span class="link-primary save-quantity-link js-save-link" data-product-id="${matchingProduct.id}">Save</span>
                       <span class="delete-quantity-link link-primary js-delete-quantity-link" data-product-id="${matchingProduct.id}">
                         Delete
                       </span>
@@ -75,7 +70,6 @@ export function radderOrderSummary() {
       const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} -`;
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
-
       html += `
           <div class="delivery-option js-delivery-option"
           data-product-id="${matchingProduct.id}"
@@ -98,88 +92,57 @@ export function radderOrderSummary() {
     });
     return html;
   }
+
   document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
+
   document.querySelectorAll('.js-delete-quantity-link').forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
       renderCheckoutHeader();
-      const container = document.querySelector(
-        `.js-cart-item-container-${productId}`);
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove();
       randderPaymentSummary();
       updateCartQuantity();
     });
-
   });
 
   function updateCartQuantity() {
-    const cartQuantity = calculateCartQuantity();
+    calculateCartQuantity();
     renderCheckoutHeader();
-    // document.querySelector('.js-return-to-home-link')
-    //   .innerHTML = `${cartQuantity} items`;
   }
   updateCartQuantity();
 
-
-  document.querySelectorAll('.js-update-quantity-link')
-    .forEach((link) => {
-      link.addEventListener('click', () => {
-        const productId = link.dataset.productId;
-        // updateFromCart(productId);
-
-        const container = document.querySelector(
-          `.js-cart-item-container-${productId}`
-        );
-        container.classList.add('is-editing-quantity');
-      });
+  document.querySelectorAll('.js-update-quantity-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const productId = link.dataset.productId;
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
+      container.classList.add('is-editing-quantity');
     });
+  });
 
   document.querySelectorAll('.js-save-link').forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
-      // const container = document.querySelector(
-      //   `.js-cart-item-container-${productId}`
-      // );
-      // container.classList.remove('is-editing-quantity');
-
-
-
-      const quantityInput = document.querySelector(
-        `.js-quantity-input-${productId}`
-      );
+      const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
       const newQuantity = Number(quantityInput.value);
-
 
       if (newQuantity < 0 || newQuantity >= 1000) {
         alert('Quantity must be at least 0 and less than 1000');
         return;
       }
 
-
       upadteQuantity(productId, newQuantity);
 
-      const container = document.querySelector(
-        `.js-cart-item-container-${productId}`
-      );
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.classList.remove('is-editing-quantity');
 
-      const quantityLabel = document.querySelector(
-        `.js-quantity-label-${productId}`
-      );
+      const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
       quantityLabel.innerHTML = newQuantity;
       updateCartQuantity();
       randderPaymentSummary();
     });
   });
-
-
-  //DeliveryDate Schedule:
-
-
-  const today = dayjs();
-  const deliveryDate = today.add(5, 'days');
-  const formatdate = deliveryDate.format('dddd, MMMM, D')
 
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
     element.addEventListener('click', () => {
@@ -192,7 +155,6 @@ export function radderOrderSummary() {
 }
 
 async function loadPage() {
-
   await loadProductsFetch();
 
   await new Promise((resolve) => {
@@ -200,70 +162,9 @@ async function loadPage() {
       resolve('1458');
     });
   });
+
   radderOrderSummary();
   randderPaymentSummary();
   renderCheckoutHeader();
-
-
 }
-loadPage()
-
-
-
-/*
-//this is a Promise all method & better way to write all the promiss
-
-Promise.all([
-  loadProductsFetch(),
-  new Promise((resolve) => {
-    loadCart(() => {
-      resolve('1458');
-    });
-  }),
-
-]).then((values) => {
-  console.log(values);
-  radderOrderSummary();
-  randderPaymentSummary();
-  renderCheckoutHeader();
-});
-*/
-
-/*
-this is a Promise method ,to handle nested callback *****
-new Promise((resolve) => {
-
-  loadProducts(() => {
-    resolve();
-  });
-
-}).then(() => {
-  return new Promise((resolve) => {
-    loadCart(() => {
-      resolve();
-    });
-  });
-
-}).then(() => {
-  radderOrderSummary();
-  randderPaymentSummary();
-  renderCheckoutHeader();
-});
-*/
-
-
-
-/*
-this is a callback function method;
-
-loadProducts(() => {
-  loadCart(() => {
-
-    radderOrderSummary();
-    randderPaymentSummary();
-    renderCheckoutHeader();
-
-  });
-
-});
-*/
+loadPage();
