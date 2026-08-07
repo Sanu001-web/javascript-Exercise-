@@ -123,6 +123,8 @@ export function loadProducts(abcd) {
   xhr.send();
 }
 
+console.log('hello chnages how are you ?')
+
 
 /*
 export const products = [
