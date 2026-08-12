@@ -1,13 +1,13 @@
-import {cart} from '/data/cart.js';
+import { cart } from '/data/cart.js';
 
 
 export function renderCheckoutHeader() {
-   let cartQuantity = 0;
+  let cartQuantity = 0;
 
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
-  
+
   const checkoutHeaderHTML = `
     <div class="header-content">
       <div class="checkout-header-left-section">
@@ -23,7 +23,10 @@ export function renderCheckoutHeader() {
       </div>
 
       <div class="checkout-header-right-section">
-          <img src="https://tinyurl.com/mpf5p4f2">
+          <a href="orders.html">
+           <img src="https://tinyurl.com/mpf5p4f2">
+          </a>
+          
       </div>
     </div>
   `;
