@@ -1,53 +1,124 @@
-import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+// export let cart = Array.isArray(storedCart) ? storedCart : [];
+// let storedCart = JSON.parse(localStorage.getItem('cart')); 
 
-export const deliveryOptions = [{
-  id: '1',
-  deliveryDays: 7,
-  priceCents: 0
-},
-{
-  id: '2',
-  deliveryDays: 3,
-  priceCents: 499
-},
-{
-  id: '3',
-  deliveryDays: 1,
-  priceCents: 999
-}]
+function Cart(localStorageKey) {
+  const cart = {
 
-export function getDeliveryOption(deliveryOptionId) {
-  let deliveryOption = '';
+    cartItem: [],
+    loadFromStorage() {
+      this.cartItem = JSON.parse(localStorage.getItem(localStorageKey));
 
-  deliveryOptions.forEach((option) => {
-    if (option.id === deliveryOptionId) {
-      deliveryOption = option;
+      if (!this.cartItem) {
+        this.cartItem = [
+          {
+            productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+            quantity: 2,
+            deliveryOptionId: '1'
+          },
+          {
+            productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+            quantity: 1,
+            deliveryOptionId: '2'
+          }];
+          this.saveTOLocalStorage();
+      }
+    },
+    saveTOLocalStorage() {
+      localStorage.setItem(localStorageKey, JSON.stringify(this.cartItem));
+      // return cart.length;
+    },
+
+
+    addToCart(productId) {
+      let matchingItem;
+      this.cartItem.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+          matchingItem = cartItem;
+        }
+      });
+
+      const quantitySelector = document.querySelector(
+        `.js-quantity-selector-${productId}`
+      );
+      const quantity = quantitySelector ? Number(quantitySelector.value) : 1;
+      // const quantity = Number(quantitySelector.value);
+
+
+      if (matchingItem) {
+        // matchingItem.quantity += 1;
+        matchingItem.quantity += quantity;
+      } else {
+        this.cartItem.push({
+          // productId:productId, so use shorhand method 
+          productId,
+          // quantity: 1
+          quantity,
+          deliveryOptionId: '2'
+        });
+      }
+      this.saveTOLocalStorage();
+    },
+
+    removeFromCart(productId) {
+      const newCart = [];
+
+      this.cartItem.forEach((cartItem) => {
+        if (cartItem.productId !== productId) {
+          newCart.push(cartItem);
+        }
+      });
+      this.cartItem = newCart;
+      this.saveTOLocalStorage();
+    },
+
+    calculateCartQuantity() {
+      let cartQuantity = 0;
+      this.cartItem.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+      });
+
+      return cartQuantity;
+
+    },
+
+    upadteQuantity(productId, newQuantity) {
+
+      let matchingItem;
+      this.cartItem.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+          matchingItem = cartItem;
+        }
+      });
+      matchingItem.quantity = newQuantity;
+      saveTOLocalStorage();
+    },
+    updateDeliveryOption(productId, deliveryOptionId) {
+      let matchingItem;
+      this.cartItem.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+          matchingItem = cartItem;
+        }
+      });
+
+      matchingItem.deliveryOptionId = deliveryOptionId;
+      this.saveTOLocalStorage();
     }
-  });
-  return deliveryOption || deliveryOptions[0];
-}
-export function isWeekend(date) {
-  const dayOfWeek = date.format('dddd')
-  return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+
+  };
+  return cart;
 }
 
-export function calculateDeliveryDate(deliveryOption) {
-  let remainingDays = deliveryOption.deliveryDays;
-  let deliveryDate = dayjs();
 
-  while (remainingDays > 0) {
-    deliveryDate = deliveryDate.add(1, 'day');
+const cart = Cart('cart-oop');
+const businessCart = Cart('cart-business');
 
-    if (!isWeekend(deliveryDate)) {
-      remainingDays--;
-      // This is a shortcut for:
-      // remainingDays = remainingDays - 1;
-    }
-  }
 
-  const dateString = deliveryDate.format(
-    'dddd, MMMM D'
-  );
+cart.loadFromStorage();  
+businessCart.loadFromStorage();  
+console.log('this is normal cart')
+console.log(cart);
+console.log('this is business cart--------------------------------------------')
+console.log(businessCart);
 
-  return dateString;
-}
+
+
