@@ -62,7 +62,7 @@ function renderProductGrid() {
 
   document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-  function updateCartQuantity() {
+ function updateCartQuantity() {
     const cartQuantity = calculateCartQuantity();
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   }
