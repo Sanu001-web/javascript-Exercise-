@@ -2,19 +2,19 @@
 // let storedCart = JSON.parse(localStorage.getItem('cart')); 
 
 class Cart {
-  cartItem;
-  localStorageKey;
+  cartItems;
+  #localStorageKey;
 
   constructor(localStorageKey) {
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage() {
-    this.cartItem = JSON.parse(localStorage.getItem(this.localStorageKey));
+  #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
-    if (!this.cartItem) {
-      this.cartItem = [
+    if (!this.cartItems) {
+      this.cartItems = [
         {
           productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
           quantity: 2,
@@ -30,13 +30,13 @@ class Cart {
   }
 
   saveTOLocalStorage() {
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItem));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
     // return cart.length;
   }
 
   addToCart(productId) {
     let matchingItem;
-    this.cartItem.forEach((cartItem) => {
+    this.cartItems.forEach((cartItem) => {
       if (productId === cartItem.productId) {
         matchingItem = cartItem;
       }
@@ -53,7 +53,7 @@ class Cart {
       // matchingItem.quantity += 1;
       matchingItem.quantity += quantity;
     } else {
-      this.cartItem.push({
+      this.cartItems.push({
         // productId:productId, so use shorhand method 
         productId,
         // quantity: 1
@@ -68,31 +68,31 @@ class Cart {
   removeFromCart(productId) {
     const newCart = [];
 
-    this.cartItem.forEach((cartItem) => {
+    this.cartItems.forEach((cartItem) => {
       if (cartItem.productId !== productId) {
         newCart.push(cartItem);
       }
     });
-    this.cartItem = newCart;
+    this.cartItems = newCart;
     this.saveTOLocalStorage();
   }
 
 
-  removeFromCart(productId) {
-    const newCart = [];
+  // removeFromCart(productId) {
+  //   const newCart = [];
 
-    this.cartItem.forEach((cartItem) => {
-      if (cartItem.productId !== productId) {
-        newCart.push(cartItem);
-      }
-    });
-    this.cartItem = newCart;
-    this.saveTOLocalStorage();
-  }
+  //   this.cartItems.forEach((cartItem) => {
+  //     if (cartItem.productId !== productId) {
+  //       newCart.push(cartItem);
+  //     }
+  //   });
+  //   this.cartItems = newCart;
+  //   this.saveTOLocalStorage();
+  // }
 
   calculateCartQuantity() {
     let cartQuantity = 0;
-    this.cartItem.forEach((cartItem) => {
+    this.cartItems.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
     });
 
@@ -103,19 +103,19 @@ class Cart {
   upadteQuantity(productId, newQuantity) {
 
     let matchingItem;
-    this.cartItem.forEach((cartItem) => {
+    this.cartItems.forEach((cartItem) => {
       if (productId === cartItem.productId) {
         matchingItem = cartItem;
       }
     });
     matchingItem.quantity = newQuantity;
-    saveTOLocalStorage();
+    this.saveTOLocalStorage();
   }
 
 
   updateDeliveryOption(productId, deliveryOptionId) {
     let matchingItem;
-    this.cartItem.forEach((cartItem) => {
+    this.cartItems.forEach((cartItem) => {
       if (productId === cartItem.productId) {
         matchingItem = cartItem;
       }
@@ -128,8 +128,9 @@ class Cart {
 }
 
 
-const cart = new Cart('cart-oop');
+export const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
+
 
 
 console.log(cart);
