@@ -71,18 +71,6 @@ function Cart(localStorageKey) {
       this.saveTOLocalStorage();
     },
 
-    removeFromCart(productId) {
-      const newCart = [];
-
-      this.cartItem.forEach((cartItem) => {
-        if (cartItem.productId !== productId) {
-          newCart.push(cartItem);
-        }
-      });
-      this.cartItem = newCart;
-      this.saveTOLocalStorage();
-    },
-
     calculateCartQuantity() {
       let cartQuantity = 0;
       this.cartItem.forEach((cartItem) => {
