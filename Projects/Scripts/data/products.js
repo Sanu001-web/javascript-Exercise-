@@ -36,8 +36,8 @@ class Product {
   }
 
   getStarsUrl() {
-  return `https://supersimple.dev/projects/amazon/images/ratings/rating-${this.rating.stars * 10}.png`;
-}
+    return `https://supersimple.dev/projects/amazon/images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
 
   getPrice() {
     return `$${formatCurrency(this.priceCents)}`;
@@ -95,7 +95,7 @@ export function loadProductsFetch() {
         return new Product(productDetails);
       });
       console.log('load products');
-    }).catch((error)=>{
+    }).catch((error) => {
       console.log("Unexpected error. Please try again later2");
     });
 
@@ -117,11 +117,10 @@ export function loadProducts(abcd) {
     abcd();
   });
 
-xhr.addEventListener('error',(error)=>{
-console.log("Unexpected error. Please try again later");
-});
+  xhr.addEventListener('error', (error) => {
+    console.log("Unexpected error. Please try again later");
+  });
 
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-
