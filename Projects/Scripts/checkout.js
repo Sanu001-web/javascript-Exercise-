@@ -1,9 +1,9 @@
-import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption, loadCart } from '/data/cart.js';
+import { cart, removeFromCart, calculateCartQuantity, upadteQuantity, updateDeliveryOption, loadCart, loadCartFetch } from '/data/cart.js';
 import { products, getProduct, loadProducts, loadProductsFetch } from '/data/products.js';
 import { formatCurrency } from '/utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '/data/deliveryOptions.js';
-import { randderPaymentSummary } from '/checkoutss/paymentSummary.js';
+import { renderPaymentSummary } from '/checkoutss/paymentSummary.js';
 import { renderCheckoutHeader } from '/checkoutss/checkoutHeader.js';
 
 export function radderOrderSummary() {
@@ -102,7 +102,7 @@ export function radderOrderSummary() {
       renderCheckoutHeader();
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove();
-      randderPaymentSummary();
+      renderPaymentSummary();
       updateCartQuantity();
     });
   });
@@ -140,7 +140,7 @@ export function radderOrderSummary() {
       const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
       quantityLabel.innerHTML = newQuantity;
       updateCartQuantity();
-      randderPaymentSummary();
+      renderPaymentSummary();
     });
   });
 
@@ -149,7 +149,7 @@ export function radderOrderSummary() {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       radderOrderSummary();
-      randderPaymentSummary();
+      renderPaymentSummary();
     });
   });
 }
@@ -157,22 +157,25 @@ export function radderOrderSummary() {
 async function loadPage() {
   try {
     // throw 'error404';
-    await loadProductsFetch();
 
-    await new Promise((resolve,reject) => {
-      // throw 'error502';
-      loadCart(() => {
-        resolve();
-        // reject('error745');
-      });
-    });
+    await Promise.all([               //lesson18-18i
+      await loadProductsFetch(),
+      await loadCartFetch()
+    ]);
+    // await new Promise((resolve, reject) => {
+    //   // throw 'error502';
+    //   loadCart(() => {
+    //     resolve();
+    //     // reject('error745');
+    //   });
+    // });
   } catch (error) {
-    console.log("Unexpected error. Please try again later.",error);
+    console.log("Unexpected error. Please try again later.", error);
 
   }
 
   radderOrderSummary();
-  randderPaymentSummary();
+  renderPaymentSummary();
   renderCheckoutHeader();
 }
 loadPage();
