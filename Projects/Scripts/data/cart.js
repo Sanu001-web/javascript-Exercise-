@@ -94,7 +94,7 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
   saveTOLocalStorage();
 }
 
-export function clearCart() {
+export function clearCart() {  //clear the cart after we make our order placed.
   cart = [];
   saveTOLocalStorage();
 }
