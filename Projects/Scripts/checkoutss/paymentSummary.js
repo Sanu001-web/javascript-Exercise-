@@ -101,7 +101,7 @@ export function renderPaymentSummary() {
         JSON.stringify([order, ...savedOrders])
       );
 
-      // clearCart();
+      clearCart(); // clear the cart after we make our order placed
 
       setTimeout(() => {
         window.location.href = 'orders.html';
