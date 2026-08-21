@@ -1,4 +1,4 @@
-*{
+* {
   font-family: Roboto, Arial;
   padding: 0;
   margin: 0;
@@ -17,11 +17,13 @@ body {
   padding-left: 20px;
   padding-right: 25px;
   background-color: rgb(248, 248, 248);
-  transition: padding-left 0.3s ease;
+  color: #000;
+  transition: padding-left 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
- body.sidebar-open {
-    padding-left: 100px;
-  }
+
+body.sidebar-open {
+  padding-left: 100px;
+}
 
 .header {
   height: 55px;
@@ -35,6 +37,7 @@ body {
   z-index: 100;
   background-color: white;
   border-bottom: 1px solid rgb(228, 228, 228);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .left-section {
@@ -71,10 +74,11 @@ body {
   border-radius: 2px;
   box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
   width: 0;
+  background-color: white;
+  color: #000;
 }
 
 .search-bar::placeholder {
-
   font-size: 16px;
 }
 
@@ -113,7 +117,6 @@ body {
   pointer-events: none;
   white-space: nowrap;
   transition: opacity 0.15s;
-  
   font-size: 12px;
 }
 
@@ -143,12 +146,27 @@ body {
 }
 
 .right-section {
-  width: 180px;
+  width: 220px;
   margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
+}
+
+.theme-toggle {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(240, 240, 240);
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background-color: rgb(220, 220, 220);
 }
 
 .upload-icon,
@@ -190,7 +208,7 @@ body {
   width: 72px;
   z-index: 200;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .sidebar.active {
@@ -217,6 +235,11 @@ body {
   align-items: center;
 }
 
+.music-tab-link{
+  text-decoration: none;
+ 
+}
+
 .sidebar-link img {
   height: 25px;
   margin-bottom: 4px;
@@ -225,6 +248,10 @@ body {
 .sidebar-link div {
   font-size: 10px;
   font-weight: 500;
+}
+
+.icon-dark {
+  display: none;
 }
 
 .thumbnail {
@@ -238,6 +265,14 @@ body {
   line-height: 20px;
   margin-bottom: 12px;
   cursor: pointer;
+}
+
+.video-videoTitle {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 12px;
 }
 
 .video-info-grid {
@@ -285,6 +320,46 @@ body {
   row-gap: 40px;
 }
 
+body.dark-theme {
+  background-color: #181818;
+  color: #fff;
+}
+
+body.dark-theme .header,
+body.dark-theme .sidebar {
+  background-color: #202020;
+  border-color: #383838;
+}
+
+body.dark-theme .search-bar {
+  background-color: #121212;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-theme .search-button,
+body.dark-theme .voice-search-button,
+body.dark-theme .theme-toggle {
+  background-color: #383838;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-theme .theme-toggle:hover,
+body.dark-theme .sidebar-link:hover {
+  background-color: #4a4a4a;
+}
+
+body.dark-theme .video-videoTitle,
+body.dark-theme .sidebar-link div {
+  color: #fff;
+}
+
+body.dark-theme .video-author,
+body.dark-theme .video-stats {
+  color: #aaa;
+}
+
 @media (min-width: 550px) {
   body {
     padding-left: 20px;
@@ -297,9 +372,7 @@ body {
   .sidebar {
     width: 240px;
     padding: 12px;
-    background-color: rgb(255, 255, 255);
     overflow: hidden;
-    box-sizing: border-box;
   }
 
   .sidebar-link {
@@ -321,7 +394,6 @@ body {
     align-items: center;
     column-gap: 16px;
     padding: 0 16px;
-    box-sizing: border-box;
   }
 
   .sidebar-link img {
@@ -333,7 +405,7 @@ body {
 
   .sidebar-link div {
     font-size: 15px;
-    color: #000000;
+    color: #000;
     font-weight: 400;
     white-space: nowrap;
   }
@@ -344,5 +416,27 @@ body {
 
   .sidebar-items {
     display: block;
+  }
+}
+
+@media (max-width: 549px) {
+  .middle-section {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .right-section {
+    width: auto;
+    margin-right: 10px;
+    gap: 10px;
+  }
+
+  .right-section>div:not(.notifications-icon-container),
+  .current-user-picture {
+    display: none;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
   }
 }
