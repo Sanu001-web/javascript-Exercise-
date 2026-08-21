@@ -30,7 +30,7 @@ export const videoInfo = [
     }
   },
   {
-    thubmnail: 'https://tinyurl.com/3ymerhes',
+    thubmnail: 'https://tinyurl.com/z8jjdcdy',
     profilePic: 'https://tinyurl.com/2set23hh',
     videoTitle: '5 Powerful Lessons that helped me in Life #motivation',
     videoAuthor: 'Veritasium',
@@ -40,10 +40,10 @@ export const videoInfo = [
     }
   },
   {
-    thubmnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvKnwO4o06B7MgtgP-k4CUz24xy-5siK7dw&s',
+    thubmnail: 'https://tinyurl.com/4b3e3us3',
     profilePic: 'https://tinyurl.com/2mrsdcv6',
-    videoTitle: 'Talking Tech and AI with Google CEO Sundar Pichai!',
-    videoAuthor: 'Marques Brownlee',
+    videoTitle: 'Everything About Machine Learning Explained Slowly (For Sleep)',
+    videoAuthor: 'Cosmo Explains',
     channelViewInfo: {
       views: '3.4M views',
       UploadDate: '6 months ago'
@@ -127,6 +127,7 @@ export function renderVideos(videos) {
         </div>
       </div>
     </div>
+    
 `;
 
   });
