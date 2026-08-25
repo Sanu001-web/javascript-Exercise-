@@ -93,6 +93,8 @@ export const videoInfo = [
 ];
 
 
+
+
 export function renderVideos(videos) {
   const container = document.querySelector('.js-video-grid');
 
