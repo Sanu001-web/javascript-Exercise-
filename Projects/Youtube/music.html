@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Tab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <!-- <link rel="stylesheet" href="styles/sidebar.css"> -->
+  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+  <link rel="stylesheet" href="styles/music.css">
+</head>
+
+<body>
+  <header class="header js-header">
+    <!-- on header.js -->
+  </header>
+
+  <aside class="sidebar js-sidebarss">
+    <!-- on sidebar.js -->
+  </aside>
+
+
+  <main class="page-content">
+    <section class="music-container">
+      <div class="music-bar-container">
+        <div class="music-bar">
+          <img class="music-bar-one" src="https://img.icons8.com/?size=64&id=BhQ1jBS6I2Bu&format=png" alt="Music">
+        </div>
+
+        <div class="music-channel-info">
+          <h1 class="tab-name-music">Music</h1>
+          <p class="subscriber">127M subscribers</p>
+        </div>
+      </div>
+
+      <button class="subs-button js-subs-button" type="button">Subscribe</button>
+
+      <nav class="main-container" aria-label="Channel navigation">
+        <button class="home-page js-home-page selectedss selected" type="button">Home</button>
+        <button class="post-page js-post-page selectedss" type="button">Posts</button>
+      </nav>
+    </section>
+
+    <div class="home-content js-home-content"></div>
+    <div class="post-content js-post-content"></div>
+  </main>
+
+  <script src="scripts/header.js" type="module"></script>
+  <script src="scripts/music.js" type="module"></script>
+  <script src="scripts/sideBar.js" type="module"></script>
+
+</body>
+
+</html>
