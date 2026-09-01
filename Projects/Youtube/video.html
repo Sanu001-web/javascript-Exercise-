@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Video Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/videoDetails.css">
+</head>
+
+<body>
+
+  <main class="video-details-page">
+    <a href="index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-circle-chevron-left-icon lucide-circle-chevron-left back-button">
+        <circle cx="12" cy="12" r="10" />
+        <path d="m14 16-4-4 4-4" />
+      </svg>
+    </a>
+    <header class="header js-header"></header>
+
+    <section class="video-player-section">
+      <div class="video-player-wrapper">
+        <iframe id="videoPlayer" class="video-player" title="Video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="video-actions">
+      <span id="profile-pic">profile-pic</span>
+      <div class="connect-container">
+        <span id="channel-author">Marques Brownlee</span>
+        <span id="subscriber-count">4.53m subscribers</span>
+      </div>
+      <button id="join-btn" type="button">Join</button>
+      <button id="subscribe-btn" type="button">Subscribe</button>
+      <button id="watchLaterBtn" type="button">Watch Later</button>
+      <button id="shareBtn" type="button">Share</button>
+      <button id="saveBtn" type="button">Save</button>
+      <button id="downloadBtn" type="button">Download</button>
+    </section>
+    <section class="video-information">
+
+      <div class="video-badges" id="videoBadges"></div>
+
+      <h1 id="videoTitle">Video Title</h1>
+
+      <div class="video-meta">
+        <span id="videoViews">0 views</span>
+        <span id="videoUploadDate">Upload date</span>
+        <span id="videoChannelId">Channel ID</span>
+        <span id="videoDuration">00:00</span>
+      </div>
+
+      <p id="videoDescription">Video description</p>
+
+    </section>
+
+
+    <section id="shareOptions" class="share-options" hidden>
+      <button type="button" id="copyLinkBtn">Copy Link</button>
+      <button type="button" id="shareFacebookBtn">Facebook</button>
+      <button type="button" id="shareTwitterBtn">X</button>
+      <button type="button" id="shareWhatsAppBtn">WhatsApp</button>
+    </section>
+
+    <section class="related-videos-section">
+      <h2>Related Videos</h2>
+      <div id="relatedVideos" class="related-videos-grid"></div>
+    </section>
+
+  </main>
+  <script src="scripts/header.js" type="module"></script>
+  <script src="scripts/videoDetails.js" type="module"></script>
+  <script src="scripts/sideBar.js" type="module"></script>
+
+</body>
+
+</html>
