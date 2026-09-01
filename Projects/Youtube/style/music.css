@@ -188,6 +188,7 @@ button {
 }
 
 .sidebar {
+  transform: translateX(1px);
   position: fixed;
   top: 55px;
   bottom: 0;
