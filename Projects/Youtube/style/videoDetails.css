@@ -1,4 +1,4 @@
-*{
+* {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
@@ -123,18 +123,24 @@
 }
 
 .profile-picc {
- border-radius: 50px;
+  border-radius: 50px;
   width: 40px;
   cursor: pointer;
 }
-#subscriber-count{
+
+#subscriber-count {
   font-size: 14px;
   color: rgb(145, 143, 143);
 }
-#channel-author{
+
+#channel-author {
   font-size: 15px;
   font-weight: 600;
 }
+
+
+
+
 
 
 .video-information {
@@ -250,33 +256,67 @@
   padding: 16px 0;
 }
 
-.video-actions button {
-  padding: 10px 16px;
-
-  border: 1px solid #d0d0d0;
-  border-radius: 20px;
-
-  background-color: #f2f2f2;
-  color: #0f0f0f;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.2s,
-    transform 0.2s;
+.subscribe-button.is-sub-btn {
+  background: #111;
+  color: #fff;
 }
 
-.video-actions button:hover {
+.subs-button {
+  padding: 10px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  color: #0f0f0f;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+
+.watch-later-button,
+.share-button,
+.save-button,
+.download-button {
+  padding: 10px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  color: #0f0f0f;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.join-button{
+  padding: 10px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  background-color: #201b1b;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.join-button.joined {
+  background-color: #c42323;
+  color: #e5ff00;
+}
+
+
+.watch-later-button:hover,
+.share-button:hover,
+.save-button:hover,
+.download-button:hover {
   background-color: #e5e5e5;
 }
 
 .video-actions button:active {
   transform: scale(0.97);
 }
-
 
 /* 
    SHARE OPTIONS
