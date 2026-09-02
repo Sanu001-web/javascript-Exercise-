@@ -28,7 +28,24 @@ export const videoInfo = [
     thubmnail: 'https://tinyurl.com/bden2953',
     videoUrl: 'https://www.youtube.com/embed/Zxwq3aW9ctU?si=5L_BPXZ6T3_7Ncdl',
     duration: '10:05:29',
-    description: ``,
+    description: `🚀 Spring 6 and Spring Boot Tutorial for Beginners
+
+Learn Spring 6 and Spring Boot from scratch with simple explanations and practical examples. This tutorial covers the core concepts you need to start building modern Java applications using Spring.
+
+Perfect for Java beginners, students, freshers, and aspiring backend developers.
+
+📌 Topics Covered:
+
+Spring 6 fundamentals
+Spring Framework & Spring Boot
+Dependency Injection & IoC
+Spring Beans & Annotations
+Creating your first Spring Boot application
+Basic project structure and configuration
+
+👍 Like, Share & Subscribe for more Java and Spring Boot tutorials!
+
+#Spring6 #SpringBoot #Java #JavaTutorial #BackendDevelopment`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/5s88eh4k',
@@ -320,7 +337,7 @@ export const videoInfo = [
     thubmnail: 'https://tinyurl.com/bkz2nh82',
     videoUrl: 'https://www.youtube.com/embed/z8_dwc6rEyU?si=J1hs6iAe-rFdACin',
     duration: '69:06',
-        description: `🎵 The Kid LAROI & Justin Bieber — STAY
+    description: `🎵 The Kid LAROI & Justin Bieber — STAY
     Listen to the song and follow along with the lyrics.
     If you enjoy the track, don't forget to like the video and subscribe for more lyric videos and music content.
     ⚠️ Disclaimer: This video is intended for entertainment and fan purposes. All rights to the music belong to their respective copyright owners.
@@ -368,6 +385,7 @@ export const videoInfo = [
   }
 ];
 
+
 export function renderVideos(videos = []) {
   const container = document.querySelector('.js-video-grid');
 
@@ -402,6 +420,7 @@ export function renderVideos(videos = []) {
     </div>
   `).join('');
 }
+
 
 if (document.querySelector('.js-video-grid')) {
   renderVideos(videoInfo);
