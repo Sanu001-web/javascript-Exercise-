@@ -282,13 +282,9 @@ button {
   color: #111;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
-.subs-button:hover {
-  background: #d9d9d9;
-  color: #111;
-}
 
 .is-sub-btn {
   background: #111;
