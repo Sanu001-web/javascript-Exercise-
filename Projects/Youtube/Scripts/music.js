@@ -1,6 +1,7 @@
 import { musicContent, defaultImages } from '../data/musicContent.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
+import { subsFunc} from './subscription.js'
 
 renderHeader();
 renderSidebar();
@@ -98,6 +99,9 @@ function renderMusic() {
 }
 
 function showHomeContent() {
+  if (!homeContent || !postContent) {
+    return;
+  }
   homeContent.innerHTML = '';
   postContent.innerHTML = '';
   renderMusic();
@@ -170,18 +174,6 @@ function showPostContent() {
   postContent.innerHTML = postHTML;
 }
 
-subscribeButton?.addEventListener('click', () => {
-  const isSubscribed = subscribeButton.innerText === 'Subscribed';
-
-  subscribeButton.innerText = isSubscribed
-    ? 'Subscribe'
-    : 'Subscribed';
-
-  subscribeButton.classList.toggle(
-    'is-sub-btn',
-    !isSubscribed
-  );
-});
 
 homePageButton?.addEventListener('click', showHomeContent);
 postPageButton?.addEventListener('click', showPostContent);
@@ -198,4 +190,5 @@ tabButtons.forEach(button => {
   });
 });
 
+subsFunc();
 showHomeContent();
