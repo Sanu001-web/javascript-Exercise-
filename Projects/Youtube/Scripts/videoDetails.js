@@ -1,7 +1,10 @@
 import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
+import { subsFunc,joinFunc } from './subscription.js';
 
+
+subsFunc();
 renderHeader();
 renderSidebar();
 
@@ -20,7 +23,7 @@ const shareBtn = document.querySelector('#shareBtn');
 const saveBtn = document.querySelector('#saveBtn');
 const downloadBtn = document.querySelector('#downloadBtn');
 const profileImage = document.querySelector('#profile-pic');
-
+// const joinBtn = document.querySelector('.js-join-button');
 
 const shareOptions = document.querySelector('#shareOptions');
 const copyLinkBtn = document.querySelector('#copyLinkBtn');
@@ -31,6 +34,8 @@ const shareWhatsAppBtn = document.querySelector('#shareWhatsAppBtn');
 const urlParams = new URLSearchParams(window.location.search);
 const videoIndex = Number(urlParams.get('video')) || 0;
 const currentVideo = videoInfo[videoIndex] || videoInfo[0];
+
+joinFunc();
 
 function getEmbedUrl(url) {
   if (!url) {
@@ -52,14 +57,15 @@ function loadVideo() {
   videoPlayer.src = getEmbedUrl(currentVideo.videoUrl);
 
   videoTitle.textContent = currentVideo.videoTitle || 'Video Title';
-  videoDescription.textContent =
-    currentVideo.description || 'No description available.';
-  videoViews.textContent =
-    currentVideo.channelViewInfo?.views || '0 views';
-  videoUploadDate.textContent =
-    currentVideo.channelViewInfo?.UploadDate || 'Unknown date';
-  videoChannelId.textContent =
-    currentVideo.channelId || currentVideo.videoAuthor || 'Unknown channel';
+
+  videoDescription.textContent = currentVideo.description || 'No description available.';
+
+  videoViews.textContent = currentVideo.channelViewInfo?.views || '0 views';
+
+  videoUploadDate.textContent = currentVideo.channelViewInfo?.UploadDate || 'Unknown date';
+
+  videoChannelId.textContent = currentVideo.channelId || currentVideo.videoAuthor || 'Unknown channel';
+
   videoDuration.textContent = currentVideo.duration || '00:00';
 
   renderBadges();
@@ -71,14 +77,22 @@ function renderBadges() {
   videoBadges.innerHTML = (currentVideo.badges || [])
     .map(badge => `<span class="video-badge">${badge}</span>`)
     .join('');
-
 }
 
 function renderProfileImg() {
-  videoInfo.forEach((videoo) => {
-    profileImage.innerHTML = `<img class="profile-picc" src="${videoo.profilePic}" alt="4069" />`;
-  });
+  if (!profileImage || !currentVideo.profilePic) {
+    return;
+  }
+
+  profileImage.innerHTML = `
+    <img
+      class="profile-picc"
+      src="${currentVideo.profilePic}"
+      alt="${currentVideo.videoAuthor || 'Channel profile picture'}"
+    >
+  `;
 }
+
 function renderRelatedVideos() {
   relatedVideos.innerHTML = videoInfo
     .map((video, index) => {
@@ -87,33 +101,32 @@ function renderRelatedVideos() {
       }
 
       return `
-            <article class="related-video-card">
-              <a href="video.html?video=${index}" class="related-video-link">
-                <div class="related-thumbnail-wrapper">
-                  <img
-                    class="related-thumbnail"
-                    src="${video.thubmnail}"
-                    alt="${video.videoTitle}"
-                  >
-                  <span class="related-video-duration">
-                    ${video.duration || '00:00'}
-                  </span>
-                </div>
+        <article class="related-video-card">
+          <a href="video.html?video=${index}" class="related-video-link">
+            <div class="related-thumbnail-wrapper">
+              <img
+                class="related-thumbnail"
+                src="${video.thubmnail}"
+                alt="${video.videoTitle}"
+              >
+              <span class="related-video-duration">
+                ${video.duration || '00:00'}
+              </span>
+            </div>
 
-                <div class="related-video-info">
-                  <h3 class="related-video-title">${video.videoTitle}</h3>
-                  <p class="related-video-author">${video.videoAuthor}</p>
-                  <p class="related-video-stats">
-                    ${video.channelViewInfo?.views || '0 views'} •
-                    ${video.channelViewInfo?.UploadDate || 'Unknown date'}
-                  </p>
-                </div>
-              </a>
-            </article>
-          `;
+            <div class="related-video-info">
+              <h3 class="related-video-title">${video.videoTitle}</h3>
+              <p class="related-video-author">${video.videoAuthor}</p>
+              <p class="related-video-stats">
+                ${video.channelViewInfo?.views || '0 views'} •
+                ${video.channelViewInfo?.UploadDate || 'Unknown date'}
+              </p>
+            </div>
+          </a>
+        </article>
+      `;
     })
     .join('');
-
 }
 
 watchLaterBtn.addEventListener('click', () => {
@@ -176,7 +189,7 @@ saveBtn.addEventListener('click', () => {
 });
 
 downloadBtn.addEventListener('click', () => {
-  alert('YouTube videos cannot be downloaded directly from an iframe.');
+  alert('Downloading 3%');
 });
 
 loadVideo();
