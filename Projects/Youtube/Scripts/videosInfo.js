@@ -1,8 +1,9 @@
 export const videoInfo = [
   {
+    id: "video001",
     thubmnail: 'https://tinyurl.com/3r83eyke',
     videoUrl: 'https://www.youtube.com/embed/n2RNcPRtAiY?si=3rMZkLfSjjSz81Am',
-    duration: '41:10',
+    duration: '14:21',
     description: `A fascinating conversation about technology, artificial intelligence, innovation, and the future of the internet with Google CEO Sundar Pichai.
     We explore how AI is transforming the way we work, learn, build products, and interact with technology — and what the next generation of AI could mean for society.
     If you're interested in technology, AI, startups, Google, and the future of computing, this conversation is worth watching.
@@ -22,12 +23,14 @@ export const videoInfo = [
     channelViewInfo: {
       views: '3.4M views',
       UploadDate: '6 months ago'
-    }
+    },
+    videoSubscriberCount: '9M subscribers'
   },
   {
+    id: "video002",
     thubmnail: 'https://tinyurl.com/bden2953',
     videoUrl: 'https://www.youtube.com/embed/Zxwq3aW9ctU?si=5L_BPXZ6T3_7Ncdl',
-    duration: '10:05:29',
+    duration: '04:29',
     description: `🚀 Spring 6 and Spring Boot Tutorial for Beginners
 
 Learn Spring 6 and Spring Boot from scratch with simple explanations and practical examples. This tutorial covers the core concepts you need to start building modern Java applications using Spring.
@@ -54,12 +57,13 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '1.4M views',
       UploadDate: '4 months ago'
-    }
+    },
+    videoSubscriberCount: '247k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/tbjvav3w',
     videoUrl: 'https://www.youtube.com/embed/32DLasxoOiM?si=MZVw-o57y9YGtS1p',
-    duration: '60:05',
+    duration: '18:34:05',
     description: `Master Java from the basics to advanced concepts in this complete Java programming course! 🚀
 
     Whether you're a beginner starting your programming journey or a developer looking to strengthen your Java fundamentals, this one-video course covers the essential concepts you need to become confident in Java.
@@ -79,14 +83,19 @@ Basic project structure and configuration
     videoTitle: 'Java Programming Full Tutorial in One Video (2024) | Java full course',
     videoAuthor: 'CoDing SeeKho ',
     channelViewInfo: {
-      views: '12M views',
+      views: '12k views',
       UploadDate: '1 years ago'
-    }
+    },
+    hashtags: ["#Music", "#YouTube", "#Tutorial"],
+    likes: 1250,
+    dislikes: 45,
+    transcript: "Full video transcript...",
+    videoSubscriberCount: '732k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/z8jjdcdy',
     videoUrl: 'https://www.youtube.com/embed/u0xQ68YghOU?si=CGX-tJicqqTK5bGf',
-    duration: '19:35',
+    duration: '23:35',
     description: `Life teaches us lessons that no classroom can.
 
     In this video, I share 5 powerful lessons that changed the way I think about success, failure, relationships, discipline, and personal growth.
@@ -107,12 +116,13 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '18M views',
       UploadDate: '4 months ago'
-    }
+    },
+    videoSubscriberCount: '932k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/4b3e3us3',
     videoUrl: 'https://www.youtube.com/embed/c0E_lZzIw0w?si=LWgmwf_b379xQgzj',
-    duration: '56:31',
+    duration: '02:04:24',
     description: `Curious about machine learning but don't want a fast-paced technical explanation?
 
     This relaxing, slow-paced journey through machine learning is designed to help you understand the big ideas without feeling overwhelmed.
@@ -133,12 +143,13 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '3.4M views',
       UploadDate: '6 months ago'
-    }
+    },
+    videoSubscriberCount: '5m subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/3239aswr',
     videoUrl: 'https://www.youtube.com/embed/q6z_UCBM5Ek?si=aGOOZksLZdhekPOx',
-    duration: '02:10:20',
+    duration: '65:55:08',
     description: `Take your Java development skills to the next level with a complete journey through modern Java backend development. 🔥
     In this course, we explore powerful technologies used to build production-ready applications, including Spring Boot, REST APIs, Microservices, databases, Spring Security, and Spring AI.
     You'll learn how modern Java applications are designed, developed, connected, and deployed — giving you practical knowledge that goes beyond basic programming.
@@ -159,7 +170,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '19M views',
       UploadDate: '4 years ago'
-    }
+    },
+    videoSubscriberCount: '3.01m subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/5y2e3anu',
@@ -184,7 +196,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '556K views',
       UploadDate: '6 months ago'
-    }
+    },
+    videoSubscriberCount: '6m subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/bdupmpw6',
@@ -210,7 +223,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '519K views',
       UploadDate: '5 years ago'
-    }
+    },
+    videoSubscriberCount: '546k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/2p9zabxs',
@@ -259,7 +273,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '578K views',
       UploadDate: '2 years ago'
-    }
+    },
+    videoSubscriberCount: '845k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/3d7hamsd',
@@ -307,7 +322,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '54K views',
       UploadDate: '3 Days ago'
-    }
+    },
+    videoSubscriberCount: '669k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/5887e9rm',
@@ -331,7 +347,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '54K views',
       UploadDate: '3 Days ago'
-    }
+    },
+    videoSubscriberCount: '262k subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/bkz2nh82',
@@ -355,7 +372,7 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '154K views',
       UploadDate: '1 years ago'
-    }
+    },videoSubscriberCount: '11m subscribers'
   },
   {
     thubmnail: 'https://tinyurl.com/25ujpvtu',
@@ -381,7 +398,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '1.4M views',
       UploadDate: '1 years ago'
-    }
+    },
+    videoSubscriberCount: '100k subscribers'
   }
 ];
 
