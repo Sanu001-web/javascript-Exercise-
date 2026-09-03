@@ -3,8 +3,8 @@ import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc,joinFunc } from './subscription.js';
 
-
 subsFunc();
+
 renderHeader();
 renderSidebar();
 
@@ -23,6 +23,8 @@ const shareBtn = document.querySelector('#shareBtn');
 const saveBtn = document.querySelector('#saveBtn');
 const downloadBtn = document.querySelector('#downloadBtn');
 const profileImage = document.querySelector('#profile-pic');
+const channelAuthor = document.querySelector('.js-channel-author');
+const subscriberCount = document.querySelector('#subscriber-count');
 // const joinBtn = document.querySelector('.js-join-button');
 
 const shareOptions = document.querySelector('#shareOptions');
@@ -64,7 +66,7 @@ function loadVideo() {
 
   videoUploadDate.textContent = currentVideo.channelViewInfo?.UploadDate || 'Unknown date';
 
-  videoChannelId.textContent = currentVideo.channelId || currentVideo.videoAuthor || 'Unknown channel';
+  videoChannelId.textContent = currentVideo.videoAuthor || currentVideo.channelId || 'Unknown channel';
 
   videoDuration.textContent = currentVideo.duration || '00:00';
 
@@ -92,6 +94,9 @@ function renderProfileImg() {
     >
   `;
 }
+
+channelAuthor.innerHTML =`${currentVideo.videoAuthor}`;
+subscriberCount.innerHTML =`${currentVideo.videoSubscriberCount}`
 
 function renderRelatedVideos() {
   relatedVideos.innerHTML = videoInfo
@@ -191,5 +196,11 @@ saveBtn.addEventListener('click', () => {
 downloadBtn.addEventListener('click', () => {
   alert('Downloading 3%');
 });
+
+localStorage.setItem(
+  "likedVideos",
+  JSON.stringify(["video001", "video002"])
+);
+
 
 loadVideo();
