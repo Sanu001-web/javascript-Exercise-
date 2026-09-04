@@ -24,7 +24,8 @@ export const videoInfo = [
       views: '3.4M views',
       UploadDate: '6 months ago'
     },
-    videoSubscriberCount: '9M subscribers'
+    videoSubscriberCount: '9M subscribers',
+    likeCount: '65k'
   },
   {
     id: "video002",
@@ -58,7 +59,8 @@ Basic project structure and configuration
       views: '1.4M views',
       UploadDate: '4 months ago'
     },
-    videoSubscriberCount: '247k subscribers'
+    videoSubscriberCount: '247k subscribers',
+    likeCount: '415k'
   },
   {
     thubmnail: 'https://tinyurl.com/tbjvav3w',
@@ -90,7 +92,8 @@ Basic project structure and configuration
     likes: 1250,
     dislikes: 45,
     transcript: "Full video transcript...",
-    videoSubscriberCount: '732k subscribers'
+    videoSubscriberCount: '732k subscribers',
+    likeCount: '21k'
   },
   {
     thubmnail: 'https://tinyurl.com/z8jjdcdy',
@@ -117,7 +120,8 @@ Basic project structure and configuration
       views: '18M views',
       UploadDate: '4 months ago'
     },
-    videoSubscriberCount: '932k subscribers'
+    videoSubscriberCount: '932k subscribers',
+    likeCount: '945k'
   },
   {
     thubmnail: 'https://tinyurl.com/4b3e3us3',
@@ -144,7 +148,8 @@ Basic project structure and configuration
       views: '3.4M views',
       UploadDate: '6 months ago'
     },
-    videoSubscriberCount: '5m subscribers'
+    videoSubscriberCount: '5m subscribers',
+    likeCount: '115k'
   },
   {
     thubmnail: 'https://tinyurl.com/3239aswr',
@@ -171,7 +176,8 @@ Basic project structure and configuration
       views: '19M views',
       UploadDate: '4 years ago'
     },
-    videoSubscriberCount: '3.01m subscribers'
+    videoSubscriberCount: '3.01m subscribers',
+    likeCount: '545k'
   },
   {
     thubmnail: 'https://tinyurl.com/5y2e3anu',
@@ -197,7 +203,8 @@ Basic project structure and configuration
       views: '556K views',
       UploadDate: '6 months ago'
     },
-    videoSubscriberCount: '6m subscribers'
+    videoSubscriberCount: '6m subscribers',
+    likeCount: '117k'
   },
   {
     thubmnail: 'https://tinyurl.com/bdupmpw6',
@@ -224,7 +231,8 @@ Basic project structure and configuration
       views: '519K views',
       UploadDate: '5 years ago'
     },
-    videoSubscriberCount: '546k subscribers'
+    videoSubscriberCount: '546k subscribers',
+    likeCount: '345k'
   },
   {
     thubmnail: 'https://tinyurl.com/2p9zabxs',
@@ -274,7 +282,8 @@ Basic project structure and configuration
       views: '578K views',
       UploadDate: '2 years ago'
     },
-    videoSubscriberCount: '845k subscribers'
+    videoSubscriberCount: '845k subscribers',
+    likeCount: '276k'
   },
   {
     thubmnail: 'https://tinyurl.com/3d7hamsd',
@@ -323,7 +332,8 @@ Basic project structure and configuration
       views: '54K views',
       UploadDate: '3 Days ago'
     },
-    videoSubscriberCount: '669k subscribers'
+    videoSubscriberCount: '669k subscribers',
+    likeCount: '255k'
   },
   {
     thubmnail: 'https://tinyurl.com/5887e9rm',
@@ -348,7 +358,8 @@ Basic project structure and configuration
       views: '54K views',
       UploadDate: '3 Days ago'
     },
-    videoSubscriberCount: '262k subscribers'
+    videoSubscriberCount: '262k subscribers',
+    likeCount: '885k'
   },
   {
     thubmnail: 'https://tinyurl.com/bkz2nh82',
@@ -372,7 +383,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '154K views',
       UploadDate: '1 years ago'
-    },videoSubscriberCount: '11m subscribers'
+    },videoSubscriberCount: '11m subscribers',
+    likeCount: '105k'
   },
   {
     thubmnail: 'https://tinyurl.com/25ujpvtu',
@@ -399,7 +411,8 @@ Basic project structure and configuration
       views: '1.4M views',
       UploadDate: '1 years ago'
     },
-    videoSubscriberCount: '100k subscribers'
+    videoSubscriberCount: '100k subscribers',
+    likeCount: '169k'
   }
 ];
 
