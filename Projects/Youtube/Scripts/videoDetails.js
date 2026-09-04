@@ -1,7 +1,7 @@
 import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
-import { subsFunc,joinFunc } from './subscription.js';
+import { subsFunc, joinFunc } from './subscription.js';
 
 subsFunc();
 
@@ -25,7 +25,11 @@ const downloadBtn = document.querySelector('#downloadBtn');
 const profileImage = document.querySelector('#profile-pic');
 const channelAuthor = document.querySelector('.js-channel-author');
 const subscriberCount = document.querySelector('#subscriber-count');
+const likeNumber = document.querySelector('#js-like-count');
+const moreOption = document.querySelector('.js-more-options-btn');
+const reportOption = document.querySelector('#js-report-option');
 // const joinBtn = document.querySelector('.js-join-button');
+// const moreOption = document.querySelector('#js-repot-option');
 
 const shareOptions = document.querySelector('#shareOptions');
 const copyLinkBtn = document.querySelector('#copyLinkBtn');
@@ -95,8 +99,15 @@ function renderProfileImg() {
   `;
 }
 
-channelAuthor.innerHTML =`${currentVideo.videoAuthor}`;
-subscriberCount.innerHTML =`${currentVideo.videoSubscriberCount}`
+// videos action feedback
+channelAuthor.innerHTML = `${currentVideo.videoAuthor}`;
+subscriberCount.innerHTML = `${currentVideo.videoSubscriberCount}`;
+likeNumber.innerHTML = `${currentVideo.likeCount}`;
+//show report option button
+
+moreOption.addEventListener('click', () => {
+  reportOption.classList.toggle('show-report');
+});
 
 function renderRelatedVideos() {
   relatedVideos.innerHTML = videoInfo
