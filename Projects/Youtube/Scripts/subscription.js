@@ -10,7 +10,6 @@ export function subsFunc() {
     subscribeButton.classList.toggle('is-sub-btn', !isSubscribed);
     // Show bell after subscribing
     notificationBell?.classList.toggle('show-bell', !isSubscribed);
-
   });
 }
 
