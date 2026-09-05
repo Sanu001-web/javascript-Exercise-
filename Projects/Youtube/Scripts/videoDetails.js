@@ -4,7 +4,6 @@ import { renderSidebar } from './sideBar.js';
 import { subsFunc, joinFunc } from './subscription.js';
 
 subsFunc();
-
 renderHeader();
 renderSidebar();
 
@@ -25,11 +24,14 @@ const downloadBtn = document.querySelector('#downloadBtn');
 const profileImage = document.querySelector('#profile-pic');
 const channelAuthor = document.querySelector('.js-channel-author');
 const subscriberCount = document.querySelector('#subscriber-count');
+
+const likeButton = document.querySelector('.like-button');
+const dislikeButton = document.querySelector('.dislike-button');
 const likeNumber = document.querySelector('#js-like-count');
-const moreOption = document.querySelector('.js-more-options-btn');
+const dislikeNumber = document.querySelector('#js-dislike-count');
+
+const moreOption = document.querySelector('#js-more-options-btn');
 const reportOption = document.querySelector('#js-report-option');
-// const joinBtn = document.querySelector('.js-join-button');
-// const moreOption = document.querySelector('#js-repot-option');
 
 const shareOptions = document.querySelector('#shareOptions');
 const copyLinkBtn = document.querySelector('#copyLinkBtn');
@@ -40,43 +42,47 @@ const shareWhatsAppBtn = document.querySelector('#shareWhatsAppBtn');
 const urlParams = new URLSearchParams(window.location.search);
 const videoIndex = Number(urlParams.get('video')) || 0;
 const currentVideo = videoInfo[videoIndex] || videoInfo[0];
+const videoId = currentVideo.videoId || `video-${videoIndex}`;
 
 joinFunc();
 
 function getEmbedUrl(url) {
-  if (!url) {
-    return '';
-  }
+  if (!url) return '';
 
-  const videoId = url.split('/embed/')[1]?.split('?')[0];
+  const id = url.split('/embed/')[1]?.split('?')[0];
 
-  return videoId
-    ? `https://www.youtube.com/embed/${videoId}?rel=0`
+  return id
+    ? `https://www.youtube.com/embed/${id}?rel=0`
     : url;
 }
 
 function loadVideo() {
-  if (!currentVideo) {
-    return;
-  }
-
   videoPlayer.src = getEmbedUrl(currentVideo.videoUrl);
 
   videoTitle.textContent = currentVideo.videoTitle || 'Video Title';
-
-  videoDescription.textContent = currentVideo.description || 'No description available.';
-
-  videoViews.textContent = currentVideo.channelViewInfo?.views || '0 views';
-
-  videoUploadDate.textContent = currentVideo.channelViewInfo?.UploadDate || 'Unknown date';
-
-  videoChannelId.textContent = currentVideo.videoAuthor || currentVideo.channelId || 'Unknown channel';
-
+  videoDescription.textContent =
+    currentVideo.description || 'No description available.';
+  videoViews.textContent =
+    currentVideo.channelViewInfo?.views || '0 views';
+  videoUploadDate.textContent =
+    currentVideo.channelViewInfo?.UploadDate || 'Unknown date';
+  videoChannelId.textContent =
+    currentVideo.videoAuthor || 'Unknown channel';
   videoDuration.textContent = currentVideo.duration || '00:00';
+
+  if (channelAuthor) {
+    channelAuthor.textContent = currentVideo.videoAuthor || 'Unknown channel';
+  }
+
+  if (subscriberCount) {
+    subscriberCount.textContent =
+      currentVideo.videoSubscriberCount || '0';
+  }
 
   renderBadges();
   renderRelatedVideos();
   renderProfileImg();
+  showReactionCounts();
 }
 
 function renderBadges() {
@@ -86,9 +92,7 @@ function renderBadges() {
 }
 
 function renderProfileImg() {
-  if (!profileImage || !currentVideo.profilePic) {
-    return;
-  }
+  if (!profileImage || !currentVideo.profilePic) return;
 
   profileImage.innerHTML = `
     <img
@@ -99,45 +103,25 @@ function renderProfileImg() {
   `;
 }
 
-// videos action feedback
-channelAuthor.innerHTML = `${currentVideo.videoAuthor}`;
-subscriberCount.innerHTML = `${currentVideo.videoSubscriberCount}`;
-likeNumber.innerHTML = `${currentVideo.likeCount}`;
-//show report option button
-
-moreOption.addEventListener('click', () => {
-  reportOption.classList.toggle('show-report');
-});
-
 function renderRelatedVideos() {
   relatedVideos.innerHTML = videoInfo
     .map((video, index) => {
-      if (index === videoIndex) {
-        return '';
-      }
+      if (index === videoIndex) return '';
 
       return `
         <article class="related-video-card">
           <a href="video.html?video=${index}" class="related-video-link">
-            <div class="related-thumbnail-wrapper">
-              <img
-                class="related-thumbnail"
-                src="${video.thubmnail}"
-                alt="${video.videoTitle}"
-              >
-              <span class="related-video-duration">
-                ${video.duration || '00:00'}
-              </span>
-            </div>
-
-            <div class="related-video-info">
-              <h3 class="related-video-title">${video.videoTitle}</h3>
-              <p class="related-video-author">${video.videoAuthor}</p>
-              <p class="related-video-stats">
-                ${video.channelViewInfo?.views || '0 views'} •
-                ${video.channelViewInfo?.UploadDate || 'Unknown date'}
-              </p>
-            </div>
+            <img
+              class="related-thumbnail"
+              src="${video.thubmnail}"
+              alt="${video.videoTitle}"
+            >
+            <h3>${video.videoTitle}</h3>
+            <p>${video.videoAuthor}</p>
+            <p>
+              ${video.channelViewInfo?.views || '0 views'} •
+              ${video.channelViewInfo?.UploadDate || 'Unknown date'}
+            </p>
           </a>
         </article>
       `;
@@ -145,7 +129,37 @@ function renderRelatedVideos() {
     .join('');
 }
 
-watchLaterBtn.addEventListener('click', () => {
+/* Simple like and dislike logic */
+let likes = Number(localStorage.getItem(`likes-${videoId}`)) ||
+  Number(currentVideo.likeCount) || 0;
+
+let dislikes = Number(localStorage.getItem(`dislikes-${videoId}`)) || 0;
+
+function showReactionCounts() {
+  likeNumber.textContent = likes;
+  dislikeNumber.textContent = dislikes;
+}
+
+likeButton.addEventListener('click', () => {
+  likes++;
+  localStorage.setItem(`likes-${videoId}`, likes);
+  showReactionCounts();
+});
+
+dislikeButton.addEventListener('click', () => {
+  dislikes++;
+  localStorage.setItem(`dislikes-${videoId}`, dislikes);
+  showReactionCounts();
+});
+
+/* Other buttons */
+if (moreOption && reportOption) {
+  moreOption.addEventListener('click', () => {
+    reportOption.classList.toggle('show-report');
+  });
+}
+
+watchLaterBtn?.addEventListener('click', () => {
   const savedVideos = JSON.parse(
     localStorage.getItem('watchLaterVideos') || '[]'
   );
@@ -163,11 +177,11 @@ watchLaterBtn.addEventListener('click', () => {
   }
 });
 
-shareBtn.addEventListener('click', () => {
+shareBtn?.addEventListener('click', () => {
   shareOptions.hidden = !shareOptions.hidden;
 });
 
-copyLinkBtn.addEventListener('click', async () => {
+copyLinkBtn?.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(window.location.href);
     copyLinkBtn.textContent = 'Link Copied';
@@ -176,21 +190,25 @@ copyLinkBtn.addEventListener('click', async () => {
   }
 });
 
-shareFacebookBtn.addEventListener('click', () => {
+shareFacebookBtn?.addEventListener('click', () => {
   window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`,
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      window.location.href
+    )}`,
     '_blank'
   );
 });
 
-shareTwitterBtn.addEventListener('click', () => {
+shareTwitterBtn?.addEventListener('click', () => {
   window.open(
-    `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(currentVideo.videoTitle)}`,
+    `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      window.location.href
+    )}&text=${encodeURIComponent(currentVideo.videoTitle)}`,
     '_blank'
   );
 });
 
-shareWhatsAppBtn.addEventListener('click', () => {
+shareWhatsAppBtn?.addEventListener('click', () => {
   window.open(
     `https://api.whatsapp.com/send?text=${encodeURIComponent(
       `${currentVideo.videoTitle} ${window.location.href}`
@@ -199,19 +217,13 @@ shareWhatsAppBtn.addEventListener('click', () => {
   );
 });
 
-saveBtn.addEventListener('click', () => {
+saveBtn?.addEventListener('click', () => {
   localStorage.setItem('savedVideo', JSON.stringify(currentVideo));
   saveBtn.textContent = 'Saved';
 });
 
-downloadBtn.addEventListener('click', () => {
+downloadBtn?.addEventListener('click', () => {
   alert('Downloading 3%');
 });
-
-localStorage.setItem(
-  "likedVideos",
-  JSON.stringify(["video001", "video002"])
-);
-
 
 loadVideo();
