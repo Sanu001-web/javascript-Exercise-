@@ -142,7 +142,7 @@
 .video-information {
   padding: 25px 15px;
   border-bottom: 1px solid #dddddd;
-  background-color: #dad4d4;
+  background-color: #bbbbbb;
   border-radius: 20px;
 
 }
@@ -179,7 +179,7 @@
   font-size: 15px;
   line-height: 1.6;
 
-  color: #333;
+  color: #403f3f
 }
 
 
@@ -266,7 +266,7 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
-
+  position: relative;
 }
 
 .subscribe-button.is-sub-btn {
@@ -301,12 +301,25 @@
   display: block;
 }
 
-.report-more-btn {
+#js-report-option {
   display: none;
 }
 
-.report-more-btn .show-report {
-  display: block;
+
+
+#js-report-option.show-report {
+  cursor: pointer;
+  display: flex;
+  color: #fff;
+  background-color: #3c3535;
+  /* padding: 5px 12px; */
+  padding: 10px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 43px;
+  right: -50px;
 }
 
 .video-actions-caontainer {
@@ -330,18 +343,26 @@
 }
 
 .like-btn {
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   margin-right: -2px;
 }
 
 .dislike-btn {
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-.like-btn span {
-  margin-left: 2px;
+.like-btn span,.dislike-btn span {
+  margin-left: 5px;
 }
 
 .action-btns {
@@ -368,7 +389,7 @@
 }
 
 .more-options-btn {
-  padding: 8px 8px;
+  padding: 8px 10px;
   display: block;
 }
 
