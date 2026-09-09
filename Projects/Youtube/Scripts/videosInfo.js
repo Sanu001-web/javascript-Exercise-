@@ -11,10 +11,10 @@ export const videoInfo = [
     #AI #ArtificialIntelligence #Google #SundarPichai #Technology #FutureOfAI #Innovation
 
     📱 Follow & Connect:
-    Instagram: https://instagram.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername
-    X: https://x.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    Instagram: https://instagram.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web
+    X: https://x.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/2j5efujp',
@@ -75,10 +75,10 @@ Basic project structure and configuration
     #Java #JavaProgramming #Coding #Programming #JavaTutorial #LearnJava #SoftwareDevelopment
 
     📱 Connect With Me:
-    Instagram: https://instagram.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername
-    GitHub: https://github.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    Instagram: https://instagram.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web
+    GitHub: https://github.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/wm55uces',
@@ -108,9 +108,9 @@ Basic project structure and configuration
     #Motivation #LifeLessons #SelfImprovement #Success #Mindset #PersonalGrowth #Inspiration
 
     📱 Connect:
-    Instagram: https://instagram.com/yourusername
-    YouTube: https://youtube.com/@yourusername
-    LinkedIn: https://linkedin.com/in/yourusername`,
+    Instagram: https://instagram.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/mv78prx9',
@@ -136,9 +136,9 @@ Basic project structure and configuration
     #MachineLearning #AI #ArtificialIntelligence #LearnAI #Education #DeepLearning #Sleep
 
     📱 More Content:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    X: https://x.com/yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/2mrsdcv6',
@@ -163,10 +163,10 @@ Basic project structure and configuration
     #Java #SpringBoot #Microservices #SpringAI #BackendDevelopment #JavaDeveloper #SoftwareEngineering
 
     🔗 Connect:
-    GitHub: https://github.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername
-    Instagram: https://instagram.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    GitHub: https://github.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/5s88eh4k',
@@ -190,10 +190,10 @@ Basic project structure and configuration
     #India #Technology #Tech #StartupIndia #IndianStartups #Bangalore #Bengaluru #Vlog
 
     📱 Follow the Journey:
-    Instagram: https://instagram.com/yourusername
-    YouTube: https://youtube.com/@yourusername
-    X: https://x.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername`,
+    Instagram: https://instagram.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web
+    X: https://x.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/4ykwxvw6',
@@ -218,10 +218,10 @@ Basic project structure and configuration
     #CodingInterview #Algorithms #DataStructures #Programming #LeetCode #SoftwareEngineering #TechInterview
 
     🔗 Stay Connected:
-    GitHub: https://github.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername
-    Instagram: https://instagram.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    GitHub: https://github.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/4r75m9xt',
@@ -245,10 +245,10 @@ Basic project structure and configuration
     #SoftwareEngineering #Programming #SoftwareDevelopment #Coding #Developers #Tech #Engineering
 
     📱 Connect:
-    LinkedIn: https://linkedin.com/in/yourusername
-    GitHub: https://github.com/yourusername
-    X: https://x.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    LinkedIn: https://linkedin.com/in/Sanu001-web
+    GitHub: https://github.com/Sanu001-web
+    X: https://x.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/24yyfj4f',
@@ -271,8 +271,8 @@ Basic project structure and configuration
     #ChestDay #Workout #Gym #Fitness #Bodybuilding #FitnessJourney #Training #Discipline
 
     📱 Follow the Journey:
-    Instagram: https://instagram.com/yourusername
-    YouTube: https://youtube.com/@yourusername`,
+    Instagram: https://instagram.com/Sanu001-web
+    YouTube: https://youtube.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/4s367nvx',
@@ -296,10 +296,10 @@ Basic project structure and configuration
     #India #Sugar #IndianEconomy #Agriculture #Economy #GlobalEconomy #IndiaGlobalReview
 
     📱 Follow:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    X: https://x.com/yourusername
-    Facebook: https://facebook.com/yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web
+    Facebook: https://facebook.com/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/2euzjxxw',
@@ -320,9 +320,9 @@ Basic project structure and configuration
     #CasteCensus #VandeMataram #Books #History #IndianHistory #Politics #India #Reading
 
     📱 जुड़ें:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    X: https://x.com/yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/487e7ez6',
@@ -346,9 +346,9 @@ Basic project structure and configuration
     #VikasDivyakirti #Motivation #LifeLessons #SelfImprovement #Mindset #Success #PersonalGrowth
 
     📱 Connect:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    X: https://x.com/yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/wf65rt77',
@@ -372,9 +372,9 @@ Basic project structure and configuration
     #STAY #TheKidLAROI #JustinBieber #Lyrics #Music #LyricVideo #PopMusic
 
     📱 Follow:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    TikTok: https://tiktok.com/@yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    TikTok: https://tiktok.com/@Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/2phh5er7',
@@ -383,7 +383,8 @@ Basic project structure and configuration
     channelViewInfo: {
       views: '154K views',
       UploadDate: '1 years ago'
-    },videoSubscriberCount: '11m subscribers',
+    },
+    videoSubscriberCount: '11m subscribers',
     likeCount: '105k'
   },
   {
@@ -398,10 +399,10 @@ Basic project structure and configuration
     #LearnEnglish #EnglishSpeaking #EnglishFluency #SpokenEnglish #EnglishLearning #LearnEnglishOnline #CommunicationSkills
 
     📱 Connect:
-    YouTube: https://youtube.com/@yourusername
-    Instagram: https://instagram.com/yourusername
-    X: https://x.com/yourusername
-    LinkedIn: https://linkedin.com/in/yourusername`,
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web`,
     channelId: 'MarquesBrownlee',
     badges: ['New', '4K'],
     profilePic: 'https://tinyurl.com/3sw76tae',
@@ -416,6 +417,54 @@ Basic project structure and configuration
   }
 ];
 
+function formatCount(value) {
+  if (value === null || value === undefined || value === '') {
+    return '0';
+  }
+
+  const text = String(value).trim();
+  const match = text.match(/^([\d,.]+)\s*([KMBT])?/i);
+
+  if (!match) {
+    return text;
+  }
+
+  let number = Number(match[1].replace(/,/g, ''));
+  const suffix = match[2]?.toUpperCase();
+
+  if (Number.isNaN(number)) {
+    return text;
+  }
+
+  const multipliers = {
+    K: 1_000,
+    M: 1_000_000,
+    B: 1_000_000_000,
+    T: 1_000_000_000_000
+  };
+
+  if (suffix) {
+    number *= multipliers[suffix];
+  }
+
+  if (number < 1_000) {
+    return Math.floor(number).toString();
+  }
+
+  const units = [
+    { value: 1_000_000_000_000, suffix: 'T' },
+    { value: 1_000_000_000, suffix: 'B' },
+    { value: 1_000_000, suffix: 'M' },
+    { value: 1_000, suffix: 'K' }
+  ];
+
+  const unit = units.find(({ value: unitValue }) => number >= unitValue);
+  const formattedNumber = (number / unit.value)
+    .toFixed(1)
+    .replace(/\.0$/, '');
+
+  return `${formattedNumber}${unit.suffix}`;
+}
 
 export function renderVideos(videos = []) {
   const container = document.querySelector('.js-video-grid');
@@ -439,19 +488,16 @@ export function renderVideos(videos = []) {
         </div>
 
         <div class="video-info">
-        
           <p class="video-videoTitle">${video.videoTitle}</p>
-        
           <p class="video-author">${video.videoAuthor}</p>
           <p class="video-stats">
-            ${video.channelViewInfo.views} • ${video.channelViewInfo.UploadDate}
+            ${formatCount(video.channelViewInfo.views)} views • ${video.channelViewInfo.UploadDate}
           </p>
         </div>
       </div>
     </div>
   `).join('');
 }
-
 
 if (document.querySelector('.js-video-grid')) {
   renderVideos(videoInfo);
