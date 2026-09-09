@@ -2,6 +2,8 @@ import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc, joinFunc } from './subscription.js';
+import { comments } from './comments.js';
+
 
 subsFunc();
 renderHeader();
@@ -10,6 +12,7 @@ renderSidebar();
 const videoPlayer = document.querySelector('#videoPlayer');
 const videoTitle = document.querySelector('#videoTitle');
 const videoDescription = document.querySelector('#videoDescription');
+const descriptionToggle = document.querySelector('#descriptionToggle');
 const videoViews = document.querySelector('#videoViews');
 const videoUploadDate = document.querySelector('#videoUploadDate');
 const videoChannelId = document.querySelector('#videoChannelId');
@@ -306,54 +309,19 @@ saveBtn?.addEventListener('click', () => {
 });
 
 downloadBtn?.addEventListener('click', () => {
-  alert('Downloading 3%');
+  alert('Downloading 7%');
+});
+
+descriptionToggle?.addEventListener('click', () => {
+  const isExpanded = descriptionToggle.getAttribute('aria-expanded') === 'true';
+
+  videoDescription?.classList.toggle('description-collapsed', isExpanded);
+  descriptionToggle.setAttribute('aria-expanded', String(!isExpanded));
+  descriptionToggle.textContent = isExpanded ? 'Show more' : 'Show less';
 });
 
 
-// ========================================
 // COMMENTS
-// ========================================
-
-const currentUser = 'You';
-
-let comments = [
-  {
-    id: 1,
-    username: 'Alex',
-    text: 'This video was really helpful!',
-    likes: 15,
-    dislikes: 2,
-    liked: false,
-    disliked: false,
-    date: Date.now() - 1000000,
-    replies: [
-      {
-        id: 11,
-        username: 'Sarah',
-        text: 'I agree!',
-        likes: 4,
-        dislikes: 1,
-        liked: false,
-        disliked: false,
-        date: Date.now() - 500000,
-        owner: false
-      }
-    ],
-    owner: false
-  },
-  {
-    id: 2,
-    username: 'John',
-    text: 'Great explanation. Thanks for sharing.',
-    likes: 28,
-    dislikes: 1,
-    liked: false,
-    disliked: false,
-    date: Date.now() - 2000000,
-    replies: [],
-    owner: false
-  }
-];
 
 function generateId() {
   return Date.now() + Math.floor(Math.random() * 1000);
@@ -610,9 +578,8 @@ function renderReplies(comment) {
                 👎 ${reply.dislikes}
               </button>
 
-              ${
-                reply.owner
-                  ? `
+              ${reply.owner
+      ? `
                     <button
                       class="action-btn delete-btn"
                       onclick="deleteReply(${comment.id}, ${reply.id})"
@@ -620,8 +587,8 @@ function renderReplies(comment) {
                       Delete
                     </button>
                   `
-                  : ''
-              }
+      : ''
+    }
             </div>
           </div>
         </div>
@@ -684,9 +651,8 @@ function renderComments() {
             Reply
           </button>
 
-          ${
-            comment.owner
-              ? `
+          ${comment.owner
+      ? `
                 <button
                   class="action-btn delete-btn"
                   onclick="deleteComment(${comment.id})"
@@ -694,8 +660,8 @@ function renderComments() {
                   Delete
                 </button>
               `
-              : ''
-          }
+      : ''
+    }
         </div>
 
         <div id="reply-form-${comment.id}" class="reply-form">
