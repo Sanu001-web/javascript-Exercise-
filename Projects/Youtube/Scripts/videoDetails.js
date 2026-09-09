@@ -9,6 +9,8 @@ subsFunc();
 renderHeader();
 renderSidebar();
 
+
+
 const videoPlayer = document.querySelector('#videoPlayer');
 const videoTitle = document.querySelector('#videoTitle');
 const videoDescription = document.querySelector('#videoDescription');
@@ -18,6 +20,9 @@ const videoUploadDate = document.querySelector('#videoUploadDate');
 const videoChannelId = document.querySelector('#videoChannelId');
 const videoDuration = document.querySelector('#videoDuration');
 const videoBadges = document.querySelector('#videoBadges');
+const videoHashtags = document.querySelector('#videoHashtags');
+const transcriptToggle = document.querySelector('#transcriptToggle');
+const videoTranscript = document.querySelector('#videoTranscript');
 const relatedVideos = document.querySelector('#relatedVideos');
 
 const watchLaterBtn = document.querySelector('#watchLaterBtn');
@@ -151,6 +156,8 @@ function loadVideo() {
   }
 
   renderBadges();
+  renderHashtags();
+  renderTranscript();
   renderRelatedVideos();
   renderProfileImg();
   showReactionCounts();
@@ -162,6 +169,26 @@ function renderBadges() {
   videoBadges.innerHTML = (currentVideo.badges || [])
     .map(badge => `<span class="video-badge">${badge}</span>`)
     .join('');
+}
+
+function renderHashtags() {
+  if (!videoHashtags) return;
+
+  const hashtags = currentVideo.hashtags ||
+    (currentVideo.description?.match(/#[\p{L}\d_]+/gu) || []);
+
+  videoHashtags.innerHTML = hashtags
+    .map(hashtag => `<span class="video-hashtag">${hashtag}</span>`)
+    .join('');
+  videoHashtags.hidden = hashtags.length === 0;
+}
+
+function renderTranscript() {
+  if (!videoTranscript || !transcriptToggle) return;
+
+  const transcript = currentVideo.transcript ||
+    'No transcript is available for this video.';
+  videoTranscript.textContent = transcript;
 }
 
 function renderProfileImg() {
@@ -318,6 +345,15 @@ descriptionToggle?.addEventListener('click', () => {
   videoDescription?.classList.toggle('description-collapsed', isExpanded);
   descriptionToggle.setAttribute('aria-expanded', String(!isExpanded));
   descriptionToggle.textContent = isExpanded ? 'Show more' : 'Show less';
+});
+
+transcriptToggle?.addEventListener('click', () => {
+  const isExpanded = transcriptToggle.getAttribute('aria-expanded') === 'true';
+  const shouldExpand = !isExpanded;
+
+  videoTranscript.hidden = !shouldExpand;
+  transcriptToggle.setAttribute('aria-expanded', String(shouldExpand));
+  transcriptToggle.textContent = shouldExpand ? 'Hide transcript' : 'Show transcript';
 });
 
 
