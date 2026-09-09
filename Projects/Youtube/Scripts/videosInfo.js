@@ -25,7 +25,32 @@ export const videoInfo = [
       UploadDate: '6 months ago'
     },
     videoSubscriberCount: '9M subscribers',
-    likeCount: '65k'
+    likeCount: '65k',
+    hashtags: [
+      "#AI",
+      "#ArtificialIntelligence",
+      "#Google",
+      "#SundarPichai",
+      "#Technology",
+      "#FutureOfAISK",
+      "#Innovation"
+    ],
+    transcript: `Marques Brownlee: Today we're talking tech and AI with Google CEO Sundar Pichai.
+
+Sundar Pichai: AI is one of the most transformative technologies we've seen. It has the potential to change how we work, learn, build products, and interact with computers.
+
+Marques Brownlee: How do you think AI will change the way people use technology?
+
+Sundar Pichai: I think we're moving toward a world where technology becomes much more natural and useful. Instead of having to learn how to use a computer, you can increasingly communicate with it in ways that feel intuitive.
+
+Marques Brownlee: And what does that mean for the future of the internet?
+
+Sundar Pichai: AI will fundamentally change how we access information and create things. Search, productivity, education, and many other areas will evolve significantly.
+
+Marques Brownlee: There's clearly a lot happening in AI right now.
+
+Sundar Pichai: Absolutely. We're still in the early stages, and I think the next few years will be incredibly exciting.`,
+
   },
   {
     id: "video002",
