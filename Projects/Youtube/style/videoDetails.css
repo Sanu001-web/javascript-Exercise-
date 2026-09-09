@@ -174,7 +174,7 @@
 .video-description {
   max-width: 900px;
   padding: 16px;
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
   border-radius: 12px;
 }
 
@@ -187,6 +187,44 @@
   line-height: 1.6;
 
   color: #403f3f;
+  white-space: pre-line;
+}
+
+.video-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.video-hashtag {
+  color: #065fd4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.transcript-container {
+  margin-top: 16px;
+}
+
+.transcript-toggle {
+  padding: 0;
+  color: #0f0f0f;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.video-transcript {
+  max-width: 900px;
+  margin-top: 10px;
+  padding: 16px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  background: #fff;
+  color: #403f3f;
+  font-size: 14px;
+  line-height: 1.6;
   white-space: pre-line;
 }
 
