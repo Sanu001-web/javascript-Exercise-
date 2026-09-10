@@ -491,27 +491,51 @@ function formatCount(value) {
   return `${formattedNumber}${unit.suffix}`;
 }
 
-export function renderVideos(videos = []) {
-  const container = document.querySelector('.js-video-grid');
+const PAGE_SIZE = 6;
+const continueWatchingIndexes = new Set([1, 4, 7]);
 
-  if (!container) {
-    return;
-  }
+function skeletonCards(count) {
+  return Array.from({ length: count }, () => `
+    <div class="video-preview skeleton-card" aria-hidden="true">
+      <div class="skeleton-thumbnail"></div>
+      <div class="skeleton-info">
+        <div class="skeleton-avatar"></div>
+        <div class="skeleton-lines">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
 
-  container.innerHTML = videos.map((video, index) => `
-    <div class="video-preview">
+function videoCard(video, index) {
+  const isContinueWatching = continueWatchingIndexes.has(index);
+  const progress = isContinueWatching ? [35, 62, 48][index % 3] : 0;
+
+  return `
+    <div class="video-preview${isContinueWatching ? ' continue-watching-card' : ''}">
       <div class="thumbnail-row">
         <a class="video-watch" href="video.html?video=${index}">
-          <div class="video-time">${video.duration}</div>
           <img class="thumbnail" src="${video.thubmnail}" alt="${video.videoTitle}">
+          ${isContinueWatching ? `
+            <span class="continue-watching-label">Continue watching</span>
+            <span class="watch-progress" style="width: ${progress}%"></span>
+          ` : ''}
+          <div class="video-time">${video.duration}</div>
         </a>
+        <button class="video-menu-button" type="button" aria-label="More actions" aria-expanded="false">⋮</button>
+        <div class="video-menu" role="menu">
+          <button type="button" role="menuitem">Save to Watch later</button>
+          <button type="button" role="menuitem">Add to playlist</button>
+          <button type="button" role="menuitem">Not interested</button>
+          <button type="button" role="menuitem">Report</button>
+        </div>
       </div>
 
       <div class="video-info-grid">
         <div class="channel-picture">
           <img class="profile-picture" src="${video.profilePic}" alt="${video.videoAuthor}">
         </div>
-
         <div class="video-info">
           <p class="video-videoTitle">${video.videoTitle}</p>
           <p class="video-author">${video.videoAuthor}</p>
@@ -521,7 +545,67 @@ export function renderVideos(videos = []) {
         </div>
       </div>
     </div>
-  `).join('');
+  `;
+}
+
+export function renderVideos(videos = []) {
+  const container = document.querySelector('.js-video-grid');
+  if (!container) return;
+
+  let displayed = 0;
+  let loading = false;
+  container.innerHTML = skeletonCards(Math.min(PAGE_SIZE, videos.length));
+
+  const loadMoreButton = document.createElement('button');
+  loadMoreButton.className = 'load-more-button';
+  loadMoreButton.type = 'button';
+  loadMoreButton.textContent = 'Load more';
+  container.after(loadMoreButton);
+
+  const loadNextPage = () => {
+    if (loading || displayed >= videos.length) return;
+    loading = true;
+    loadMoreButton.disabled = true;
+    loadMoreButton.textContent = 'Loading...';
+
+    setTimeout(() => {
+      const nextDisplayed = Math.min(displayed + PAGE_SIZE, videos.length);
+      const start = displayed;
+      const cards = videos.slice(start, nextDisplayed).map((video, offset) =>
+        videoCard(video, start + offset)
+      ).join('');
+
+      if (displayed === 0) {
+        container.innerHTML = cards;
+      } else {
+        container.insertAdjacentHTML('beforeend', cards);
+      }
+      displayed = nextDisplayed;
+      loading = false;
+      loadMoreButton.disabled = displayed >= videos.length;
+      loadMoreButton.textContent = displayed >= videos.length ? 'No more videos' : 'Load more';
+    }, 500);
+  };
+
+  loadMoreButton.addEventListener('click', loadNextPage);
+  loadNextPage();
+
+  container.addEventListener('click', event => {
+    const menuButton = event.target.closest('.video-menu-button');
+    if (!menuButton) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const menu = menuButton.nextElementSibling;
+    const isOpen = menu.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.video-menu, .video-menu-button')) {
+      container.querySelectorAll('.video-menu.open').forEach(menu => menu.classList.remove('open'));
+      container.querySelectorAll('.video-menu-button').forEach(button => button.setAttribute('aria-expanded', 'false'));
+    }
+  });
 }
 
 if (document.querySelector('.js-video-grid')) {
