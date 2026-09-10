@@ -2,6 +2,15 @@ import { renderSidebar } from './sideBar.js';
 
 renderSidebar();
 
+const categoryButtons = document.querySelectorAll('.navi-btn');
+
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    categoryButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
 const notificationButton = document.querySelector('.notifications-icon');
 
 notificationButton?.addEventListener('click', () => {
