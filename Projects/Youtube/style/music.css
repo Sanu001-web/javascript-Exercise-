@@ -166,26 +166,7 @@ button {
   text-align: center;
 }
 
-.tooltip {
-  position: absolute;
-  top: 42px;
-  z-index: 10;
-  padding: 5px 8px;
-  border-radius: 3px;
-  background: #555;
-  color: #fff;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
 
-.icon-container:hover .tooltip,
-.search-button:hover .tooltip,
-.voice-search-button:hover .tooltip {
-  opacity: 1;
-}
 
 .sidebar {
   transform: translateX(1px);
