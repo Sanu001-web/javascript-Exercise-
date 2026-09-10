@@ -536,10 +536,31 @@ body {
   color: #0f0f0f;
 }
 
+.comments-section {
+  border-top: 1px solid #e5e5e5;
+}
+
 .comments-container {
   max-width: 850px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 28px 20px 36px;
+}
+
+.comments-container button,
+.comments-container input,
+.comments-container select {
+  font-family: inherit;
+}
+
+.comments-container .avatar {
+  width: 40px;
+  height: 40px;
+  background: #065fd4;
+}
+
+.comments-container .comment .avatar {
+  background: #606060;
+  font-size: 14px;
 }
 
 .comments-header {
@@ -551,7 +572,12 @@ body {
 
 .comments-header h2 {
   font-size: 20px;
+  font-weight: 500;
   margin: 0;
+}
+
+.comments-header h2 span {
+  font-weight: 600;
 }
 
 .sort-container {
@@ -640,8 +666,12 @@ button {
 
 .comment {
   display: flex;
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.comment:last-child {
+  margin-bottom: 0;
 }
 
 .comment-content {
@@ -678,19 +708,27 @@ button {
 }
 
 .action-btn {
+  min-height: 32px;
   background: transparent;
-  padding: 7px 10px;
-  border-radius: 20px;
+  padding: 6px 10px;
+  border-radius: 18px;
+  color: #606060;
   font-size: 13px;
+  transition: background-color .2s, color .2s;
 }
 
 .action-btn:hover {
-  background: #eee;
+  background: #f2f2f2;
 }
 
-.like-btn.liked {
+.action-btn.liked,
+.action-btn.disliked {
   color: #065fd4;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.action-btn.disliked {
+  color: #cc0000;
 }
 
 .delete-btn {
@@ -700,10 +738,10 @@ button {
 /* Replies */
 
 .replies {
-  margin-top: 15px;
-  margin-left: 20px;
-  border-left: 2px solid #eee;
-  padding-left: 15px;
+  margin-top: 16px;
+  margin-left: 4px;
+  padding-left: 20px;
+  border-left: 3px solid #f0f0f0;
 }
 
 .reply-form {
