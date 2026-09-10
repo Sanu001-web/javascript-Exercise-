@@ -1,6 +1,6 @@
-/* =========================================================
+/* 
    HEADER
-========================================================= */
+*/
 
 .header {
   height: 55px;
@@ -26,10 +26,92 @@
     color 0.3s ease;
 }
 
+/*
+CATOGARY-NAVIGATION
+*/
 
-/* =========================================================
+.category-navigation {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  right: 0;
+  z-index: 900;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 24px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  scrollbar-width: none;
+}
+
+.category-navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.navi-btn {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  color: #0f0f0f;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navi-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.navi-btn.active {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+body.dark-theme .category-navigation {
+  background-color: #202020;
+  border-bottom-color: #383838;
+}
+
+body.dark-theme .navi-btn {
+  background-color: #383838;
+  color: #fff;
+}
+
+body.dark-theme .navi-btn:hover {
+  background-color: #4a4a4a;
+}
+
+body.dark-theme .navi-btn.active {
+  background-color: #fff;
+  color: #0f0f0f;
+}
+
+@media (max-width: 600px) {
+  .category-navigation {
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .navi-btn {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+}
+
+/* 
    LEFT SECTION
-========================================================= */
+*/
 
 .left-section {
   display: flex;
@@ -56,9 +138,9 @@
 }
 
 
-/* =========================================================
+/* 
    MIDDLE SECTION
-========================================================= */
+ */
 
 .middle-section {
   flex: 1;
@@ -123,9 +205,9 @@
     0 0 0 1px #1a73e8;
 }
 
-/* =========================================================
+/* 
    SEARCH WRAPPER
-========================================================= */
+ */
 
 .search-wrapper {
   position: relative;
@@ -197,9 +279,9 @@
 }
 
 
-/* =========================================================
+/* 
    SEARCH BUTTON
-========================================================= */
+ */
 
 .search-button {
   height: 40px;
@@ -242,9 +324,9 @@
 }
 
 
-/* =========================================================
+/* 
    TOOLTIP
-========================================================= */
+ */
 
 .search-button .tooltip,
 .voice-search-button .tooltip,
@@ -294,9 +376,9 @@
 }
 
 
-/* =========================================================
+/* 
    SEARCH SUGGESTIONS DROPDOWN
-========================================================= */
+ */
 
 .search-suggestions {
   position: absolute;
@@ -366,9 +448,9 @@
 }
 
 
-/* =========================================================
+/* 
    SUGGESTION ITEM
-========================================================= */
+ */
 
 .suggestion-item {
   width: 100%;
@@ -427,9 +509,9 @@
 }
 
 
-/* =========================================================
+/* 
    REMOVE HISTORY BUTTON
-========================================================= */
+ */
 
 .remove-history {
   width: 28px;
@@ -459,9 +541,9 @@
 }
 
 
-/* =========================================================
+/* 
    RECENT SEARCH HEADER
-========================================================= */
+ */
 
 .recent-search-header {
   height: 48px;
@@ -507,9 +589,9 @@
 }
 
 
-/* =========================================================
+/* 
    EMPTY SUGGESTIONS
-========================================================= */
+ */
 
 .suggestion-empty {
   padding: 18px;
@@ -522,9 +604,9 @@
 }
 
 
-/* =========================================================
+/* 
    VOICE SEARCH
-========================================================= */
+ */
 
 .voice-search-button {
 
@@ -639,9 +721,9 @@
 }
 
 
-/* =========================================================
+/* 
    RIGHT SECTION
-========================================================= */
+ */
 
 .right-section {
 
@@ -660,9 +742,9 @@
 
 
 
-/* =========================================================
+/* 
    HEADER ICONS
-========================================================= */
+ */
 
 .upload-icon,
 .youtube-apps-icon,
@@ -697,9 +779,9 @@
 }
 
 
-/* =========================================================
+/* 
    NOTIFICATION BADGE
-========================================================= */
+ */
 
 .notify {
 
@@ -724,9 +806,9 @@
 }
 
 
-/* =========================================================
+/* 
    USER PICTURE
-========================================================= */
+*/
 
 .current-user-picture {
 
