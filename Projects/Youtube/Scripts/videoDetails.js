@@ -2,7 +2,7 @@ import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc, joinFunc } from './subscription.js';
-import { comments } from './comments.js';
+import { comments, currentUser } from './comments.js';
 
 
 subsFunc();
@@ -51,7 +51,32 @@ const urlParams = new URLSearchParams(window.location.search);
 const videoIndex = Number(urlParams.get('video')) || 0;
 const currentVideo = videoInfo[videoIndex] || videoInfo[0];
 const videoId = currentVideo.videoId || `video-${videoIndex}`;
+const commentsStorageKey = `comments-${videoId}`;
 
+function loadSavedComments() {
+  const savedComments = localStorage.getItem(commentsStorageKey);
+
+  if (!savedComments) {
+    saveComments();
+    return;
+  }
+
+  try {
+    const storedComments = JSON.parse(savedComments);
+
+    if (Array.isArray(storedComments)) {
+      comments.splice(0, comments.length, ...storedComments);
+    }
+  } catch {
+    // Keep the default comments if saved data is invalid.
+  }
+}
+
+function saveComments() {
+  localStorage.setItem(commentsStorageKey, JSON.stringify(comments));
+}
+
+loadSavedComments();
 joinFunc();
 
 function formatCount(value) {
@@ -364,7 +389,7 @@ function generateId() {
 }
 
 function findComment(commentId) {
-  return comments.find(comment => comment.id === commentId);
+  return comments.find(comment => String(comment.id) === String(commentId));
 }
 
 function addComment() {
@@ -409,7 +434,8 @@ function deleteComment(commentId) {
   if (!comment || !comment.owner) return;
 
   if (confirm('Delete this comment?')) {
-    comments = comments.filter(item => item.id !== commentId);
+    const commentIndex = comments.findIndex(item => item.id === commentId);
+    if (commentIndex !== -1) comments.splice(commentIndex, 1);
     renderComments();
   }
 }
@@ -439,14 +465,14 @@ function dislikeComment(commentId) {
   if (!comment) return;
 
   if (comment.disliked) {
-    comment.dislikes--;
+    comment.dislikes = Math.max(0, comment.dislikes - 1);
     comment.disliked = false;
   } else {
     comment.dislikes++;
     comment.disliked = true;
 
     if (comment.liked) {
-      comment.likes--;
+      comment.likes = Math.max(0, comment.likes - 1);
       comment.liked = false;
     }
   }
@@ -456,7 +482,7 @@ function dislikeComment(commentId) {
 
 function findReply(commentId, replyId) {
   const comment = findComment(commentId);
-  return comment?.replies.find(reply => reply.id === replyId);
+  return comment?.replies.find(reply => String(reply.id) === String(replyId));
 }
 
 function likeReply(commentId, replyId) {
@@ -601,15 +627,19 @@ function renderReplies(comment) {
 
             <div class="comment-actions">
               <button
-                class="action-btn like-btn"
-                onclick="likeReply(${comment.id}, ${reply.id})"
+                class="action-btn like-btn${reply.liked ? ' liked' : ''}"
+                data-comment-action="like-reply"
+                data-comment-id="${comment.id}"
+                data-reply-id="${reply.id}"
               >
                 👍 ${reply.likes}
               </button>
 
               <button
-                class="action-btn dislike-btn"
-                onclick="dislikeReply(${comment.id}, ${reply.id})"
+                class="action-btn dislike-btn${reply.disliked ? ' disliked' : ''}"
+                data-comment-action="dislike-reply"
+                data-comment-id="${comment.id}"
+                data-reply-id="${reply.id}"
               >
                 👎 ${reply.dislikes}
               </button>
@@ -618,7 +648,9 @@ function renderReplies(comment) {
       ? `
                     <button
                       class="action-btn delete-btn"
-                      onclick="deleteReply(${comment.id}, ${reply.id})"
+                      data-comment-action="delete-reply"
+                      data-comment-id="${comment.id}"
+                      data-reply-id="${reply.id}"
                     >
                       Delete
                     </button>
@@ -640,6 +672,7 @@ function renderComments() {
   if (!container || !count) return;
 
   sortComments();
+  saveComments();
   count.textContent = comments.length;
 
   if (!comments.length) {
@@ -667,22 +700,25 @@ function renderComments() {
 
         <div class="comment-actions">
           <button
-            class="action-btn like-btn"
-            onclick="likeComment(${comment.id})"
+            class="action-btn like-btn${comment.liked ? ' liked' : ''}"
+            data-comment-action="like-comment"
+            data-comment-id="${comment.id}"
           >
             👍 ${comment.likes}
           </button>
 
           <button
-            class="action-btn dislike-btn"
-            onclick="dislikeComment(${comment.id})"
+            class="action-btn dislike-btn${comment.disliked ? ' disliked' : ''}"
+            data-comment-action="dislike-comment"
+            data-comment-id="${comment.id}"
           >
             👎 ${comment.dislikes}
           </button>
 
           <button
             class="action-btn"
-            onclick="toggleReplyForm(${comment.id})"
+            data-comment-action="toggle-reply"
+            data-comment-id="${comment.id}"
           >
             Reply
           </button>
@@ -691,7 +727,8 @@ function renderComments() {
       ? `
                 <button
                   class="action-btn delete-btn"
-                  onclick="deleteComment(${comment.id})"
+                  data-comment-action="delete-comment"
+                  data-comment-id="${comment.id}"
                 >
                   Delete
                 </button>
@@ -720,6 +757,40 @@ function renderComments() {
 
 document.getElementById('sort')?.addEventListener('change', renderComments);
 
+document.getElementById('commentsList')?.addEventListener('click', event => {
+  const button = event.target.closest('[data-comment-action]');
+  if (!button) return;
+
+  const commentId = button.dataset.commentId;
+  const replyId = button.dataset.replyId;
+
+  switch (button.dataset.commentAction) {
+    case 'like-comment':
+      likeComment(commentId);
+      break;
+    case 'dislike-comment':
+      dislikeComment(commentId);
+      break;
+    case 'like-reply':
+      likeReply(commentId, replyId);
+      break;
+    case 'dislike-reply':
+      dislikeReply(commentId, replyId);
+      break;
+    case 'toggle-reply':
+      toggleReplyForm(commentId);
+      break;
+    case 'delete-comment':
+      deleteComment(commentId);
+      break;
+    case 'delete-reply':
+      deleteReply(commentId, replyId);
+      break;
+    default:
+      break;
+  }
+});
+
 
 // Inline handlers in video.html need these functions on window.
 Object.assign(window, {
@@ -734,6 +805,7 @@ Object.assign(window, {
   addReply,
   deleteReply
 });
+
 
 loadVideo();
 renderComments();
