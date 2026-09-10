@@ -68,4 +68,5 @@ export function renderSidebar() {
   `;
 
 }
+
 renderSidebar();
