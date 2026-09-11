@@ -42,8 +42,23 @@ export function renderHeader({ showSearch = true } = {}) {
 
   header.innerHTML = `
     <div class="left-section">
-      <img class="hamburger-menu icon-light" src="https://tinyurl.com/hamburger-menu" alt="Menu">
-      <img class="hamburger-menu-two icon-dark" src="https://tinyurl.com/5hfnrayk" alt="darkMenu">
+    
+        <svg 
+          class="hamburger-menu"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24" 
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          class="lucide lucide-menu">
+          <path d="M4 5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 19h16" />
+        </svg>
       <a href="index.html">
         <img class="youtube-logo" src="https://tinyurl.com/youtube-logo0" alt="YouTube">
       </a>
