@@ -513,13 +513,16 @@ body.sidebar-open {
    DARK MODE
  */
 
-body.dark-mode .header {
+.icon-dark {
+  display: none;
+}
 
-  background-color: #0f0f0f;
+.dark-theme .icon-dark {
+  display: inline;
+}
 
-  border-bottom-color: #303030;
-
-  color: white;
+.dark-theme .icon-light{
+  display: none;
 }
 
 
@@ -708,9 +711,7 @@ body.dark-mode .theme-toggle:hover {
 
 
 
-.icon-dark {
-  display: none;
-}
+
 
 .thumbnail {
   width: 100%;
