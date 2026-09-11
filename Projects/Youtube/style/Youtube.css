@@ -87,7 +87,10 @@ body {
 .search-filters::-webkit-scrollbar {
   display: none;
 }
-
+.sidebar-home-link{
+  text-decoration: none;
+  color: #000;
+}
 
 /* 
    FILTER BUTTON
