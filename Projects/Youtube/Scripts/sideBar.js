@@ -3,6 +3,8 @@ export function renderSidebar() {
   if (!sidebar) return;
 
   sidebar.innerHTML = `
+  
+ 
     <div class="sidebar-link">
       <div class="sidebar-container">
 
@@ -77,7 +79,7 @@ export function renderSidebar() {
     <div class="sidebar-link">
       <div class="sidebar-container">
         <img class="subscription icon-light" src="https://tinyurl.com/wx7s74bn">
-        <img class="subscription icon-dark" src="https://tinyurl.com/yc4wn25r">
+        <img class="subscription icon-dark" src="https://tinyurl.com/4e4p6hsk">
         <span class="sidebar-items"> Subscription</span>
       </div>
     </div>
@@ -92,8 +94,19 @@ export function renderSidebar() {
     <a href="music.html" class="music-tab-link">
       <div class="sidebar-link">
         <div class="sidebar-container">
-          <img class="yt-music icon-light" src="https://tinyurl.com/yry3tmyz">
-          <img class="yt-music icon-dark" src="https://tinyurl.com/57pxhkuc">
+           <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2" 
+            stroke-linecap="round"
+            stroke-linejoin="round" 
+            class="lucide lucide-circle-play yt-music ">
+            <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+            <circle cx="12" cy="12" r="10" />
+          </svg>   
           <span class="sidebar-items"> Music</span>
         </div>
       </div>
