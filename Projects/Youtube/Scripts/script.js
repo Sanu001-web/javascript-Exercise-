@@ -18,17 +18,22 @@ notificationButton?.addEventListener('click', () => {
 });
 
 const hamburger = document.querySelector('.hamburger-menu');
+const hamburgerTwo = document.querySelector('.hamburger-menu-two');
 const sidebar = document.querySelector('.sidebar');
+
+function toggleSidebar() {
+  const isOpen = sidebar?.classList.contains('active');
+  setSidebarState(!isOpen);
+}
 
 function setSidebarState(isOpen) {
   sidebar?.classList.toggle('active', isOpen);
   document.body.classList.toggle('sidebar-open', isOpen);
 }
 
-hamburger?.addEventListener('click', () => {
-  const isOpen = sidebar?.classList.contains('active');
-  setSidebarState(!isOpen);
-});
+hamburger?.addEventListener('click', toggleSidebar);
+hamburgerTwo?.addEventListener('click', toggleSidebar);
+
 
 const themeToggle = document.querySelector('.js-theme-toggle');
 
