@@ -4,11 +4,9 @@ export function renderSidebar() {
 
   sidebar.innerHTML = `
   
- 
+ <a class="sidebar-home-link" href="index.html">
     <div class="sidebar-link">
       <div class="sidebar-container">
-
-
         <!-- DARK MODE ICON -->
         <svg class="home-icon icon-light" 
           xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -37,6 +35,7 @@ export function renderSidebar() {
           <span class="sidebar-items"> Home</span>
       </div>
     </div>
+    </a>
 
     <div class="sidebar-link">
       <div class="sidebar-container">
