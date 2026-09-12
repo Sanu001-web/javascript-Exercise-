@@ -5,9 +5,9 @@ import { subsFunc, joinFunc } from './subscription.js';
 import { comments, currentUser } from './comments.js';
 
 
-subsFunc();
 renderHeader();
 renderSidebar();
+subsFunc();
 
 
 
@@ -264,9 +264,21 @@ function renderRelatedVideos() {
     .join('');
 }
 
+function parseCount(value) {
+  const text = String(value || '').trim();
+  const match = text.match(/([\d,.]+)\s*([KMBT])?/i);
+  if (!match) return 0;
+
+  const multipliers = { K: 1e3, M: 1e6, B: 1e9, T: 1e12 };
+  const number = Number(match[1].replace(/,/g, ''));
+  return Number.isNaN(number)
+    ? 0
+    : number * (multipliers[match[2]?.toUpperCase()] || 1);
+}
+
 let likes =
   Number(localStorage.getItem(`likes-${videoId}`)) ||
-  Number(String(currentVideo.likeCount || '').replace(/[KMBT]/gi, '')) ||
+  parseCount(currentVideo.likeCount) ||
   0;
 
 let dislikes = Number(localStorage.getItem(`dislikes-${videoId}`)) || 0;
@@ -298,9 +310,16 @@ moreOption?.addEventListener('click', () => {
 });
 
 watchLaterBtn?.addEventListener('click', () => {
-  const savedVideos = JSON.parse(
-    localStorage.getItem('watchLaterVideos') || '[]'
-  );
+  let savedVideos = [];
+
+  try {
+    const storedVideos = JSON.parse(
+      localStorage.getItem('watchLaterVideos') || '[]'
+    );
+    savedVideos = Array.isArray(storedVideos) ? storedVideos : [];
+  } catch {
+    savedVideos = [];
+  }
 
   const alreadySaved = savedVideos.some(
     video => video.videoTitle === currentVideo.videoTitle
@@ -434,7 +453,9 @@ function deleteComment(commentId) {
   if (!comment || !comment.owner) return;
 
   if (confirm('Delete this comment?')) {
-    const commentIndex = comments.findIndex(item => item.id === commentId);
+    const commentIndex = comments.findIndex(
+      item => String(item.id) === String(commentId)
+    );
     if (commentIndex !== -1) comments.splice(commentIndex, 1);
     renderComments();
   }
@@ -482,7 +503,7 @@ function dislikeComment(commentId) {
 
 function findReply(commentId, replyId) {
   const comment = findComment(commentId);
-  return comment?.replies.find(reply => String(reply.id) === String(replyId));
+  return comment?.replies?.find(reply => String(reply.id) === String(replyId));
 }
 
 function likeReply(commentId, replyId) {
@@ -536,6 +557,7 @@ function addReply(commentId) {
   const comment = findComment(commentId);
 
   if (!input || !comment) return;
+  if (!Array.isArray(comment.replies)) comment.replies = [];
 
   const text = input.value.trim();
 
@@ -567,7 +589,9 @@ function deleteReply(commentId, replyId) {
   if (!comment || !reply || !reply.owner) return;
 
   if (confirm('Delete this reply?')) {
-    comment.replies = comment.replies.filter(item => item.id !== replyId);
+    comment.replies = comment.replies.filter(
+      item => String(item.id) !== String(replyId)
+    );
     renderComments();
   }
 }
@@ -581,7 +605,8 @@ function sortComments() {
   } else {
     comments.sort(
       (a, b) =>
-        b.likes + b.replies.length - (a.likes + a.replies.length)
+        b.likes + (b.replies?.length || 0) -
+        (a.likes + (a.replies?.length || 0))
     );
   }
 }
@@ -607,7 +632,7 @@ function escapeHTML(text) {
 }
 
 function renderReplies(comment) {
-  if (!comment.replies.length) return '';
+  if (!Array.isArray(comment.replies) || !comment.replies.length) return '';
 
   return `
     <div class="replies">
