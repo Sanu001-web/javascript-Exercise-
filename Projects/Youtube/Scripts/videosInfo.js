@@ -493,6 +493,7 @@ function formatCount(value) {
 
 const PAGE_SIZE = 6;
 const continueWatchingIndexes = new Set([1, 4, 7]);
+let renderRequestId = 0;
 
 function skeletonCards(count) {
   return Array.from({ length: count }, () => `
@@ -552,9 +553,13 @@ export function renderVideos(videos = []) {
   const container = document.querySelector('.js-video-grid');
   if (!container) return;
 
+  const requestId = ++renderRequestId;
   let displayed = 0;
   let loading = false;
   container.innerHTML = skeletonCards(Math.min(PAGE_SIZE, videos.length));
+
+  // Remove the previous search's control before creating a new one.
+  container.parentElement?.querySelectorAll('.load-more-button').forEach(button => button.remove());
 
   const loadMoreButton = document.createElement('button');
   loadMoreButton.className = 'load-more-button';
@@ -569,6 +574,11 @@ export function renderVideos(videos = []) {
     loadMoreButton.textContent = 'Loading...';
 
     setTimeout(() => {
+      if (requestId !== renderRequestId) {
+        loading = false;
+        return;
+      }
+
       const nextDisplayed = Math.min(displayed + PAGE_SIZE, videos.length);
       const start = displayed;
       const cards = videos.slice(start, nextDisplayed).map((video, offset) =>
