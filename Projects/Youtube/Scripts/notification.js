@@ -7,7 +7,7 @@ const notifiChannelInfo = [
   },
   {
     profilePic: 'https://tinyurl.com/2mrsdcv6',
-    comments: "Neha Sharma commented: 'chai aur code ek dum must combination kya bolti public.'",
+    comments: "Miraa Sharma commented: 'chai aur code ek dum must combination kya bolti public.'",
     updateComments: '12 day ago',
     thumbnail: 'https://tinyurl.com/y3yf87e8'
   },
@@ -41,6 +41,8 @@ function renderNotification(notifications) {
   const notificationContainer = document.querySelector(
     '.js-comments-container-info'
   );
+
+  if (!notificationContainer) return;
 
   let notificationHTML = '';
 
