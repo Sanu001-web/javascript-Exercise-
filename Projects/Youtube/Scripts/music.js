@@ -3,6 +3,7 @@ import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc} from './subscription.js'
 
+
 renderHeader();
 renderSidebar();
 
@@ -71,6 +72,8 @@ function renderSection(title, musics, sectionClass) {
 }
 
 function renderMusic() {
+  if (!homeContent) return;
+
   const sections = [
     {
       title: "India's Biggest Hits",
