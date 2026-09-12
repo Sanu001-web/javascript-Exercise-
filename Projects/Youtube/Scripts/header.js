@@ -90,4 +90,43 @@ export function renderHeader({ showSearch = true } = {}) {
       <img class="current-user-picture" src="https://tinyurl.com/user-pictures" alt="User">
     </div>
   `;
+
+  // The header is rendered dynamically, so bind the toggle after its HTML exists.
+  initializeThemeToggle();
 }
+
+function initializeThemeToggle() {
+  const themeToggle = document.querySelector('.js-theme-toggle');
+
+  if (!themeToggle || themeToggle.dataset.themeBound === 'true') {
+    return;
+  }
+
+  themeToggle.dataset.themeBound = 'true';
+  themeToggle.addEventListener('click', () => {
+    setTheme(!document.body.classList.contains('dark-theme'));
+  });
+
+  setTheme(document.body.classList.contains('dark-theme'));
+}
+
+export function setTheme(isDark = document.body.classList.contains('dark-theme')) {
+  document.body.classList.toggle('dark-theme', isDark);
+
+  const themeToggle = document.querySelector('.js-theme-toggle');
+  if (themeToggle) {
+    themeToggle.textContent = isDark ? '☀' : '☾';
+    themeToggle.setAttribute(
+      'aria-label',
+      isDark ? 'Switch to light mode' : 'Switch to dark mode'
+    );
+  }
+
+  localStorage.setItem('dark-theme', String(isDark));
+}
+
+const savedTheme = localStorage.getItem('dark-theme') === 'true';
+setTheme(savedTheme);
+
+// Automatically render the shared header on pages that contain .js-header.
+renderHeader();
