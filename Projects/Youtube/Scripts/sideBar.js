@@ -4,9 +4,9 @@ export function renderSidebar() {
 
   sidebar.innerHTML = `
   
- <a class="sidebar-home-link" href="index.html">
+
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="index.html" class="sidebar-container js-sidebar-container">
         <!-- DARK MODE ICON -->
         <svg class="home-icon icon-light" 
           xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -33,12 +33,12 @@ export function renderSidebar() {
           <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
         </svg>
           <span class="sidebar-items"> Home</span>
-      </div>
+      </a>
     </div>
-    </a>
+
 
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="explore.html" class="sidebar-container js-sidebar-container">
        <svg 
           class="icon-light"
           xmlns="http://www.w3.org/2000/svg" 
@@ -72,47 +72,46 @@ export function renderSidebar() {
             <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
          </svg>
          <span class="sidebar-items"> Explore</span>
-      </div>
+      </a>
     </div>
 
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="subscription.html" class="sidebar-container js-sidebar-container">
         <img class="subscription icon-light" src="https://tinyurl.com/wx7s74bn">
-        <img class="subscription icon-dark" src="https://tinyurl.com/4e4p6hsk">
+        <img class="subscription icon-dark" src="https://s5.ezgif.com/tmp/ezgif-54a3b41db3504a88.png">
         <span class="sidebar-items"> Subscription</span>
-      </div>
+      </a>
     </div>
 
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="original.html" class="sidebar-container js-sidebar-container">
         <img class="original" src="https://img.icons8.com/?size=48&id=T3RtcOyeFsCq&format=png">
         <span class="sidebar-items"> Original</span>
-      </div>
+      </a>
     </div>
 
-    <a href="music.html" class="music-tab-link">
+  
       <div class="sidebar-link">
-        <div class="sidebar-container">
-           <svg xmlns="http://www.w3.org/2000/svg"
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
+        <a href="music.html" class="sidebar-container js-sidebar-container music-tab-link">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2" 
+            stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round" 
-            class="lucide lucide-circle-play yt-music ">
+            stroke-linejoin="round"
+            class="lucide lucide-circle-play yt-music">
             <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
             <circle cx="12" cy="12" r="10" />
-          </svg>   
-          <span class="sidebar-items"> Music</span>
-        </div>
+          </svg>
+          <span class="sidebar-items">Music</span>
+        </a>
       </div>
-    </a>
 
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="sport.html" class="sidebar-container js-sidebar-container">
         <svg xmlns="http://www.w3.org/2000/svg" 
           width="24" 
           height="24" 
@@ -128,11 +127,11 @@ export function renderSidebar() {
           <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" />
         </svg>
         <span class="sidebar-items"> Sport</span>
-      </div>
+      </a>
     </div>
 
     <div class="sidebar-link">
-      <div class="sidebar-container">
+      <a href="history.html" class="sidebar-container js-sidebar-container">
         <svg xmlns="http://www.w3.org/2000/svg" 
           width="24"
           height="24" 
@@ -145,7 +144,7 @@ export function renderSidebar() {
           <path d="M12 7v5l4 2" />
         </svg>
         <div class="sidebar-items">History</div>
-      </div>
+      </a>
     </div>
  
   `;
