@@ -1,4 +1,5 @@
 import { renderSidebar } from './sideBar.js';
+import {setTheme} from './header.js'
 
 renderSidebar();
 
@@ -21,6 +22,7 @@ const hamburger = document.querySelector('.hamburger-menu');
 const hamburgerTwo = document.querySelector('.hamburger-menu-two');
 const sidebar = document.querySelector('.sidebar');
 
+
 function toggleSidebar() {
   const isOpen = sidebar?.classList.contains('active');
   setSidebarState(!isOpen);
@@ -30,32 +32,25 @@ function setSidebarState(isOpen) {
   sidebar?.classList.toggle('active', isOpen);
   document.body.classList.toggle('sidebar-open', isOpen);
 }
+setSidebarState(); //Keep sidebar state after page refresh using localStorage.
 
 hamburger?.addEventListener('click', toggleSidebar);
 hamburgerTwo?.addEventListener('click', toggleSidebar);
 
+setTheme();
 
-const themeToggle = document.querySelector('.js-theme-toggle');
 
-function setTheme(isDark) {
-  document.body.classList.toggle('dark-theme', isDark);
 
-  if (themeToggle) {
-    themeToggle.textContent = isDark ? '☀' : '☾';
-    themeToggle.setAttribute(
-      'aria-label',
-      isDark ? 'Switch to light mode' : 'Switch to dark mode'
-    );
+//sidebar-active:
+
+
+const sidebarItems = document.querySelectorAll(".js-sidebar-container");
+const currentPage = window.location.pathname.split("/").pop();
+
+sidebarItems.forEach((item) => {
+  const itemPage = item.getAttribute("href");
+
+  if (itemPage === currentPage) {
+    item.classList.add("active");
   }
-
-  localStorage.setItem('dark-theme', isDark);
-}
-
-const savedTheme = localStorage.getItem('dark-theme') === 'true';
-
-setTheme(savedTheme);
-
-themeToggle?.addEventListener('click', () => {
-  const isDark = document.body.classList.contains('dark-theme');
-  setTheme(!isDark);
 });
