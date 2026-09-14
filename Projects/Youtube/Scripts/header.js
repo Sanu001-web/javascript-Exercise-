@@ -1,3 +1,18 @@
+import { loadCommentNotifications } from './comments.js';
+
+const builtInNotificationCount = 6;
+
+function getNotificationCount() {
+  return builtInNotificationCount + loadCommentNotifications().length;
+}
+
+function updateNotificationBadge() {
+  const badge = document.querySelector('.notify');
+  if (badge) {
+    badge.textContent = getNotificationCount();
+  }
+}
+
 export function renderHeader({ showSearch = true } = {}) {
   const header = document.querySelector('.js-header');
 
@@ -81,7 +96,7 @@ export function renderHeader({ showSearch = true } = {}) {
       </div>
 
       <div class="notifications-icon-container">
-        <div class="notify">6</div>
+        <div class="notify">${getNotificationCount()}</div>
 
         <img class="notifications-icon" src="https://tinyurl.com/notificaation" alt="Notifications">
           <div class="tooltip">notifications</div>
@@ -126,6 +141,10 @@ export function setTheme(isDark = document.body.classList.contains('dark-theme')
 
 const savedTheme = localStorage.getItem('dark-theme') === 'true';
 setTheme(savedTheme);
+
+// Keep the badge in sync when a comment creates a notification.
+window.addEventListener('comment-notification-added', updateNotificationBadge);
+window.addEventListener('storage', updateNotificationBadge);
 
 // Automatically render the shared header on pages that contain .js-header.
 renderHeader();
