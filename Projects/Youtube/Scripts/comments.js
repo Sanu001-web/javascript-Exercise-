@@ -1,5 +1,38 @@
 export const currentUser = 'You';
 
+export const notificationsStorageKey = 'comment-notifications';
+
+export function saveCommentNotification(notification) {
+  let notifications = [];
+
+  try {
+    const storedNotifications = JSON.parse(
+      localStorage.getItem(notificationsStorageKey) || '[]'
+    );
+    notifications = Array.isArray(storedNotifications) ? storedNotifications : [];
+  } catch {
+    notifications = [];
+  }
+
+  notifications.unshift({
+    id: Date.now() + Math.floor(Math.random() * 1000),
+    ...notification
+  });
+  localStorage.setItem(notificationsStorageKey, JSON.stringify(notifications));
+  window.dispatchEvent(new CustomEvent('comment-notification-added'));
+}
+
+export function loadCommentNotifications() {
+  try {
+    const notifications = JSON.parse(
+      localStorage.getItem(notificationsStorageKey) || '[]'
+    );
+    return Array.isArray(notifications) ? notifications : [];
+  } catch {
+    return [];
+  }
+}
+
 export let comments = [
   {
     id: 1,
