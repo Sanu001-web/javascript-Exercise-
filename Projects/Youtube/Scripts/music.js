@@ -1,11 +1,9 @@
 import { musicContent, defaultImages } from '../data/musicContent.js';
 import { renderHeader } from './header.js';
-import { renderSidebar } from './sideBar.js';
 import { subsFunc} from './subscription.js'
 
 
 renderHeader();
-renderSidebar();
 
 const subscribeButton = document.querySelector('.js-subs-button');
 const homePageButton = document.querySelector('.js-home-page');
