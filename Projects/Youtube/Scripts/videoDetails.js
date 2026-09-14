@@ -2,7 +2,7 @@ import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc, joinFunc } from './subscription.js';
-import { comments, currentUser } from './comments.js';
+import {comments,currentUser,saveCommentNotification} from './comments.js';
 
 
 renderHeader();
@@ -437,6 +437,14 @@ function addComment() {
     date: Date.now(),
     replies: [],
     owner: true
+  });
+
+  saveCommentNotification({
+    profilePic: currentVideo.profilePic,
+    comments: `${currentUser} commented: '${text}' on ${currentVideo.videoTitle}`,
+    updateComments: 'Just now',
+    thumbnail: currentVideo.thubmnail,
+    videoUrl: `video.html?video=${videoIndex}`
   });
 
   input.value = '';
