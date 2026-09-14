@@ -494,6 +494,9 @@ function formatCount(value) {
 const PAGE_SIZE = 6;
 const continueWatchingIndexes = new Set([1, 4, 7]);
 let renderRequestId = 0;
+let activeVideoGrid = null;
+let closeMenusHandler = null;
+let videoGridClickHandler = null;
 
 function skeletonCards(count) {
   return Array.from({ length: count }, () => `
@@ -513,10 +516,13 @@ function videoCard(video, index) {
   const isContinueWatching = continueWatchingIndexes.has(index);
   const progress = isContinueWatching ? [35, 62, 48][index % 3] : 0;
 
+  const videoIndex = videoInfo.indexOf(video);
+  const videoLinkIndex = videoIndex >= 0 ? videoIndex : index;
+
   return `
     <div class="video-preview${isContinueWatching ? ' continue-watching-card' : ''}">
       <div class="thumbnail-row">
-        <a class="video-watch" href="video.html?video=${index}">
+        <a class="video-watch" href="video.html?video=${videoLinkIndex}">
           <img class="thumbnail" src="${video.thubmnail}" alt="${video.videoTitle}">
           ${isContinueWatching ? `
             <span class="continue-watching-label">Continue watching</span>
@@ -556,6 +562,24 @@ export function renderVideos(videos = []) {
   const requestId = ++renderRequestId;
   let displayed = 0;
   let loading = false;
+
+  if (closeMenusHandler) {
+    document.removeEventListener('click', closeMenusHandler);
+  }
+
+  closeMenusHandler = event => {
+    if (!event.target.closest('.video-menu, .video-menu-button')) {
+      activeVideoGrid?.querySelectorAll('.video-menu.open').forEach(menu => {
+        menu.classList.remove('open');
+      });
+      activeVideoGrid?.querySelectorAll('.video-menu-button').forEach(button => {
+        button.setAttribute('aria-expanded', 'false');
+      });
+    }
+  };
+
+  activeVideoGrid = container;
+  document.addEventListener('click', closeMenusHandler);
   container.innerHTML = skeletonCards(Math.min(PAGE_SIZE, videos.length));
 
   // Remove the previous search's control before creating a new one.
@@ -586,7 +610,12 @@ export function renderVideos(videos = []) {
       ).join('');
 
       if (displayed === 0) {
-        container.innerHTML = cards;
+        container.innerHTML = cards || `
+          <div class="no-results">
+            <h2>No videos found</h2>
+            <p>Try a different search term.</p>
+          </div>
+        `;
       } else {
         container.insertAdjacentHTML('beforeend', cards);
       }
@@ -600,22 +629,22 @@ export function renderVideos(videos = []) {
   loadMoreButton.addEventListener('click', loadNextPage);
   loadNextPage();
 
-  container.addEventListener('click', event => {
+  if (videoGridClickHandler) {
+    container.removeEventListener('click', videoGridClickHandler);
+  }
+
+  videoGridClickHandler = event => {
     const menuButton = event.target.closest('.video-menu-button');
-    if (!menuButton) return;
+    if (!menuButton || !container.contains(menuButton)) return;
+
     event.preventDefault();
     event.stopPropagation();
     const menu = menuButton.nextElementSibling;
     const isOpen = menu.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', isOpen);
-  });
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  };
 
-  document.addEventListener('click', event => {
-    if (!event.target.closest('.video-menu, .video-menu-button')) {
-      container.querySelectorAll('.video-menu.open').forEach(menu => menu.classList.remove('open'));
-      container.querySelectorAll('.video-menu-button').forEach(button => button.setAttribute('aria-expanded', 'false'));
-    }
-  });
+  container.addEventListener('click', videoGridClickHandler);
 }
 
 if (document.querySelector('.js-video-grid')) {
