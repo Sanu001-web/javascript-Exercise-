@@ -1,3 +1,5 @@
+import { loadCommentNotifications } from './comments.js';
+
 const notifiChannelInfo = [
   {
     profilePic: 'https://tinyurl.com/4wtvze3d',
@@ -37,6 +39,17 @@ const notifiChannelInfo = [
 
 ];
 
+function notificationQuant(savedNotifications = loadCommentNotifications()) {
+  // Six notifications are built in; add every comment notification saved by the user.
+  return notifiChannelInfo.length + savedNotifications.length;
+}
+
+function escapeHTML(text) {
+  const div = document.createElement('div');
+  div.textContent = text ?? '';
+  return div.innerHTML;
+}
+
 function renderNotification(notifications) {
   const notificationContainer = document.querySelector(
     '.js-comments-container-info'
@@ -59,15 +72,15 @@ function renderNotification(notifications) {
 
       <div class="comments-container">
         <div class="comments">
-          ${notify.comments}
+          ${escapeHTML(notify.comments)}
         </div>
         <div class="update-comments">
-          ${notify.updateComments}
+          ${escapeHTML(notify.updateComments)}
         </div>
       </div>
 
       <div class="video-thumbnail-container">
-      <a href="index.html">
+      <a href="${notify.videoUrl || 'index.html'}">
         <img
           class="video-thumbnail"
           src="${notify.thumbnail}"
@@ -82,4 +95,12 @@ function renderNotification(notifications) {
   notificationContainer.innerHTML = notificationHTML;
 }
 
-renderNotification(notifiChannelInfo);
+const savedNotifications = loadCommentNotifications();
+const totalNotifications = notificationQuant(savedNotifications);
+
+const notificationTitle = document.querySelector('.noty');
+if (notificationTitle) {
+  notificationTitle.textContent = `Notification (${totalNotifications})`;
+}
+
+renderNotification([...savedNotifications, ...notifiChannelInfo]);
