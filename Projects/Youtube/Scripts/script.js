@@ -48,8 +48,23 @@ setSidebarState(savedSidebarState); // Keep sidebar state after page refresh.
 
 // Use delegation because header.js creates the hamburger with innerHTML.
 document.addEventListener('click', (event) => {
-  if (event.target.closest('.hamburger-menu, .hamburger-menu-two')) {
+  const target = event.target;
+
+  if (target.closest('.hamburger-menu, .hamburger-menu-two')) {
     toggleSidebar();
+    return;
+  }
+
+  // On mobile, clicking anywhere outside the open sidebar closes it.
+  const sidebar = document.querySelector('.js-sidebarss');
+  const isMobile = window.matchMedia('(max-width: 549px)').matches;
+
+  if (
+    isMobile &&
+    sidebar?.classList.contains('active') &&
+    !sidebar.contains(target)
+  ) {
+    setSidebarState(false);
   }
 });
 
