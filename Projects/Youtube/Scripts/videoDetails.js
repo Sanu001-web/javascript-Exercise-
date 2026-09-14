@@ -48,7 +48,11 @@ const shareTwitterBtn = document.querySelector('#shareTwitterBtn');
 const shareWhatsAppBtn = document.querySelector('#shareWhatsAppBtn');
 
 const urlParams = new URLSearchParams(window.location.search);
-const videoIndex = Number(urlParams.get('video')) || 0;
+const requestedVideoIndex = Number.parseInt(urlParams.get('video') ?? '', 10);
+const videoIndex = Number.isInteger(requestedVideoIndex) &&
+  requestedVideoIndex >= 0 && requestedVideoIndex < videoInfo.length
+  ? requestedVideoIndex
+  : 0;
 const currentVideo = videoInfo[videoIndex] || videoInfo[0];
 const videoId = currentVideo.videoId || `video-${videoIndex}`;
 const commentsStorageKey = `comments-${videoId}`;
