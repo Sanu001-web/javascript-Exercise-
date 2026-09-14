@@ -53,8 +53,7 @@ export function renderHeader({ showSearch = true } = {}) {
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round" 
-          stroke-linejoin="round"
-          class="lucide lucide-menu">
+          stroke-linejoin="round">
           <path d="M4 5h16" />
           <path d="M4 12h16" />
           <path d="M4 19h16" />
