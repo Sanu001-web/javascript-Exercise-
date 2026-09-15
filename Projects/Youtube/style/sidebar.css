@@ -82,7 +82,11 @@ body.dark-theme .sidebar-container.active {
   width: 100%;
 }
 
+
+
 @media (min-width: 550px) {
+  
+
   body {
     padding-left: 20px;
   }
@@ -116,14 +120,8 @@ body.dark-theme .sidebar-container.active {
     align-items: center;
     column-gap: 16px;
     padding: 0 16px;
-
   }
 
-  .sidebar-container:hover {
-    /* border-radius: 10px; */
-    height: 100%;
-    width: 100%;
-  }
 
   .sidebar-link img {
     width: 24px;
@@ -147,6 +145,5 @@ body.dark-theme .sidebar-container.active {
   .sidebar-items {
     display: block;
   }
-
 
 }
