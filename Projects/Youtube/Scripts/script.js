@@ -12,6 +12,30 @@ categoryButtons.forEach(button => {
   });
 });
 
+const categoryNavigation = document.querySelector('.category-navigation');
+const previousCategoryButton = document.querySelector('.category-scroll-button--previous');
+const nextCategoryButton = document.querySelector('.category-scroll-button--next');
+
+function updateCategoryScrollButtons() {
+  if (!categoryNavigation || !previousCategoryButton || !nextCategoryButton) return;
+
+  const maxScroll = categoryNavigation.scrollWidth - categoryNavigation.clientWidth;
+  previousCategoryButton.disabled = categoryNavigation.scrollLeft <= 1;
+  nextCategoryButton.disabled = categoryNavigation.scrollLeft >= maxScroll - 1;
+}
+
+previousCategoryButton?.addEventListener('click', () => {
+  categoryNavigation?.scrollBy({ left: -320, behavior: 'smooth' });
+});
+
+nextCategoryButton?.addEventListener('click', () => {
+  categoryNavigation?.scrollBy({ left: 320, behavior: 'smooth' });
+});
+
+categoryNavigation?.addEventListener('scroll', updateCategoryScrollButtons, { passive: true });
+window.addEventListener('resize', updateCategoryScrollButtons);
+updateCategoryScrollButtons();
+
 const notificationButton = document.querySelector('.notifications-icon');
 
 notificationButton?.addEventListener('click', () => {
