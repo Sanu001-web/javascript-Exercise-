@@ -101,10 +101,12 @@ export function renderHeader({ showSearch = true } = {}) {
         <img class="notifications-icon" src="https://tinyurl.com/notificaation" alt="Notifications">
           <div class="tooltip">notifications</div>
       </div>
+      <a href="profile.html">
       <img class="current-user-picture" src="https://tinyurl.com/user-pictures" alt="User">
+      </a>
     </div>
   `;
-
+  // <button class="sign-btn" type="submit">Sign in</button>  
   // The header is rendered dynamically, so bind the toggle after its HTML exists.
   initializeThemeToggle();
 }
