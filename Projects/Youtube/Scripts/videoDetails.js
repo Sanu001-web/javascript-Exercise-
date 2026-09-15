@@ -2,7 +2,7 @@ import { videoInfo } from './videosInfo.js';
 import { renderHeader } from './header.js';
 import { renderSidebar } from './sideBar.js';
 import { subsFunc, joinFunc } from './subscription.js';
-import {comments,currentUser,saveCommentNotification} from './comments.js';
+import { comments, currentUser, saveCommentNotification } from './comments.js';
 
 
 renderHeader();
