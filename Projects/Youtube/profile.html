@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/profile.css" type="text/css" media="all" />
+
+</head>
+
+<body>
+  <div class="header js-header">
+    <!-- nothing -->
+  </div>
+  <nav class="category-navigation" aria-label="Video categories">
+    <button class="navi-btn active" type="button">All</button>
+    <a href="music.html" class="music-tab-link">
+      <button class="navi-btn" type="button">Music</button>
+    </a>
+    <button class="navi-btn" type="button">AI</button>
+    <button class="navi-btn" type="button">Computer programming</button>
+    <button class="navi-btn" type="button">Reverberation</button>
+    <button class="navi-btn" type="button">Mixes</button>
+    <button class="navi-btn" type="button">Podcasts</button>
+    <button class="navi-btn" type="button">Live</button>
+    <button class="navi-btn" type="button">Romantic Music</button>
+    <button class="navi-btn" type="button">JEE Main</button>
+    <button class="navi-btn" type="button">Indian pop music</button>
+    <button class="navi-btn" type="button">Electromotive force</button>
+    <button class="navi-btn" type="button">Playlists</button>
+    <button class="navi-btn" type="button">Smartphones</button>
+    <button class="navi-btn" type="button">Study Skills</button>
+    <button class="navi-btn" type="button">Physical Chemistry</button>
+    <button class="navi-btn" type="button">Ghazal</button>
+    <button class="navi-btn" type="button">Thoughts</button>
+    <button class="navi-btn" type="button">Electrical Engineering</button>
+    <button class="navi-btn" type="button">Recently uploaded</button>
+    <button class="navi-btn" type="button">Watched</button>
+  </nav>
+  <div class="sidebar js-sidebar js-sidebarss">
+    <!-- nothing -->
+  </div>
+
+ <!-- ================= MAIN ================= -->
+
+    <main class="profile-main">
+
+        <!-- CHANNEL COVER -->
+
+        <section class="channel-cover">
+
+            <div class="cover-background"></div>
+
+        </section>
+
+
+        <!-- ================= CHANNEL INFORMATION ================= -->
+
+        <section class="channel-information">
+
+            <div class="channel-profile-picture">
+
+                <img
+                    id="profileImage"
+                    src="https://tinyurl.com/bdharchm"
+                    alt="Profile picture"
+                >
+
+            </div>
+
+
+            <div class="channel-details">
+
+                <h1 id="profileUsername">
+                    My YouTube Channel
+                </h1>
+
+                <p id="profileHandle">
+                    @mychannel
+                </p>
+
+                <p class="subscriber-text">
+                    <span id="subscriberCount">1,250</span>
+                    subscribers
+                    •
+                    Joined
+                    <span id="joinedDate">2025</span>
+                </p>
+
+                <p id="profileDescription">
+                    Welcome to my YouTube channel!
+                    Here you can find videos, shorts,
+                    live streams and more.
+                </p>
+
+            </div>
+
+
+            <div class="channel-actions">
+
+                <button
+                    class="edit-profile-button"
+                    onclick="openEditProfile()"
+                >
+                    Edit profile
+                </button>
+
+                <button
+                    class="subscribe-button"
+                    onclick="subscribeChannel()"
+                >
+                    Subscribe
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHANNEL TABS ================= -->
+
+        <nav class="channel-tabs">
+
+            <button
+                class="channel-tab active"
+                onclick="showChannelTab('home', this)"
+            >
+                Home
+            </button>
+
+            <button
+                class="channel-tab"
+                onclick="showChannelTab('videos', this)"
+            >
+                Videos
+            </button>
+
+            <button
+                class="channel-tab"
+                onclick="showChannelTab('shorts', this)"
+            >
+                Shorts
+            </button>
+
+            <button
+                class="channel-tab"
+                onclick="showChannelTab('live', this)"
+            >
+                Live
+            </button>
+
+            <button
+                class="channel-tab"
+                onclick="showChannelTab('playlists', this)"
+            >
+                Playlists
+            </button>
+
+            <button
+                class="channel-tab"
+                onclick="showChannelTab('community', this)"
+            >
+                Community
+            </button>
+
+        </nav>
+
+
+        <!-- ================= CHANNEL CONTENT ================= -->
+
+        <section class="channel-content">
+
+
+            <!-- HOME -->
+
+            <div
+                id="home"
+                class="channel-tab-content active-content"
+            >
+
+                <h2>Home</h2>
+
+                <div class="channel-home-grid">
+
+                    <div class="channel-card">
+                        <div class="fake-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>Welcome to my channel</h3>
+
+                        <p>
+                            This is my first YouTube video.
+                        </p>
+                    </div>
+
+                    <div class="channel-card">
+                        <div class="fake-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>My latest video</h3>
+
+                        <p>
+                            Check out my newest content.
+                        </p>
+                    </div>
+
+                    <div class="channel-card">
+                        <div class="fake-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>Best moments</h3>
+
+                        <p>
+                            Some of my favorite moments.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEOS -->
+
+            <div
+                id="videos"
+                class="channel-tab-content"
+            >
+
+                <h2>Videos</h2>
+
+                <div id="videosContainer" class="video-grid">
+
+                    <div class="video-item">
+                        <div class="fake-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>My YouTube Video</h3>
+
+                        <p>1.2K views • 2 days ago</p>
+                    </div>
+
+                    <div class="video-item">
+                        <div class="fake-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>Another Video</h3>
+
+                        <p>850 views • 1 week ago</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHORTS -->
+
+            <div
+                id="shorts"
+                class="channel-tab-content"
+            >
+
+                <h2>Shorts</h2>
+
+                <div class="shorts-grid">
+
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            ▶
+                        </div>
+
+                        <p>My first short</p>
+                    </div>
+
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            ▶
+                        </div>
+
+                        <p>Funny short</p>
+                    </div>
+
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            ▶
+                        </div>
+
+                        <p>Quick tutorial</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIVE -->
+
+            <div
+                id="live"
+                class="channel-tab-content"
+            >
+
+                <h2>Live</h2>
+
+                <div class="empty-channel">
+
+                    <div class="empty-icon">
+                        🔴
+                    </div>
+
+                    <h3>No live streams</h3>
+
+                    <p>
+                        Your upcoming and previous live streams
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLAYLISTS -->
+
+            <div
+                id="playlists"
+                class="channel-tab-content"
+            >
+
+                <h2>Playlists</h2>
+
+                <div class="playlist-grid">
+
+                    <div class="playlist-card">
+
+                        <div class="playlist-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>My Favorites</h3>
+
+                        <p>10 videos</p>
+
+                    </div>
+
+                    <div class="playlist-card">
+
+                        <div class="playlist-thumbnail">
+                            ▶
+                        </div>
+
+                        <h3>Watch Later</h3>
+
+                        <p>15 videos</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMMUNITY -->
+
+            <div
+                id="community"
+                class="channel-tab-content"
+            >
+
+                <h2>Community</h2>
+
+                <div class="community-post">
+
+                    <div class="community-user">
+
+                        <img
+                            id="communityProfileImage"
+                            src="https://tinyurl.com/bdharchm"
+                        >
+
+                        <strong id="communityUsername">
+                            My YouTube Channel
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Welcome to my community!
+                        What kind of videos should I make next?
+                    </p>
+
+                    <div class="community-actions">
+                        👍 Like
+                        &nbsp;&nbsp;
+                        💬 Comment
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section
+            id="dashboard"
+            class="dashboard-section"
+        >
+
+            <div class="dashboard-header">
+
+                <h2>Channel Dashboard</h2>
+
+                <p>
+                    Manage your channel and view performance.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card">
+
+                    <span class="dashboard-icon">
+                        👥
+                    </span>
+
+                    <h3>Subscribers</h3>
+
+                    <strong id="dashboardSubscribers">
+                        1,250
+                    </strong>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <span class="dashboard-icon">
+                        ▶
+                    </span>
+
+                    <h3>Total videos</h3>
+
+                    <strong>
+                        24
+                    </strong>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <span class="dashboard-icon">
+                        👁
+                    </span>
+
+                    <h3>Total views</h3>
+
+                    <strong>
+                        25.4K
+                    </strong>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <span class="dashboard-icon">
+                        ❤️
+                    </span>
+
+                    <h3>Likes</h3>
+
+                    <strong>
+                        4.8K
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="account-section">
+
+                <h2>Account</h2>
+
+                <p>
+                    Manage your simulated YouTube account.
+                </p>
+
+                <div class="account-buttons">
+
+                    <button
+                        class="login-button"
+                        onclick="openLoginModal()"
+                    >
+                        Login
+                    </button>
+
+                    <button
+                        class="logout-button"
+                        onclick="logoutUser()"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+                <p id="loginStatus">
+                    Checking login status...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= EDIT PROFILE MODAL ================= -->
+
+    <div
+        id="editProfileModal"
+        class="modal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="close-modal"
+                onclick="closeEditProfile()"
+            >
+                ×
+            </button>
+
+            <h2>Edit profile</h2>
+
+            <label>
+                Username
+            </label>
+
+            <input
+                id="editUsername"
+                type="text"
+                placeholder="Enter username"
+            >
+
+
+            <label>
+                Profile picture URL
+            </label>
+
+            <input
+                id="editProfileImage"
+                type="text"
+                placeholder="Paste image URL"
+            >
+
+
+            <label>
+                Subscriber count
+            </label>
+
+            <input
+                id="editSubscribers"
+                type="number"
+                min="0"
+            >
+
+
+            <label>
+                Channel description
+            </label>
+
+            <textarea
+                id="editDescription"
+                placeholder="Tell viewers about your channel"
+            ></textarea>
+
+
+            <button
+                class="save-profile-button"
+                onclick="saveProfile()"
+            >
+                Save changes
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= LOGIN MODAL ================= -->
+
+    <div
+        id="loginModal"
+        class="modal"
+    >
+
+        <div class="modal-box login-box">
+
+            <button
+                class="close-modal"
+                onclick="closeLoginModal()"
+            >
+                ×
+            </button>
+
+            <h2>Sign in</h2>
+
+            <p>
+                This is a simulated login.
+                No real Google account is used.
+            </p>
+
+
+            <label>
+                Username
+            </label>
+
+            <input
+                id="loginUsername"
+                type="text"
+                placeholder="Enter username"
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="Enter email"
+            >
+
+
+            <button
+                class="save-profile-button"
+                onclick="loginUser()"
+            >
+                Sign in
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+  <script src="scripts/header.js" type="module"></script>
+  <script src="scripts/sideBar.js" type="module"></script>
+  <script src="scripts/script.js" type="module"></script>
+  <script src="scripts/profile.js"></script>
+  
+</body>
+
+</html>
