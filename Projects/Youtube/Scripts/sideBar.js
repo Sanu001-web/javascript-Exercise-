@@ -76,7 +76,22 @@ export function renderSidebar() {
     <div class="sidebar-link">
       <a href="subscription.html" class="sidebar-container js-sidebar-container">
         <img class="subscription icon-light" src="https://tinyurl.com/wx7s74bn">
-        <img class="subscription icon-dark" src="https://s5.ezgif.com/tmp/ezgif-54a3b41db3504a88.png">
+        <img class="subscription icon-dark" src="data:image/png;base64,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
+            70mPl+5T5L1EpdVIIMFU2nhoEIkADSpWsJgKsEl
+            /Py0aAjogjwAjQkYBj9QMAAAD//9chIDcAAAAGSURBVAMAMUNL7DYY/64AAAAASUVORK5CYII="
+          >
         <span class="sidebar-items"> Subscription</span>
       </a>
     </div>
@@ -149,3 +164,4 @@ export function renderSidebar() {
 
 }
 
+renderSidebar();
