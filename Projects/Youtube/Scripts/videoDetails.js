@@ -442,7 +442,7 @@ function addComment() {
   saveCommentNotification({
     profilePic: currentVideo.profilePic,
     comments: `${currentUser} commented: '${text}' on ${currentVideo.videoTitle}`,
-    updateComments: 'Just now',
+    createdAt: new Date().toISOString(),
     thumbnail: currentVideo.thubmnail,
     videoUrl: `video.html?video=${videoIndex}`
   });
