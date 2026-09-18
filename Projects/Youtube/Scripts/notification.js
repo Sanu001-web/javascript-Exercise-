@@ -5,39 +5,88 @@ const notifiChannelInfo = [
     profilePic: 'https://tinyurl.com/4wtvze3d',
     comments: "Jackk Mass commented: 'algorithm concepts are fantastic.'",
     updateComments: '1 day ago',
-    thumbnail: 'https://tinyurl.com/bdupmpw6'
+    thumbnail: 'https://tinyurl.com/bdupmpw6',
+    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/2mrsdcv6',
     comments: "Miraa Sharma commented: 'chai aur code ek dum must combination kya bolti public.'",
     updateComments: '12 day ago',
-    thumbnail: 'https://tinyurl.com/y3yf87e8'
+    thumbnail: 'https://tinyurl.com/y3yf87e8',
+    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/4yvu6ka3',
     comments: "Nick commented: 'Pahle chai bna leta hu fir chai ke saath video dekhunga .'",
     updateComments: '6 minutes ago',
-    thumbnail: 'https://tinyurl.com/3239aswr'
+    thumbnail: 'https://tinyurl.com/3239aswr',
+    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/3tjyyd2y',
     comments: "Vikash verma commented: ' This is the example of Good Teacher, project end at 30 mins but he add intervalId null to cleanup the memoryvand make this project more.'",
     updateComments: '15 day ago',
-    thumbnail: 'https://tinyurl.com/2yzt95s7'
+    thumbnail: 'https://tinyurl.com/2yzt95s7',
+    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/bdrhsadj',
     comments: "Jackk Mass commented: 'behtareen behtareen .'",
     updateComments: '5 months ago',
-    thumbnail: 'https://tinyurl.com/y3yf87e8'
+    thumbnail: 'https://tinyurl.com/y3yf87e8',
+    createdAt: new Date().toISOString()
+
   }, {
     profilePic: 'https://tinyurl.com/3tjyyd2y',
     comments: "Aman khan commented: 'Goat of web development is back 🐐.'",
     updateComments: '15 day ago',
-    thumbnail: 'https://tinyurl.com/2yzt95s7'
+    thumbnail: 'https://tinyurl.com/2yzt95s7',
+    createdAt: new Date().toISOString()
   },
 
 ];
+
+// Display notification dates in a YouTube-style relative format.
+function formatNotificationDate(createdAt, fallback = 'Unknown date') {
+  const date = new Date(createdAt);
+
+  if (Number.isNaN(date.getTime())) {
+    return fallback;
+  }
+
+  const now = new Date();
+  const seconds = Math.max(0, Math.floor((now - date) / 1000));
+
+  if (seconds < 60) return 'Just now';
+
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) {
+    return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+  }
+
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) {
+    return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+  }
+
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const calendarDays = Math.floor((startOfToday - startOfDate) / 86_400_000);
+
+  if (calendarDays === 0) return 'Today';
+  if (calendarDays === 1) return 'Yesterday';
+  if (calendarDays < 30) {
+    return `${calendarDays} day${calendarDays === 1 ? '' : 's'} ago`;
+  }
+
+  const months = Math.floor(calendarDays / 30);
+  if (months < 12) {
+    return `${months} month${months === 1 ? '' : 's'} ago`;
+  }
+
+  const years = Math.floor(calendarDays / 365);
+  return `${years} year${years === 1 ? '' : 's'} ago`;
+}
 
 function notificationQuant(savedNotifications = loadCommentNotifications()) {
   // Six notifications are built in; add every comment notification saved by the user.
@@ -74,8 +123,8 @@ function renderNotification(notifications) {
         <div class="comments">
           ${escapeHTML(notify.comments)}
         </div>
-        <div class="update-comments">
-          ${escapeHTML(notify.updateComments)}
+        <div class="update-comments js-update-comments">
+          ${escapeHTML(formatNotificationDate(notify.createdAt, notify.updateComments))}
         </div>
       </div>
 
@@ -104,3 +153,4 @@ if (notificationTitle) {
 }
 
 renderNotification([...savedNotifications, ...notifiChannelInfo]);
+
