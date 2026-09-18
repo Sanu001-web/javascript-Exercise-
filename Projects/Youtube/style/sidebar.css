@@ -71,6 +71,7 @@ body.dark-theme .sidebar-link:hover,
 body.dark-theme .sidebar-container.active {
   background-color: #383838;
   color: #fff;
+  border-radius: 0;
 }
 
 .sidebar-container.active {
