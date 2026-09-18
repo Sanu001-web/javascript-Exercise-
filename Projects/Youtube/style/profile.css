@@ -280,11 +280,11 @@ body {
   width: 100%;
 
   aspect-ratio: 16 / 9;
-
-  background:
+  background-image: url('https://tinyurl.com/bdharchm');
+  /* background:
     linear-gradient(135deg,
       #333,
-      #111);
+      #111); */
 
   color: white;
 
@@ -524,6 +524,7 @@ body {
  */
 
 .account-section {
+  overflow: hidden;
   margin-top: 35px;
 
   padding: 25px;
@@ -534,6 +535,8 @@ body {
 }
 
 .account-section p {
+  margin-top: 5px;
+  margin-bottom: 0;
   color: #606060;
 }
 
@@ -678,6 +681,26 @@ body {
 
   cursor: pointer;
 }
+
+/* 
+Dark Mode
+*/
+
+.dark-theme .channel-details p {
+  color: #757373;
+  ;
+}
+
+.dark-theme #profileDescription,
+.dark-theme .channel-card p {
+  color: #aba3a3;
+}
+
+.dark-theme .channel-tab.active,
+.dark-theme .account-section p {
+  color: #bbbcbd;
+}
+
 
 
 /* 
