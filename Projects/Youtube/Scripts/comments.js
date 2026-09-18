@@ -16,7 +16,8 @@ export function saveCommentNotification(notification) {
 
   notifications.unshift({
     id: Date.now() + Math.floor(Math.random() * 1000),
-    ...notification
+    ...notification,
+    createdAt: notification.createdAt || new Date().toISOString()
   });
   localStorage.setItem(notificationsStorageKey, JSON.stringify(notifications));
   window.dispatchEvent(new CustomEvent('comment-notification-added'));
