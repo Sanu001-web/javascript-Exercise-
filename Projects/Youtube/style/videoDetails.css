@@ -246,6 +246,21 @@
 }
 
 
+/*Dark Mode*/
+
+body.dark-theme .comments-container ,body.dark-theme .related-videos-section {
+
+  color: #ffffff;
+}
+body.dark-theme .related-video-title{
+
+  color: #ffffff;
+}
+body.dark-theme .cancel-btn {
+  color: #fff;
+}
+
+
 /* 
    VIDEO BADGES
  */
@@ -408,7 +423,7 @@
 }
 
 .like-btn {
-   display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -418,7 +433,7 @@
 }
 
 .dislike-btn {
-   display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -426,7 +441,8 @@
   border-bottom-right-radius: 20px;
 }
 
-.like-btn span,.dislike-btn span {
+.like-btn span,
+.dislike-btn span {
   margin-left: 5px;
 }
 
@@ -695,6 +711,10 @@ button {
   font-size: 13px;
 }
 
+body.dark-theme .date{
+  color: #a1a1a1;
+}
+
 .comment-text {
   margin: 5px 0 10px;
   line-height: 1.5;
@@ -913,7 +933,7 @@ button {
 
   font-size: 14px;
 
-  color: #606060;
+  color: #bbbbbb;
 }
 
 .related-video-stats {
@@ -921,7 +941,7 @@ button {
 
   font-size: 13px;
 
-  color: #606060;
+  color: #bbbbbb;
 }
 
 
