@@ -87,10 +87,11 @@ body {
 .search-filters::-webkit-scrollbar {
   display: none;
 }
+/* 
 .sidebar-home-link{
   text-decoration: none;
   color: #000;
-}
+} */
 
 /* 
    FILTER BUTTON
@@ -957,8 +958,7 @@ body.dark-theme .theme-toggle {
   border-color: #555;
 }
 
-body.dark-theme .theme-toggle:hover,
-body.dark-theme .sidebar-link:hover {
+body.dark-theme .theme-toggle:hover {
   background-color: #4a4a4a;
 }
 
