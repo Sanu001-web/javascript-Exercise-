@@ -1,150 +1,136 @@
-body.sidebar-open {
-  padding-left: 70px;
-  padding-top: 120px;
-}
-
+/* Sidebar is closed until JavaScript adds the .active class. */
 .sidebar {
   position: fixed;
+  top: 111px;
   left: 0;
   bottom: 0;
-  top: 111px;
-  background-color: white;
+  z-index: 950;
+
   width: 72px;
-  z-index: 200;
+  padding: 8px;
+  overflow-y: auto;
+  background-color: #ffffff;
   transform: translateX(-100%);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .sidebar.active {
   transform: translateX(0);
 }
 
-.sidebar-link {
-  height: 76px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
+/* Move the page content when the full sidebar is open. */
+body.sidebar-open {
+  padding-left: 90px;
 }
 
-.sidebar-link:hover {
-  background-color: rgb(235, 235, 235);
-  cursor: pointer;
+.sidebar-link {
+  width: 100%;
+  height: 64px;
+  margin-bottom: 2px;
+  border-radius: 8px;
 }
 
 .sidebar-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+
+  color: #000000;
   text-decoration: none;
-  color: #000;
-
+  border-radius: 8px;
 }
 
-.music-tab-link {
-  text-decoration: none;
-  color: #000;
+.sidebar-container:hover,
+.sidebar-link:hover {
+  background-color: #eeeeee;
 }
 
-.sidebar-link img {
-  height: 25px;
-  margin-bottom: 4px;
-}
-
-.sidebar-link a {
-  font-size: 10px;
+/* This class is added to the current page link by script.js. */
+.sidebar-container.active {
+  background-color: #e5e5e5;
   font-weight: 500;
 }
 
-body.dark-theme .sidebar {
-  background-color: #202020;
-  border-color: #383838;
+.sidebar-container svg,
+.sidebar-container img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-body.dark-theme .sidebar-container {
-  color: #fff;
+.sidebar-items {
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-body.dark-theme .sidebar-link:hover,
-body.dark-theme .sidebar-container.active {
-  background-color: #383838;
-  color: #fff;
-  border-radius: 0;
-}
-
-.sidebar-container.active {
-  background-color: #e5e5e5;
-  color: #000;
-  font-weight: 600;
-  border-radius: 8px;
-  height: 100%;
-  width: 100%;
-}
-
-
-
-@media (min-width: 550px) {
-  
-
-  body {
-    padding-left: 20px;
-  }
-
+/* Full sidebar on larger screens. */
+@media (min-width: 680px) {
   body.sidebar-open {
-    padding-left: 250px;
+    padding-left: 260px;
   }
 
   .sidebar {
     width: 240px;
     padding: 12px;
-    overflow: hidden;
   }
 
   .sidebar-link {
-    height: 56px;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .sidebar-link:hover {
-    background-color: rgb(235, 235, 235);
+    height: 48px;
+    margin-bottom: 4px;
   }
 
   .sidebar-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    align-items: center;
-    column-gap: 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
     padding: 0 16px;
   }
 
-
-  .sidebar-link img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    margin: 0;
-  }
-
-
-  .sidebar-link a {
+  .sidebar-items {
     font-size: 15px;
-    color: #000000;
-    font-weight: 400;
-    white-space: nowrap;
+    line-height: 20px;
+    text-align: left;
   }
+}
 
-  .sidebar-link:hover a {
-    font-weight: 800;
+/* Keep only icons on small screens. */
+@media (max-width: 549px) {
+  .sidebar {
+    top: 112px;
   }
 
   .sidebar-items {
-    display: block;
+    display: none;
   }
 
+  .sidebar-container {
+    gap: 0;
+  }
+}
+
+/* Dark mode. */
+body.dark-theme .sidebar {
+  background-color: #202020;
+}
+
+body.dark-theme .sidebar-container {
+  color: #ffffff;
+}
+
+body.dark-theme .sidebar-container:hover,
+body.dark-theme .sidebar-link:hover {
+  background-color: #383838;
+}
+
+body.dark-theme .sidebar-container.active {
+  background-color: #4a4a4a;
 }
