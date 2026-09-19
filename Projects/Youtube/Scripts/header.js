@@ -31,11 +31,22 @@ export function renderHeader({ showSearch = true } = {}) {
           aria-label="Search"
         >
 
-        <button
-          class="search-button js-search-button"
-          type="button"
-          aria-label="Search">
-          <img class="search-icon" src="https://tinyurl.com/search-icon0" alt="Search">
+        <button class="search-button js-search-button" type="button" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            class="search-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2" 
+            stroke-linecap="round"
+            stroke-linejoin="round" 
+            class="lucide lucide-search">
+            <path d="m21 21-4.34-4.34" />
+            <circle cx="11" cy="11" r="8" />
+          </svg>
+          
           <div class="tooltip">Search</div>
         </button>
 
@@ -49,7 +60,20 @@ export function renderHeader({ showSearch = true } = {}) {
       </div>
 
       <button class="voice-search-button" type="button" aria-label="Search with your voice">
-        <img class="voice-search-icon " src="https://tinyurl.com/voice-search-icons" alt="Voice search">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+          width="20" 
+          height="20" 
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          class="lucide lucide-mic voice-search-icon ">
+          <path d="M12 19v3" />
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+          <rect x="9" y="2" width="6" height="13" rx="3" />
+        </svg>
         <div class="tooltip">search with your voice</div>
       </button>
     </div>
@@ -74,7 +98,8 @@ export function renderHeader({ showSearch = true } = {}) {
           <path d="M4 19h16" />
         </svg>
       <a href="index.html">
-        <img class="youtube-logo" src="https://tinyurl.com/youtube-logo0" alt="YouTube">
+        <img class="youtube-logo icon-dark" src="https://tinyurl.com/3rf8zvcp" alt="dark-logo" />
+        <img class="youtube-logo icon-light" src="https://tinyurl.com/youtube-logo0" alt="YouTube">
       </a>
     </div>
 
@@ -86,23 +111,60 @@ export function renderHeader({ showSearch = true } = {}) {
       </button>
 
       <div class="upload-icon-container">
-        <img class="upload-icon" src="https://tinyurl.com/uploads-icons" alt="Upload">
+       <svg xmlns="http://www.w3.org/2000/svg"
+          class="upload-icon" 
+          height="20"
+          width="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          class="lucide lucide-upload">
+          <path d="M12 3v12" />
+          <path d="m17 8-5-5-5 5" />
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        </svg>
+       
       <div class="tooltip">uploads</div>
       </div>
 
       <div class="youtube-apps-icon-container">
-        <img class="youtube-apps-icon" src="https://tinyurl.com/youtube-apps-icon" alt="Apps">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="youtube-apps-icon" 
+          width="20" 
+          height="20"
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid">
+          <rect width="7" height="7" x="3" y="3" rx="1" />
+          <rect width="7" height="7" x="14" y="3" rx="1" />
+          <rect width="7" height="7" x="14" y="14" rx="1" />
+          <rect width="7" height="7" x="3" y="14" rx="1" />
+        </svg>
         <div class="tooltip">apps</div>
       </div>
 
       <div class="notifications-icon-container">
         <div class="notify">${getNotificationCount()}</div>
-
-        <img class="notifications-icon" src="https://tinyurl.com/notificaation" alt="Notifications">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="notifications-icon" 
+              width="20" 
+              height="20"
+              viewBox="0 0 24 24" 
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell">
+              <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+              <path
+              d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+            </svg>
           <div class="tooltip">notifications</div>
       </div>
       <a href="profile.html">
-      <img class="current-user-picture" src="https://tinyurl.com/user-pictures" alt="User">
+      <img class="current-user-picture" src="https://tinyurl.com/bdharchm" alt="User">
       </a>
     </div>
   `;
