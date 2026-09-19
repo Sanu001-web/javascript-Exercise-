@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/sidebar.css">
-  <link rel="stylesheet" href="styles/sport.css">
+  <link rel="stylesheet" href="styles/history.css" type="text/css" media="all" />
+  <!-- <link rel="stylesheet" href="styles/sport.css"> -->
 
 </head>
 
@@ -48,14 +49,125 @@
     <!-- nothing -->
   </div>
 
-  <main class="sport-page">
-    <h1>History</h1>
+  <main class="container">
+
+    <div class="history-header">
+
+      <div>
+        <h1>Watch history</h1>
+        <p>Your recently watched videos</p>
+      </div>
+
+      <button
+            id="clearHistory"
+            class="clear-btn"
+        >
+            Clear all watch history
+        </button>
+
+    </div>
+
+
+    <div id="historyList">
+
+      <article class="history-item">
+
+        <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                alt="Coding"
+            >
+
+        <div class="details">
+
+          <h2>
+            How To Build A Modern Website
+          </h2>
+
+          <p>Web Dev Pro</p>
+
+          <p>
+            450K views • Watched yesterday
+          </p>
+
+          <div class="progress">
+            <span style="width: 70%"></span>
+          </div>
+
+        </div>
+
+        <button class="more">⋮</button>
+
+      </article>
+
+
+      <article class="history-item">
+
+        <img
+                src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"
+                alt="Football"
+            >
+
+        <div class="details">
+
+          <h2>
+            Top 10 Football Goals
+          </h2>
+
+          <p>Sports World</p>
+
+          <p>
+            900K views • Watched 2 days ago
+          </p>
+
+          <div class="progress">
+            <span style="width: 45%"></span>
+          </div>
+
+        </div>
+
+        <button class="more">⋮</button>
+
+      </article>
+
+
+      <article class="history-item">
+
+        <img
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80"
+                alt="Music"
+            >
+
+        <div class="details">
+
+          <h2>
+            Relaxing Music For Studying
+          </h2>
+
+          <p>Chill Music</p>
+
+          <p>
+            2.4M views • Watched 3 days ago
+          </p>
+
+          <div class="progress">
+            <span style="width: 90%"></span>
+          </div>
+
+        </div>
+
+        <button class="more">⋮</button>
+
+      </article>
+
+    </div>
+
   </main>
 
   <script src="scripts/header.js" type="module"></script>
   <script src="scripts/sideBar.js" type="module"></script>
   <script src="scripts/script.js" type="module"></script>
-  
+  <script src="scripts/history.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 
 </html>
