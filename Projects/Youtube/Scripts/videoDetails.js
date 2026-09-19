@@ -426,6 +426,8 @@ function addComment() {
     return;
   }
 
+  const commentTime = Date.now();
+
   comments.unshift({
     id: generateId(),
     username: currentUser,
@@ -434,7 +436,7 @@ function addComment() {
     dislikes: 0,
     liked: false,
     disliked: false,
-    date: Date.now(),
+    date: commentTime,
     replies: [],
     owner: true
   });
@@ -442,7 +444,7 @@ function addComment() {
   saveCommentNotification({
     profilePic: currentVideo.profilePic,
     comments: `${currentUser} commented: '${text}' on ${currentVideo.videoTitle}`,
-    createdAt: new Date().toISOString(),
+    createdAt: new Date(commentTime).toISOString(),
     thumbnail: currentVideo.thubmnail,
     videoUrl: `video.html?video=${videoIndex}`
   });
@@ -623,18 +625,45 @@ function sortComments() {
   }
 }
 
-function formatDate(timestamp) {
-  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+function formatDate(timestamp, fallback = 'Unknown date') {
+  const date = new Date(timestamp);
 
-  if (seconds < 60) return `${seconds}s ago`;
+  if (Number.isNaN(date.getTime())) {
+    return fallback;
+  }
+
+  const now = new Date();
+  const seconds = Math.max(0, Math.floor((now - date) / 1000));
+
+  if (seconds < 60) return 'Just now';
 
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes}m ago`;
+  if (minutes < 60) {
+    return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+  }
 
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours}h ago`;
+  if (hours < 24) {
+    return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+  }
 
-  return `${Math.floor(hours / 24)}d ago`;
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const calendarDays = Math.floor((startOfToday - startOfDate) / 86_400_000);
+
+  if (calendarDays === 0) return 'Today';
+  if (calendarDays === 1) return 'Yesterday';
+  if (calendarDays < 30) {
+    return `${calendarDays} day${calendarDays === 1 ? '' : 's'} ago`;
+  }
+
+  const months = Math.floor(calendarDays / 30);
+  if (months < 12) {
+    return `${months} month${months === 1 ? '' : 's'} ago`;
+  }
+
+  const years = Math.floor(calendarDays / 365);
+  return `${years} year${years === 1 ? '' : 's'} ago`;
 }
 
 function escapeHTML(text) {
