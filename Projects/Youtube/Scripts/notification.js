@@ -6,42 +6,36 @@ const notifiChannelInfo = [
     comments: "Jackk Mass commented: 'algorithm concepts are fantastic.'",
     updateComments: '1 day ago',
     thumbnail: 'https://tinyurl.com/bdupmpw6',
-    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/2mrsdcv6',
     comments: "Miraa Sharma commented: 'chai aur code ek dum must combination kya bolti public.'",
     updateComments: '12 day ago',
     thumbnail: 'https://tinyurl.com/y3yf87e8',
-    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/4yvu6ka3',
     comments: "Nick commented: 'Pahle chai bna leta hu fir chai ke saath video dekhunga .'",
     updateComments: '6 minutes ago',
     thumbnail: 'https://tinyurl.com/3239aswr',
-    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/3tjyyd2y',
     comments: "Vikash verma commented: ' This is the example of Good Teacher, project end at 30 mins but he add intervalId null to cleanup the memoryvand make this project more.'",
     updateComments: '15 day ago',
     thumbnail: 'https://tinyurl.com/2yzt95s7',
-    createdAt: new Date().toISOString()
   },
   {
     profilePic: 'https://tinyurl.com/bdrhsadj',
     comments: "Jackk Mass commented: 'behtareen behtareen .'",
     updateComments: '5 months ago',
     thumbnail: 'https://tinyurl.com/y3yf87e8',
-    createdAt: new Date().toISOString()
 
   }, {
     profilePic: 'https://tinyurl.com/3tjyyd2y',
     comments: "Aman khan commented: 'Goat of web development is back 🐐.'",
     updateComments: '15 day ago',
     thumbnail: 'https://tinyurl.com/2yzt95s7',
-    createdAt: new Date().toISOString()
   },
 
 ];
