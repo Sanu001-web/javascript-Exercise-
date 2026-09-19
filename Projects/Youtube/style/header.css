@@ -112,6 +112,17 @@ CATOGARY-NAVIGATION
   background-color: #0f0f0f;
   color: #fff;
 }
+.dark-theme .left-section{
+   display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+.dark-theme .youtube-logo{
+  height: 38.5px;
+  margin-left: -12px;
+  margin-top: 5px;
+}
 
 body.dark-theme .category-navigation {
   background-color: #202020;
@@ -841,7 +852,7 @@ body.dark-theme .navi-btn.active {
 
   background-color: rgb(200, 0, 0);
 
-  padding: 2px 5px;
+  padding: 2px;
 
   text-align: center;
 
