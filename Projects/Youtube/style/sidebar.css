@@ -118,19 +118,19 @@ body.sidebar-open {
 }
 
 /* Dark mode. */
-body.dark-theme .sidebar {
+.dark-theme .sidebar {
   background-color: #202020;
 }
 
-body.dark-theme .sidebar-container {
+.dark-theme .sidebar-container {
   color: #ffffff;
 }
 
-body.dark-theme .sidebar-container:hover,
-body.dark-theme .sidebar-link:hover {
+.dark-theme .sidebar-container:hover,
+.dark-theme .sidebar-link:hover {
   background-color: #383838;
 }
 
-body.dark-theme .sidebar-container.active {
+.dark-theme .sidebar-container.active {
   background-color: #4a4a4a;
 }
