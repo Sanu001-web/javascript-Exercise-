@@ -7,13 +7,7 @@
 /* 
    VIDEO DETAILS PAGE
  */
-.back-button {
-  position: absolute;
-  top: 62px;
-  left: 10px;
-  color: #717171;
-  cursor: pointer;
-}
+
 
 
 .video-details-page {
@@ -248,19 +242,25 @@
 
 /*Dark Mode*/
 
-body.dark-theme .comments-container ,body.dark-theme .related-videos-section {
+.dark-theme .comments-container ,body.dark-theme .related-videos-section {
 
   color: #ffffff;
 }
-body.dark-theme .related-video-title{
+.dark-theme .related-video-title{
 
   color: #ffffff;
 }
-body.dark-theme .cancel-btn {
+.dark-theme .cancel-btn {
   color: #fff;
 }
 
-
+.dark-theme #channel-author{
+  color: #fff;
+}
+.dark-theme .comment-box{
+  background-color: transparent;
+  color: #fff;
+}
 /* 
    VIDEO BADGES
  */
