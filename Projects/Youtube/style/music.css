@@ -416,6 +416,14 @@ button {
     height: 190px;
   }
 }
+/* dark theme */
+
+.dark-theme .post-text h4{
+  color: #fff;
+}
+.dark-theme .post-text p{
+  color: #dddcdc;
+}
 
 @media (max-width: 380px) {
   .right-section .theme-toggle {
