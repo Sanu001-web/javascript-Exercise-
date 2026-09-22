@@ -5,7 +5,7 @@ export function renderSidebar() {
   sidebar.innerHTML = `
   
 
-    <div class="sidebar-link">
+    <div class="sidebar-link home-icon-btn">
       <a href="index.html" class="sidebar-container js-sidebar-container">
         <!-- DARK MODE ICON -->
         <svg class="home-icon icon-light" 
@@ -16,7 +16,7 @@ export function renderSidebar() {
             d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </svg>
 
-         <svg
+        <svg
           class="home-icon icon-dark"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -32,11 +32,13 @@ export function renderSidebar() {
           <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
         </svg>
           <span class="sidebar-items"> Home</span>
+        
       </a>
+      <div class="tooltip">Home</div>
     </div>
 
 
-    <div class="sidebar-link">
+    <div class="sidebar-link explore-icon-btn">
       <a href="explore.html" class="sidebar-container js-sidebar-container">
        <svg 
           class="icon-light"
@@ -71,9 +73,10 @@ export function renderSidebar() {
          </svg>
          <span class="sidebar-items"> Explore</span>
       </a>
+      <div class="tooltip">explore</div>
     </div>
 
-    <div class="sidebar-link">
+    <div class="sidebar-link subs-icon-btn">
       <a href="subscription.html" class="sidebar-container js-sidebar-container">
         <img class="subscription icon-light" src="https://tinyurl.com/wx7s74bn">
         <img class="subscription icon-dark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAF3klEQVR4AeycW6gVVRjH9y4yiW4WVG9BUXRR0Y50MSLpoSg1IkohkBNd7MGHLg
@@ -94,17 +97,19 @@ export function renderSidebar() {
           >
         <span class="sidebar-items"> Subscription</span>
       </a>
+      <div class="tooltip">subs</div>
     </div>
 
-    <div class="sidebar-link">
+    <div class="sidebar-link original-icon-btn">
       <a href="original.html" class="sidebar-container js-sidebar-container">
         <img class="original" src="https://img.icons8.com/?size=48&id=T3RtcOyeFsCq&format=png">
         <span class="sidebar-items"> Original</span>
       </a>
+      <div class="tooltip">original</div>
     </div>
 
   
-      <div class="sidebar-link">
+      <div class="sidebar-link music-icon-btn">
         <a href="music.html" class="sidebar-container js-sidebar-container music-tab-link">
           <svg xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -121,9 +126,10 @@ export function renderSidebar() {
           </svg>
           <span class="sidebar-items">Music</span>
         </a>
+        <div class="tooltip">music</div>
       </div>
 
-    <div class="sidebar-link">
+    <div class="sidebar-link sport-icon-btn">
       <a href="sport.html" class="sidebar-container js-sidebar-container">
         <svg xmlns="http://www.w3.org/2000/svg" 
           width="24" 
@@ -141,9 +147,10 @@ export function renderSidebar() {
         </svg>
         <span class="sidebar-items"> Sport</span>
       </a>
+      <div class="tooltip">sport</div>
     </div>
 
-    <div class="sidebar-link">
+    <div class="sidebar-link history-icon-btn">
       <a href="history.html" class="sidebar-container js-sidebar-container">
         <svg xmlns="http://www.w3.org/2000/svg" 
           width="24"
@@ -158,6 +165,7 @@ export function renderSidebar() {
         </svg>
         <div class="sidebar-items">History</div>
       </a>
+      <div class="tooltip">history</div>
     </div>
  
   `;
