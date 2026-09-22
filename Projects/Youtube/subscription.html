@@ -4,18 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sport</title>
+
+  <title>Subscriptions - YouTube</title>
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Subscription CSS -->
+  <link rel="stylesheet" href="styles/subscription.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/sport.css">
-
 </head>
 
 <body>
+
   <div class="header js-header">
     <!-- nothing -->
   </div>
@@ -48,15 +57,793 @@
     <!-- nothing -->
   </div>
 
-  <main class="sport-page">
-    <h1>Subscription</h1>
-  
+
+  <!-- 
+         MAIN CONTENT
+     -->
+  <main class="main-content">
+
+    <!-- Page Heading -->
+    <section class="page-header">
+
+      <div>
+        <h1>Subscriptions</h1>
+        <p>Latest videos from channels you follow</p>
+      </div>
+
+      <button class="manage-btn" id="manageBtn">
+                <i class="fa-solid fa-sliders"></i>
+                Manage
+            </button>
+
+    </section>
+
+
+    <!-- 
+             CHANNELS
+         -->
+    <section class="channels-section">
+
+      <div class="section-heading">
+        <h2>Your channels</h2>
+
+        <button class="scroll-btn" id="channelNextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+      </div>
+
+
+      <div class="channels-wrapper" id="channelsWrapper">
+
+        <!-- Channel 1 -->
+        <article class="channel-card">
+
+          <img
+                        class="channel-avatar"
+                        src="https://i.pravatar.cc/200?img=1"
+                        alt="Tech World"
+                    >
+
+          <h3>Tech World</h3>
+
+          <p>2.4M subscribers</p>
+
+          <button class="subscribed-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Subscribed
+                    </button>
+
+        </article>
+
+
+        <!-- Channel 2 -->
+        <article class="channel-card">
+
+          <img
+                        class="channel-avatar"
+                        src="https://i.pravatar.cc/200?img=2"
+                        alt="Code Academy"
+                    >
+
+          <h3>Code Academy</h3>
+
+          <p>1.8M subscribers</p>
+
+          <button class="subscribed-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Subscribed
+                    </button>
+
+        </article>
+
+
+        <!-- Channel 3 -->
+        <article class="channel-card">
+
+          <img
+                        class="channel-avatar"
+                        src="https://i.pravatar.cc/200?img=3"
+                        alt="Travel Vibes"
+                    >
+
+          <h3>Travel Vibes</h3>
+
+          <p>950K subscribers</p>
+
+          <button class="subscribed-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Subscribed
+                    </button>
+
+        </article>
+
+
+        <!-- Channel 4 -->
+        <article class="channel-card">
+
+          <img
+                        class="channel-avatar"
+                        src="https://i.pravatar.cc/200?img=4"
+                        alt="Music Hub"
+                    >
+
+          <h3>Music Hub</h3>
+
+          <p>3.2M subscribers</p>
+
+          <button class="subscribed-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Subscribed
+                    </button>
+
+        </article>
+
+
+        <!-- Channel 5 -->
+        <article class="channel-card">
+
+          <img
+                        class="channel-avatar"
+                        src="https://i.pravatar.cc/200?img=5"
+                        alt="Fitness Daily"
+                    >
+
+          <h3>Fitness Daily</h3>
+
+          <p>720K subscribers</p>
+
+          <button class="subscribed-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Subscribed
+                    </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- 
+             CATEGORY FILTERS
+         -->
+    <section class="filter-section">
+
+      <button class="filter-chip active" data-filter="all">
+                All
+            </button>
+
+      <button class="filter-chip" data-filter="technology">
+                Technology
+            </button>
+
+      <button class="filter-chip" data-filter="programming">
+                Programming
+            </button>
+
+      <button class="filter-chip" data-filter="travel">
+                Travel
+            </button>
+
+      <button class="filter-chip" data-filter="music">
+                Music
+            </button>
+
+      <button class="filter-chip" data-filter="fitness">
+                Fitness
+            </button>
+
+    </section>
+
+
+    <!-- 
+             VIDEO FEED
+         -->
+    <section class="video-section">
+
+      <div class="section-heading">
+        <h2>Latest videos</h2>
+
+        <button class="sort-btn" id="sortBtn">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                    Latest
+                </button>
+      </div>
+
+
+      <div class="video-grid" id="videoGrid">
+
+
+        <!-- VIDEO 1 -->
+        <article class="video-card" data-category="technology">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=11"
+                            alt="Latest technology video"
+                        >
+
+            <span class="video-duration">
+                            12:45
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=1"
+                            alt="Tech World"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                10 Amazing Technologies You Should Know
+              </h3>
+
+              <p class="channel-name">
+                Tech World
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                1.2M views • 2 hours ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>12K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- VIDEO 2 -->
+        <article class="video-card" data-category="programming">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=12"
+                            alt="Programming tutorial"
+                        >
+
+            <span class="video-duration">
+                            28:17
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=2"
+                            alt="Code Academy"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                Build a Website From Scratch
+              </h3>
+
+              <p class="channel-name">
+                Code Academy
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                456K views • 5 hours ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>8.5K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- VIDEO 3 -->
+        <article class="video-card" data-category="travel">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=13"
+                            alt="Travel video"
+                        >
+
+            <span class="video-duration">
+                            18:32
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=3"
+                            alt="Travel Vibes"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                Exploring the Most Beautiful Places
+              </h3>
+
+              <p class="channel-name">
+                Travel Vibes
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                2.1M views • 1 day ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>25K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- VIDEO 4 -->
+        <article class="video-card" data-category="music">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=14"
+                            alt="Music video"
+                        >
+
+            <span class="video-duration">
+                            4:28
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=4"
+                            alt="Music Hub"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                New Music Mix - Best Songs This Week
+              </h3>
+
+              <p class="channel-name">
+                Music Hub
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                5.4M views • 1 day ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>45K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- VIDEO 5 -->
+        <article class="video-card" data-category="fitness">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=15"
+                            alt="Fitness workout"
+                        >
+
+            <span class="video-duration">
+                            15:10
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=5"
+                            alt="Fitness Daily"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                15 Minute Full Body Workout
+              </h3>
+
+              <p class="channel-name">
+                Fitness Daily
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                890K views • 2 days ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>18K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- VIDEO 6 -->
+        <article class="video-card" data-category="technology">
+
+          <div class="thumbnail-container">
+
+            <img
+                            src="https://picsum.photos/640/360?random=16"
+                            alt="Technology gadgets"
+                        >
+
+            <span class="video-duration">
+                            10:52
+                        </span>
+
+          </div>
+
+          <div class="video-info">
+
+            <img
+                            class="video-channel-avatar"
+                            src="https://i.pravatar.cc/100?img=1"
+                            alt="Tech World"
+                        >
+
+            <div class="video-details">
+
+              <h3>
+                Best Gadgets You Can Buy This Year
+              </h3>
+
+              <p class="channel-name">
+                Tech World
+                <i class="fa-solid fa-circle-check verified"></i>
+              </p>
+
+              <p class="video-meta">
+                760K views • 3 days ago
+              </p>
+
+            </div>
+
+            <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+          </div>
+
+          <div class="video-actions">
+
+            <button class="action-btn like-btn">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span>9.2K</span>
+                        </button>
+
+            <button class="action-btn">
+                            <i class="fa-regular fa-share-from-square"></i>
+                            Share
+                        </button>
+
+            <button class="action-btn save-btn">
+                            <i class="fa-regular fa-bookmark"></i>
+                            Save
+                        </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
   </main>
 
+
+  <!-- 
+         NOTIFICATION PANEL
+     -->
+  <div class="notification-panel" id="notificationPanel">
+
+    <div class="panel-header">
+      <h3>Notifications</h3>
+
+      <button id="closeNotification">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+    </div>
+
+    <div class="notification-item">
+
+      <img
+                src="https://i.pravatar.cc/100?img=1"
+                alt="Tech World"
+            >
+
+      <div>
+        <strong>Tech World</strong>
+        <p>uploaded a new video.</p>
+        <small>10 minutes ago</small>
+      </div>
+
+    </div>
+
+    <div class="notification-item">
+
+      <img
+                src="https://i.pravatar.cc/100?img=2"
+                alt="Code Academy"
+            >
+
+      <div>
+        <strong>Code Academy</strong>
+        <p>started a live stream.</p>
+        <small>1 hour ago</small>
+      </div>
+
+    </div>
+
+    <div class="notification-item">
+
+      <img
+                src="https://i.pravatar.cc/100?img=3"
+                alt="Travel Vibes"
+            >
+
+      <div>
+        <strong>Travel Vibes</strong>
+        <p>uploaded a new travel vlog.</p>
+        <small>3 hours ago</small>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- 
+         MANAGE MODAL
+     -->
+  <div class="modal-overlay" id="manageModal">
+
+    <div class="manage-modal">
+
+      <div class="modal-header">
+
+        <h2>Manage subscriptions</h2>
+
+        <button id="closeManageModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+      </div>
+
+      <div class="manage-list">
+
+        <label class="manage-channel">
+
+                    <div>
+                        <img
+                            src="https://i.pravatar.cc/100?img=1"
+                            alt="Tech World"
+                        >
+
+                        <span>Tech World</span>
+                    </div>
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+
+        <label class="manage-channel">
+
+                    <div>
+                        <img
+                            src="https://i.pravatar.cc/100?img=2"
+                            alt="Code Academy"
+                        >
+
+                        <span>Code Academy</span>
+                    </div>
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+
+        <label class="manage-channel">
+
+                    <div>
+                        <img
+                            src="https://i.pravatar.cc/100?img=3"
+                            alt="Travel Vibes"
+                        >
+
+                        <span>Travel Vibes</span>
+                    </div>
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+
+        <label class="manage-channel">
+
+                    <div>
+                        <img
+                            src="https://i.pravatar.cc/100?img=4"
+                            alt="Music Hub"
+                        >
+
+                        <span>Music Hub</span>
+                    </div>
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+      </div>
+
+      <button class="modal-done-btn" id="doneManageBtn">
+                Done
+            </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 
+         TOAST MESSAGE
+     -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Saved</span>
+  </div>
+
+
+  <!-- Subscription JavaScript -->
+  <script src="subscription.js"></script>
+  <script src="scripts/subscription.js" type="module"></script>
   <script src="scripts/header.js" type="module"></script>
   <script src="scripts/sideBar.js" type="module"></script>
   <script src="scripts/script.js" type="module"></script>
-  
+
 </body>
 
 </html>
