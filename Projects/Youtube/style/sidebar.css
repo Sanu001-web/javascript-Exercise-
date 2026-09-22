@@ -18,6 +18,51 @@
   transform: translateX(0);
 }
 
+/*TOOLTIPS*/
+.explore-icon-btn .tooltip,
+.home-icon-btn .tooltip,
+.subs-icon-btn .tooltip,
+.original-icon-btn .tooltip,
+.music-icon-btn .tooltip,
+.sport-icon-btn .tooltip,
+.history-icon-btn .tooltip {
+  position: absolute;
+
+  color: white;
+
+  bottom: -10px;
+  right: -8px;
+
+  border-radius: 2px;
+
+  background-color: #616161;
+
+  padding: 4px 8px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  white-space: nowrap;
+
+  transition: opacity 0.15s;
+
+  font-size: 12px;
+
+  z-index: 20000;
+}
+
+.explore-icon-btn:hover .tooltip,
+.home-icon-btn:hover .tooltip,
+.subs-icon-btn:hover .tooltip,
+.original-icon-btn:hover .tooltip,
+.music-icon-btn:hover .tooltip,
+.sport-icon-btn:hover .tooltip,
+.history-icon-btn:hover .tooltip {
+  opacity: 1;
+}
+
+
 /* Move the page content when the full sidebar is open. */
 body.sidebar-open {
   padding-left: 90px;
@@ -28,6 +73,7 @@ body.sidebar-open {
   height: 64px;
   margin-bottom: 2px;
   border-radius: 8px;
+  position: relative;
 }
 
 .sidebar-container {
