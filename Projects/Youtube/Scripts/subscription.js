@@ -1,7 +1,9 @@
+import { subscriptionVideoRender } from '../data/subscriptionVideoInfo.js';
+
 const SUBSCRIPTIONS_KEY = 'subscriptions';
 const DEFAULT_SUBSCRIPTIONS = ['channel001', 'channel005'];
 const PAGE_STATE_KEY = 'subscription-page-state';
-
+subscriptionVideoRender();
 function getSubscriptions() {
   try {
     const saved = JSON.parse(localStorage.getItem(SUBSCRIPTIONS_KEY) || 'null');
@@ -106,7 +108,12 @@ function sortVideos() {
 }
 
 function copyVideoLink(card) {
-  const link = `${window.location.href.split('#')[0]}#${card.querySelector('h3')?.textContent.trim().replace(/\s+/g, '-')}`;
+  if (!card) return;
+
+  const title = card.querySelector('h3')?.textContent.trim();
+  if (!title) return;
+
+  const link = `${window.location.href.split('#')[0]}#${title.replace(/\s+/g, '-')}`;
   if (navigator.clipboard?.writeText) {
     navigator.clipboard.writeText(link).then(
       () => showToast('Video link copied'),
@@ -168,11 +175,6 @@ function initializeSubscriptionPage() {
       return;
     }
 
-    if (target.closest('#channelNextBtn')) {
-      document.querySelector('#channelsWrapper')?.scrollBy({ left: 230, behavior: 'smooth' });
-      return;
-    }
-
     if (target.closest('#sortBtn')) {
       sortVideos();
       return;
@@ -195,6 +197,8 @@ function initializeSubscriptionPage() {
 
     if (actionButton) {
       const card = actionButton.closest('.video-card');
+      if (!card) return;
+
       if (actionButton.classList.contains('like-btn')) {
         const liked = actionButton.classList.toggle('liked');
         actionButton.querySelector('i')?.classList.toggle('fa-regular', !liked);
@@ -264,3 +268,4 @@ if (document.readyState === 'loading') {
 } else {
   initializeSubscriptionPage();
 }
+
