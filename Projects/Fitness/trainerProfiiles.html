@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer Profile | ShaanFitness</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="trainer-profile-page">
+  <nav class="fixed w-full bg-black z-50 shadow-md py-4 px-6 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold sky-blue">ShaanFitness</a>
+    <a href="index.html" class="px-4 py-2 border border-sky-blue text-sky-blue rounded-lg btn-hover">
+      <i class="fas fa-arrow-left mr-2"></i>Back to Trainers
+    </a>
+  </nav>
+
+  <main class="trainer-profile-shell">
+    <section class="trainer-profile-hero glass-card" aria-live="polite">
+      <div class="profile-image-wrap">
+        <img id="trainer-image" src="" alt="">
+      </div>
+      <div class="profile-copy">
+        <p class="eyebrow sky-blue">ShaanFitness coaching team</p>
+        <h1 id="trainer-name">Trainer Profile</h1>
+        <p id="trainer-role" class="trainer-profile-role"></p>
+        <p id="trainer-bio" class="profile-bio"></p>
+        <div id="trainer-tags" class="profile-tags"></div>
+        <a href="index.html" class="inline-flex mt-6 px-6 py-3 bg-sky-blue text-black font-bold rounded-lg btn-hover">
+          <i class="fas fa-calendar-check mr-2"></i>Book a Consultation
+        </a>
+      </div>
+    </section>
+
+    <section class="profile-detail-grid">
+      <article class="glass-card profile-detail-card">
+        <span class="feature-icon"><i class="fas fa-dumbbell"></i></span>
+        <h2>Coaching Style</h2>
+        <p id="trainer-style"></p>
+      </article>
+      <article class="glass-card profile-detail-card">
+        <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
+        <h2>Best For</h2>
+        <p id="trainer-best-for"></p>
+      </article>
+      <article class="glass-card profile-detail-card">
+        <span class="feature-icon"><i class="fas fa-medal"></i></span>
+        <h2>Specialties</h2>
+        <ul id="trainer-specialties"></ul>
+      </article>
+    </section>
+
+    <section class="glass-card profile-cta">
+      <i class="fas fa-fire sky-blue"></i>
+      <div>
+        <h2>Ready to start your transformation?</h2>
+        <p>Choose a plan and let our coaching team help you train with confidence.</p>
+      </div>
+      <a href="index.html" class="px-6 py-3 bg-sky-blue text-black font-bold rounded-lg btn-hover">Explore Plans</a>
+    </section>
+  </main>
+
+  <script>
+    const trainers = {
+      "Ananya Sharma": {
+        role: "Personal Trainer", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Creates individual workouts, corrects form, and builds steady progression for every member.",
+        style: "Supportive, form-first training with clear weekly progressions that make every session feel achievable.",
+        bestFor: "Beginners, general fitness, strength foundations, and members who want personal attention.",
+        tags: ["PT", "Beginners"], specialties: ["Strength foundations", "Form correction", "Progressive workouts"]
+      },
+      "Meera Kapoor": {
+        role: "Weight-Loss / Fat-Loss Trainer", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Combines cardio, strength, and sustainable habits to reduce body fat while protecting muscle.",
+        style: "Sustainable coaching that combines smart training, practical habits, and consistent accountability.",
+        bestFor: "Fat loss, healthy lifestyle changes, and members who want long-term results.",
+        tags: ["Fat Loss", "Nutrition"], specialties: ["Cardio and strength", "Habit coaching", "Nutrition guidance"]
+      },
+      "Kabir Singh": {
+        role: "Bodybuilding Coach", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Guides muscle growth, physique development, posing, and competition preparation.",
+        style: "Detailed physique programming focused on progressive overload, recovery, and confident execution.",
+        bestFor: "Muscle gain, bodybuilding, physique development, and competition preparation.",
+        tags: ["Muscle", "Posing"], specialties: ["Hypertrophy", "Posing practice", "Competition prep"]
+      },
+      "Riya Nair": {
+        role: "Mobility / Flexibility Coach", image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Improves range of motion, stretching, recovery, and mindful movement quality.",
+        style: "Mindful, controlled movement sessions that help you move better and recover consistently.",
+        bestFor: "Mobility, flexibility, recovery, yoga, and improving movement quality.",
+        tags: ["Yoga", "Mobility"], specialties: ["Stretching", "Range of motion", "Recovery sessions"]
+      },
+      "Vikram Joshi": {
+        role: "Strength & Conditioning Coach", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Develops power, speed, endurance, and athletic performance for all experience levels.",
+        style: "Performance-driven programming that develops strength, speed, endurance, and power together.",
+        bestFor: "Athletes, HYROX preparation, sports performance, and advanced conditioning.",
+        tags: ["HYROX", "Athletes"], specialties: ["Power development", "Speed training", "Conditioning"]
+      },
+      "Arjun Rao": {
+        role: "CrossFit & Olympic Weightlifting Coach", image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Coaches functional fitness, gymnastics, snatch, clean and jerk, and conditioning.",
+        style: "Technical coaching that builds safe, efficient lifts and confident functional movement.",
+        bestFor: "CrossFit, Olympic lifting, functional fitness, and high-energy training.",
+        tags: ["CrossFit", "Power"], specialties: ["Snatch and clean & jerk", "Gymnastics", "Metcons"]
+      },
+      "Dev Patel": {
+        role: "Functional Fitness Coach", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Uses practical movements to improve balance, coordination, everyday strength, and confidence.",
+        style: "Practical, energetic sessions using movement patterns that transfer to everyday life.",
+        bestFor: "Everyday strength, balance, coordination, and active beginners.",
+        tags: ["Movement", "Balance"], specialties: ["Functional movement", "Balance training", "Core strength"]
+      },
+      "Rahul Verma": {
+        role: "Powerlifting Coach", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Specializes in safe, progressive squat, bench press, and deadlift programming.",
+        style: "Structured strength programming with careful technique coaching and measurable milestones.",
+        bestFor: "Squat, bench press, deadlift, and members pursuing strength goals.",
+        tags: ["Squat", "Bench", "Deadlift"], specialties: ["Powerlifting technique", "Strength cycles", "Meet preparation"]
+      },
+      "Neha Iyer": {
+        role: "Group Fitness Instructor", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Leads energetic HIIT, aerobics, circuit, and strength classes that keep the community moving.",
+        style: "Fun, motivating group sessions with options for every fitness level.",
+        bestFor: "HIIT, aerobics, circuit training, and members who love community energy.",
+        tags: ["HIIT", "Community"], specialties: ["Group classes", "Circuit training", "Aerobics"]
+      },
+      "Sana Khan": {
+        role: "Online Fitness Coach", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Provides remote programs, weekly guidance, and progress monitoring wherever you train.",
+        style: "Flexible online support with regular check-ins, adaptable plans, and clear accountability.",
+        bestFor: "Remote members, busy schedules, home workouts, and travel-friendly programs.",
+        tags: ["Online", "Coaching"], specialties: ["Remote programming", "Weekly check-ins", "Progress tracking"]
+      },
+      "Karan Malhotra": {
+        role: "Corrective Exercise Trainer", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&h=700&q=85",
+        bio: "Works on movement limitations and exercise adaptations within an appropriate professional scope.",
+        style: "Patient, movement-focused coaching designed to improve control, confidence, and exercise quality.",
+        bestFor: "Movement limitations, exercise adaptations, recovery, and form improvement.",
+        tags: ["Recovery", "Form"], specialties: ["Movement assessment", "Exercise adaptation", "Form coaching"]
+      }
+    };
+
+    const fallback = trainers["Ananya Sharma"];
+    const requestedName = new URLSearchParams(window.location.search).get("trainer");
+    const trainer = trainers[requestedName] || fallback;
+    const setText = (id, value) => document.getElementById(id).textContent = value;
+
+    const profileImage = document.getElementById("trainer-image");
+    profileImage.src = trainer.image;
+    profileImage.alt = `${requestedName || "Ananya Sharma"}, ShaanFitness coach`;
+    profileImage.addEventListener("error", () => {
+      const maleNames = ["Kabir Singh", "Vikram Joshi", "Arjun Rao", "Dev Patel", "Rahul Verma", "Karan Malhotra"];
+      const isMale = maleNames.includes(requestedName);
+      const portrait = isMale
+        ? '<path d="M57 155c5-31 22-47 43-47s38 16 43 47" fill="#2563eb"/><path d="M70 65c8-24 52-24 60 0-8-8-18-12-30-12s-22 4-30 12z" fill="#111827"/>'
+        : '<path d="M56 155c6-31 23-47 44-47s38 16 44 47" fill="#db2777"/><path d="M61 76c0-35 78-43 78 0v28h-10V76c-18 10-40 10-58 0v28H61z" fill="#111827"/>';
+      profileImage.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" rx="28" fill="#172554"/><circle cx="100" cy="76" r="28" fill="#f2c6a0"/>${portrait}<path d="M25 174h150" stroke="#87CEFA" stroke-width="6"/></svg>`)}`;
+    }, { once: true });
+    setText("trainer-name", requestedName && trainers[requestedName] ? requestedName : "Ananya Sharma");
+    setText("trainer-role", trainer.role);
+    setText("trainer-bio", trainer.bio);
+    setText("trainer-style", trainer.style);
+    setText("trainer-best-for", trainer.bestFor);
+    document.getElementById("trainer-tags").innerHTML = trainer.tags.map(tag => `<span>${tag}</span>`).join("");
+    document.getElementById("trainer-specialties").innerHTML = trainer.specialties.map(item => `<li>${item}</li>`).join("");
+  </script>
+</body>
+</html>
