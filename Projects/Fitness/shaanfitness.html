@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="cursor-effect"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-black z-50 shadow-md py-4 px-6 flex justify-between items-center">
+    <a href="index.html">
+    <div class="text-2xl font-bold sky-blue">ShaanFitness</div>
+    </a>
+    <div class="hidden md:flex space-x-8 desktop-nav">
+      <button data-page="home" class="nav-link hover-glow px-3 py-1 rounded">Home</button>
+      <button data-page="about" class="nav-link hover-glow px-3 py-1 rounded">About</button>
+      <button data-page="services" class="nav-link hover-glow px-3 py-1 rounded">Services</button>
+      <button data-page="gallery" class="nav-link hover-glow px-3 py-1 rounded">Gallery</button>
+      <button data-page="dashboard" class="nav-link hover-glow px-3 py-1 rounded">Dashboard</button>
+      <button data-page="diet" class="nav-link hover-glow px-3 py-1 rounded">Diet Planner</button>
+      <button data-page="contact" class="nav-link hover-glow px-3 py-1 rounded">Contact</button>
+    </div>
+    <div class="flex space-x-4 login-container">
+      <button data-page="login" class="login-cont px-4 py-1 rounded-lg bg-sky-blue text-black font-semibold btn-hover hover-glow">Login</button>
+      <button data-page="signup" class="login-cont px-4 py-2 rounded-lg border border-sky-blue text-sky-blue font-semibold btn-hover hover-glow">Sign Up</button>
+      <button class="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false">
+        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="mobile-nav" aria-hidden="true">
+      <button data-page="home">Home</button>
+      <button data-page="about">About</button>
+      <button data-page="services">Services</button>
+      <button data-page="gallery">Gallery</button>
+      <button data-page="dashboard">Dashboard</button>
+      <button data-page="diet">Diet Planner</button>
+      <button data-page="contact">Contact</button>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <section id="home-page" class="page active-page pt-32 pb-20 px-6 text-center">
+    <div class="slide-in">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Transform Your
+        Body,<br><span class="sky-blue">Elevate Your Life</span></h1>
+      <p class="text-xl max-w-2xl mx-auto mb-10">Join ShaanFitness — Where Premium Workouts Meet Personalized Nutrition
+        for Maximum Results.</p>
+      <div class="flex justify-center gap-4">
+        <button data-page="signup" class="px-8 py-3 bg-sky-blue text-black font-bold rounded-full btn-hover hover-glow">Get Started</button>
+        <button data-page="services" class="px-8 py-3 border border-sky-blue text-sky-blue font-bold rounded-full btn-hover hover-glow">Explore Plans</button>
+      </div>
+    </div>
+
+    <!-- Essential Information Section -->
+    <div class="max-w-6xl mx-auto mt-20">
+      <h2 class="text-3xl font-bold mb-12 sky-blue">Why Choose ShaanFitness?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-heartbeat text-4xl sky-blue mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Personalized Approach</h3>
+          <p>Custom workout and nutrition plans tailored to your unique body type and goals.</p>
+        </div>
+        <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-user-tie text-4xl sky-blue mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Expert Guidance</h3>
+          <p>Certified trainers and nutritionists with proven track records of success.</p>
+        </div>
+        <div class="glass-card p-6 hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-chart-line text-4xl sky-blue mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Measurable Results</h3>
+          <p>Track your progress with our advanced analytics and see real improvements.</p>
+        </div>
+      </div>
+
+      <div class="glass-card p-8 mt-12">
+        <h2 class="text-2xl font-semibold mb-6">What We Offer</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="hover-glow p-4 rounded-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold mb-3 sky-blue">Comprehensive Fitness Programs</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li class="hover:text-sky-blue transition-colors duration-300">Strength Training</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Cardio Workouts</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Flexibility & Mobility</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Functional Fitness</li>
+            </ul>
+          </div>
+          <div class="hover-glow p-4 rounded-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold mb-3 sky-blue">Nutritional Support</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li class="hover:text-sky-blue transition-colors duration-300">Custom Diet Plans</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Macro Tracking</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Supplement Guidance</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Hydration Monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Page -->
+  <section id="about-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">About ShaanFitness</h1>
+      <div class="glass-card p-8 mb-12 hover-glow">
+        <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+        <p class="mb-6">At ShaanFitness, we believe fitness is more than just exercise – it's a lifestyle
+          transformation. Our mission is to empower individuals to achieve their health goals through personalized
+          training programs and nutritional guidance tailored specifically to their needs.</p>
+        <p>We combine cutting-edge workout techniques with science-backed nutrition plans to deliver results that last.
+          Whether you're a beginner taking your first steps or an athlete looking to break through plateaus, we have the
+          expertise to guide you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 about-pillars">
+        <div class="glass-card p-8 hover-glow about-pillar">
+          <div class="about-card-heading">
+            <span class="about-icon"><i class="fas fa-dumbbell"></i></span>
+            <div>
+              <p class="eyebrow sky-blue">Built around you</p>
+              <h2 class="text-2xl font-semibold">Our Approach</h2>
+            </div>
+          </div>
+          <ul class="about-list">
+            <li><i class="fas fa-dumbbell"></i><span>Personalized workout plans based on your fitness level</span></li>
+            <li><i class="fas fa-bowl-food"></i><span>Nutrition guidance tailored to your body goals</span></li>
+            <li><i class="fas fa-chart-line"></i><span>Progress tracking with detailed analytics</span></li>
+            <li><i class="fas fa-user-tie"></i><span>Expert trainers with years of experience</span></li>
+            <li><i class="fas fa-calendar-check"></i><span>Flexible scheduling to fit your busy life</span></li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-8 hover-glow about-pillar">
+          <div class="about-card-heading">
+            <span class="about-icon"><i class="fas fa-medal"></i></span>
+            <div>
+              <p class="eyebrow sky-blue">More than a workout</p>
+              <h2 class="text-2xl font-semibold">Why Choose Us</h2>
+            </div>
+          </div>
+          <ul class="about-list">
+            <li><i class="fas fa-weight-hanging"></i><span>State-of-the-art facilities with premium equipment</span></li>
+            <li><i class="fas fa-people-group"></i><span>Small group classes for personalized attention</span></li>
+            <li><i class="fas fa-mobile-screen-button"></i><span>24/7 access to our online platform</span></li>
+            <li><i class="fas fa-utensils"></i><span>Holistic approach combining fitness and nutrition</span></li>
+            <li><i class="fas fa-fire"></i><span>Community support and motivation</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-stats" aria-label="ShaanFitness highlights">
+        <div class="about-stat hover-glow"><i class="fas fa-users"></i><strong>1,500+</strong><span>Active members</span></div>
+        <div class="about-stat hover-glow"><i class="fas fa-calendar-days"></i><strong>7 days</strong><span>Open every week</span></div>
+        <div class="about-stat hover-glow"><i class="fas fa-bolt"></i><strong>50+</strong><span>Weekly classes</span></div>
+        <div class="about-stat hover-glow"><i class="fas fa-trophy"></i><strong>1 goal</strong><span>Your best self</span></div>
+      </div>
+    </div>
+    <div class="glass-card p-8 mb-16">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow sky-blue">Meet your support team</p>
+          <h2 class="text-3xl font-bold">Trainers & Coaches</h2>
+        </div>
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-user-group preview-icon">
+            <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+            <path d="M19 10h1a2 2 0 012 2v1" />
+            <path d="M5 10H4a2 2 0 00-2 2v1" />
+            <circle cx="12" cy="11" r="3" />
+            <circle cx="18" cy="4" r="2" />
+            <circle cx="6" cy="4" r="2" />
+        </svg>
+      </div>
+      <p class="text-gray-300 mb-8">Choose the specialist who matches your goal, from first workout to competition day.
+      </p>
+      <div class="trainer-grid">
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&h=500&q=85" alt="Ananya Sharma, Indian personal trainer">
+          <div>
+            <h3>Ananya Sharma</h3>
+            <p class="trainer-role">Personal Trainer</p>
+            <p>Creates individual workouts, corrects form, and builds steady progression for every member.</p>
+            <span class="trainer-tag">PT · Beginners</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&h=500&q=85" alt="Meera Kapoor, Indian weight-loss trainer">
+          <div>
+            <h3>Meera Kapoor</h3>
+            <p class="trainer-role">Weight-Loss / Fat-Loss Trainer</p>
+            <p>Combines cardio, strength, and sustainable habits to reduce body fat while protecting muscle.</p>
+            <span class="trainer-tag">Fat Loss · Nutrition</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&h=500&q=85" alt="Kabir Singh, Indian bodybuilding coach">
+          <div>
+            <h3>Kabir Singh</h3>
+            <p class="trainer-role">Bodybuilding Coach</p>
+            <p>Guides muscle growth, physique development, posing, and competition preparation.</p>
+            <span class="trainer-tag">Muscle · Posing</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=500&h=500&q=85" alt="Riya Nair, Indian mobility coach">
+          <div>
+            <h3>Riya Nair</h3>
+            <p class="trainer-role">Mobility / Flexibility Coach</p>
+            <p>Improves range of motion, stretching, recovery, and mindful movement quality.</p>
+            <span class="trainer-tag">Yoga · Mobility</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=500&h=500&q=85" alt="Vikram Joshi, Indian strength and conditioning coach">
+          <div>
+            <h3>Vikram Joshi</h3>
+            <p class="trainer-role">Strength & Conditioning Coach</p>
+            <p>Develops power, speed, endurance, and athletic performance for all experience levels.</p>
+            <span class="trainer-tag">HYROX · Athletes</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=500&h=500&q=85" alt="Arjun Rao, Indian CrossFit coach">
+          <div>
+            <h3>Arjun Rao</h3>
+            <p class="trainer-role">CrossFit & Olympic Weightlifting Coach</p>
+            <p>Coaches functional fitness, gymnastics, snatch, clean and jerk, and conditioning.</p>
+            <span class="trainer-tag">CrossFit · Power</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&h=500&q=85" alt="Dev Patel, Indian functional fitness coach">
+          <div>
+            <h3>Dev Patel</h3>
+            <p class="trainer-role">Functional Fitness Coach</p>
+            <p>Uses practical movements to improve balance, coordination, everyday strength, and confidence.</p>
+            <span class="trainer-tag">Movement · Balance</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=500&h=500&q=85" alt="Rahul Verma, Indian powerlifting coach">
+          <div>
+            <h3>Rahul Verma</h3>
+            <p class="trainer-role">Powerlifting Coach</p>
+            <p>Specializes in safe, progressive squat, bench press, and deadlift programming.</p>
+            <span class="trainer-tag">Squat · Bench · Deadlift</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&h=500&q=85" alt="Neha Iyer, Indian group fitness instructor">
+          <div>
+            <h3>Neha Iyer</h3>
+            <p class="trainer-role">Group Fitness Instructor</p>
+            <p>Leads energetic HIIT, aerobics, circuit, and strength classes that keep the community moving.</p>
+            <span class="trainer-tag">HIIT · Community</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&h=500&q=85" alt="Sana Khan, Indian online fitness coach">
+          <div>
+            <h3>Sana Khan</h3>
+            <p class="trainer-role">Online Fitness Coach</p>
+            <p>Provides remote programs, weekly guidance, and progress monitoring wherever you train.</p>
+            <span class="trainer-tag">Online · Coaching</span>
+          </div>
+        </article>
+        <article class="trainer-card">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=500&h=500&q=85" alt="Karan Malhotra, Indian corrective exercise trainer">
+          <div>
+            <h3>Karan Malhotra</h3>
+            <p class="trainer-role">Corrective Exercise Trainer</p>
+            <p>Works on movement limitations and exercise adaptations within an appropriate professional scope.</p>
+            <span class="trainer-tag">Recovery · Form</span>
+          </div>
+        </article>
+      </div>
+      <div class="specialty-list" aria-label="Available coaching specialties">
+        <span><i class="fas fa-user-check"></i> Fitness / General Trainer</span>
+        <span><i class="fas fa-person-running"></i> Functional Fitness</span>
+        <span><i class="fas fa-weight-hanging"></i> Powerlifting</span>
+        <span><i class="fas fa-trophy"></i> Sports Performance</span>
+        <span><i class="fas fa-people-group"></i> Group Fitness</span>
+        <span><i class="fas fa-laptop"></i> Online Fitness Coaching</span>
+        <span><i class="fas fa-person-circle-check"></i> Corrective Exercise</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Page -->
+  <section id="services-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">Our Services</h1>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="glass-card p-8 text-center hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-dumbbell text-4xl sky-blue mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Personal Training</h3>
+          <p class="mb-4">One-on-one sessions with expert trainers who customize workouts to your specific goals and
+            fitness level.</p>
+          <ul class="text-left mb-6">
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Customized workout plans
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Form correction & technique
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Progress tracking
+            </li>
+          </ul>
+          <button class="px-6 py-2 bg-sky-blue text-black font-semibold rounded-lg mt-4 btn-hover hover-glow">₹5000/month</button>
+        </div>
+
+        <div class="glass-card p-8 text-center hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-users text-4xl sky-blue mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Group Classes</h3>
+          <p class="mb-4">High-energy group sessions led by certified instructors focusing on different aspects of
+            fitness.</p>
+          <ul class="text-left mb-6">
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>HIIT & Cardio classes
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Strength training
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Yoga & flexibility
+            </li>
+          </ul>
+          <button class="px-6 py-2 bg-sky-blue text-black font-semibold rounded-lg mt-4 btn-hover hover-glow">₹3000/month</button>
+        </div>
+
+        <div class="glass-card p-8 text-center hover:scale-105 transition-transform duration-300 hover-glow">
+          <i class="fas fa-utensils text-4xl sky-blue mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Nutrition Coaching</h3>
+          <p class="mb-4">Personalized meal plans designed by nutrition experts to complement your fitness journey.</p>
+          <ul class="text-left mb-6">
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Customized meal plans
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Macro tracking guidance
+            </li>
+            <li class="mb-2 hover:text-sky-blue transition-colors duration-300">
+              <i class="fas fa-check-circle text-sky-blue mr-2"></i>Weekly check-ins
+            </li>
+          </ul>
+          <button class="px-6 py-2 bg-sky-blue text-black font-semibold rounded-lg mt-4 btn-hover hover-glow">₹4000/month</button>
+        </div>
+      </div>
+
+      <div class="glass-card p-8">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Membership Packages</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-sky-blue rounded-lg p-6 text-center hover-glow">
+            <h3 class="text-xl font-bold mb-3">Basic</h3>
+            <p class="text-3xl font-bold mb-4">₹4000<span class="text-lg">/month</span></p>
+            <ul class="mb-6 space-y-2">
+              <li class="hover:text-sky-blue transition-colors duration-300">Access to gym facilities</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">3 group classes/week</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Basic progress tracking</li>
+            </ul>
+            <button class="px-6 py-2 border border-sky-blue text-sky-blue rounded-lg w-full btn-hover hover-glow">Select Plan</button>
+          </div>
+
+          <div class="border-2 border-sky-blue rounded-lg p-6 text-center relative hover-glow">
+            <div
+              class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-sky-blue text-black px-4 py-1 rounded-full text-sm font-bold">
+              POPULAR</div>
+            <h3 class="text-xl font-bold mb-3">Premium</h3>
+            <p class="text-3xl font-bold mb-4">₹7000<span class="text-lg">/month</span></p>
+            <ul class="mb-6 space-y-2">
+              <li class="hover:text-sky-blue transition-colors duration-300">All Basic features</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Unlimited group classes</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">2 personal training sessions</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Nutrition consultation</li>
+            </ul>
+            <button class="px-6 py-2 bg-sky-blue text-black rounded-lg w-full font-bold btn-hover hover-glow">Select Plan</button>
+          </div>
+
+          <div class="border border-sky-blue rounded-lg p-6 text-center hover-glow">
+            <h3 class="text-xl font-bold mb-3">Elite</h3>
+            <p class="text-3xl font-bold mb-4">₹12000<span class="text-lg">/month</span></p>
+            <ul class="mb-6 space-y-2">
+              <li class="hover:text-sky-blue transition-colors duration-300">All Premium features</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">5 personal training sessions</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Custom nutrition plan</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">Priority booking</li>
+              <li class="hover:text-sky-blue transition-colors duration-300">24/7 support</li>
+            </ul>
+            <button class="px-6 py-2 border border-sky-blue text-sky-blue rounded-lg w-full btn-hover hover-glow">Select Plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Page -->
+  <section id="gallery-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">Our Gym Gallery</h1>
+
+      <div class="zone-grid mb-16">
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85" alt="Zumba dance fitness zone">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-music"></i></span>
+            <div>
+              <h2>Zumba Zone</h2>
+              <p>Energetic dance workouts with music, lights, and group motivation.</p>
+            </div>
+          </div>
+        </article>
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85" alt="Weight lifting zone">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-dumbbell"></i></span>
+            <div>
+              <h2>Weight Lifting</h2>
+              <p>Free weights, racks, and expert guidance for strength and muscle growth.</p>
+            </div>
+          </div>
+        </article>
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=85" alt="Yoga studio">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-person-praying"></i></span>
+            <div>
+              <h2>Yoga Studio</h2>
+              <p>A calm studio for balance, flexibility, breathing, and recovery.</p>
+            </div>
+          </div>
+        </article>
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85" alt="Meditation room">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-spa"></i></span>
+            <div>
+              <h2>Meditation Room</h2>
+              <p>Quiet guided sessions to reset your mind after a powerful workout.</p>
+            </div>
+          </div>
+        </article>
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85" alt="Posing room with mirrors">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-person"></i></span>
+            <div>
+              <h2>Posing Room</h2>
+              <p>Mirrors and coaching space for physique practice and confidence.</p>
+            </div>
+          </div>
+        </article>
+        <article class="zone-card hover-glow">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85" alt="Hyrox training zone">
+          <div class="zone-content"><span class="zone-icon"><i class="fas fa-person-running"></i></span>
+            <div>
+              <h2>HYROX Training</h2>
+              <p>Sleds, ropes, carries, and functional stations built for race fitness.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <!-- Indian Gym Photos -->
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/43jz27s7" alt="Indian Gym" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/2h8fdd5y" alt="Indian Fitness Center" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/472f4e7v" alt="Indian Weightlifting" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/2xe6726e" alt="Indian CrossFit" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/enmfrxkn" alt="Indian Strength Training" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/4tp34ked" alt="Indian Yoga Class" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/y5tbpmte" alt="Indian Cardio Zone" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/5k2d9pdm" alt="Indian Functional Fitness" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/5n87s9wk" alt="Indian Stand-alone Training" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+
+        </div>
+        <div class="overflow-hidden rounded-lg slide-in hover-glow">
+          <img src="https://tinyurl.com/3f97rhjx" alt="Indian Group Training" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+      </div>
+
+      <div class="glass-card p-8 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Visit Our State-of-the-Art Facilities</h2>
+        <p class="mb-6 max-w-3xl mx-auto">Our gyms feature premium equipment, spacious workout areas, and specialized
+          zones for different training styles. From free weights to cardio machines, yoga studios to functional fitness
+          areas, we have everything you need to achieve your fitness goals.</p>
+        <button data-page="contact" class="px-6 py-3 bg-sky-blue text-black font-bold rounded-full btn-hover hover-glow">Schedule a Tour</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Page -->
+  <section id="dashboard-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">Your Fitness Dashboard</h1>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="glass-card p-6 text-center hover-glow">
+          <i class="fas fa-fire text-3xl sky-blue mb-3"></i>
+          <p class="text-2xl font-bold">1,250</p>
+          <p>Calories Burned</p>
+        </div>
+        <div class="glass-card p-6 text-center hover-glow">
+          <i class="fas fa-running text-3xl sky-blue mb-3"></i>
+          <p class="text-2xl font-bold">42</p>
+          <p>Workout Days</p>
+        </div>
+        <div class="glass-card p-6 text-center hover-glow">
+          <i class="fas fa-weight text-3xl sky-blue mb-3"></i>
+          <p class="text-2xl font-bold">72.5 kg</p>
+          <p>Current Weight</p>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 mb-8 hover-glow">
+        <h2 class="text-2xl font-semibold mb-6">Performance Overview</h2>
+        <div id="dashboard-chart"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass-card p-6 hover-glow">
+          <h2 class="text-2xl font-semibold mb-4">Recent Workouts</h2>
+          <ul class="space-y-3">
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>Chest & Triceps</span>
+              <span>45 min</span>
+            </li>
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>Leg Day</span>
+              <span>60 min</span>
+            </li>
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>HIIT Cardio</span>
+              <span>30 min</span>
+            </li>
+            <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+              <span>Back & Biceps</span>
+              <span>50 min</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 hover-glow">
+          <h2 class="text-2xl font-semibold mb-4">Upcoming Sessions</h2>
+          <ul class="space-y-3">
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>Personal Training</span>
+              <span>Tomorrow, 6:00 PM</span>
+            </li>
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>Yoga Class</span>
+              <span>Thu, 7:00 AM</span>
+            </li>
+            <li
+              class="flex justify-between border-b border-gray-700 pb-3 hover:text-sky-blue transition-colors duration-300">
+              <span>Nutrition Consultation</span>
+              <span>Fri, 3:00 PM</span>
+            </li>
+            <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+              <span>HIIT Group Class</span>
+              <span>Sat, 8:00 AM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diet Planner Page -->
+  <section id="diet-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">Personalized Diet Planner</h1>
+
+      <!-- BMI Calculator -->
+      <div class="diet-feature-grid mb-8">
+        <div class="glass-card p-8 bmi-card hover-glow">
+          <div class="feature-heading">
+            <span class="feature-icon"><i class="fas fa-weight-scale"></i></span>
+            <div>
+              <p class="eyebrow sky-blue">Know your starting point</p>
+              <h2 class="text-2xl font-semibold">BMI Calculator</h2>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6">Get a quick estimate and discover which plan can support your goal.</p>
+          <form id="bmi-form" class="bmi-form">
+            <label>
+              Height <span>(cm)</span>
+              <input id="bmi-height" type="number" min="50" max="250" step="0.1" placeholder="e.g. 170" required>
+            </label>
+            <label>
+              Weight <span>(kg)</span>
+              <input id="bmi-weight" type="number" min="10" max="400" step="0.1" placeholder="e.g. 70" required>
+            </label>
+            <button type="submit" class="px-6 py-3 bg-sky-blue text-black font-bold rounded-lg btn-hover hover-glow">
+              <i class="fas fa-calculator mr-2"></i>Calculate BMI
+            </button>
+          </form>
+          <div id="bmi-result" class="bmi-result" aria-live="polite">Enter your details to see your result.</div>
+        </div>
+
+        <!-- Free Meal Options -->
+        <div class="glass-card p-8 meal-preview-card hover-glow">
+          <div class="feature-heading">
+            <span class="feature-icon"><i class="fas fa-utensils"></i></span>
+            <div>
+              <p class="eyebrow sky-blue">Try before you join</p>
+              <h2 class="text-2xl font-semibold">Free Meal Inspiration</h2>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6">Three simple options to fuel your next workout. A personalized membership plan
+            gives you more variety.</p>
+          <div class="meal-options">
+            <article class="meal-option">
+              <i class="fas fa-dumbbell sky-blue"></i>
+              <div>
+                <h3>Power Breakfast</h3>
+                <p>Oats, banana, berries & Greek yogurt</p>
+              </div>
+              <span>420 cal</span>
+            </article>
+            <article class="meal-option">
+              <i class="fas fa-person-running sky-blue"></i>
+              <div>
+                <h3>Gym Lunch</h3>
+                <p>Paneer, brown rice & colorful vegetables</p>
+              </div>
+              <span>560 cal</span>
+            </article>
+            <article class="meal-option">
+              <i class="fas fa-bolt sky-blue"></i>
+              <div>
+                <h3>Recovery Dinner</h3>
+                <p>Chicken or tofu, quinoa & roasted vegetables</p>
+              </div>
+              <span>510 cal</span>
+            </article>
+          </div>
+          <button data-page="signup" class="w-full mt-6 py-3 bg-sky-blue text-black font-bold rounded-lg btn-hover hover-glow">
+            <i class="fas fa-crown mr-2"></i>Unlock Your Full Meal Plan
+          </button>
+        </div>
+      </div>
+
+      <!-- Free Diet Tips Section -->
+      <div class="glass-card p-8 mb-8">
+        <h2 class="text-2xl font-semibold mb-6">Free Diet Tips</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-800 p-4 rounded-lg hover-glow">
+            <h3 class="text-lg font-semibold mb-2">Stay Hydrated</h3>
+            <p>Drink at least 8 glasses of water daily to boost metabolism and flush out toxins.</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg hover-glow">
+            <h3 class="text-lg font-semibold mb-2">Balanced Meals</h3>
+            <p>Include protein, carbs, and healthy fats in every meal for sustained energy.</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg hover-glow">
+            <h3 class="text-lg font-semibold mb-2">Portion Control</h3>
+            <p>Use smaller plates to naturally reduce portion sizes without feeling deprived.</p>
+          </div>
+        </div>
+        <div class="mt-6 text-center">
+          <p class="inline-block bg-yellow-500 text-black px-4 py-2 rounded-lg hover-glow">Unlock personalized plans
+            with our ₹19 diet package!</p>
+        </div>
+      </div>
+
+      <!-- Custom Planner Feature -->
+      <div class="glass-card p-8 mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <div>
+            <h2 class="text-2xl font-semibold">Custom Diet Planner</h2>
+            <p class="text-gray-300">Create your personalized nutrition plan</p>
+          </div>
+          <button data-page="login" class="px-6 py-2 bg-sky-blue text-black font-semibold rounded-lg mt-4 md:mt-0 btn-hover hover-glow">
+          Login to Access
+        </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="hover-glow p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 sky-blue">Features Included:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-check-circle text-sky-blue mr-3"></i>
+                <span>Personalized meal plans based on your goals</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-check-circle text-sky-blue mr-3"></i>
+                <span>Macro and micronutrient tracking</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-check-circle text-sky-blue mr-3"></i>
+                <span>Weekly meal prep guides</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-check-circle text-sky-blue mr-3"></i>
+                <span>Recipe suggestions and substitutions</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-check-circle text-sky-blue mr-3"></i>
+                <span>Progress monitoring and adjustments</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-900 p-6 rounded-lg hover-glow">
+            <h3 class="text-xl font-semibold mb-4">Get Your Custom Plan</h3>
+            <div class="mb-4">
+              <p class="text-3xl font-bold sky-blue">₹19<span class="text-lg">/month</span></p>
+              <p class="text-gray-400">One-time payment for lifetime access</p>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                <span>Personalized macros calculation</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                <span>Weekly meal plans</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                <span>Shopping list generator</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                <span>Email support</span>
+              </li>
+            </ul>
+            <button data-page="login" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg btn-hover hover-glow">
+            Purchase Now
+          </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Today's Meal Plan (Placeholder) -->
+      <div class="glass-card p-8 mb-8">
+        <h2 class="text-2xl font-semibold mb-6">Sample Daily Plan</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="hover-glow p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 sky-blue">Breakfast</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Oatmeal with Berries</span>
+                <span>350 cal</span>
+              </li>
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Green Tea</span>
+                <span>0 cal</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hover-glow p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 sky-blue">Lunch</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Grilled Chicken Salad</span>
+                <span>420 cal</span>
+              </li>
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Brown Rice</span>
+                <span>180 cal</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hover-glow p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 sky-blue">Dinner</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Salmon with Vegetables</span>
+                <span>480 cal</span>
+              </li>
+              <li class="flex justify-between hover:text-sky-blue transition-colors duration-300">
+                <span>Quinoa</span>
+                <span>220 cal</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nutritional Targets (Placeholder) -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass-card p-8 hover-glow">
+          <h2 class="text-2xl font-semibold mb-4">Sample Nutritional Targets</h2>
+          <div class="mb-4">
+            <div class="flex justify-between mb-1">
+              <span>Calories</span>
+              <span>1800 / 2200</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-sky-blue h-2.5 rounded-full" style="width: 82%"></div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex justify-between mb-1">
+              <span>Protein</span>
+              <span>120g / 150g</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex justify-between mb-1">
+              <span>Carbs</span>
+              <span>180g / 250g</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 72%"></div>
+            </div>
+          </div>
+          <div class="hover-glow">
+            <div class="flex justify-between mb-1">
+              <span>Fats</span>
+              <span>60g / 70g</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-red-500 h-2.5 rounded-full" style="width: 86%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8">
+          <h2 class="text-2xl font-semibold mb-4">Hydration Tracker</h2>
+          <p class="mb-4">Daily Goal: 3.5L</p>
+          <div class="grid grid-cols-4 gap-4 mb-6">
+            <button class="py-3 bg-gray-800 rounded-lg hover:bg-sky-blue btn-hover hover-glow">250ml</button>
+            <button class="py-3 bg-gray-800 rounded-lg hover:bg-sky-blue btn-hover hover-glow">500ml</button>
+            <button class="py-3 bg-gray-800 rounded-lg hover:bg-sky-blue btn-hover hover-glow">750ml</button>
+            <button class="py-3 bg-gray-800 rounded-lg hover:bg-sky-blue btn-hover hover-glow">1L</button>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold sky-blue">2.25L</p>
+            <p>Consumed Today</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12 sky-blue">Contact Us</h1>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <div class="glass-card p-8 mb-8 hover-glow">
+            <h2 class="text-2xl font-semibold mb-6">Get In Touch</h2>
+            <form>
+              <div class="mb-4">
+                <label class="block mb-2">Name</label>
+                <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Your Name">
+              </div>
+              <div class="mb-4">
+                <label class="block mb-2">Email</label>
+                <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
+              </div>
+              <div class="mb-4">
+                <label class="block mb-2">Subject</label>
+                <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Subject">
+              </div>
+              <div class="mb-6">
+                <label class="block mb-2">Message</label>
+                <textarea class="w-full p-3 bg-gray-800 rounded-lg h-32 hover:border-sky-blue transition-colors duration-300" placeholder="Your message..."></textarea>
+              </div>
+              <button type="submit" class="px-6 py-3 bg-sky-blue text-black font-bold rounded-lg w-full btn-hover hover-glow">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <div class="glass-card p-8 mb-8 hover-glow">
+            <h2 class="text-2xl font-semibold mb-6">Contact Information</h2>
+            <ul class="space-y-4">
+              <li class="flex items-start hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-map-marker-alt sky-blue mt-1 mr-4"></i>
+                <span>123 Fitness Street, Mumbai, Maharashtra 400001</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-phone sky-blue mr-4"></i>
+                <span>+91 98765 43210</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-envelope sky-blue mr-4"></i>
+                <span>info@shaanfitness.in</span>
+              </li>
+              <li class="flex items-center hover:text-sky-blue transition-colors duration-300">
+                <i class="fas fa-clock sky-blue mr-4"></i>
+                <span>Mon-Sat: 5:00 AM - 11:00 PM<br>Sun: 7:00 AM - 9:00 PM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 hover-glow">
+            <h2 class="text-2xl font-semibold mb-6">Follow Us</h2>
+            <div class="flex space-x-6">
+              <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-facebook-f"></i></button>
+              <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-instagram"></i></button>
+              <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-twitter"></i></button>
+              <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-youtube"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Page -->
+  <section id="login-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-md mx-auto">
+      <div class="glass-card p-8 hover-glow">
+        <h1 class="text-3xl font-bold text-center mb-8 sky-blue">Member Login</h1>
+        <form>
+          <div class="mb-6">
+            <label class="block mb-2">Email Address</label>
+            <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
+          </div>
+          <div class="mb-6">
+            <label class="block mb-2">Password</label>
+            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+          </div>
+          <div class="flex justify-between items-center mb-6">
+            <label class="flex items-center hover:text-sky-blue transition-colors duration-300">
+            <input type="checkbox" class="mr-2">
+            <span>Remember Me</span>
+          </label>
+            <button class="sky-blue hover:underline">Forgot Password?</button>
+          </div>
+          <button type="submit" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg mb-6 btn-hover hover-glow">Login</button>
+          <p class="text-center">Don't have an account?
+            <button data-page="signup" class="sky-blue hover:underline">Sign Up</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup Page -->
+  <section id="signup-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-md mx-auto">
+      <div class="glass-card p-8 hover-glow">
+        <h1 class="text-3xl font-bold text-center mb-8 sky-blue">Create Account</h1>
+        <form>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block mb-2">First Name</label>
+              <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="First Name">
+            </div>
+            <div>
+              <label class="block mb-2">Last Name</label>
+              <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2">Email Address</label>
+            <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2">Phone Number</label>
+            <input type="tel" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="+91">
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2">Password</label>
+            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+          </div>
+          <div class="mb-6">
+            <label class="block mb-2">Confirm Password</label>
+            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+          </div>
+          <div class="mb-6">
+            <label class="flex items-center hover:text-sky-blue transition-colors duration-300">
+            <input type="checkbox" class="mr-2">
+            <span>I agree to the <button class="sky-blue hover:underline">Terms & Conditions</button></span>
+          </label>
+          </div>
+          <button type="submit" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg mb-6 btn-hover hover-glow">Create Account</button>
+          <p class="text-center">Already have an account?
+            <button data-page="login" class="sky-blue hover:underline">Login</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
