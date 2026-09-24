@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/notification.css" type="text/css" media="all" />
   <title>Notification</title>
 </head>
@@ -20,12 +20,49 @@
   <div class="header js-header">
     <!-- nothing -->
   </div>
+  <nav class="category-navigation" aria-label="Video categories">
+    <button class="navi-btn active" type="button">All</button>
+    <a href="music.html" class="music-tab-link">
+      <button class="navi-btn" type="button">Music</button>
+    </a>
+    <button class="navi-btn" type="button">AI</button>
+    <button class="navi-btn" type="button">Computer programming</button>
+    <button class="navi-btn" type="button">Reverberation</button>
+    <button class="navi-btn" type="button">Mixes</button>
+    <button class="navi-btn" type="button">Podcasts</button>
+    <button class="navi-btn" type="button">Live</button>
+    <button class="navi-btn" type="button">Romantic Music</button>
+    <button class="navi-btn" type="button">JEE Main</button>
+    <button class="navi-btn" type="button">Indian pop music</button>
+    <button class="navi-btn" type="button">Electromotive force</button>
+    <button class="navi-btn" type="button">Playlists</button>
+    <button class="navi-btn" type="button">Smartphones</button>
+    <button class="navi-btn" type="button">Study Skills</button>
+    <button class="navi-btn" type="button">Physical Chemistry</button>
+    <button class="navi-btn" type="button">Ghazal</button>
+    <button class="navi-btn" type="button">Thoughts</button>
+    <button class="navi-btn" type="button">Electrical Engineering</button>
+    <button class="navi-btn" type="button">Recently uploaded</button>
+    <button class="navi-btn" type="button">Watched</button>
+  </nav>
+  <div class="sidebar js-sidebar js-sidebarss">
+    <!-- nothing -->
+  </div>
+
+
+
   <nav class="notification-container">
     <div class="noty">
       Notification
     </div>
     <div class="setting-icon">
-      <img src="https://tinyurl.com/settings0" alt="settind-icon" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-settings preview-icon">
+        <path
+          d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
     </div>
   </nav>
 
@@ -33,12 +70,11 @@
 
     <!-- nothing check script.js -->
   </div>
-  <div class="sidebar js-sidebar js-sidebarss">
-    <!-- nothing -->
-  </div>
+
   <script src="scripts/notification.js" type="module"></script>
-  <script src="scripts/sideBar.js" type="module"></script>
   <script src="scripts/header.js" type="module"></script>
+  <script src="scripts/sideBar.js" type="module"></script>
+  <script src="scripts/script.js" type="module"></script>
 </body>
 
 </html>
