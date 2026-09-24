@@ -87,9 +87,14 @@
       <div class="section-heading">
         <h2>Your channels</h2>
 
-        <button class="scroll-btn" id="channelNextBtn">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
+        <div class="channel-scroll-controls" aria-label="Channel carousel controls">
+          <button class="scroll-btn channel-scroll-btn--previous" type="button" aria-label="Previous channels" disabled>
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="scroll-btn channel-scroll-btn--next" type="button" aria-label="Next channels">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
 
 
@@ -207,32 +212,41 @@
     <!-- 
              CATEGORY FILTERS
          -->
-    <section class="filter-section">
+    <section class="filter-carousel" aria-label="Subscription video filters">
+      <button class="filter-scroll-button filter-scroll-button--previous" type="button" aria-label="Previous subscription filters" disabled>
+        &#10094;
+      </button>
 
-      <button class="filter-chip active" data-filter="all">
+      <div class="filter-section">
+
+        <button class="filter-chip active" data-filter="all">
                 All
             </button>
 
-      <button class="filter-chip" data-filter="technology">
+        <button class="filter-chip" data-filter="technology">
                 Technology
             </button>
 
-      <button class="filter-chip" data-filter="programming">
+        <button class="filter-chip" data-filter="programming">
                 Programming
             </button>
 
-      <button class="filter-chip" data-filter="travel">
+        <button class="filter-chip" data-filter="travel">
                 Travel
             </button>
 
-      <button class="filter-chip" data-filter="music">
+        <button class="filter-chip" data-filter="music">
                 Music
             </button>
 
-      <button class="filter-chip" data-filter="fitness">
+        <button class="filter-chip" data-filter="fitness">
                 Fitness
             </button>
 
+      </div>
+      <button class="filter-scroll-button filter-scroll-button--next" type="button" aria-label="Next subscription filters">
+        &#10095;
+      </button>
     </section>
 
 
@@ -252,421 +266,7 @@
 
 
       <div class="video-grid" id="videoGrid">
-
-
-        <!-- VIDEO 1 -->
-        <article class="video-card" data-category="technology">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=11"
-                            alt="Latest technology video"
-                        >
-
-            <span class="video-duration">
-                            12:45
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=1"
-                            alt="Tech World"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                10 Amazing Technologies You Should Know
-              </h3>
-
-              <p class="channel-name">
-                Tech World
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                1.2M views • 2 hours ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>12K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- VIDEO 2 -->
-        <article class="video-card" data-category="programming">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=12"
-                            alt="Programming tutorial"
-                        >
-
-            <span class="video-duration">
-                            28:17
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=2"
-                            alt="Code Academy"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                Build a Website From Scratch
-              </h3>
-
-              <p class="channel-name">
-                Code Academy
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                456K views • 5 hours ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>8.5K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- VIDEO 3 -->
-        <article class="video-card" data-category="travel">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=13"
-                            alt="Travel video"
-                        >
-
-            <span class="video-duration">
-                            18:32
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=3"
-                            alt="Travel Vibes"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                Exploring the Most Beautiful Places
-              </h3>
-
-              <p class="channel-name">
-                Travel Vibes
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                2.1M views • 1 day ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>25K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- VIDEO 4 -->
-        <article class="video-card" data-category="music">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=14"
-                            alt="Music video"
-                        >
-
-            <span class="video-duration">
-                            4:28
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=4"
-                            alt="Music Hub"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                New Music Mix - Best Songs This Week
-              </h3>
-
-              <p class="channel-name">
-                Music Hub
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                5.4M views • 1 day ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>45K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- VIDEO 5 -->
-        <article class="video-card" data-category="fitness">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=15"
-                            alt="Fitness workout"
-                        >
-
-            <span class="video-duration">
-                            15:10
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=5"
-                            alt="Fitness Daily"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                15 Minute Full Body Workout
-              </h3>
-
-              <p class="channel-name">
-                Fitness Daily
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                890K views • 2 days ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>18K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- VIDEO 6 -->
-        <article class="video-card" data-category="technology">
-
-          <div class="thumbnail-container">
-
-            <img
-                            src="https://picsum.photos/640/360?random=16"
-                            alt="Technology gadgets"
-                        >
-
-            <span class="video-duration">
-                            10:52
-                        </span>
-
-          </div>
-
-          <div class="video-info">
-
-            <img
-                            class="video-channel-avatar"
-                            src="https://i.pravatar.cc/100?img=1"
-                            alt="Tech World"
-                        >
-
-            <div class="video-details">
-
-              <h3>
-                Best Gadgets You Can Buy This Year
-              </h3>
-
-              <p class="channel-name">
-                Tech World
-                <i class="fa-solid fa-circle-check verified"></i>
-              </p>
-
-              <p class="video-meta">
-                760K views • 3 days ago
-              </p>
-
-            </div>
-
-            <button class="more-btn">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-
-          </div>
-
-          <div class="video-actions">
-
-            <button class="action-btn like-btn">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <span>9.2K</span>
-                        </button>
-
-            <button class="action-btn">
-                            <i class="fa-regular fa-share-from-square"></i>
-                            Share
-                        </button>
-
-            <button class="action-btn save-btn">
-                            <i class="fa-regular fa-bookmark"></i>
-                            Save
-                        </button>
-
-          </div>
-
-        </article>
-
+        <!-- all videos is on javascript file -->
       </div>
 
     </section>
@@ -838,7 +438,6 @@
 
 
   <!-- Subscription JavaScript -->
-  <script src="subscription.js"></script>
   <script src="scripts/subscription.js" type="module"></script>
   <script src="scripts/header.js" type="module"></script>
   <script src="scripts/sideBar.js" type="module"></script>
