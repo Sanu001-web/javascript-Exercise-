@@ -80,7 +80,7 @@ export function renderHeader({ showSearch = true } = {}) {
   ` : '';
 
   header.innerHTML = `
-    <div class="left-section">
+    <div class="left-section yt-log-home">
     
         <svg 
           class="hamburger-menu"
@@ -101,7 +101,9 @@ export function renderHeader({ showSearch = true } = {}) {
         <img class="youtube-logo icon-dark" src="https://tinyurl.com/3rf8zvcp" alt="dark-logo" />
         <img class="youtube-logo icon-light" src="https://tinyurl.com/youtube-logo0" alt="YouTube">
       </a>
+      <div class="tooltip">youtube home</div>
     </div>
+        
 
     ${searchHTML}
 
