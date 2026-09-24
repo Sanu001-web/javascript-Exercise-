@@ -50,7 +50,6 @@ CATOGARY-NAVIGATION
   scroll-behavior: smooth;
   scrollbar-width: none;
   border-bottom: 1px solid #e5e5e5;
-  scrollbar-width: none;
 }
 
 .category-navigation::-webkit-scrollbar {
@@ -388,7 +387,8 @@ body.dark-theme .navi-btn.active {
 .voice-search-button .tooltip,
 .youtube-apps-icon-container .tooltip,
 .upload-icon-container .tooltip,
-.notifications-icon-container .tooltip {
+.notifications-icon-container .tooltip ,
+.yt-log-home .tooltip{
 
   position: absolute;
 
@@ -415,18 +415,12 @@ body.dark-theme .navi-btn.active {
   z-index: 2000;
 }
 
-
-.icon-container:hover .tooltip,
-.search-button:hover .tooltip,
-.voice-search-button:hover .tooltip {
-  opacity: 1;
-}
-
 .search-button:hover .tooltip,
 .voice-search-button:hover .tooltip,
 .upload-icon-container:hover .tooltip,
 .youtube-apps-icon-container:hover .tooltip,
-.notifications-icon-container:hover .tooltip {
+.notifications-icon-container:hover .tooltip ,
+.yt-log-home:hover .tooltip{
 
   opacity: 1;
 }
