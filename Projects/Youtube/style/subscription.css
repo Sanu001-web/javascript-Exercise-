@@ -187,6 +187,26 @@ a {
   background: #f2f2f2;
 }
 
+.channel-scroll-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.channel-scroll-btn--previous,
+.channel-scroll-btn--next {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #e5e5e5;
+}
+
+.channel-scroll-btn--previous:disabled,
+.channel-scroll-btn--next:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
 
 /* =========================================================
    CHANNEL SECTION
@@ -201,19 +221,14 @@ a {
   gap: 16px;
 
   overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 
   padding: 3px 2px 12px;
-
-  scrollbar-width: thin;
 }
 
 .channels-wrapper::-webkit-scrollbar {
-  height: 5px;
-}
-
-.channels-wrapper::-webkit-scrollbar-thumb {
-  background: #c7c7c7;
-  border-radius: 10px;
+  display: none;
 }
 
 .channel-card {
@@ -371,7 +386,7 @@ a {
 
   overflow: hidden;
 
-  background: #ffffff;
+  /* background: #ffffff; */
 
   transition:
     transform 0.2s ease,
@@ -543,66 +558,7 @@ a {
 }
 
 
-/* =========================================================
-   VIDEO ACTIONS
-========================================================= */
 
-.video-actions {
-  display: flex;
-  align-items: stretch;
-  gap: 7px;
-
-  min-height: 34px;
-  margin-top: auto;
-  margin-bottom: 10px;
-  padding-top: 12px;
-}
-
-.action-btn {
-  min-width: 0;
-  min-height: 34px;
-  flex: 1 1 0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  padding: 7px 8px;
-
-  border-radius: 18px;
-
-  background: #f2f2f2;
-  color: #0f0f0f;
-
-  font-size: 12px;
-  white-space: nowrap;
-
-  transition: background 0.2s ease;
-}
-
-.action-btn i {
-  flex-shrink: 0;
-}
-
-.action-btn span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.action-btn:hover {
-  background: #e5e5e5;
-}
-
-.like-btn.liked {
-  background: #ffecec;
-  color: #cc0000;
-}
-
-.save-btn.saved {
-  background: #e8f0fe;
-  color: #1a73e8;
-}
 
 
 /* =========================================================
@@ -1025,9 +981,7 @@ a {
     gap: 28px;
   }
 
-  .video-actions {
-    gap: 5px;
-  }
+  
 
   .action-btn {
     padding: 7px 6px;
@@ -1048,7 +1002,7 @@ a {
 ========================================================= */
 
 
-body.dark-theme .video-details h3{
+body.dark-theme .video-details h3 {
   color: #1e1d1d;
 }
 
@@ -1127,6 +1081,17 @@ body.dark-theme .more-btn:hover {
 
 body.dark-theme .manage-channel input {
   accent-color: #ff4e45;
+}
+
+body.dark-theme .video-details h3 {
+  color: #ffffff;
+}
+
+body.dark-theme .channel-name,
+body.dark-theme .video-meta,
+body.dark-theme .page-header p,
+body.dark-theme .channel-card p {
+  color: #b3aeae;
 }
 
 
