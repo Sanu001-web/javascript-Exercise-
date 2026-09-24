@@ -1,4 +1,7 @@
-export const videoInfo = [
+import { subscriptionInfo } from '../data/subscriptionVideoInfo.js';
+import { sportVideoInfo } from '../data/sportVideoInfo.js';
+
+const homeVideoInfo = [
   {
     id: "video001",
     thubmnail: 'https://tinyurl.com/3r83eyke',
@@ -439,7 +442,60 @@ Basic project structure and configuration
     },
     videoSubscriberCount: '100k subscribers',
     likeCount: '169k'
+  },
+  {
+    thubmnail: 'https://picsum.photos/640/360?random=16',
+    videoUrl: 'https://www.youtube.com/embed/59RZ6b8gSCE?si=zmrJJjAtvJNB9hyR',
+    duration: '10:52',
+    description: `Want to become fluent in English? Stop searching for shortcuts.
+    In this video, we break down what actually helps you become fluent — consistent listening, speaking, reading, vocabulary building, thinking in English, and most importantly, daily practice.
+    You don't need perfect grammar before you start speaking. You need the courage to practice, make mistakes, learn, and keep going.
+    If you're serious about improving your English, start today and stay consistent. 🇬🇧🔥
+    Comment below: What is the biggest challenge you face while learning English?
+    #LearnEnglish #EnglishSpeaking #EnglishFluency #SpokenEnglish #EnglishLearning #LearnEnglishOnline #CommunicationSkills
+
+    📱 Connect:
+    YouTube: https://youtube.com/@Sanu001-web
+    Instagram: https://instagram.com/Sanu001-web
+    X: https://x.com/Sanu001-web
+    LinkedIn: https://linkedin.com/in/Sanu001-web`,
+    channelId: 'MarquesBrownlee',
+    badges: ['New', '4K'],
+    profilePic: 'https://i.pravatar.cc/100?img=6',
+    videoTitle: "Best Gadgets You Can Buy This Year",
+    videoAuthor: 'Volka English',
+    channelViewInfo: {
+      views: '760K views',
+      UploadDate: '3 days ago'
+    },
+    videoSubscriberCount: '178k subscribers',
+    likeCount: '69k'
   }
+];
+
+const subscriptionVideos = subscriptionInfo.map((video, index) => ({
+  id: `subscription-${index + 1}`,
+  thubmnail: video.thumbnailContainer.thumbnail,
+  videoUrl: '',
+  duration: video.thumbnailContainer.videoDuration.trim(),
+  description: video.videoInfo.videoDetails.videoTitle,
+  channelId: video.videoInfo.videoDetails.channelName,
+  badges: ['New'],
+  profilePic: video.videoInfo.videoChannelAvatar,
+  videoTitle: video.videoInfo.videoDetails.videoTitle,
+  videoAuthor: video.videoInfo.videoDetails.channelName,
+  channelViewInfo: {
+    views: video.videoInfo.videoDetails.videoMeta.split(' • ')[0],
+    UploadDate: video.videoInfo.videoDetails.videoMeta.split(' • ')[1] || ''
+  },
+  videoSubscriberCount: '0 subscribers',
+  likeCount: '0'
+}));
+
+export const videoInfo = [
+  ...homeVideoInfo,
+  ...subscriptionVideos,
+  ...sportVideoInfo
 ];
 
 function formatCount(value) {
