@@ -242,25 +242,42 @@
 
 /*Dark Mode*/
 
-.dark-theme .comments-container ,body.dark-theme .related-videos-section {
+.icon-dark {
+  display: none;
+}
+
+.dark-theme .icon-dark {
+  display: inline;
+}
+
+.dark-theme .icon-light {
+  display: none;
+}
+
+.dark-theme .comments-container,
+body.dark-theme .related-videos-section {
 
   color: #ffffff;
 }
-.dark-theme .related-video-title{
+
+.dark-theme .related-video-title {
 
   color: #ffffff;
 }
+
 .dark-theme .cancel-btn {
   color: #fff;
 }
 
-.dark-theme #channel-author{
+.dark-theme #channel-author {
   color: #fff;
 }
-.dark-theme .comment-box{
+
+.dark-theme .comment-box {
   background-color: transparent;
   color: #fff;
 }
+
 /* 
    VIDEO BADGES
  */
@@ -459,8 +476,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  padding: 8px 10px;
+  padding: 8px 12px;
 }
+
+
 
 
 .save-button,
@@ -711,7 +730,7 @@ button {
   font-size: 13px;
 }
 
-body.dark-theme .date{
+body.dark-theme .date {
   color: #a1a1a1;
 }
 
