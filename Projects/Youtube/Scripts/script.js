@@ -36,6 +36,66 @@ categoryNavigation?.addEventListener('scroll', updateCategoryScrollButtons, { pa
 window.addEventListener('resize', updateCategoryScrollButtons);
 updateCategoryScrollButtons();
 
+// Give page-specific filter rows the same controlled carousel behavior.
+document.querySelectorAll('.filter-carousel').forEach(carousel => {
+  const filterRow = carousel.querySelector('.filter-section, .categories');
+  const previousButton = carousel.querySelector('.filter-scroll-button--previous');
+  const nextButton = carousel.querySelector('.filter-scroll-button--next');
+
+  if (!filterRow || !previousButton || !nextButton) return;
+
+  const updateFilterButtons = () => {
+    const maxScroll = filterRow.scrollWidth - filterRow.clientWidth;
+    previousButton.disabled = filterRow.scrollLeft <= 1;
+    nextButton.disabled = filterRow.scrollLeft >= maxScroll - 1;
+  };
+
+  previousButton.addEventListener('click', () => {
+    filterRow.scrollBy({ left: -Math.max(filterRow.clientWidth * 0.75, 180), behavior: 'smooth' });
+  });
+
+  nextButton.addEventListener('click', () => {
+    filterRow.scrollBy({ left: Math.max(filterRow.clientWidth * 0.75, 180), behavior: 'smooth' });
+  });
+
+  filterRow.addEventListener('scroll', updateFilterButtons, { passive: true });
+  window.addEventListener('resize', updateFilterButtons);
+  updateFilterButtons();
+});
+
+// Give channel rows the same controlled carousel behavior without a visible scrollbar.
+document.querySelectorAll('.channels-section').forEach(section => {
+  const channelRow = section.querySelector('.channels-wrapper');
+  const previousButton = section.querySelector('.channel-scroll-btn--previous');
+  const nextButton = section.querySelector('.channel-scroll-btn--next');
+
+  if (!channelRow || !previousButton || !nextButton) return;
+
+  const updateChannelButtons = () => {
+    const maxScroll = channelRow.scrollWidth - channelRow.clientWidth;
+    previousButton.disabled = channelRow.scrollLeft <= 1;
+    nextButton.disabled = channelRow.scrollLeft >= maxScroll - 1;
+  };
+
+  previousButton.addEventListener('click', () => {
+    channelRow.scrollBy({
+      left: -Math.max(channelRow.clientWidth * 0.75, 220),
+      behavior: 'smooth'
+    });
+  });
+
+  nextButton.addEventListener('click', () => {
+    channelRow.scrollBy({
+      left: Math.max(channelRow.clientWidth * 0.75, 220),
+      behavior: 'smooth'
+    });
+  });
+
+  channelRow.addEventListener('scroll', updateChannelButtons, { passive: true });
+  window.addEventListener('resize', updateChannelButtons);
+  updateChannelButtons();
+});
+
 const notificationButton = document.querySelector('.notifications-icon');
 
 notificationButton?.addEventListener('click', () => {
