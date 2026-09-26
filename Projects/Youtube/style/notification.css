@@ -13,8 +13,8 @@
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: #fff;
-  color: #0f0f0f;
+  /* background-color: #fff; */
+  /* color: #0f0f0f; */
 }
 
 .notification-container {
@@ -62,7 +62,7 @@ body {
   grid-template-columns: 56px minmax(0, 1fr) minmax(140px, 220px);
   align-items: center;
   gap: 16px;
-  width: min(100%, 960px);
+  /* width: min(100%, 960px); */
   margin: 0 auto;
   padding: 16px clamp(16px, 4vw, 40px);
   background: #fff;
@@ -123,6 +123,30 @@ body {
 
 .video-thumbnail:hover {
   opacity: 0.85;
+}
+
+.dark-theme .comments-container-info {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.dark-theme .notification-container,
+.body.dark-theme {
+
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.dark-theme .comments {
+  color: #fff;
+}
+
+.dark-theme .setting-icon:hover {
+  background-color: #60606086;
+}
+
+.dark-theme .update-comments {
+  color: #b3aeae;
 }
 
 @media (max-width: 700px) {
@@ -197,11 +221,12 @@ body {
   }
 }
 
-
+/* 
 @media (prefers-color-scheme: dark) {
-  :root,
-  body {
-    background: #181818;
+
+  :root
+  {
+    background: #a78181;
     color: #fff;
   }
 
@@ -226,3 +251,4 @@ body {
     background-color: #303030;
   }
 }
+*/
