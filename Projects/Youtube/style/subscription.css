@@ -414,6 +414,8 @@ a {
   border-radius: 10px;
 
   background: #eeeeee;
+
+  cursor: pointer;
 }
 
 .thumbnail-container img {
@@ -482,6 +484,7 @@ a {
   min-width: 0;
 
   padding-right: 25px;
+  cursor: pointer;
 }
 
 .video-details h3 {
