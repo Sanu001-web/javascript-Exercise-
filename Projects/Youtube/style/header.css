@@ -855,6 +855,9 @@ body.dark-theme .navi-btn.active {
   min-width: 8px;
 }
 
+.notify-link{
+  color: #fff;
+}
 
 /* 
    USER PICTURE
