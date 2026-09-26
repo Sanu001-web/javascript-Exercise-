@@ -224,6 +224,9 @@ body {
   height: 30px;
 }
 
+.dark-theme .video-info p {
+  color: #b3aeae;
+}
 
 /* 
    RESPONSIVE
