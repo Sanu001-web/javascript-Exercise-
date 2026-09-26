@@ -149,10 +149,11 @@ export function renderHeader({ showSearch = true } = {}) {
         <div class="tooltip">apps</div>
       </div>
 
+<a class="notify-link" href="notification.html">
       <div class="notifications-icon-container">
         <div class="notify">${getNotificationCount()}</div>
           <svg xmlns="http://www.w3.org/2000/svg"
-              class="notifications-icon" 
+              class="notifications-icon icon-dark " 
               width="20" 
               height="20"
               viewBox="0 0 24 24" 
@@ -163,8 +164,25 @@ export function renderHeader({ showSearch = true } = {}) {
               <path
               d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
             </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" 
+            class="notifications-icon icon-light"
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="#000000"
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="lucide lucide-bell preview-icon">
+              <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+              <path
+              d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+            </svg>
           <div class="tooltip">notifications</div>
       </div>
+      </a>
       <a href="profile.html">
       <img class="current-user-picture" src="https://tinyurl.com/bdharchm" alt="User">
       </a>
