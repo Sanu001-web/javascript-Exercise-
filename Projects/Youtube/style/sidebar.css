@@ -1,7 +1,7 @@
 /* Sidebar is closed until JavaScript adds the .active class. */
 .sidebar {
   position: fixed;
-  top: 111px;
+  top: 55px;
   left: 0;
   bottom: 0;
   z-index: 950;
@@ -151,7 +151,7 @@ body.sidebar-open {
 /* Keep only icons on small screens. */
 @media (max-width: 549px) {
   .sidebar {
-    top: 112px;
+    top: 55px;
   }
 
   .sidebar-items {
