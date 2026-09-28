@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Tab</title>
+  <meta name="description" content="Music playlists, artists, albums and songs">
+  <title>Music</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/styles.css">
@@ -19,44 +22,40 @@
 
 <body>
 
-  <div class="header js-header">
-    <!-- nothing -->
-  </div>
-  <nav class="category-navigation" aria-label="Video categories">
-    <button class="navi-btn active" type="button">All</button>
-    <a href="music.html" class="music-tab-link">
-      <button class="navi-btn" type="button">Music</button>
-    </a>
-    <button class="navi-btn" type="button">AI</button>
-    <button class="navi-btn" type="button">Computer programming</button>
-    <button class="navi-btn" type="button">Reverberation</button>
-    <button class="navi-btn" type="button">Mixes</button>
-    <button class="navi-btn" type="button">Podcasts</button>
-    <button class="navi-btn" type="button">Live</button>
-    <button class="navi-btn" type="button">Romantic Music</button>
-    <button class="navi-btn" type="button">JEE Main</button>
-    <button class="navi-btn" type="button">Indian pop music</button>
-    <button class="navi-btn" type="button">Electromotive force</button>
-    <button class="navi-btn" type="button">Playlists</button>
-    <button class="navi-btn" type="button">Smartphones</button>
-    <button class="navi-btn" type="button">Study Skills</button>
-    <button class="navi-btn" type="button">Physical Chemistry</button>
-    <button class="navi-btn" type="button">Ghazal</button>
-    <button class="navi-btn" type="button">Thoughts</button>
-    <button class="navi-btn" type="button">Electrical Engineering</button>
-    <button class="navi-btn" type="button">Recently uploaded</button>
-    <button class="navi-btn" type="button">Watched</button>
-  </nav>
-  <div class="sidebar js-sidebar js-sidebarss">
-    <!-- nothing -->
-  </div>
+  <!-- Existing header -->
+  <div class="header js-header"></div>
 
+  <!-- Categories -->
+  <nav class="category-navigation music-categories" aria-label="Music categories">
+    <button class="navi-btn active category-btn" data-category="all" type="button">All</button>
+    <button class="navi-btn category-btn" data-category="music" type="button">Music</button>
+    <button class="navi-btn category-btn" data-category="pop" type="button">Pop</button>
+    <button class="navi-btn category-btn" data-category="bollywood" type="button">Bollywood</button>
+    <button class="navi-btn category-btn" data-category="romantic" type="button">Romantic</button>
+    <button class="navi-btn category-btn" data-category="indian" type="button">Indian</button>
+    <button class="navi-btn category-btn" data-category="mixes" type="button">Mixes</button>
+    <button class="navi-btn category-btn" data-category="podcasts" type="button">Podcasts</button>
+    <button class="navi-btn category-btn" data-category="live" type="button">Live</button>
+    <button class="navi-btn category-btn" data-category="playlists" type="button">Playlists</button>
+    <button class="navi-btn category-btn" data-category="ghazal" type="button">Ghazal</button>
+    <button class="navi-btn category-btn" data-category="recent" type="button">Recently uploaded</button>
+  </nav>
+
+  <!-- Existing sidebar -->
+  <div class="sidebar js-sidebar js-sidebarss"></div>
 
   <main class="page-content">
+
+    <!-- Music channel -->
     <section class="music-container">
+
       <div class="music-bar-container">
         <div class="music-bar">
-          <img class="music-bar-one" src="https://img.icons8.com/?size=64&id=BhQ1jBS6I2Bu&format=png" alt="Music">
+          <img
+            class="music-bar-one"
+            src="https://img.icons8.com/?size=64&id=BhQ1jBS6I2Bu&format=png"
+            alt="Music"
+          >
         </div>
 
         <div class="music-channel-info">
@@ -65,18 +64,248 @@
         </div>
       </div>
 
-      <button class="subs-button subscribe-button js-subs-button" type="button">Subscribe</button>
+      <button
+        class="subs-button subscribe-button js-subs-button"
+        type="button"
+      >
+        Subscribe
+      </button>
 
-      <nav class="main-container" aria-label="Channel navigation">
-        <button class="home-page js-home-page selectedss selected" type="button">Home</button>
-        <button class="post-page js-post-page selectedss" type="button">Posts</button>
+      <nav class="main-container" aria-label="Music channel navigation">
+        <button
+          class="home-page js-home-page selectedss selected"
+          type="button"
+        >
+          Home
+        </button>
+
+        <button
+          class="post-page js-post-page selectedss"
+          type="button"
+        >
+          Posts
+        </button>
       </nav>
-      
+
     </section>
 
+    <!-- Search result / page content -->
+    <section class="music-search-result js-search-result hidden">
+      <div class="music-page-heading">
+        <h2>Search results</h2>
+        <button class="clear-search js-clear-search" type="button">
+          Clear
+        </button>
+      </div>
+
+      <div class="music-search-grid js-search-grid"></div>
+    </section>
+
+    <!-- Home -->
     <div class="home-content js-home-content"></div>
+
+    <!-- Posts -->
     <div class="post-content js-post-content"></div>
+
+    <!-- Detail pages -->
+    <section class="music-detail-page js-detail-page hidden"></section>
+
   </main>
+
+  <!-- Queue -->
+  <aside class="queue-panel js-queue-panel" aria-label="Music queue">
+    <div class="queue-header">
+      <div>
+        <h2>Queue</h2>
+        <span class="queue-count js-queue-count">0 songs</span>
+      </div>
+
+      <button
+        class="icon-button js-close-queue"
+        type="button"
+        aria-label="Close queue"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="queue-list js-queue-list"></div>
+  </aside>
+
+  <!-- Playlist modal -->
+  <div class="modal-overlay js-playlist-modal hidden">
+    <div
+      class="playlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="playlist-modal-title"
+    >
+      <button
+        class="modal-close js-close-playlist-modal"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <h2 id="playlist-modal-title">Create playlist</h2>
+
+      <label for="playlist-name">Playlist name</label>
+      <input
+        id="playlist-name"
+        class="playlist-name-input js-playlist-name"
+        type="text"
+        maxlength="50"
+        placeholder="My playlist"
+      >
+
+      <label for="playlist-description">Description</label>
+      <textarea
+        id="playlist-description"
+        class="playlist-description-input js-playlist-description"
+        maxlength="200"
+        placeholder="Add a description"
+      ></textarea>
+
+      <div class="modal-actions">
+        <button class="secondary-button js-cancel-playlist" type="button">
+          Cancel
+        </button>
+
+        <button class="primary-button js-save-playlist" type="button">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed music player -->
+  <section class="music-player js-music-player" aria-label="Music player">
+
+    <div class="player-top-progress">
+      <input
+        class="progress-range js-progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="0.1"
+        aria-label="Song progress"
+      >
+    </div>
+
+    <div class="player-content">
+
+      <div class="player-song">
+        <img
+          class="player-cover js-player-cover"
+          src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=200&q=80"
+          alt="Current song"
+        >
+
+        <div class="player-song-info">
+          <button class="player-song-title js-player-title" type="button">
+            Nothing playing
+          </button>
+
+          <button class="player-song-artist js-player-artist" type="button">
+            Choose a song
+          </button>
+        </div>
+
+        <button
+          class="player-favorite js-player-favorite"
+          type="button"
+          aria-label="Favorite"
+        >
+          ♡
+        </button>
+      </div>
+
+      <div class="player-controls">
+
+        <button
+          class="player-action js-shuffle"
+          type="button"
+          aria-label="Shuffle"
+        >
+          🔀
+        </button>
+
+        <button
+          class="player-action js-previous"
+          type="button"
+          aria-label="Previous"
+        >
+          ⏮
+        </button>
+
+        <button
+          class="player-play js-play-pause"
+          type="button"
+          aria-label="Play"
+        >
+          ▶
+        </button>
+
+        <button
+          class="player-action js-next"
+          type="button"
+          aria-label="Next"
+        >
+          ⏭
+        </button>
+
+        <button
+          class="player-action js-repeat"
+          type="button"
+          aria-label="Repeat"
+        >
+          🔁
+        </button>
+
+      </div>
+
+      <div class="player-volume">
+
+        <span class="player-time js-current-time">0:00</span>
+
+        <button
+          class="volume-button js-volume-button"
+          type="button"
+          aria-label="Mute"
+        >
+          🔊
+        </button>
+
+        <input
+          class="volume-range js-volume"
+          type="range"
+          min="0"
+          max="1"
+          value="1"
+          step="0.01"
+          aria-label="Volume"
+        >
+
+        <span class="player-time js-duration">0:00</span>
+
+        <button
+          class="queue-button js-open-queue"
+          type="button"
+        >
+          ☰ Queue
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Hidden audio element -->
+  <audio class="js-audio"></audio>
+
   <script src="scripts/header.js" type="module"></script>
   <script src="scripts/sideBar.js" type="module"></script>
   <script src="scripts/script.js" type="module"></script>
