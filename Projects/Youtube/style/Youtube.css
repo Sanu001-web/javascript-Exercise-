@@ -478,11 +478,6 @@ body {
 
 @media (max-width: 420px) {
 
-  .hamburger-menu {
-    display: none;
-  }
-
-
   .youtube-logo {
     margin-left: 8px;
   }
