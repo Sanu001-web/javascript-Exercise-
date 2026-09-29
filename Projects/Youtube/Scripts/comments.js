@@ -19,7 +19,11 @@ export function saveCommentNotification(notification) {
     ...notification,
     createdAt: notification.createdAt || new Date().toISOString()
   });
-  localStorage.setItem(notificationsStorageKey, JSON.stringify(notifications));
+  try {
+    localStorage.setItem(notificationsStorageKey, JSON.stringify(notifications));
+  } catch {
+    // Notifications can still be displayed for this session without storage.
+  }
   window.dispatchEvent(new CustomEvent('comment-notification-added'));
 }
 
