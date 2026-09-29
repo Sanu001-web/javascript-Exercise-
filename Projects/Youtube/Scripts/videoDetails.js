@@ -57,8 +57,24 @@ const currentVideo = videoInfo[videoIndex] || videoInfo[0];
 const videoId = currentVideo.videoId || `video-${videoIndex}`;
 const commentsStorageKey = `comments-${videoId}`;
 
+function getStoredValue(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function setStoredValue(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Page interactions should continue when browser storage is unavailable.
+  }
+}
+
 function loadSavedComments() {
-  const savedComments = localStorage.getItem(commentsStorageKey);
+  const savedComments = getStoredValue(commentsStorageKey);
 
   if (!savedComments) {
     saveComments();
@@ -77,7 +93,7 @@ function loadSavedComments() {
 }
 
 function saveComments() {
-  localStorage.setItem(commentsStorageKey, JSON.stringify(comments));
+  setStoredValue(commentsStorageKey, JSON.stringify(comments));
 }
 
 loadSavedComments();
@@ -281,11 +297,11 @@ function parseCount(value) {
 }
 
 let likes =
-  Number(localStorage.getItem(`likes-${videoId}`)) ||
+  Number(getStoredValue(`likes-${videoId}`)) ||
   parseCount(currentVideo.likeCount) ||
   0;
 
-let dislikes = Number(localStorage.getItem(`dislikes-${videoId}`)) || 0;
+let dislikes = Number(getStoredValue(`dislikes-${videoId}`)) || 0;
 
 function showReactionCounts() {
   if (likeNumber) {
@@ -299,13 +315,13 @@ function showReactionCounts() {
 
 likeButton?.addEventListener('click', () => {
   likes++;
-  localStorage.setItem(`likes-${videoId}`, likes);
+  setStoredValue(`likes-${videoId}`, likes);
   showReactionCounts();
 });
 
 dislikeButton?.addEventListener('click', () => {
   dislikes++;
-  localStorage.setItem(`dislikes-${videoId}`, dislikes);
+  setStoredValue(`dislikes-${videoId}`, dislikes);
   showReactionCounts();
 });
 
@@ -331,7 +347,7 @@ watchLaterBtn?.addEventListener('click', () => {
 
   if (!alreadySaved) {
     savedVideos.push(currentVideo);
-    localStorage.setItem('watchLaterVideos', JSON.stringify(savedVideos));
+    setStoredValue('watchLaterVideos', JSON.stringify(savedVideos));
     watchLaterBtn.textContent = 'Added to Watch Later';
   } else {
     watchLaterBtn.textContent = 'Already Added';
@@ -379,7 +395,7 @@ shareWhatsAppBtn?.addEventListener('click', () => {
 });
 
 saveBtn?.addEventListener('click', () => {
-  localStorage.setItem('savedVideo', JSON.stringify(currentVideo));
+  setStoredValue('savedVideo', JSON.stringify(currentVideo));
   saveBtn.textContent = 'Saved';
 });
 
