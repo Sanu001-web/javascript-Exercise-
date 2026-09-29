@@ -94,7 +94,11 @@ function loadStorage(key, fallback) {
 }
 
 function saveStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Keep music controls usable when browser storage is unavailable.
+  }
 }
 
 function escapeHTML(value = '') {
@@ -1942,7 +1946,7 @@ document.addEventListener(
 
     if (!notification) return;
 
-    window.location.href = 'notifications.html';
+    window.location.href = 'notification.html';
   }
 );
 
@@ -1951,8 +1955,12 @@ document.addEventListener(
 ========================================= */
 
 function syncTheme() {
-  const savedTheme =
-    localStorage.getItem(STORAGE_KEYS.theme);
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
+  } catch {
+    // Keep the theme already applied by the shared header.
+  }
 
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
@@ -1978,10 +1986,14 @@ function watchThemeChanges() {
             'dark-theme'
           );
 
-        localStorage.setItem(
-          STORAGE_KEYS.theme,
-          isDark ? 'dark' : 'light'
-        );
+        try {
+          localStorage.setItem(
+            STORAGE_KEYS.theme,
+            isDark ? 'dark' : 'light'
+          );
+        } catch {
+          // The shared theme still works without persistence.
+        }
       }, 50);
     }
   );
