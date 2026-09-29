@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+  <title>Chai & Coffee Order Builde </title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8956c"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coffee preview-icon">
+        <path d="M10 2v2" />
+        <path d="M14 2v2" />
+        <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+        <path d="M6 2v2" />
+      </svg>
+      Chai & Coffee Order Builder
+    </h1>
+  </header>
+  <main class="app">
+
+
+    <section class="panel" aria-label="Order options">
+      <div class="option-group">
+        <h2>drink</h2>
+        <div class="radio-group">
+          <label><input type="radio" name="drink" value="espresso" checked />Espresso</label>
+          <label><input type="radio" name="drink" value="latte" />Latte</label>
+          <label><input type="radio" name="drink" value="cappuccino" />Cappuccino</label>
+          <label><input type="radio" name="drink" value="matcha" />Matcha</label>
+          <label><input type="radio" name="drink" value="chai" />Chai</label>
+        </div>
+      </div>
+      <div class="option-group">
+        <h2>size</h2>
+        <div class="radio-group">
+          <label><input type="radio" name="size" value="small" />Small</label>
+          <label><input type="radio" name="size" value="medium" checked />Medium</label>
+          <label><input type="radio" name="size" value="large" />Large</label>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <h2>milk</h2>
+        <div class="radio-group">
+          <label><input type="radio" name="milk" id="" value="regular" checked/>Regular</label>
+          <label><input type="radio" name="milk" id="" value="oat" />Oat</label>
+          <label><input type="radio" name="milk" id="" value="soy" />Soy</label>
+          <label><input type="radio" name="milk" id="" value="almond" />Almond</label>
+          <label><input type="radio" name="milk" id="" value="no milk" />No Milk</label>
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <h2>Extras</h2>
+        <div class="radio-group">
+          <label><input type="checkbox" name="extras" value="extrashot" />Extra Shot</label>
+          <label><input type="checkbox" name="extras" value="vanilla" />Vanilla Syrup</label>
+          <label><input type="checkbox" name="extras" value="whipped" />Whipped Cream</label>
+          <label><input type="checkbox" name="extras" value="caramel" />Caramel Syrup</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual" aria-label="Visual cup and order summary">
+      <div class="cup-scene">
+        <div class="cup js-cup">
+          <div class="cup-fill"></div>
+          <div class="cup-shine">
+
+          </div>
+        </div>
+        <div class="cup-base"></div>
+        <div class="cup-handle"></div>
+
+        <div class="badges" id="badges"></div>
+
+      </div>
+
+      <div class="summary js-summary" aria-live="polite">
+        <h3>Your Order</h3>
+        <div class="summary-items"></div>
+        <hr class="summary-divider" />
+        <div class="summary-total">
+          <span>Total</span>
+          <span class="summary-price">$0.00</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Owned by: Mr. Shanu</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
