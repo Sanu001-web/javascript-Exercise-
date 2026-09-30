@@ -1,3 +1,25 @@
+https://www.youtube.com/watch?v=DkUjwWQEgOE
+https://www.youtube.com/live/7dcG2amh4dY?si=RBGZuQE3lidNBX7J
+https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Feature suggestions for your YouTube clone
 
 ## 1. Header and search features
