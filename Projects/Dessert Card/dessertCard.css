@@ -33,6 +33,7 @@ body {
 .heard-card h2 {
   font-family: "Playwrite AR", cursive;
   color: var(--accent);
+
 }
 
 .srch-boxx {
@@ -230,6 +231,10 @@ body {
     padding: 18px;
   }
 
+  .heard-card h2 {
+    font-size: 20px;
+  }
+
   .heard-card {
     /* flex-wrap: wrap; */
     gap: 14px;
@@ -242,6 +247,7 @@ body {
   }
 
   .srch-boxx {
+    width: 20px;
     min-width: 0;
     flex: 1;
   }
