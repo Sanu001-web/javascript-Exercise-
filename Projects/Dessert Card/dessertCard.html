@@ -12,16 +12,30 @@
 </head>
 
 <body>
-  <header class="heard-card">
-    <h2>Mishti</h2>
-    <div class="srch-container">
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="left-nav">  
+      <header class="heard-card" id="home">
+        <h2>Mishti</h2>
+      </header>
+    </div>
+    <div class="nav-links middle-nav">
+      <a class="nav-brand" href="#home">
+        <img src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" />
+        <span>Sweet moments</span>
+      </a>
+      <a href="#home">Home</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#checkout">Checkout</a>
+    </div>
+    <div class="srch-container right-nav">
       <input class="srch-boxx" type="text" name="search" id="srch-box" placeholder="search own your mood" />
       <button class="srch-btn" type="submit">Search</button>
     </div>
-  </header>
+  </nav>
   <main class="dessert-area">
-    <section class="dessert-container-sec">
-    <span class="section-tag">
+    <section class="dessert-container-sec" id="desserts">
+      <span class="section-tag">
       Desserts
       <svg xmlns="http://www.w3.org/2000/svg" 
         width="24" 
@@ -63,7 +77,7 @@
 
       </div>
     </section>
-    <section class="checkOut js-checkOut">
+    <section class="checkOut js-checkOut" id="checkout">
 
       <div>
         <h3>
@@ -82,8 +96,8 @@
       </div>
     </section>
   </main>
-
-  <script src="script.js"></script>
+  <script src="dessertData/dessert-card.js" type="module"></script>
+  <script src="script.js" type="module"></script>
 </body>
 
 </html>
