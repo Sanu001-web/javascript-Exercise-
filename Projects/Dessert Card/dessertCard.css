@@ -50,6 +50,10 @@ body {
   overflow: hidden;
 }
 
+.home-link {
+  text-decoration: none;
+}
+
 .nav-brand,
 .nav-links a {
   color: var(--surface);
@@ -93,7 +97,7 @@ body {
   gap: 8px;
 }
 
-.srch-boxx {
+.srch-box {
   padding: 10px 10px;
   color: var(--accent);
   border: 1px solid #ccc;
@@ -105,11 +109,11 @@ body {
   max-width: 100%;
 }
 
-.srch-boxx::placeholder {
+.srch-box::placeholder {
   color: #a09e9d;
 }
 
-.srch-boxx:focus {
+.srch-box:focus {
   border-color: #d88b5b;
   outline: none;
   box-shadow: 0 0 5px rgba(216, 139, 91, 0.3);
@@ -175,6 +179,10 @@ body {
   display: flex;
   position: relative;
   flex-direction: column;
+}
+
+.dessert-card[hidden] {
+  display: none;
 }
 
 .dessert-img {
@@ -322,7 +330,7 @@ body {
     gap: 8px;
   }
 
-  .srch-boxx {
+  .srch-box {
     width: 20px;
     min-width: 0;
     flex: 1;
