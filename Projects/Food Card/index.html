@@ -23,13 +23,22 @@
         </header>
       </a>
     </div>
-    <div class="nav-links middle-nav">
-      <a class="nav-brand" href="#home">
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
+        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
+        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
+        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
+      </svg>
+    </button>
+    <div class="nav-links middle-nav" id="main-navigation-links">
+      <a href="#home">Home</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#trandingFood">Tranding</a>
+      <a class="nav-brand" href="sweet-moments.html">
         <img src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" />
         <span>Sweet moments</span>
       </a>
-      <a href="#home">Home</a>
-      <a href="#desserts">Desserts</a>
       <a href="#checkout">Checkout</a>
     </div>
     <div class="srch-container right-nav">
@@ -86,14 +95,13 @@
     </section>
     <!-- checkout page -->
     <section class="checkOut js-checkOut" id="checkout">
+        <div>
+          <h3>
+            checkout
+          </h3>
 
-      <div>
-        <h3>
-          checkout
-        </h3>
-
-        <p class="js-checkout-message" aria-live="polite">Choose a dessert and serving size to add it to checkout.</p>
-      </div>
+          <p class="js-checkout-message" aria-live="polite">Choose a dessert and serving size to add it to checkout.</p>
+        </div>
     </section>
 
     <!-- popup qantity -->
@@ -231,7 +239,7 @@
 
     <!-- ---------------------------------+-----------------------------------------+-------------- -->
 
-    <section class="frqntly-order-food-container-sec">
+    <section class="frqntly-order-food-container-sec" id="trandingFood">
       <span class="section-tag">
       Frequently Ordered Food
      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cooking-pot preview-icon"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/></svg>
@@ -265,6 +273,7 @@
 
 
   </main>
+  <script src="nav.js" defer></script>
   <script src="FoodData/dessert-card.js" type="module"></script>
   <script src="FoodData/frqOrderFood.js" type="module"></script>
   <script src="script.js" type="module"></script>
