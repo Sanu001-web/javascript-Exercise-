@@ -16,6 +16,7 @@
   --button-color: #fbfbfb;
 }
 
+
 body {
   padding: 25px;
   background-color: #fcf8f5;
@@ -78,6 +79,58 @@ body {
   display: flex;
   align-items: center;
   gap: 28px;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border: 1px solid #eadfd7;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: #fcf4ed;
+  outline: 2px solid #c18351;
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  /* .main-nav {
+    flex-wrap: wrap;
+  } */
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav:not(.is-menu-open) .nav-links,
+  .main-nav:not(.is-menu-open) .moments-order-link {
+    display: none;
+  }
+
+  .main-nav.is-menu-open .nav-links {
+    order: 4;
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .main-nav.is-menu-open .moments-order-link {
+    order: 5;
+  }
+
+  .main-nav .right-nav {
+    order: 3;
+    width: 100%;
+  }
 }
 
 .nav-links a {
