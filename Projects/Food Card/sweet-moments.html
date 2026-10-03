@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fcf8f5" />
+  <title>Sweet Moments | Mishti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/sweet-moments.css" />
+</head>
+<body class="moments-page">
+  <nav class="main-nav" aria-label="Main navigation">
+    <a class="home-link" href="index.html"><header class="heard-card"><h2>Mishti</h2></header></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="moments-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
+        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
+        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
+        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
+      </svg>
+    </button>
+    <div class="nav-links middle-nav" id="moments-navigation-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#desserts">Desserts</a>
+      <a class="nav-brand" href="sweet-moments.html" aria-current="page">
+        <img src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" />
+        <span>Sweet moments</span>
+      </a>
+      <a href="index.html#checkout">Checkout</a>
+    </div>
+    <a class="moments-order-link" href="index.html#desserts">Explore desserts</a>
+  </nav>
+
+  <main class="moments-main">
+    <header class="moments-hero">
+      <p class="moments-eyebrow">A little sweetness for your day</p>
+      <h1>Sweet moments</h1>
+      <p class="moments-intro">Stories, little rituals, and delicious inspiration to make ordinary days feel special.</p>
+      <a class="moments-cta" href="#stories">Read our journal <span aria-hidden="true">↓</span></a>
+      <span class="hero-sparkle sparkle-one" aria-hidden="true">✦</span>
+      <span class="hero-sparkle sparkle-two" aria-hidden="true">✧</span>
+    </header>
+
+    <section class="moments-feature" aria-labelledby="featured-title">
+      <div class="feature-image" role="img" aria-label="Waffle topped with fresh berries"></div>
+      <article class="feature-copy">
+        <p class="story-category">The Mishti table · 5 min read</p>
+        <h2 id="featured-title">A slower morning, one waffle at a time</h2>
+        <p>Some mornings deserve more than a rushed cup of tea. Set the table, pile fresh berries onto a warm waffle, and let breakfast become the best part of the day.</p>
+        <a href="#story-morning">Read the story <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+
+    <section class="moments-stories" id="stories" aria-labelledby="stories-title">
+      <div class="stories-heading">
+        <div>
+          <p class="story-category">Notes from our kitchen</p>
+          <h2 id="stories-title">A few things worth savoring</h2>
+        </div>
+        <span class="stories-flourish" aria-hidden="true">Made with love ♡</span>
+      </div>
+      <div class="story-grid">
+        <article class="story-card story-card-berries" id="story-morning">
+          <div class="story-art" role="img" aria-label="Illustration of a berry-topped waffle"><span aria-hidden="true">🧇</span></div>
+          <div class="story-card-copy">
+            <p class="story-category">Little rituals · 4 min read</p>
+            <h3>Make room for a sweeter morning</h3>
+            <p>Turn a simple breakfast into a small celebration with warm waffles, bright berries, and a drizzle of syrup.</p>
+            <a href="index.html#desserts">Find your breakfast treat <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="story-card story-card-sharing">
+          <div class="story-art" role="img" aria-label="Illustration of colorful macarons"><span aria-hidden="true">🍬</span></div>
+          <div class="story-card-copy">
+            <p class="story-category">Gather together · 3 min read</p>
+            <h3>The prettiest little reason to share</h3>
+            <p>A box of macarons has a way of bringing everyone to the table. Pick a favorite, pass the box, and stay awhile.</p>
+            <a href="index.html#desserts">Choose something to share <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="story-card story-card-comfort">
+          <div class="story-art" role="img" aria-label="Illustration of a cozy cup of dessert"><span aria-hidden="true">🍮</span></div>
+          <div class="story-card-copy">
+            <p class="story-category">A moment to yourself · 2 min read</p>
+            <h3>A little treat, just because</h3>
+            <p>No occasion needed. A silky spoonful of panna cotta can be the gentle pause your busy afternoon was asking for.</p>
+            <a href="index.html#desserts">Take a dessert break <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <aside class="moments-note">
+      <span aria-hidden="true">✿</span>
+      <p>Life is made of little moments. Make yours a little sweeter.</p>
+      <a href="index.html#desserts">Shop Mishti</a>
+    </aside>
+  </main>
+
+  <footer class="moments-footer">Made with love and a little sugar · Mishti</footer>
+  <script src="nav.js" defer></script>
+</body>
+</html>
