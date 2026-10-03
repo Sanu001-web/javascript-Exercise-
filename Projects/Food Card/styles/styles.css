@@ -18,6 +18,7 @@
 
 
 body {
+  position: relative;
   padding: 25px;
   background-color: #fcf8f5;
   font-family: "Roboto", sans-serif;
@@ -92,6 +93,19 @@ body {
   border-radius: 10px;
   background: #fff;
   cursor: pointer;
+  transition: transform 0.200s ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-toggle svg {
+  transition: transform 0.220s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.main-nav.is-menu-open .nav-toggle svg {
+  transform: rotate(8deg) scale(1.08);
+}
+
+.nav-toggle:active {
+  transform: scale(0.92);
 }
 
 .nav-toggle:hover,
@@ -99,6 +113,31 @@ body {
   background: #fcf4ed;
   outline: 2px solid #c18351;
   outline-offset: 2px;
+}
+
+@keyframes nav-menu-reveal {
+  from {
+    opacity: 0;
+    transform:rotate(180deg);
+  }
+
+  to {
+    opacity: 1;
+    transform:rotateZ(360deg);
+  }
+}
+
+.main-nav.is-menu-open .nav-links {
+  animation: nav-menu-reveal 220ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle,
+  .nav-toggle svg,
+  .main-nav.is-menu-open .nav-links {
+    animation-duration: 1ms;
+    transition-duration: 1ms;
+  }
 }
 
 @media (max-width: 760px) {
@@ -116,11 +155,19 @@ body {
   }
 
   .main-nav.is-menu-open .nav-links {
+    animation: nav-menu-reveal 220ms ease-out both;
     order: 4;
-    width: 100%;
+    width: 30%;
     align-items: stretch;
     flex-direction: column;
     gap: 4px;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: #ffffff;
+    padding: 5px 8px 5px 8px;
+    border-radius: 10px;
+    z-index: 100;
   }
 
   .main-nav.is-menu-open .moments-order-link {
