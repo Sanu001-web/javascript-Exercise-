@@ -4,16 +4,25 @@ https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d
 
 
 ---------------------------------------------------
+Food card feature :
+
 https://dribbble.com/shots/24246568-Online-Delivery-Food-Mobile-App
 
 
+Working cart and checkout — Add multiple items, change quantities, remove items, and show a running total.
+Serving-size pricing — Use the selected size’s price in the cart instead of only showing a confirmation message.
+Category filters and sorting — Filter by categories such as waffles or Indian sweets, and sort by price or popularity.
+Favorites — Let visitors save desserts they like, with favorites remembered between visits.
+Persistent cart — Save cart contents in the browser so they remain after a page refresh.
+Dietary and allergen labels — Add tags like vegetarian, contains nuts, or gluten-free.
+Customer ratings and reviews — Show ratings on dessert cards and let customers leave feedback.
+Special offers — Add a featured dessert, seasonal collection, or discount banner.
+Better search feedback — Show a “No desserts found” message when a search has no matches.
 
 
 
 
-
-
-
+-------------------------------------------------------------------
 
 
 
