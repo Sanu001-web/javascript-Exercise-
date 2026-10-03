@@ -1,47 +1,55 @@
 export const card = [
   {
+    producId:'02d62a07-0462-47ec-9e99-f561f734d745',
     dessertImg: 'https://tinyurl.com/yuhvn4bv',
     category: 'Waffles',
-    dessertName: 'waffle with Berries',
+    dessertName: 'Waffle with Berries',
     dessertPrice: '149'
   },
   {
+    producId:'b5def8a8-7418-46a7-9dfe-de4b84b31cc3',
     dessertImg: 'https://tinyurl.com/2x5w47b7',
     category: 'Creme Brulee',
     dessertName: 'Vanilla Bean Creme Brulee',
     dessertPrice: '248'
   },
   {
+    producId:'85d2f172-2a13-45eb-ab05-13aadfc414c5',
     dessertImg: 'https://tinyurl.com/4ycepybf',
     category: 'Macaron',
     dessertName: 'Macaron Mix of Five',
     dessertPrice: '49'
   },
   {
+    producId:'31843dda-3e24-4a14-a01c-de65e0ddec6d',
     dessertImg: 'https://tinyurl.com/bdeah7uh',
     category: 'Oats',
     dessertName: 'Bowl of Cereal',
     dessertPrice: '342'
   },
   {
+    producId:'2496692a-f079-4275-9104-b66691f5741e',
     dessertImg: 'https://tinyurl.com/46dh7nwz',
     category: 'Indian Sweet',
     dessertName: 'Jalebi',
     dessertPrice: '183'
   },
   {
+    producId:'6174aed5-e494-4f5e-9e83-10ac9ad157ed',
     dessertImg: 'https://tinyurl.com/ppyzjhky',
     category: 'Panna Cotta',
-    dessertName: 'Vanillla Panna Cotta',
+    dessertName: 'Vanilla Panna Cotta',
     dessertPrice: '458'
   },
   {
+    producId:'86288b07-78de-4330-9205-486f4d94ff02',
     dessertImg: 'https://tinyurl.com/yhkcdknw',
     category: 'Tiramisu',
     dessertName: 'Classic Tiramisu',
     dessertPrice: '346'
   },
   {
+    producId:'4d8b9d04-1d5b-4a52-a2d9-19795363e63b',
     dessertImg: 'https://tinyurl.com/3dzw8a8e',
     category: 'Waffle',
     dessertName: 'Waffle with Chocolates',
@@ -60,7 +68,7 @@ export function renderDessertCard() {
     dessertCard.innerHTML = `
 
   <div class="dessert-card-image">
-    <img class="dessert-img" src="${cardIteam.dessertImg}" alt="waffle with barriess" />
+    <img class="dessert-img" src="${cardIteam.dessertImg}" alt="${cardIteam.dessertName}" />
   </div>
   <button class="add-to-cart js-add-to-cart" type="submit">
    <svg xmlns="http://www.w3.org/2000/svg"
@@ -115,9 +123,6 @@ export function renderDessertCard() {
   </div>
  `;
   });
-
-
-
 
 }
 
