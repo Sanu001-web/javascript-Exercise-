@@ -148,6 +148,7 @@ body {
 
 
 .dessert-area {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   align-items: start;
