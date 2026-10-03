@@ -204,10 +204,21 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  grid-template-areas:
+    "desserts checkout"
+    "popular checkout";
   align-items: start;
   gap: 32px;
   max-width: 1440px;
   margin: 80px auto 0;
+}
+
+.dessert-container-sec {
+  grid-area: desserts;
+}
+
+.frqntly-order-food-container-sec {
+  grid-area: popular;
 }
 
 .section-tag {
@@ -317,6 +328,10 @@ body {
 }
 
 .checkOut {
+  grid-area: checkout;
+  align-self: start;
+  position: sticky;
+  top: 24px;
   margin-top: 20px;
   padding: 24px;
   background: #fff;
@@ -340,10 +355,15 @@ body {
 @media (max-width: 850px) {
   .dessert-area {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "desserts"
+      "popular"
+      "checkout";
     gap: 28px;
   }
 
   .checkOut {
+    position: static;
     margin-top: 0;
   }
 }
