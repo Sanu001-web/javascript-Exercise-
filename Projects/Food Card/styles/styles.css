@@ -118,12 +118,12 @@ body {
 @keyframes nav-menu-reveal {
   from {
     opacity: 0;
-    transform: rotate(180deg);
+    transform: translateX(10px,65%);
   }
 
   to {
     opacity: 1;
-    transform: rotateZ(360deg);
+    transform: translateY(30px,6%);
   }
 }
 
