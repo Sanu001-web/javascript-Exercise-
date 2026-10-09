@@ -79,6 +79,7 @@ body {
   display: flex;
   align-items: center;
   gap: 28px;
+  
 }
 
 .nav-toggle {
@@ -168,6 +169,7 @@ body {
     padding: 5px 8px 5px 8px;
     border-radius: 10px;
     z-index: 100;
+    overflow: hidden;
   }
 
   .main-nav.is-menu-open .moments-order-link {
