@@ -1,3 +1,40 @@
+
+
+
+Bill details
+
+Amount
+
+Food price
+
+₹248.00
+
+GST on food (5%)
+
+₹12.40
+
+Platform fee (example)
+
+₹10.00
+
+GST on platform fee (18%)
+
+₹1.80
+
+Delivery fee (example)
+
+₹25.00
+
+GST on delivery fee (18%)
+
+₹4.50
+
+Total payable
+
+₹301.70
+
+
+---------------------------------------------------------
 https://www.youtube.com/watch?v=DkUjwWQEgOE
 https://www.youtube.com/live/7dcG2amh4dY?si=RBGZuQE3lidNBX7J
 https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d
