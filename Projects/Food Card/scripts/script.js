@@ -1,5 +1,5 @@
 import { renderDessertCard, dessertCards } from './FoodData/dessert-card.js'
-import { renderfrquntOrderFoodCard } from './FoodData/frqOrderFood.js';
+import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from './FoodData/frqOrderFood.js';
 
 
 renderDessertCard();
@@ -94,9 +94,9 @@ const searchButton = document.querySelector('.srch-btn');
 function searchCorner() {
   const search = searchInput.value.trim().toLowerCase();
 
-  dessertCards.forEach((dessertCard) => {
-    const matches = dessertCard.textContent.toLowerCase().includes(search);
-    dessertCard.hidden = !matches;
+  [...dessertCards, ...frqntlyOrderFoods].forEach((foodCard) => {
+    const matches = foodCard.textContent.toLowerCase().includes(search);
+    foodCard.hidden = !matches;
   });
 }
 searchButton.addEventListener('click', searchCorner);
