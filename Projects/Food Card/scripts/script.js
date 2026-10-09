@@ -1,5 +1,5 @@
-import { renderDessertCard, dessertCards } from './FoodData/dessert-card.js'
-import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from './FoodData/frqOrderFood.js';
+import { renderDessertCard, dessertCards } from '../FoodData/dessert-card.js'
+import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from '../FoodData/frqOrderFood.js';
 
 
 renderDessertCard();
