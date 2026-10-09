@@ -23,7 +23,20 @@
         </header>
       </a>
     </div>
-    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+    <div class="nav-links middle-nav" id="main-navigation-links">
+      <a href="#home">Home</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#trandingFood">Tranding</a>
+      <a class="nav-brand" href="sweet-moments.html">
+        <span>Sweet moments</span>
+        <img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="sweet-movements" />
+      </a>
+      <a href="#checkout">Checkout</a>
+    </div>
+    <div class="srch-container right-nav">
+      <input class="srch-box js-srch-box" type="text" name="search"  placeholder="Search by dessert or category" />
+      <button class="srch-btn" type="submit">Search</button>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
         <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
@@ -31,19 +44,6 @@
         <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
       </svg>
     </button>
-    <div class="nav-links middle-nav" id="main-navigation-links">
-      <a href="#home">Home</a>
-      <a href="#desserts">Desserts</a>
-      <a href="#trandingFood">Tranding</a>
-      <a class="nav-brand" href="sweet-moments.html">
-        <img src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" />
-        <span>Sweet moments</span>
-      </a>
-      <a href="#checkout">Checkout</a>
-    </div>
-    <div class="srch-container right-nav">
-      <input class="srch-box js-srch-box" type="text" name="search"  placeholder="Search by dessert or category" />
-      <button class="srch-btn" type="submit">Search</button>
     </div>
   </nav>
 
@@ -93,16 +93,7 @@
 
       </div>
     </section>
-    <!-- checkout page -->
-    <section class="checkOut js-checkOut" id="checkout">
-        <div>
-          <h3>
-            checkout
-          </h3>
 
-          <p class="js-checkout-message" aria-live="polite">Choose a dessert and serving size to add it to checkout.</p>
-        </div>
-    </section>
 
     <!-- popup qantity -->
     <section class="popup-qantity js-popup-qantity" role="dialog" aria-modal="true" aria-hidden="true"
@@ -270,9 +261,19 @@
 
       </div>
     </section>
+    <!-- checkout page -->
+    <section class="checkOut js-checkOut" id="checkout">
+      <div>
+        <h3>
+          checkout
+        </h3>
 
+        <p class="js-checkout-message" aria-live="polite">Choose a dessert and serving size to add it to checkout.</p>
+      </div>
+    </section>
 
   </main>
+
   <script src="nav.js" defer></script>
   <script src="FoodData/dessert-card.js" type="module"></script>
   <script src="FoodData/frqOrderFood.js" type="module"></script>
