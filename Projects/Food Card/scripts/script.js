@@ -36,6 +36,9 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     const dessertName = foodCard.querySelector('.dessert-name, .fOrderFood-name').textContent.trim();
     const dessertImage = foodCard.querySelector('.dessert-img, .fOrderFood-img');
 
+    const dessertPrice = foodCard.querySelector('.price-tag').textContent.trim();
+    quantityPopup.dataset.dessertPrice = dessertPrice;
+
     if (quantityPopup.classList.contains('is-open') &&
       quantityPopup.dataset.dessertName === dessertName) {
       closeQuantityPopup();
@@ -78,7 +81,11 @@ placeOrderButton.addEventListener('click', () => {
     return;
   }
 
-  checkoutMessage.textContent = `Added ${quantityPopup.dataset.dessertName} (${selectedSize.textContent.trim()} serving) to checkout.`;
+  // checkoutMessage.textContent = `Added ${quantityPopup.dataset.dessertName} (${selectedSize.textContent.trim()} serving) to checkout.`;
+
+  checkoutMessage.textContent = `Added ${quantityPopup.dataset.dessertName} (${selectedSize.textContent.trim()} serving) ${quantityPopup.dataset.dessertPrice}`;
+
+
   closeQuantityPopup();
 });
 
@@ -107,5 +114,3 @@ searchInput.addEventListener('keydown', (event) => {
     searchCorner();
   }
 });
-
-
