@@ -4,56 +4,56 @@ export const frequentlyOrderFood = [
     fOrderFoodImg: 'https://tinyurl.com/4pbdd47t',
     category: 'Paneer',
     fOrderFoodName: 'Paneer Chawal & Roti Combo ',
-    fOrderFoodPrice: '149'
+    fOrderFoodPrice: '789'
   },
   {
     producId: 'b5def8a8-7418-46a7-9dfe-de4b84b31cc3',
     fOrderFoodImg: 'https://tinyurl.com/yd52cmj4',
     category: 'Cutlet',
     fOrderFoodName: 'Veg Cutlet Curry',
-    fOrderFoodPrice: '248'
+    fOrderFoodPrice: '1098'
   },
   {
     producId: '85d2f172-2a13-45eb-ab05-13aadfc414c5',
     fOrderFoodImg: 'https://tinyurl.com/4sx6w4wz',
     category: 'South Indian Palate',
     fOrderFoodName: 'Itly With 5 Types Chutney',
-    fOrderFoodPrice: '49'
+    fOrderFoodPrice: '479'
   },
   {
     producId: '31843dda-3e24-4a14-a01c-de65e0ddec6d',
     fOrderFoodImg: 'https://tinyurl.com/2s3hnmfa',
     category: 'Rice',
     fOrderFoodName: 'Veg Rice Bowl of Mixes Spices',
-    fOrderFoodPrice: '342'
+    fOrderFoodPrice: '312'
   },
   {
     producId: '2496692a-f079-4275-9104-b66691f5741e',
     fOrderFoodImg: 'https://tinyurl.com/3xyhcxfz',
     category: 'Dal',
     fOrderFoodName: 'Indian Authentic Dal Tadka',
-    fOrderFoodPrice: '183'
+    fOrderFoodPrice: '289'
   },
   {
     producId: '6174aed5-e494-4f5e-9e83-10ac9ad157ed',
     fOrderFoodImg: 'https://tinyurl.com/7t2t5872',
     category: 'Paneer',
     fOrderFoodName: 'Fiber Rice Palak Paneer',
-    fOrderFoodPrice: '458'
+    fOrderFoodPrice: '558'
   },
   {
     producId: '86288b07-78de-4330-9205-486f4d94ff02',
     fOrderFoodImg: 'https://tinyurl.com/yeyp9zs8',
     category: 'Aloo',
     fOrderFoodName: 'Bihari Style Spicy Aloo',
-    fOrderFoodPrice: '346'
+    fOrderFoodPrice: '145'
   },
   {
     producId: '4d8b9d04-1d5b-4a52-a2d9-19795363e63b',
     fOrderFoodImg: 'https://tinyurl.com/yawfzvn7',
     category: 'Indian Sadhvik',
     fOrderFoodName: 'Indian Culture Simple Food',
-    fOrderFoodPrice: '193'
+    fOrderFoodPrice: '1278'
   }
 ];
 
