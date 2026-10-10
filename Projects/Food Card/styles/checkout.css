@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --border-color: #afacac;
+  --accent-color: #f79f57;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+  color: #000;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
+
+
+.food-info-container {
+  padding: 12px 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.foodimg-container {
+  flex: 0 0 auto;
+  border-radius: 10px;
+  background-color: #f1f0f073;
+}
+
+.food-img {
+  display: block;
+  width: 180px;
+  height: 200px;
+  padding: 5px;
+  object-fit: contain;
+}
+
+.copen-code {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+}
+
+.coupen-code {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#cu-code {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  border-bottom: 1.5px solid #aaa;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.apply-coupen-code {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-coupen-code:focus-visible,
+#cu-code:focus-visible {
+  outline: 2px solid #eb905b;
+  outline-offset: 2px;
+}
+
+.price-food-container {
+  display: flex;
+  align-items: flex-start;
+
+  border: 1px solid rgb(175, 172, 172);
+
+  padding: 10px;
+}
+
+.price-tag-container {
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.food-price-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.price {
+  margin: -5px;
+}
+
+.price-calculater {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  gap: 12px;
+  margin-top: 10px;
+  border-bottom: 1.5px solid #aaa;
+  padding: 10px;
+}
+
+.bill-detail-amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-heading {
+  font-weight: 500;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 16px;
+  }
+
+  .food-img {
+    width: 120px;
+    height: 150px;
+  }
+
+  .copen-code {
+    padding: 18px;
+  }
+}
