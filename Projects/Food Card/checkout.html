@@ -1,164 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Payment Card</title>
-  <!--------------------------- font ------------------------->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fcf8f5" />
+  <title>Checkout | Mishti</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/checkout.css" />
-
-  <!--------------------- styles ---------------------------->
-  <link rel="stylesheet" href="styles/checkout.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles/nav.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="styles/nav.css" />
 </head>
 
 <body>
-
   <nav class="main-nav" aria-label="Main navigation">
     <div class="left-nav">
       <a class="home-link" href="index.html">
-        <header class="heard-card" id="home">
-          <h2>Mishti</h2>
-        </header>
+        <header class="heard-card" id="home"><h2>Mishti</h2></header>
       </a>
     </div>
     <div class="nav-links middle-nav" id="main-navigation-links">
       <a href="index.html">Home</a>
       <a href="index.html#desserts">Desserts</a>
-      <a href="index.html">Tranding</a>
-      <a class="nav-brand" href="sweet-moments.html">
-        <span>Sweet moments</span>
-        <img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="sweet-movements" />
-      </a>
-      <a href="checkout.html">Checkout</a>
+      <a href="index.html#trandingFood">Trending</a>
+      <a class="nav-brand" href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a href="checkout.html" aria-current="page">Checkout</a>
     </div>
     <div class="srch-container right-nav">
-      <input class="srch-box js-srch-box" type="text" name="search"  placeholder="Search by dessert or category" />
-      <button class="srch-btn" type="submit">Search</button>
+      <input class="srch-box js-srch-box" type="text" name="search" placeholder="Search by dessert or category" />
+      <button class="srch-btn" type="button">Search</button>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
-        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
-        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
-        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
-      </svg>
-    </button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25"/><path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2"/><path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0"/><path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2"/></svg>
+      </button>
     </div>
   </nav>
-  <main class="main-container">
 
-    <div class="price-food-container">
-      <div class="foodimg-container">
-        <img  class="food-img" src="https://tinyurl.com/3xyhcxfz" alt="" />
-      </div>
-      <div class="food-info-container">
-        <p class="ck-food-name">
-          Daal Tadkaa
-        </p>
-        <span>
-        Quantity:1
-      </span>
-        <span>
-        Serving Size:M
-      </span>
+  <main class="checkout-layout">
+    <div class="checkout-main">
+      <header class="checkout-heading">
+        <p class="checkout-eyebrow">Almost time for something sweet</p>
+        <h1>Your checkout</h1>
+        <p>Review your treat and apply a coupon before placing your order.</p>
+      </header>
 
-        <div class="price-tag-container">
-          <span class="food-price-icon">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg"
-              width="15" 
-              height="15" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="#913a24" 
-              stroke-width="2.8" 
-              stroke-linecap="round" 
-              stroke-linejoin="round"
-              class="lucide lucide-indian-rupee preview-icon">
-              <path d="M6 3h12"/>
-              <path d="M6 8h12"/>
-              <path d="m6 13 8.5 8"/>
-              <path d="M6 13h3"/>
-              <path d="M9 13c6.667 0 6.667-10 0-10"/>
-            </svg>
-          </span>
-          <span class="price">1024</span>
+      <section class="checkout-card" aria-labelledby="order-title">
+        <div class="checkout-section-heading">
+          <h2 id="order-title">Your order</h2>
+          <a href="index.html#desserts">Add another treat</a>
         </div>
+        <div class="price-food-container ja-price-food-container" aria-live="polite"></div>
+      </section>
 
-      </div>
+      <section class="coupon-card" aria-labelledby="coupon-title">
+        <div>
+          <h2 id="coupon-title">A little extra sweetness</h2>
+          <p>Choose one offer to apply to your order.</p>
+        </div>
+        <div class="coupon-options" role="group" aria-label="Available coupons">
+          <button class="coupon-option" type="button" data-coupon="SWEET10" aria-pressed="false"><strong>SWEET10</strong><span>10% off your food</span></button>
+          <button class="coupon-option" type="button" data-coupon="MISHTI50" aria-pressed="false"><strong>MISHTI50</strong><span>₹50 off orders over ₹300</span></button>
+          <button class="coupon-option" type="button" data-coupon="FREESHIP" aria-pressed="false"><strong>FREESHIP</strong><span>Free delivery</span></button>
+        </div>
+        <p class="coupon-message" aria-live="polite">Select a coupon to see your savings.</p>
+      </section>
 
+      <section class="bill-card" aria-labelledby="bill-title">
+        <h2 id="bill-title">Bill details</h2>
+        <div class="bill-row"><span>Food price</span><span data-total="food">₹0.00</span></div>
+        <div class="bill-row"><span>GST on food (5%)</span><span data-total="food-tax">₹0.00</span></div>
+        <div class="bill-row"><span>Platform fee</span><span data-total="platform">₹10.00</span></div>
+        <div class="bill-row"><span>GST on platform fee (18%)</span><span data-total="platform-tax">₹1.80</span></div>
+        <div class="bill-row"><span>Delivery fee</span><span data-total="delivery">₹25.00</span></div>
+        <div class="bill-row"><span>GST on delivery fee (18%)</span><span data-total="delivery-tax">₹4.50</span></div>
+        <div class="bill-row discount-row" hidden><span>Coupon savings</span><span data-total="discount">−₹0.00</span></div>
+        <div class="bill-row total-row"><strong>Total payable</strong><strong data-total="grand">₹0.00</strong></div>
+        <button class="place-order-button" type="button">Place your order</button>
+        <p class="order-message" aria-live="polite"></p>
+      </section>
     </div>
-    <div class="copen-code">
-      <span> Coupon Code</span>
-      <div class="coupen-code">
-        <input type="text" name="coupen-code" id="cu-code" value="" placeholder="CODE" />
-        <button type="submit" class="apply-coupen-code">Apply</button>
-      </div>
-    </div>
 
-    <div class="price-calculater">
-      <div class="bill-detail-amount">
-        <span class="bill-heading">
-         Bill details 
-        </span>
-        <span class="bill-heading">Amount</span>
-      </div>
-      <div class="bill-detail-amount">
-        <span>
-         Food price 
-        </span>
-        <span>₹248.00</span>
-
-      </div>
-      <div class="bill-detail-amount">
-        <span>
-         GST on food (5%) 
-        </span>
-        <span>₹12.40</span>
-      </div>
-
-      <div class="bill-detail-amount">
-        <span>
-         Platform fee (example)
-        </span>
-        <span>₹10.00</span>
-      </div>
-
-      <div class="bill-detail-amount">
-        <span>
-          GST on platform fee (18%)</span>
-        <span>₹1.80</span>
-      </div>
-
-      <div class="bill-detail-amount">
-        <span>
-         Delivery fee (example) 
-        </span>
-        <span>₹25.00</span>
-      </div>
-
-      <div class="bill-detail-amount">
-        <span>
-         GST on delivery fee (18%)
-        </span>
-        <span>₹4.50</span>
-      </div>
-
-      <div class="bill-detail-amount">
-        <span>
-         Total payable 
-        </span>
-        <span>₹301.70</span>
-      </div>
-    </div>
+    <aside class="checkout-aside" aria-label="Mishti offers">
+      <article class="promo-banner promo-berries">
+        <button class="promo-close" type="button" aria-label="Dismiss offer">×</button>
+        <span class="promo-label">A berry good idea</span>
+        <h2>Make today a little sweeter.</h2>
+        <p>Explore waffles, macarons, and more from the Mishti dessert counter.</p>
+        <a href="index.html#desserts">Explore desserts <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="promo-banner promo-sharing">
+        <button class="promo-close" type="button" aria-label="Dismiss offer">×</button>
+        <span class="promo-label">For your next get-together</span>
+        <h2>Good things are better shared.</h2>
+        <p>Find a crowd-pleasing favorite in our frequently ordered collection.</p>
+        <a href="index.html#trandingFood">See popular picks <span aria-hidden="true">→</span></a>
+      </article>
+      <div class="checkout-note"><span aria-hidden="true">♡</span><p>Every order is prepared with a little extra love.</p></div>
+    </aside>
   </main>
-  <script src="scripts/nav.js" type="text/javascript" charset="utf-8"></script>
-  <script src="scripts/script.js" type="module"></script>
-</body>
 
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/checkout.js" type="module"></script>
+</body>
 </html>
