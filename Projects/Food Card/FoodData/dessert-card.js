@@ -10,7 +10,7 @@ export const card = [
     producId:'b5def8a8-7418-46a7-9dfe-de4b84b31cc3',
     dessertImg: 'https://tinyurl.com/2x5w47b7',
     category: 'Creme Brulee',
-    dessertName: 'Vanilla Bean Creme Brulee',
+    dessertName: 'Vanilla Creme Brulee',
     dessertPrice: '248'
   },
   {
