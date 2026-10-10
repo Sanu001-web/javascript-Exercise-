@@ -3,20 +3,53 @@
 
 <head>
   <title>Payment Card</title>
-  <!-- font -->
+  <!--------------------------- font ------------------------->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles/checkout.css" />
 
-  <!-- styles -------------------------->
+  <!--------------------- styles ---------------------------->
   <link rel="stylesheet" href="styles/checkout.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/nav.css" type="text/css" media="all" />
 </head>
 
 <body>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="left-nav">
+      <a class="home-link" href="index.html">
+        <header class="heard-card" id="home">
+          <h2>Mishti</h2>
+        </header>
+      </a>
+    </div>
+    <div class="nav-links middle-nav" id="main-navigation-links">
+      <a href="#home">Home</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#trandingFood">Tranding</a>
+      <a class="nav-brand" href="sweet-moments.html">
+        <span>Sweet moments</span>
+        <img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="sweet-movements" />
+      </a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+    <div class="srch-container right-nav">
+      <input class="srch-box js-srch-box" type="text" name="search"  placeholder="Search by dessert or category" />
+      <button class="srch-btn" type="submit">Search</button>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
+        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
+        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
+        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
+      </svg>
+    </button>
+    </div>
+  </nav>
   <main class="main-container">
 
     <div class="price-food-container">
