@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Payment Card</title>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/checkout.css" />
+
+  <!-- styles -------------------------->
+  <link rel="stylesheet" href="styles/checkout.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="main-container">
+
+    <div class="price-food-container">
+      <div class="foodimg-container">
+        <img  class="food-img" src="https://tinyurl.com/3xyhcxfz" alt="" />
+      </div>
+      <div class="food-info-container">
+        <p class="food-name">
+          Daal Tadkaa
+        </p>
+        <span>
+        Quantity:1
+      </span>
+        <span>
+        Serving Size:M
+      </span>
+
+        <div class="price-tag-container">
+          <span class="food-price-icon">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg"
+              width="15" 
+              height="15" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="#913a24" 
+              stroke-width="2.8" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+              class="lucide lucide-indian-rupee preview-icon">
+              <path d="M6 3h12"/>
+              <path d="M6 8h12"/>
+              <path d="m6 13 8.5 8"/>
+              <path d="M6 13h3"/>
+              <path d="M9 13c6.667 0 6.667-10 0-10"/>
+            </svg>
+          </span>
+          <span class="price">1024</span>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="copen-code">
+      <span> Coupon Code</span>
+      <div class="coupen-code">
+        <input type="text" name="coupen-code" id="cu-code" value="" placeholder="CODE" />
+        <button type="submit" class="apply-coupen-code">Apply</button>
+      </div>
+    </div>
+
+    <div class="price-calculater">
+      <div class="bill-detail-amount">
+        <span class="bill-heading">
+         Bill details 
+        </span>
+        <span class="bill-heading">Amount</span>
+      </div>
+      <div class="bill-detail-amount">
+        <span>
+         Food price 
+        </span>
+        <span>₹248.00</span>
+
+      </div>
+      <div class="bill-detail-amount">
+        <span>
+         GST on food (5%) 
+        </span>
+        <span>₹12.40</span>
+      </div>
+
+      <div class="bill-detail-amount">
+        <span>
+         Platform fee (example)
+        </span>
+        <span>₹10.00</span>
+      </div>
+
+      <div class="bill-detail-amount">
+        <span>
+          GST on platform fee (18%)</span>
+        <span>₹1.80</span>
+      </div>
+
+      <div class="bill-detail-amount">
+        <span>
+         Delivery fee (example) 
+        </span>
+        <span>₹25.00</span>
+      </div>
+
+      <div class="bill-detail-amount">
+        <span>
+         GST on delivery fee (18%)
+        </span>
+        <span>₹4.50</span>
+      </div>
+
+      <div class="bill-detail-amount">
+        <span>
+         Total payable 
+        </span>
+        <span>₹301.70</span>
+      </div>
+    </div>
+  </main>
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>
