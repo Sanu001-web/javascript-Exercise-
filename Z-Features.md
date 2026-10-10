@@ -1,5 +1,9 @@
 https://www.youtube.com/watch?v=z2LQYsZhsFw
 
+
+
+## tips of code:
+https://youtu.be/PL3Odw-k8W4?si=miMX4N0lk2EiOwg1
 ---------------------------------------------------------
 https://www.youtube.com/watch?v=DkUjwWQEgOE
 https://www.youtube.com/live/7dcG2amh4dY?si=RBGZuQE3lidNBX7J
