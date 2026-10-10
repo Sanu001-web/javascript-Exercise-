@@ -6,7 +6,9 @@ renderDessertCard();
 renderfrquntOrderFoodCard();
 
 const quantityPopup = document.querySelector('.js-popup-qantity');
-const popupBackButton = document.querySelector('.popup-back-btn');
+
+if (quantityPopup) {
+const popupBackButton = quantityPopup.querySelector('.popup-back-btn');
 const popupFoodName = quantityPopup.querySelector('.food-name');
 const popupHeaderName = quantityPopup.querySelector('.bk-food-name');
 const popupFoodImage = quantityPopup.querySelector('.popup-food-img');
@@ -74,6 +76,9 @@ servingSizeButtons.forEach((sizeButton) => {
   });
 });
 
+
+
+
 placeOrderButton.addEventListener('click', () => {
   const selectedSize = quantityPopup.querySelector('.popup-food-quantity-size-btn[aria-pressed="true"]');
   if (!selectedSize) {
@@ -83,8 +88,18 @@ placeOrderButton.addEventListener('click', () => {
 
   // checkoutMessage.textContent = `Added ${quantityPopup.dataset.dessertName} (${selectedSize.textContent.trim()} serving) to checkout.`;
 
-  checkoutMessage.textContent = `Added ${quantityPopup.dataset.dessertName} (${selectedSize.textContent.trim()} serving) ${quantityPopup.dataset.dessertPrice}`;
-
+  const selectedPriceLabel = selectedSize.closest('.popup-food-air-quantity')
+    ?.querySelector('.popup-food-quantity-price')?.textContent || '';
+  const selectedPrice = Number(selectedPriceLabel.match(/[\d.]+/)?.[0]);
+  const checkoutItem = {
+    name: quantityPopup.dataset.dessertName,
+    image: popupFoodImage.src,
+    price: selectedPrice || Number(quantityPopup.dataset.dessertPrice),
+    servingSize: selectedSize.textContent.trim(),
+    quantity: 1
+  };
+  localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
+  checkoutMessage.textContent = `Added ${checkoutItem.name} (${checkoutItem.servingSize} serving) to checkout.`;
 
   closeQuantityPopup();
 });
@@ -94,6 +109,7 @@ document.addEventListener('keydown', (event) => {
     closeQuantityPopup();
   }
 });
+}
 
 const searchInput = document.querySelector('.js-srch-box');
 const searchButton = document.querySelector('.srch-btn');
@@ -114,3 +130,5 @@ searchInput.addEventListener('keydown', (event) => {
     searchCorner();
   }
 });
+
+
