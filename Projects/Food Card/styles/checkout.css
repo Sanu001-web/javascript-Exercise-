@@ -34,7 +34,23 @@ body {
 }
 
 .checkout-heading {
-  padding: 0 2px 6px;
+  background-color: #ffffff;
+  padding: 10px 16px 10px 16px;
+  border: 1px solid var(--checkout-border);
+  border-radius: 15px;
+}
+
+.address-tag-container {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  gap: 5px;
+  align-items: center;
+
+}
+
+.address-edit-icon {
+  cursor: pointer;
 }
 
 .checkout-eyebrow,
@@ -50,6 +66,10 @@ body {
   margin: 7px 0;
   color: var(--checkout-accent);
   font-size: clamp(30px, 5vw, 40px);
+}
+
+.address-detail {
+  color: #955b42;
 }
 
 .checkout-heading>p:last-child,
