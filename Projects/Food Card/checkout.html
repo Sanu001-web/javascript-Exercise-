@@ -8,7 +8,9 @@
   <title>Checkout | Mishti</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles/checkout.css" />
   <link rel="stylesheet" href="styles/nav.css" />
 </head>
@@ -17,14 +19,17 @@
   <nav class="main-nav" aria-label="Main navigation">
     <div class="left-nav">
       <a class="home-link" href="index.html">
-        <header class="heard-card" id="home"><h2>Mishti</h2></header>
+        <header class="heard-card" id="home">
+          <h2>Mishti</h2>
+        </header>
       </a>
     </div>
     <div class="nav-links middle-nav" id="main-navigation-links">
       <a href="index.html">Home</a>
       <a href="index.html#desserts">Desserts</a>
       <a href="index.html#trandingFood">Trending</a>
-      <a class="nav-brand" href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a class="nav-brand"
+        href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
       <a href="checkout.html" aria-current="page">Checkout</a>
     </div>
     <div class="srch-container right-nav">
@@ -39,9 +44,29 @@
   <main class="checkout-layout">
     <div class="checkout-main">
       <header class="checkout-heading">
-        <p class="checkout-eyebrow">Almost time for something sweet</p>
-        <h1>Your checkout</h1>
-        <p>Review your treat and apply a coupon before placing your order.</p>
+        <div class="address-tag-container">
+          <p class="checkout-eyebrow">Address</p>
+          <span class="address-edit-icon-container">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg"
+              width="15" 
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#9b6e5b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" 
+              class="lucide lucide-pencil preview-icon address-edit-icon">
+              <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
+              <path d="m15 5 4 4"/>
+            </svg>
+            </span>
+        </div>
+        <div class="address-detail-info">
+          <p>Indore,  20015</p>
+          <p>Sector 34, Mangal Nagar Near Rajeev Circle Saket Hotel Building No 04 Second Floor 04 Room No 103</p>
+        </div>
       </header>
 
       <section class="checkout-card" aria-labelledby="order-title">
@@ -73,7 +98,8 @@
         <div class="bill-row"><span>GST on platform fee (18%)</span><span data-total="platform-tax">₹1.80</span></div>
         <div class="bill-row"><span>Delivery fee</span><span data-total="delivery">₹25.00</span></div>
         <div class="bill-row"><span>GST on delivery fee (18%)</span><span data-total="delivery-tax">₹4.50</span></div>
-        <div class="bill-row discount-row" hidden><span>Coupon savings</span><span data-total="discount">−₹0.00</span></div>
+        <div class="bill-row discount-row" hidden><span>Coupon savings</span><span data-total="discount">−₹0.00</span>
+        </div>
         <div class="bill-row total-row"><strong>Total payable</strong><strong data-total="grand">₹0.00</strong></div>
         <button class="place-order-button js-place-order-button" type="button">Place your order</button>
         <p class="order-message" aria-live="polite"></p>
@@ -95,11 +121,14 @@
         <p>Find a crowd-pleasing favorite in our frequently ordered collection.</p>
         <a href="index.html#trandingFood">See popular picks <span aria-hidden="true">→</span></a>
       </article>
-      <div class="checkout-note"><span aria-hidden="true">♡</span><p>Every order is prepared with a little extra love.</p></div>
+      <div class="checkout-note"><span aria-hidden="true">♡</span>
+        <p>Every order is prepared with a little extra love.</p>
+      </div>
     </aside>
   </main>
 
   <script src="scripts/nav.js" defer></script>
   <script src="scripts/checkout.js" type="module"></script>
 </body>
+
 </html>
