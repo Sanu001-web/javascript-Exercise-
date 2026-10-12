@@ -52,8 +52,8 @@ body {
   font-size: clamp(30px, 5vw, 40px);
 }
 
-.checkout-heading > p:last-child,
-.coupon-card > div:first-child p {
+.checkout-heading>p:last-child,
+.coupon-card>div:first-child p {
   margin: 0;
   color: var(--checkout-muted);
   line-height: 1.55;
@@ -93,10 +93,23 @@ body {
 
 .price-food-container {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 14px;
   padding-top: 15px;
   border-top: 1px solid #f1e9e4;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f1e9e4;
+}
+
+.checkout-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .foodimg-container {
@@ -189,7 +202,7 @@ body {
   line-height: 1.5;
 }
 
-.coupon-card > div:first-child p {
+.coupon-card>div:first-child p {
   margin-top: 5px;
   font-size: 13px;
 }
@@ -280,7 +293,9 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: background 160ms ease, transform 160ms ease;
+
 }
+
 
 .place-order-button:hover:not(:disabled) {
   transform: translateY(-1px);
