@@ -98,25 +98,7 @@ placeOrderButton.addEventListener('click', () => {
     servingSize: selectedSize.textContent.trim(),
     quantity: 1
   };
-
-  let checkoutItems = [];
-  try {
-    const savedItems = JSON.parse(localStorage.getItem('mishtiCheckoutItems'));
-    checkoutItems = Array.isArray(savedItems) ? savedItems : [];
-  } catch {
-    checkoutItems = [];
-  }
-
-  const existingItem = checkoutItems.find((item) =>
-    item.name === checkoutItem.name && item.servingSize === checkoutItem.servingSize
-  );
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    checkoutItems.push(checkoutItem);
-  }
-  localStorage.setItem('mishtiCheckoutItems', JSON.stringify(checkoutItems));
-  localStorage.removeItem('mishtiCheckoutItem');
+  localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
   checkoutMessage.textContent = `Added ${checkoutItem.name} (${checkoutItem.servingSize} serving) to checkout.`;
 
   closeQuantityPopup();
