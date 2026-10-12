@@ -34,24 +34,34 @@ body {
 }
 
 .checkout-heading {
-  background-color: #ffffff;
-  padding: 10px 16px 10px 16px;
+  padding: 10px 12px 10px 12px;
+  background-color: #fff;
   border: 1px solid var(--checkout-border);
   border-radius: 15px;
+  width: 300px;
+  /* height: 160px; */
 }
 
 .address-tag-container {
   display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-  gap: 5px;
   align-items: center;
-
+  gap: 5px;
+  font-weight: 800;
 }
 
-.address-edit-icon {
+.address-edit-icon-container {
   cursor: pointer;
 }
+
+.address-detail-info {
+  color: #9e5c4c;
+}
+
+.address-detail-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
 
 .checkout-eyebrow,
 .promo-label {
@@ -66,10 +76,6 @@ body {
   margin: 7px 0;
   color: var(--checkout-accent);
   font-size: clamp(30px, 5vw, 40px);
-}
-
-.address-detail {
-  color: #955b42;
 }
 
 .checkout-heading>p:last-child,
@@ -113,23 +119,10 @@ body {
 
 .price-food-container {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding-top: 15px;
-  border-top: 1px solid #f1e9e4;
-}
-
-.checkout-item {
-  display: flex;
   align-items: center;
   gap: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #f1e9e4;
-}
-
-.checkout-item:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
+  padding-top: 15px;
+  border-top: 1px solid #f1e9e4;
 }
 
 .foodimg-container {
