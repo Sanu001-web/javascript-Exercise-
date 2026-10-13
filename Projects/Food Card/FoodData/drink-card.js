@@ -15,7 +15,7 @@ export const drinks = [
   },
   {
     producId: '06af1def-fac6-43d6-a661-32380de81675',
-    dessertImg: 'https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=900&q=80',
+    dessertImg: 'https://tinyurl.com/bdc4ks9m',
     category: 'Drinks',
     dessertName: 'Fresh Mint Lemonade',
     dessertPrice: '129'
