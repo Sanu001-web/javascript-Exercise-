@@ -1,9 +1,13 @@
 import { renderDessertCard, dessertCards } from '../FoodData/dessert-card.js'
 import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from '../FoodData/frqOrderFood.js';
+import { renderDrinkCard } from '../FoodData/drink-card.js';
+import { renderSoupCard } from '../FoodData/soup-card.js';
 
 
 renderDessertCard();
 renderfrquntOrderFoodCard();
+renderDrinkCard();
+renderSoupCard();
 
 const quantityPopup = document.querySelector('.js-popup-qantity');
 
@@ -112,13 +116,26 @@ const searchInput = document.querySelector('.js-srch-box');
 const searchButton = document.querySelector('.srch-btn');
 
 
-function searchCorner() {
-  const search = searchInput.value.trim().toLowerCase();
+let searchTerm = '';
+let selectedCategory = 'All';
+const filterBtn = document.querySelector('.js-filter-btn');
+const filterableCards = [...dessertCards, ...frqntlyOrderFoods];
 
-  [...dessertCards, ...frqntlyOrderFoods].forEach((foodCard) => {
-    const matches = foodCard.textContent.toLowerCase().includes(search);
-    foodCard.hidden = !matches;
+function updateVisibleCards() {
+  filterableCards.forEach((foodCard) => {
+    const category = foodCard.querySelector('.dessert-catorigies, .fOrderFood-catorigies')
+      ?.textContent.trim();
+    const matchesSearch = foodCard.textContent.toLowerCase().includes(searchTerm);
+    const matchesCategory = selectedCategory === 'All' || category === selectedCategory ||
+      (selectedCategory === 'Waffles' && category === 'Waffle');
+
+    foodCard.hidden = !matchesSearch || !matchesCategory;
   });
+}
+
+function searchCorner() {
+  searchTerm = searchInput.value.trim().toLowerCase();
+  updateVisibleCards();
 }
 searchButton.addEventListener('click', searchCorner);
 searchInput.addEventListener('input', searchCorner);
@@ -129,20 +146,8 @@ searchInput.addEventListener('keydown', (event) => {
   }
 });
 
-
-// Filter both dessert and frequently ordered cards by their displayed category.
-const filterBtn = document.querySelector('.js-filter-btn');
-const filterableCards = [...dessertCards, ...frqntlyOrderFoods];
-
 filterBtn?.addEventListener('change', () => {
-  const selectedCategory = filterBtn.value;
-
-  filterableCards.forEach((foodCard) => {
-    const category = foodCard.querySelector('.dessert-catorigies, .fOrderFood-catorigies')
-      ?.textContent.trim();
-    const matchesCategory = selectedCategory === 'All' || category === selectedCategory || (selectedCategory === 'Waffles' && category === 'Waffle');
-
-    foodCard.hidden = !matchesCategory;
-  });
+  selectedCategory = filterBtn.value;
+  updateVisibleCards();
 });
 
