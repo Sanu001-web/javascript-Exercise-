@@ -38,7 +38,7 @@ export const frequentlyOrderFood = [
     producId: '6174aed5-e494-4f5e-9e83-10ac9ad157ed',
     fOrderFoodImg: 'https://tinyurl.com/7t2t5872',
     category: 'Paneer',
-    fOrderFoodName: 'Fiber Rice Palak Paneer',
+    fOrderFoodName: 'Fiber Rich Palak Paneer',
     fOrderFoodPrice: '558'
   },
   {
