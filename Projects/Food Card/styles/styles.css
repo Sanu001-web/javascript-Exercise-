@@ -31,7 +31,9 @@ body {
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     "desserts"
-    "popular";
+    "popular"
+    "drinks"
+    "soups";
   align-items: start;
   gap: 32px;
   max-width: 1440px;
@@ -42,8 +44,17 @@ body {
   grid-area: popular;
 }
 
+.drinks-container-sec {
+  grid-area: drinks;
+}
+
+.soups-container-sec {
+  grid-area: soups;
+}
+
 .dessert-container-sec,
-.frqntly-order-food-container-sec {
+.frqntly-order-food-container-sec,
+.food-menu-section {
   margin-inline: auto;
 }
 
@@ -94,6 +105,15 @@ body {
 
 .dessert-container-sec {
   grid-area: desserts;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  align-items: start;
+  gap: 24px 16px;
+  width: min(100%, 1000px);
+  margin-top: 20px;
+}
+
+.food-menu-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
   align-items: start;
@@ -206,7 +226,8 @@ body {
     margin-top: 42px;
   }
 
-  .dessert-container-sec {
+  .dessert-container-sec,
+  .food-menu-section {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
     gap: 20px 12px;
   }
@@ -221,7 +242,8 @@ body {
     padding: 14px;
   }
 
-  .dessert-container-sec {
+  .dessert-container-sec,
+  .food-menu-section {
     grid-template-columns: 1fr;
   }
 }
