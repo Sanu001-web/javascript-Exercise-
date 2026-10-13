@@ -90,13 +90,28 @@ body {
   transition: all 0.30s;
 }
 
+.sort-btn {
+  padding: 5px 10px 5px 10px;
+  background-color: #f8f8f8;
+  border: 1.9px solid #d6baa8;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #44210a;
+  font-weight: 600;
+
+  width: 80px;
+  /* Initial width */
+  transition: width 0.1s ease-in-out, all 0.30s;
+}
+
 .filter-btn option {
   font-size: 15px;
   font-weight: 500;
   color: #824116;
 }
 
-.filter-btn:focus {
+.filter-btn:focus,
+.sort-btn:focus {
   cursor: pointer;
   border-color: #d88b5b;
   outline: none;
