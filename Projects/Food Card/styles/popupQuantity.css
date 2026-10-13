@@ -10,11 +10,10 @@
   border: 1px solid #eadfd7;
   border-radius: 10px;
   box-shadow: 0 12px 36px rgba(60, 39, 27, 0.22);
-  /* width: min(360px, calc(100vw - 32px)); */
+  width: min(360px, calc(100vw - 32px));
   max-height: 90vh;
   overflow-y: auto;
   display: none;
-  width: 300px;
 }
 
 .popup-qantity.is-open {
@@ -77,8 +76,8 @@
 
 .popup-food-img {
   width: 100%;
-  max-width: 215px;
-  height: 210px;
+  max-width: 275px;
+  height: 280px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
