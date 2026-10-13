@@ -54,6 +54,34 @@ export const frequentlyOrderFood = [
     category: 'Indian Sadhvik',
     fOrderFoodName: 'Indian Culture Simple Food',
     fOrderFoodPrice: '1278'
+  },
+  {
+    producId: 'c1211045-5e8f-4b6e-9724-520444d5fcf1',
+    fOrderFoodImg: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80',
+    category: 'Rice',
+    fOrderFoodName: 'Vegetable Masala Biryani',
+    fOrderFoodPrice: '349'
+  },
+  {
+    producId: '184099e3-e6e2-4e73-a8bf-5a64f6f5bd3f',
+    fOrderFoodImg: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
+    category: 'Paneer',
+    fOrderFoodName: 'Paneer Garden Bowl',
+    fOrderFoodPrice: '289'
+  },
+  {
+    producId: '0dd417b3-6490-494b-90d3-b500befeba99',
+    fOrderFoodImg: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',
+    category: 'Rice',
+    fOrderFoodName: 'Spiced Rice Lunch Bowl',
+    fOrderFoodPrice: '259'
+  },
+  {
+    producId: '71607cef-cea8-4a0c-8aec-c73c1f0cc8b0',
+    fOrderFoodImg: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80',
+    category: 'Paneer',
+    fOrderFoodName: 'Paneer Curry Combo',
+    fOrderFoodPrice: '399'
   }
 ];
 
