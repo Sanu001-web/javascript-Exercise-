@@ -57,7 +57,7 @@ export const frequentlyOrderFood = [
   },
   {
     producId: 'c1211045-5e8f-4b6e-9724-520444d5fcf1',
-    fOrderFoodImg: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80',
+    fOrderFoodImg: 'https://tinyurl.com/3566dz6t',
     category: 'Rice',
     fOrderFoodName: 'Vegetable Masala Biryani',
     fOrderFoodPrice: '349'
@@ -73,7 +73,7 @@ export const frequentlyOrderFood = [
     producId: '0dd417b3-6490-494b-90d3-b500befeba99',
     fOrderFoodImg: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',
     category: 'Rice',
-    fOrderFoodName: 'Spiced Rice Lunch Bowl',
+    fOrderFoodName: 'Spiced Veg Rice Lunch Bowl',
     fOrderFoodPrice: '259'
   },
   {
