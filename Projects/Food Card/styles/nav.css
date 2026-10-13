@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 25px;
   margin-top: 18px;
   padding: 1px 18px;
   background: #fff;
@@ -42,6 +42,12 @@
   text-decoration: none;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-brand,
 .nav-links a {
   color: var(--surface);
@@ -52,7 +58,7 @@
 .nav-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5px;
 }
 
 .nav-brand img {
@@ -60,13 +66,6 @@
   width: 25px;
   height: 25px;
   object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-
 }
 
 .nav-toggle {
@@ -196,6 +195,7 @@
   flex: 1;
   min-width: 1px;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .srch-box::placeholder {
