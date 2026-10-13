@@ -150,4 +150,27 @@ filterBtn?.addEventListener('change', () => {
   selectedCategory = filterBtn.value;
   updateVisibleCards();
 });
+//sort 
+const sortBtn = document.querySelector("#sort");
 
+sortBtn.addEventListener("change", function () {
+  if (this.value === "sort") {
+    this.style.width = "70px";
+  } else {
+    this.style.width = "auto";
+    this.style.width = this.scrollWidth + "px";
+  }
+});
+
+
+const filterButn = document.querySelector("#filter");
+
+filterButn?.addEventListener("change", function () {
+  if (this.value === "All") {
+    this.style.width = "110px";
+  } else {
+    this.style.width = "auto";
+    this.style.width = this.scrollWidth + "px";
+  }
+});
+ 
