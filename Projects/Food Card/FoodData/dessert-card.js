@@ -54,6 +54,34 @@ export const card = [
     category: 'Waffle',
     dessertName: 'Waffle with Chocolates',
     dessertPrice: '193'
+  },
+  {
+    producId: '91858de9-ac56-4bc9-a45e-0687a126f3c0',
+    dessertImg: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
+    category: 'Indian Sweet',
+    dessertName: 'Chocolate Celebration Cake',
+    dessertPrice: '329'
+  },
+  {
+    producId: '5fc33845-02de-4de0-a2ca-74c0a47c185f',
+    dessertImg: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80',
+    category: 'Oats',
+    dessertName: 'Vanilla Ice Cream',
+    dessertPrice: '139'
+  },
+  {
+    producId: '854a50c3-4f47-41c0-939c-ce281a63a47a',
+    dessertImg: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80',
+    category: 'Indian Sweet',
+    dessertName: 'Fresh Baked Cookies',
+    dessertPrice: '119'
+  },
+  {
+    producId: '0b72c1bd-6dd0-46ab-9e84-7681fee1bee1',
+    dessertImg: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
+    category: 'Indian Sweet',
+    dessertName: 'Strawberry Cream Dessert',
+    dessertPrice: '249'
   }
 ];
 
