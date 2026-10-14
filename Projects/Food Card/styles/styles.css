@@ -264,14 +264,14 @@ body {
 
 .add-to-cart:hover,
 .add-to-cart:focus-visible {
-  background-color: #fff8f2;
+  background-color: #fcf5ed;
   transform: translate(-50%, -2px);
   box-shadow: 0 5px 12px rgba(74, 43, 28, 0.14);
 }
 
 .add-to-cart:active {
-  background-color: var(--green-bright);
-  color: var(--text);
+  background-color: #73301f;
+  color: #fff;
 }
 
 @media (max-width: 850px) {
@@ -299,6 +299,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .dessert-card,
   .frqntly-order-food-card,
   .dessert-img,
