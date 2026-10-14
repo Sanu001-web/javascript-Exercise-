@@ -142,6 +142,48 @@ body {
   display: flex;
   position: relative;
   flex-direction: column;
+  animation: menu-card-arrive 500ms cubic-bezier(0.2, 0.75, 0.3, 1) backwards;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.frqntly-order-food-card {
+  animation: menu-card-arrive 500ms cubic-bezier(0.2, 0.75, 0.3, 1) backwards;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.dessert-card:hover,
+.frqntly-order-food-card:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 10px 12px rgba(74, 43, 28, 0.12));
+}
+
+.dessert-card-image,
+.fOrderFood-card-image {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.dessert-img,
+.fOrderFood-img {
+  transition: transform 350ms cubic-bezier(0.2, 0.75, 0.3, 1), filter 350ms ease;
+}
+
+.dessert-card:hover .dessert-img,
+.frqntly-order-food-card:hover .fOrderFood-img {
+  transform: scale(1.045);
+  filter: saturate(1.08);
+}
+
+@keyframes menu-card-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dessert-card[hidden] {
@@ -220,8 +262,11 @@ body {
   transition: all 0.3s;
 }
 
-.add-to-cart:hover {
-  background-color: #f8f8f8;
+.add-to-cart:hover,
+.add-to-cart:focus-visible {
+  background-color: #fff8f2;
+  transform: translate(-50%, -2px);
+  box-shadow: 0 5px 12px rgba(74, 43, 28, 0.14);
 }
 
 .add-to-cart:active {
@@ -250,6 +295,27 @@ body {
 
   .dessert-img {
     min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dessert-card,
+  .frqntly-order-food-card,
+  .dessert-img,
+  .fOrderFood-img,
+  .add-to-cart {
+    animation: none;
+    transition: none;
+  }
+
+  .dessert-card:hover,
+  .frqntly-order-food-card:hover,
+  .dessert-card:hover .dessert-img,
+  .frqntly-order-food-card:hover .fOrderFood-img,
+  .add-to-cart:hover,
+  .add-to-cart:focus-visible {
+    transform: none;
+    filter: none;
   }
 }
 
