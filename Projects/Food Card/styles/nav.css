@@ -25,6 +25,7 @@
 
 .main-nav {
   animation: nav-arrive 450ms ease-out both;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,6 +38,7 @@
   box-shadow: 0 6px 18px rgba(60, 39, 27, 0.06);
   overflow: hidden;
   height: 60px;
+  z-index: 200;
 }
 
 
@@ -146,9 +148,9 @@
 }
 
 @media (max-width: 760px) {
-  /* .main-nav {
-    flex-wrap: wrap;
-  } */
+  .main-nav {
+    overflow: visible;
+  }
 
   .nav-toggle {
     display: inline-flex;
@@ -162,16 +164,18 @@
   .main-nav.is-menu-open .nav-links {
     animation: nav-menu-reveal 220ms ease-out both;
     order: 4;
-    width: 30%;
+    width: min(220px, calc(100vw - 36px));
     align-items: stretch;
     flex-direction: column;
     gap: 4px;
     position: absolute;
-    top: 105px;
-    right: 20px;
+    top: calc(100% + 8px);
+    right: 10px;
     background-color: #ffffff;
-    padding: 5px 8px 5px 8px;
+    padding: 8px;
+    border: 1px solid #eadfd7;
     border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(60, 39, 27, 0.12);
     z-index: 100;
     overflow: hidden;
   }
