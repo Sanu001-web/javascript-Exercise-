@@ -10,6 +10,18 @@
   --checkout-warm: #c18351;
 }
 
+@keyframes checkout-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
   margin: 0;
   padding: 24px;
@@ -19,6 +31,7 @@ body {
 }
 
 .checkout-layout {
+  animation: checkout-arrive 550ms ease-out both;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
   align-items: start;
@@ -341,6 +354,20 @@ body {
   border: 1px solid #f0e2d7;
   border-radius: 15px;
   background: radial-gradient(ellipse at top right, #fff 0%, #fff4e8 50%, #f2daca 100%);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.promo-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(60, 39, 27, 0.1);
+}
+
+.promo-banner img {
+  transition: transform 350ms ease;
+}
+
+.promo-banner:hover img {
+  transform: scale(1.025);
 }
 
 .promo-sharing {
@@ -417,6 +444,26 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--checkout-warm);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkout-layout {
+    animation: none;
+  }
+
+  .promo-banner,
+  .promo-banner img,
+  .coupon-option,
+  .place-order-button {
+    transition: none;
+  }
+
+  .promo-banner:hover,
+  .promo-banner:hover img,
+  .coupon-option:hover,
+  .place-order-button:hover:not(:disabled) {
+    transform: none;
+  }
 }
 
 @media (max-width: 850px) {
