@@ -2,6 +2,18 @@
   color: #44352f;
 }
 
+@keyframes moments-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .moments-page .main-nav {
   max-width: 1440px;
   margin: 18px auto 0;
@@ -37,6 +49,7 @@
 }
 
 .moments-hero {
+  animation: moments-arrive 650ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
   position: relative;
   overflow: hidden;
   min-height: 330px;
@@ -97,6 +110,7 @@
 }
 
 .moments-feature {
+  animation: moments-arrive 650ms 120ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   overflow: hidden;
@@ -181,6 +195,21 @@
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 6px 18px rgba(60, 39, 27, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  animation: moments-arrive 500ms ease-out backwards;
+}
+
+.story-card:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.story-card:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(60, 39, 27, 0.1);
 }
 
 .story-art {
@@ -312,6 +341,23 @@
 
   .story-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moments-hero,
+  .moments-feature,
+  .story-card {
+    animation: none;
+  }
+
+  .story-card {
+    transition: none;
+  }
+
+  .story-card:hover {
+    transform: none;
+    box-shadow: 0 6px 18px rgba(60, 39, 27, 0.05);
   }
 }
 
