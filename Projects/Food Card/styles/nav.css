@@ -24,6 +24,7 @@
 }
 
 .main-nav {
+  animation: nav-arrive 450ms ease-out both;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,15 +104,27 @@
   outline-offset: 2px;
 }
 
-@keyframes nav-menu-reveal {
+@keyframes nav-arrive {
   from {
     opacity: 0;
-    transform: translateX(10px, 65%);
+    transform: translateY(-8px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(30px, 6%);
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-menu-reveal {
+  from {
+    opacity: 0;
+    transform: translate(10px, -6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
 
@@ -120,6 +133,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .main-nav {
+    animation: none;
+  }
 
   .nav-toggle,
   .nav-toggle svg,
