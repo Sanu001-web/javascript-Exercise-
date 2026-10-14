@@ -72,7 +72,16 @@
             <path d="M15.5 6.5a3.5 3.5 0 1 0-7 0" />
           </svg>
         </span>
-        <select name="filter" id="filter" class="filter-btn js-filter-btn">
+        <div class="find-items-container">
+          <select name="sort" id="sort" class="sort-btn js-sort-btn">
+            <option class="ft-options">sort</option>
+            <option class="ft-options">Price: High-Low</option>
+            <option class="ft-options">Price: Low-High</option>
+            <option class="ft-options">Rating: High-Low</option>
+            <option class="ft-options">Rating: Low-High</option>
+          </select>
+
+          <select name="filter" id="filter" class="filter-btn js-filter-btn">
             <option class="ft-options">All</option>
             <option class="ft-options">Indian Sweet</option>
             <option class="ft-options">Waffles</option>
@@ -82,6 +91,7 @@
             <option class="ft-options">Drinks</option>
             <option class="ft-options">Soups</option>
           </select>
+        </div>
       </div>
       <div class="dessert-card">
 
