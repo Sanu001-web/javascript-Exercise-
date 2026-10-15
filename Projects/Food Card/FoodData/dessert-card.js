@@ -39,7 +39,7 @@ export const card = [
     dessertName: 'Bowl of Cereal',
     dessertPrice: '342',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '123'
     }
   },
@@ -50,7 +50,7 @@ export const card = [
     dessertName: 'Jalebi',
     dessertPrice: '183',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '157'
     }
   },
@@ -61,7 +61,7 @@ export const card = [
     dessertName: 'Vanilla Panna Cotta',
     dessertPrice: '458',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -83,7 +83,7 @@ export const card = [
     dessertName: 'Waffle with Chocolates',
     dessertPrice: '193',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-25.png',
       count: '4504'
     }
   },
@@ -116,7 +116,7 @@ export const card = [
     dessertName: 'Fresh Baked Cookies',
     dessertPrice: '119',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-2.png',
       count: '2548'
     }
   },
@@ -127,7 +127,7 @@ export const card = [
     dessertName: 'Strawberry Cream Dessert',
     dessertPrice: '249',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-1.png',
       count: '454'
     }
   }
