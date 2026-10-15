@@ -39,7 +39,7 @@ export const soups = [
     dessertName: 'Hearty Mushroom Soup',
     dessertPrice: '219',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   }
