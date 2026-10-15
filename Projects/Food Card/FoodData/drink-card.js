@@ -18,7 +18,7 @@ export const drinks = [
     dessertPrice: '159'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '211'
     }
   },
@@ -42,7 +42,7 @@ export const drinks = [
     dessertPrice: '109'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '121'
     }
   }
