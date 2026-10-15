@@ -6,7 +6,7 @@ export const frequentlyOrderFood = [
     fOrderFoodName: 'Lemon Rice',
     fOrderFoodPrice: '1098',
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating5.png',
       count: '321'
     }
   },
@@ -18,7 +18,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '789'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
       count: '321'
     }
   },
@@ -30,7 +30,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '789'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '321'
     }
   },
@@ -42,7 +42,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '403'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -54,7 +54,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '1098'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-15.png',
       count: '321'
     }
   },
@@ -66,7 +66,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '479'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-25.png',
       count: '321'
     }
   },
@@ -78,7 +78,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '419'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -90,7 +90,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '105'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
       count: '321'
     }
   },
@@ -126,7 +126,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '312'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-25.png',
       count: '321'
     }
   },
@@ -138,7 +138,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '242'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
       count: '321'
     }
   },
@@ -150,7 +150,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '289'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-25.png',
       count: '321'
     }
   },
@@ -162,7 +162,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '319'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -174,7 +174,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '558'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
       count: '321'
     }
   },
@@ -186,7 +186,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '209'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '321'
     }
   },
@@ -198,7 +198,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '145'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-2.png',
       count: '321'
     }
   },
@@ -210,7 +210,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '218'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-2.png',
       count: '321'
     }
   },
@@ -222,7 +222,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '1278'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-1.png',
       count: '321'
     }
   },
@@ -234,7 +234,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '298'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -246,7 +246,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '247'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
       count: '321'
     }
   },
@@ -258,7 +258,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '349'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '321'
     }
   },
@@ -270,7 +270,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '289'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
       count: '321'
     }
   },
@@ -282,7 +282,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '259'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
   },
@@ -306,7 +306,7 @@ export const frequentlyOrderFood = [
     fOrderFoodPrice: '329'
     ,
     rating: {
-      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
       count: '321'
     }
   }
