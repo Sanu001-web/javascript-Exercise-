@@ -4,7 +4,11 @@ export const drinks = [
     dessertImg: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80',
     category: 'Drinks',
     dessertName: 'Mango Smoothie',
-    dessertPrice: '189'
+    dessertPrice: '189',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '246'
+    }
   },
   {
     producId: 'fcb2586d-7e3c-4a26-b505-07831c960027',
@@ -12,6 +16,11 @@ export const drinks = [
     category: 'Drinks',
     dessertName: 'Iced Coffee',
     dessertPrice: '159'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '211'
+    }
   },
   {
     producId: '06af1def-fac6-43d6-a661-32380de81675',
@@ -19,13 +28,23 @@ export const drinks = [
     category: 'Drinks',
     dessertName: 'Fresh Mint Lemonade',
     dessertPrice: '129'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '345'
+    }
   },
   {
     producId: 'bfa8d71c-344f-4e3b-a99f-b26df358eaf4',
     dessertImg: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80',
     category: 'Drinks',
     dessertName: 'Fresh Orange Juice',
-    dessertPrice: '149'
+    dessertPrice: '109'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      count: '121'
+    }
   }
 ];
 
@@ -49,6 +68,11 @@ export function renderDrinkCard() {
   <div class="dessert-card-info">
     <span class="dessert-catorigies">${drink.category}</span>
     <span class="dessert-name">${drink.dessertName}</span>
+    ${drink.rating ? `
+    <div>
+      <img class="rating-icons" src="${drink.rating.stars}" alt="" />
+      <span class="dessert-name">${drink.rating.count}</span>
+    </div>` : ''}
     <div class="price-box">
       <span class="price">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a9609" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
