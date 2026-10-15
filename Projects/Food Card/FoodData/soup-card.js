@@ -42,43 +42,85 @@ export const soups = [
       stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-35.png',
       count: '321'
     }
+  },
+  {
+    producId: '36fa376e-e2d8-4b1f-bae8-34c4be9a3fb3',
+    dessertImg: 'https://tinyurl.com/3jsw4zf5',
+    category: 'Soups',
+    dessertName: 'Sweet Corn Soup',
+    dessertPrice: '192',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      count: '121'
+    }
+  },
+  {
+    producId: '4e0df4b8-251d-4d0f-a9a6-46a0466c3e1a',
+    dessertImg: 'https://tinyurl.com/2dt8f5hu',
+    category: 'Soups',
+    dessertName: 'Palak Shorba',
+    dessertPrice: '122',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '221'
+    }
+  },
+  {
+    producId: '4e0df4b8-251d-4d0f-a9a6-46a0466c3e1a',
+    dessertImg: 'https://tinyurl.com/5wuu55nv',
+    category: 'Soups',
+    dessertName: 'Borscht — Eastern Europe',
+    dessertPrice: '109',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '197'
+    }
   }
 ];
 
-export const soupCards = document.querySelectorAll('.soups-container-sec .dessert-card');
+export let soupCards = [];
 
 export function renderSoupCard() {
-  soups.forEach((soup, index) => {
-    const soupCard = soupCards[index];
-    if (!soupCard) return;
+  const container = document.querySelector('.soups-container-sec');
+  if (!container) return;
 
+  // Remove the empty placeholder cards in the HTML before rendering the data.
+  container.querySelectorAll('.dessert-card').forEach((soupCard) => soupCard.remove());
+  soupCards = [];
+
+  soups.forEach((soup) => {
+    const soupCard = document.createElement('div');
+    soupCard.className = 'dessert-card';
     soupCard.innerHTML = `
-  <div class="dessert-card-image">
-    <img class="dessert-img" src="${soup.dessertImg}" alt="${soup.dessertName}" />
-  </div>
-  <button class="add-to-cart js-add-to-cart" type="button">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c18351" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M16 5h6" /><path d="M19 2v6" /><path d="m2.05 2.05 1.099-.028a1 1 0 011.008.815l2.69 14.347A1 1 0 007.83 18H18" /><path d="M4.564 5H12" /><path d="M6.25 14h12.712a2 2 0 001.991-1.57l.172-1.041" /><circle cx="18" cy="20" r="2" /><circle cx="8" cy="20" r="2" />
-    </svg>
-    Add to Cart
-  </button>
-  <div class="dessert-card-info">
-    <span class="dessert-catorigies">${soup.category}</span>
-    <span class="dessert-name">${soup.dessertName}</span>
-    ${soup.rating ? `
-    <div>
-      <img class="rating-icons" src="${soup.rating.stars}" alt="" />
-      <span class="dessert-name">${soup.rating.count}</span>
-    </div>` : ''}
-    <div class="price-box">
-      <span class="price">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a9609" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M6 3h12" /><path d="M6 8h12" /><path d="m6 13 8.5 8" /><path d="M6 13h3" /><path d="M9 13c6.667 0 6.667-10 0-10" />
+      <div class="dessert-card-image">
+        <img class="dessert-img" src="${soup.dessertImg}" alt="${soup.dessertName}" />
+      </div>
+      <button class="add-to-cart js-add-to-cart" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c18351" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 5h6" /><path d="M19 2v6" /><path d="m2.05 2.05 1.099-.028a1 1 0 011.008.815l2.69 14.347A1 1 0 007.83 18H18" /><path d="M4.564 5H12" /><path d="M6.25 14h12.712a2 2 0 001.991-1.57l.172-1.041" /><circle cx="18" cy="20" r="2" /><circle cx="8" cy="20" r="2" />
         </svg>
-        <span class="price-tag">${soup.dessertPrice}</span>
-      </span>
-    </div>
-  </div>
- `;
+        Add to Cart
+      </button>
+      <div class="dessert-card-info">
+        <span class="dessert-catorigies">${soup.category}</span>
+        <span class="dessert-name">${soup.dessertName}</span>
+        ${soup.rating ? `
+        <div>
+          <img class="rating-icons" src="${soup.rating.stars}" alt="" />
+          <span class="dessert-name">${soup.rating.count}</span>
+        </div>` : ''}
+        <div class="price-box">
+          <span class="price">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a9609" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3h12" /><path d="M6 8h12" /><path d="m6 13 8.5 8" /><path d="M6 13h3" /><path d="M9 13c6.667 0 6.667-10 0-10" />
+            </svg>
+            <span class="price-tag">${soup.dessertPrice}</span>
+          </span>
+        </div>
+      </div>
+    `;
+
+    container.append(soupCard);
+    soupCards.push(soupCard);
   });
 }
