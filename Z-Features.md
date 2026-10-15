@@ -1,3 +1,7 @@
+#soup
+https://chatgpt.com/s/t_6ad0ac127b3481918bd67ad1593de96e
+
+-------------------------------------------------------------------
 ###Feature	What it adds	Files to change
 Category filters	Buttons such as Waffles, Indian sweets, or Rice that filter the cards.	index.html for filter controls; scripts/script.js for filtering; optionally styles/styles.css and styles/frqOrderFood.css for styling.
 Sort options	Sort by price, name, or popularity.	index.html for a sort control; scripts/script.js for sorting.
