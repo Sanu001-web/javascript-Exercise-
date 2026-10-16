@@ -66,10 +66,32 @@ export const soups = [
     }
   },
   {
-    producId: '4e0df4b8-251d-4d0f-a9a6-46a0466c3e1a',
+    producId: 'ba1e228a-2253-448d-a445-54481bb5c262',
     dessertImg: 'https://tinyurl.com/5wuu55nv',
     category: 'Soups',
     dessertName: 'Borscht — Eastern Europe',
+    dessertPrice: '109',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '197'
+    }
+  },
+  {
+    producId: 'edac8833-9070-46ba-8404-bb8991b30747',
+    dessertImg: 'https://tinyurl.com/3ttjujku',
+    category: 'Soups',
+    dessertName: 'Goulash Soup — Hungary',
+    dessertPrice: '189',
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '237'
+    }
+  },
+  {
+    producId: '22eec143-6c8c-4528-bd4a-62919e34eef8',
+    dessertImg: 'https://tinyurl.com/ey2brjxb',
+    category: 'Soups',
+    dessertName: 'Broccoli Cheddar Soup-America',
     dessertPrice: '109',
     rating: {
       stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
