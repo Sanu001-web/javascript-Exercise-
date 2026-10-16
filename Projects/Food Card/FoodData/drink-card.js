@@ -45,18 +45,86 @@ export const drinks = [
       stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
       count: '121'
     }
+  },
+  {
+    producId: '5e2e3bad-2cef-4841-b6d5-92ec9c131c74',
+    dessertImg: 'https://tinyurl.com/3berashx',
+    category: 'Drinks',
+    dessertName: 'Masala Chai',
+    dessertPrice: '27'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '1245'
+    }
+  },
+  {
+    producId: 'f786fd3c-2e4c-44b0-9d7d-862ce439badd',
+    dessertImg: 'https://tinyurl.com/2s4ev39e',
+    category: 'Drinks',
+    dessertName: 'Mango Lassi',
+    dessertPrice: '67'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '845'
+    }
+  },
+  {
+    producId: '76b3a6b0-35d4-4d5d-a112-2edf3922902a',
+    dessertImg: 'https://tinyurl.com/8m89ews3',
+    category: 'Drinks',
+    dessertName: 'Chaas (Mattha)',
+    dessertPrice: '23'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '543'
+    }
+  },
+  {
+    producId: '5bced249-7865-4f2d-a552-f98b1cef8b69',
+    dessertImg: 'https://tinyurl.com/yc7hkr7a',
+    category: 'Drinks',
+    dessertName: 'Nimbu Pani',
+    dessertPrice: '17'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '543'
+    }
+  },
+  {
+    producId: '5bced249-7865-4f2d-a552-f98b1cef8b69',
+    dessertImg: 'https://tinyurl.com/33rkdb42',
+    category: 'Drinks',
+    dessertName: 'Cold Brew Coffee',
+    dessertPrice: '49'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-45.png',
+      count: '543'
+    }
   }
 ];
 
-export const drinkCards = document.querySelectorAll('.drinks-container-sec .dessert-card');
+export let drinkCards = [];
+
 
 export function renderDrinkCard() {
-  drinks.forEach((drink, index) => {
-    const drinkCard = drinkCards[index];
-    if (!drinkCard) return;
 
-    drinkCard.innerHTML = `
-  <div class="dessert-card-image">
+  const container = document.querySelector('.drinks-container-sec');
+  if (!container) return;
+
+  container.querySelectorAll('.dessert-card').forEach((drinkCard) =>
+    drinkCard.remove());
+  drinkCards = [];
+
+  drinks.forEach((drink) => {
+    const drinkCard = document.createElement('div');
+    drinkCard.className = 'dessertCard';
+
+    drinkCard.innerHTML = `<div class="dessert-card-image">
     <img class="dessert-img" src="${drink.dessertImg}" alt="${drink.dessertName}" />
   </div>
   <button class="add-to-cart js-add-to-cart" type="button">
@@ -81,7 +149,9 @@ export function renderDrinkCard() {
         <span class="price-tag">${drink.dessertPrice}</span>
       </span>
     </div>
-  </div>
- `;
+  </div>`;
+
+    container.append(drinkCard);
+    drinkCards.push(drinkCard);
   });
 }
