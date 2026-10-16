@@ -1,20 +1,4 @@
-#soup
-https://chatgpt.com/s/t_6ad0ac127b3481918bd67ad1593de96e
 
--------------------------------------------------------------------
-###Feature	What it adds	Files to change
-Category filters	Buttons such as Waffles, Indian sweets, or Rice that filter the cards.	index.html for filter controls; scripts/script.js for filtering; optionally styles/styles.css and styles/frqOrderFood.css for styling.
-Sort options	Sort by price, name, or popularity.	index.html for a sort control; scripts/script.js for sorting.
-Add-to-cart feedback	Change the button to “Added,” show a short confirmation, or update a cart count.	FoodData/dessert-card.js and FoodData/frqOrderFood.js for card button markup; scripts/script.js for behavior; styles/styles.css and styles/frqOrderFood.css for appearance; index.html for a cart count display.
-Favorites / wishlist	Let people save favorite items and revisit them later.	FoodData/dessert-card.js and FoodData/frqOrderFood.js for favorite buttons; scripts/script.js for saving and toggling favorites; the card stylesheets for styling. You could also add a favorites section to index.html.
-Ratings and reviews	Show star ratings and review counts on each card.	FoodData/dessert-card.js and FoodData/frqOrderFood.js to add rating data; those same files’ render functions to show it; styles/styles.css and styles/frqOrderFood.css to style it.
-Dietary labels	Mark items as vegetarian, vegan, gluten-free, spicy, or containing common allergens.	Add properties in FoodData/dessert-card.js and FoodData/frqOrderFood.js; update their render functions; update the card stylesheets.
-Discount badges	Show labels like “10% off,” “Popular,” or “New.”	Add badge data in the FoodData files; update the card render functions; style the badges in styles/styles.css and styles/frqOrderFood.css.
-Quick quantity control	Increase or decrease the item quantity directly from a card or popup.	index.html for any new popup controls; scripts/script.js for the interaction; styles/popupQuantity.css for styling.
-More complete product details	Show ingredients, allergen information, preparation time, or serving guidance in the quantity popup.	Add details to the FoodData files; update index.html’s popup markup; update scripts/script.js to display the selected item’s details.
-Multi-item cart	Keep several different foods in the cart instead of replacing the current item.	scripts/script.js to add items to a cart; scripts/checkout.js to render and total multiple items; checkout.html if the cart layout needs new markup; styles/checkout.css for styling.
-Availability status	Mark items as unavailable and disable their add-to-cart buttons.	Add availability data in the FoodData files; update their render functions; update scripts/script.js if needed; style the state in the card stylesheets.
--------------------------------------------------------
 Here is everything combined into one easy-to-read table, including what each feature does, an example, how it works, and which files you need to change.
 
 ## Food Ordering Website — Complete Feature Development Table
@@ -50,10 +34,12 @@ Here is everything combined into one easy-to-read table, including what each fea
 
 Recommended implementation order: Start with add-to-cart feedback, multi-item cart, and quantity controls. Then add category filters, sorting, and availability status. Finally, implement product details, dietary labels, favorites, ratings, and discount badges.
 -------------------------------
+
+### Learn CSS Animations in 9 Minutes
 https://www.youtube.com/watch?v=z2LQYsZhsFw
 
-## tips of code:
-https://youtu.be/PL3Odw-k8W4?si=miMX4N0lk2EiOwg1
+### tips of code:
+### https://youtu.be/PL3Odw-k8W4?si=miMX4N0lk2EiOwg1
 ---------------------------------------------------------
 https://www.youtube.com/watch?v=DkUjwWQEgOE
 https://www.youtube.com/live/7dcG2amh4dY?si=RBGZuQE3lidNBX7J
