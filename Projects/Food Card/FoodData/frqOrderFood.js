@@ -309,6 +309,54 @@ export const frequentlyOrderFood = [
       stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
       count: '321'
     }
+  },
+  {
+    producId: '06730ba9-735e-4b18-8013-7656af1383e2',
+    fOrderFoodImg: 'https://tinyurl.com/yeywa5fx',
+    category: 'Paneer',
+    fOrderFoodName: 'Fried Paneer',
+    fOrderFoodPrice: '409'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '521'
+    }
+  },
+  {
+    producId: '06730ba9-735e-4b18-8013-7656af1383e2',
+    fOrderFoodImg: 'https://tinyurl.com/42fkmkzr',
+    category: 'Paneer',
+    fOrderFoodName: 'Paneer Butter Masala',
+    fOrderFoodPrice: '757'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-4.png',
+      count: '2137'
+    }
+  },
+  {
+    producId: '06730ba9-735e-4b18-8013-7656af1383e2',
+    fOrderFoodImg: 'https://tinyurl.com/yf9pk3c5',
+    category: 'Paneer',
+    fOrderFoodName: 'Paneer Tikka',
+    fOrderFoodPrice: '255'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-3.png',
+      count: '2507'
+    }
+  },
+  {
+    producId: '06730ba9-735e-4b18-8013-7656af1383e2',
+    fOrderFoodImg: 'https://tinyurl.com/5esjraf3',
+    category: 'Paneer',
+    fOrderFoodName: 'Paneer Quesadilla',
+    fOrderFoodPrice: '632'
+    ,
+    rating: {
+      stars: 'https://supersimple.dev/projects/amazon/images/ratings/rating-5.png',
+      count: '956'
+    }
   }
 ];
 
@@ -319,6 +367,7 @@ export function renderfrquntOrderFoodCard() {
 
   container.querySelectorAll('.frqntly-order-food-card').forEach((foodCard) => foodCard.remove());
   frqntlyOrderFoods = [];
+  const foodCards = document.createDocumentFragment();
 
   frequentlyOrderFood.forEach((fOrderFoodIteam) => {
     const frqntlyOrderFood = document.createElement('div');
@@ -387,11 +436,10 @@ export function renderfrquntOrderFoodCard() {
   </div>
  `;
 
-    //  this is re,ove dependencies---------------->
-
-    container.append(frqntlyOrderFood);
+    foodCards.append(frqntlyOrderFood);
     frqntlyOrderFoods.push(frqntlyOrderFood);
   });
 
+  container.append(foodCards);
 }
 
