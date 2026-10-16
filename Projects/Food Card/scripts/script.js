@@ -2,6 +2,7 @@ import { renderDessertCard, dessertCards } from '../FoodData/dessert-card.js'
 import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from '../FoodData/frqOrderFood.js';
 import { renderDrinkCard } from '../FoodData/drink-card.js';
 import { renderSoupCard } from '../FoodData/soup-card.js';
+import { updatePopupPrices } from './popUp.js';
 
 
 renderDessertCard();
@@ -21,8 +22,11 @@ if (quantityPopup) {
   const placeOrderButton = quantityPopup.querySelector('.place-order-btn');
   const checkoutMessage = document.querySelector('.js-checkout-message');
   let popupCloseTimer;
+  let orderCloseTimer;
+  const placeOrderLabel = placeOrderButton.textContent;
 
   function closeQuantityPopup() {
+    clearTimeout(orderCloseTimer);
     if (!quantityPopup.classList.contains('is-open')) return;
 
     quantityPopup.classList.remove('is-open');
@@ -44,6 +48,7 @@ if (quantityPopup) {
 
       const dessertPrice = foodCard.querySelector('.price-tag').textContent.trim();
       quantityPopup.dataset.dessertPrice = dessertPrice;
+      updatePopupPrices(quantityPopup, dessertPrice);
 
       if (quantityPopup.classList.contains('is-open') &&
         quantityPopup.dataset.dessertName === dessertName) {
@@ -61,6 +66,9 @@ if (quantityPopup) {
         sizeButton.classList.remove('is-selected');
       });
       clearTimeout(popupCloseTimer);
+      clearTimeout(orderCloseTimer);
+      placeOrderButton.disabled = false;
+      placeOrderButton.textContent = placeOrderLabel;
       quantityPopup.classList.remove('is-closing');
       quantityPopup.dataset.dessertName = dessertName;
       quantityPopup.classList.add('is-open');
@@ -87,8 +95,7 @@ if (quantityPopup) {
       popupFoodInfo.textContent = 'Please choose a serving size first.';
       return;
     }
-
-
+    
     const selectedPriceLabel = selectedSize.closest('.popup-food-air-quantity')
       ?.querySelector('.popup-food-quantity-price')?.textContent || '';
     const selectedPrice = Number(selectedPriceLabel.match(/[\d.]+/)?.[0]);
@@ -100,9 +107,15 @@ if (quantityPopup) {
       quantity: 1
     };
     localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
-    // checkoutMessage.textContent = `Added ${checkoutItem.name} (${checkoutItem.servingSize} serving) to checkout.`;
+    placeOrderButton.disabled = true;
+    placeOrderButton.textContent = 'Order Confirmed!';
 
-    closeQuantityPopup();
+    setTimeout(() => {
+      placeOrderButton.textContent = placeOrderLabel;
+      placeOrderButton.disabled = false;
+    }, 1500);
+
+    orderCloseTimer = setTimeout(closeQuantityPopup, 800);
   });
 
   document.addEventListener('keydown', (event) => {
@@ -116,10 +129,14 @@ const searchInput = document.querySelector('.js-srch-box');
 const searchButton = document.querySelector('.srch-btn');
 
 
+
 let searchTerm = '';
 let selectedCategory = 'All';
+let selectedSort = 'sort';
 const filterBtn = document.querySelector('.js-filter-btn');
+const sortItemsBtn = document.querySelector('.js-sort-btn');
 const filterableCards = [...dessertCards, ...frqntlyOrderFoods];
+const originalCardOrder = new Map(filterableCards.map((foodCard, index) => [foodCard, index]));
 
 function updateVisibleCards() {
   filterableCards.forEach((foodCard) => {
@@ -130,6 +147,36 @@ function updateVisibleCards() {
       (selectedCategory === 'Waffles' && category === 'Waffle');
 
     foodCard.hidden = !matchesSearch || !matchesCategory;
+  });
+
+  const cardsByContainer = new Map();
+  filterableCards.forEach((foodCard) => {
+    if (!foodCard.parentElement) return;
+    const siblings = cardsByContainer.get(foodCard.parentElement) || [];
+    siblings.push(foodCard);
+    cardsByContainer.set(foodCard.parentElement, siblings);
+  });
+
+  cardsByContainer.forEach((cards, container) => {
+    cards.sort((first, second) => {
+      if (selectedSort === 'Price: High-Low' || selectedSort === 'Price: Low-High') {
+        const firstPrice = Number(first.querySelector('.price-tag')?.textContent.trim()) || 0;
+        const secondPrice = Number(second.querySelector('.price-tag')?.textContent.trim()) || 0;
+        const direction = selectedSort === 'Price: High-Low' ? -1 : 1;
+        return (firstPrice - secondPrice) * direction;
+      }
+      if (selectedSort === 'Popularity') {
+        const getRating = (foodCard) => {
+          const starsUrl = foodCard.querySelector('.rating-icons')?.src || '';
+          const rating = starsUrl.match(/rating-(\d+)/)?.[1];
+          return rating === '45' ? 4.5 : Number(rating) || 0;
+        };
+        return getRating(second) - getRating(first) ||
+          originalCardOrder.get(first) - originalCardOrder.get(second);
+      }
+      return originalCardOrder.get(first) - originalCardOrder.get(second);
+    });
+    cards.forEach((foodCard) => container.append(foodCard));
   });
 }
 
@@ -148,6 +195,11 @@ searchInput.addEventListener('keydown', (event) => {
 
 filterBtn?.addEventListener('change', () => {
   selectedCategory = filterBtn.value;
+  updateVisibleCards();
+});
+
+sortItemsBtn?.addEventListener('change', () => {
+  selectedSort = sortItemsBtn.value;
   updateVisibleCards();
 });
 //sort 
@@ -173,4 +225,3 @@ filterButn?.addEventListener("change", function () {
     this.style.width = this.scrollWidth + "px";
   }
 });
- 
