@@ -1,3 +1,63 @@
+DESKTOP-2I89GSQ 3480
+
+first of get all the propmt in 
+
+
+
+
+
+
+Area	Decision
+Website purpose	Personal portfolio for professional opportunities
+Name and title	Shaan — Aspiring Web Developer
+Target audience	Recruiters, companies, potential clients, collaborators
+Technology	HTML, CSS, vanilla JavaScript
+Architecture	Lightweight static website
+Main navigation	Work, About, Contact, Let's Talk
+Design	Clean, minimal, professional
+Essential content	Introduction, skills, projects, background, contact
+Responsive support	Mobile, tablet, desktop
+Budget	Free or very low cost
+Backend	Not required for version one
+Database or login	Not required
+Deployment	Free static hosting, subject to provider limits
+Accessibility	Semantic HTML, keyboard-friendly navigation, readable contrast
+Honesty	No fabricated jobs, client testimonials, or achievements
+
+Warm off-white background
+Primary background: #F5F4F0 — softer than pure white.
+
+Charcoal text
+Primary text and buttons: #252723 for a confident, professional feel.
+
+Muted sage accent
+Accent: #D2D5CE for project previews and subtle visual details.
+
+6. Our build sequence
+We'll implement the website in this order:
+1. Create the foundation: index.html, css/style.css, and js/script.js.
+2. Build the homepage: navigation, hero headline, introduction, and calls to action.
+3. Add the portfolio sections: selected work, skills, about, and contact.
+4. Make it responsive: test and refine layouts across desktop and mobile sizes.
+5. Add polish: hover effects, small interactions, accessibility, and final visual adjustments.
+6. Publish: deploy the finished static website and verify the live links.
+
+and don't use any kind of emojis and that make funky or overall not match wesite and reduced the attractiness and structure 
+
+hello my actual name or real name is shanu kayda and i have done BCA graduation From davv indore Madhya Pradesh they are tech old technical thing like web development html, css ,Javascript,canvas,bootstraps,angular js,php ,java computer network, dbms,computer fundamental.discrete mathematic,operating system and cloud computing many other types of technology, instead of that skills i have learn many other skills like photography,camera handling, videos editing,learn github tools etc and 10+2 PCM & BIO with 82.75%
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Home page metadata: Added the document language, character encoding, mobile viewport, and theme-color metadata.
+Image handling: Added a local fallback illustration for images that fail to load, including dynamically added images. External fonts still fall back to system fonts if unavailable.
+Recipe Studio: Clarified that recipe suggestions come from a built-in collection—not live AI—and that customer ingredients aren’t sent to an AI service.
+Checkout: Changed checkout to a browser-only preview: it no longer pretends to place an order or process payment. The demo address was also removed.
+Safer markup: Escaped image URLs and alt text before inserting them into checkout markup.
+
+-------------------------------------------------------------------------------------------------------------------
 ###  identified a weakness in my earlier advice that I should explain properly.
 https://chatgpt.com/s/t_6ad1f2a13d7c8191b3cecdf66373c170
 
