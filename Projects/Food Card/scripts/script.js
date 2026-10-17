@@ -1,7 +1,7 @@
 import { renderDessertCard, dessertCards } from '../FoodData/dessert-card.js'
 import { renderfrquntOrderFoodCard, frqntlyOrderFoods } from '../FoodData/frqOrderFood.js';
-import { renderDrinkCard } from '../FoodData/drink-card.js';
-import { renderSoupCard } from '../FoodData/soup-card.js';
+import { renderDrinkCard, drinkCards } from '../FoodData/drink-card.js';
+import { renderSoupCard, soupCards } from '../FoodData/soup-card.js';
 import { updatePopupPrices } from './popUp.js';
 
 
@@ -95,7 +95,13 @@ if (quantityPopup) {
       popupFoodInfo.textContent = 'Please choose a serving size first.';
       return;
     }
+
+
+
+
     
+
+
     const selectedPriceLabel = selectedSize.closest('.popup-food-air-quantity')
       ?.querySelector('.popup-food-quantity-price')?.textContent || '';
     const selectedPrice = Number(selectedPriceLabel.match(/[\d.]+/)?.[0]);
@@ -135,7 +141,8 @@ let selectedCategory = 'All';
 let selectedSort = 'sort';
 const filterBtn = document.querySelector('.js-filter-btn');
 const sortItemsBtn = document.querySelector('.js-sort-btn');
-const filterableCards = [...dessertCards, ...frqntlyOrderFoods];
+const filterableCards = [...dessertCards, ...frqntlyOrderFoods, ...drinkCards, ...soupCards]
+  .filter((foodCard) => foodCard.querySelector('.price-tag'));
 const originalCardOrder = new Map(filterableCards.map((foodCard, index) => [foodCard, index]));
 
 function updateVisibleCards() {
@@ -165,11 +172,19 @@ function updateVisibleCards() {
         const direction = selectedSort === 'Price: High-Low' ? -1 : 1;
         return (firstPrice - secondPrice) * direction;
       }
+      if (selectedSort === 'Name: A to Z') {
+        const firstName = first.querySelector('.dessert-name, .fOrderFood-name')?.textContent.trim() || '';
+        const secondName = second.querySelector('.dessert-name, .fOrderFood-name')?.textContent.trim() || '';
+        return firstName.localeCompare(secondName) ||
+          originalCardOrder.get(first) - originalCardOrder.get(second);
+      }
       if (selectedSort === 'Popularity') {
         const getRating = (foodCard) => {
           const starsUrl = foodCard.querySelector('.rating-icons')?.src || '';
-          const rating = starsUrl.match(/rating-(\d+)/)?.[1];
-          return rating === '45' ? 4.5 : Number(rating) || 0;
+          const rating = starsUrl.match(/rating-?(\d+)/)?.[1] || '';
+          return rating.length === 2
+            ? Number(`${rating[0]}.${rating[1]}`)
+            : Number(rating) || 0;
         };
         return getRating(second) - getRating(first) ||
           originalCardOrder.get(first) - originalCardOrder.get(second);
