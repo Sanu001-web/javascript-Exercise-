@@ -135,7 +135,7 @@ export const card = [
 
 
 
-export const dessertCards = document.querySelectorAll('.dessert-card');
+export const dessertCards = document.querySelectorAll('.dessert-container-sec > .dessert-card');
 export function renderDessertCard() {
 
 
@@ -207,4 +207,7 @@ export function renderDessertCard() {
  `;
   });
 
+  dessertCards.forEach((dessertCard, index) => {
+    if (index >= card.length) dessertCard.remove();
+  });
 }
