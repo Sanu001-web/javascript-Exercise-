@@ -25,12 +25,14 @@
 
 .main-nav {
   animation: nav-arrive 450ms ease-out both;
-  position: relative;
+  position: sticky;
+  top: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  margin-top: 18px;
+  width: min(1440px, 100%);
+  margin: 18px auto 0;
   padding: 1px 18px;
   background: #fff;
   border: 1px solid #eadfd7;
@@ -152,6 +154,10 @@
     overflow: visible;
   }
 
+  .main-nav.is-menu-open {
+    z-index: 300;
+  }
+
   .nav-toggle {
     display: inline-flex;
   }
@@ -196,7 +202,8 @@
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible {
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
   color: var(--accent);
 }
 
