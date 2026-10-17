@@ -1,0 +1,23 @@
+img[data-image-state="loading"] {
+  color: transparent;
+  background: linear-gradient(100deg, #f1e5da 20%, #fff8f1 38%, #f1e5da 56%);
+  background-size: 220% 100%;
+  animation: image-skeleton-shimmer 1.35s ease-in-out infinite;
+}
+
+img[data-image-state="error"] {
+  background: #f3e8df;
+  animation: none;
+}
+
+@keyframes image-skeleton-shimmer {
+  to { background-position-x: -220%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img[data-image-state="loading"],
+  .dessert-card:empty::before,
+  .dessert-card:empty::after {
+    animation: none;
+  }
+}
