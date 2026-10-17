@@ -122,7 +122,7 @@ export function renderDrinkCard() {
 
   drinks.forEach((drink) => {
     const drinkCard = document.createElement('div');
-    drinkCard.className = 'dessertCard';
+    drinkCard.className = 'dessert-card';
 
     drinkCard.innerHTML = `<div class="dessert-card-image">
     <img class="dessert-img" src="${drink.dessertImg}" alt="${drink.dessertName}" />
