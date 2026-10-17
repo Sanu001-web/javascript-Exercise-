@@ -15,28 +15,25 @@
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/sweet-moments.css" />
   <link rel="stylesheet" href="styles/nav.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="styles/loading.css" />
+  <link rel="stylesheet" href="styles/scroll-reveal.css" />
 </head>
 <body class="moments-page">
   <nav class="main-nav" aria-label="Main navigation">
-    <a class="home-link" href="index.html"><header class="heard-card"><h2>Mishti</h2></header></a>
-    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="moments-navigation-links">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
-        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
-        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
-        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
-      </svg>
-    </button>
-    <div class="nav-links middle-nav" id="moments-navigation-links">
+    <div class="left-nav">
+      <a class="home-link" href="index.html"><header class="heard-card"><h2>Mishti</h2></header></a>
+    </div>
+    <div class="nav-links middle-nav" id="main-navigation-links">
       <a href="index.html#home">Home</a>
       <a href="index.html#desserts">Desserts</a>
-      <a class="nav-brand" href="sweet-moments.html" aria-current="page">
-        <img src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" />
-        <span>Sweet moments</span>
-      </a>
+      <a href="index.html#trandingFood">Trending</a>
+      <a class="nav-brand" href="sweet-moments.html" aria-current="page"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a href="recipe-studio.html">Recipe studio</a>
       <a href="checkout.html">Checkout</a>
     </div>
-    <a class="moments-order-link" href="index.html#desserts">Explore desserts</a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25"/><path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2"/><path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0"/><path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2"/></svg>
+    </button>
   </nav>
 
   <main class="moments-main">
@@ -50,12 +47,12 @@
     </header>
 
     <section class="moments-feature" aria-labelledby="featured-title">
-      <div class="feature-image" role="img" aria-label="Waffle topped with fresh berries"></div>
+      <div class="feature-image"><img src="https://tinyurl.com/yuhvn4bv" alt="Waffle topped with fresh berries" loading="eager" /></div>
       <article class="feature-copy">
         <p class="story-category">The Mishti table · 5 min read</p>
         <h2 id="featured-title">A slower morning, one waffle at a time</h2>
         <p>Some mornings deserve more than a rushed cup of tea. Set the table, pile fresh berries onto a warm waffle, and let breakfast become the best part of the day.</p>
-        <a href="#story-morning">Read the story <span aria-hidden="true">→</span></a>
+        <a href="index.html#desserts">Shop waffles &amp; treats <span aria-hidden="true">→</span></a>
       </article>
     </section>
 
@@ -69,31 +66,70 @@
       </div>
       <div class="story-grid">
         <article class="story-card story-card-berries" id="story-morning">
-          <div class="story-art" role="img" aria-label="Illustration of a berry-topped waffle"><span aria-hidden="true">🧇</span></div>
-          <div class="story-card-copy">
-            <p class="story-category">Little rituals · 4 min read</p>
-            <h3>Make room for a sweeter morning</h3>
-            <p>Turn a simple breakfast into a small celebration with warm waffles, bright berries, and a drizzle of syrup.</p>
-            <a href="index.html#desserts">Find your breakfast treat <span aria-hidden="true">→</span></a>
-          </div>
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: Make room for a sweeter morning">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Golden waffles topped with berries" loading="lazy" /><span aria-hidden="true">🧇</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">Little rituals · 4 min read</p>
+              <h3>Make room for a sweeter morning</h3>
+              <p>Turn a simple breakfast into a small celebration with warm waffles, bright berries, and a drizzle of syrup.</p>
+              <span class="story-card-action">Find your breakfast treat <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         </article>
         <article class="story-card story-card-sharing">
-          <div class="story-art" role="img" aria-label="Illustration of colorful macarons"><span aria-hidden="true">🍬</span></div>
-          <div class="story-card-copy">
-            <p class="story-category">Gather together · 3 min read</p>
-            <h3>The prettiest little reason to share</h3>
-            <p>A box of macarons has a way of bringing everyone to the table. Pick a favorite, pass the box, and stay awhile.</p>
-            <a href="index.html#desserts">Choose something to share <span aria-hidden="true">→</span></a>
-          </div>
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: The prettiest little reason to share">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Colorful macarons ready to share" loading="lazy" /><span aria-hidden="true">🍬</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">Gather together · 3 min read</p>
+              <h3>The prettiest little reason to share</h3>
+              <p>A box of macarons has a way of bringing everyone to the table. Pick a favorite, pass the box, and stay awhile.</p>
+              <span class="story-card-action">Choose something to share <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         </article>
         <article class="story-card story-card-comfort">
-          <div class="story-art" role="img" aria-label="Illustration of a cozy cup of dessert"><span aria-hidden="true">🍮</span></div>
-          <div class="story-card-copy">
-            <p class="story-category">A moment to yourself · 2 min read</p>
-            <h3>A little treat, just because</h3>
-            <p>No occasion needed. A silky spoonful of panna cotta can be the gentle pause your busy afternoon was asking for.</p>
-            <a href="index.html#desserts">Take a dessert break <span aria-hidden="true">→</span></a>
-          </div>
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: A little treat, just because">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Creamy panna cotta topped with fruit" loading="lazy" /><span aria-hidden="true">🍮</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">A moment to yourself · 2 min read</p>
+              <h3>A little treat, just because</h3>
+              <p>No occasion needed. A silky spoonful of panna cotta can be the gentle pause your busy afternoon was asking for.</p>
+              <span class="story-card-action">Take a dessert break <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+        <article class="story-card story-card-cake">
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: Make every celebration sweeter">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Chocolate celebration cake with layers of frosting" loading="lazy" /><span aria-hidden="true">🍰</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">Celebrate the little things · 5 min read</p>
+              <h3>Make every celebration sweeter</h3>
+              <p>Big news, small wins, or just making it to Friday—share a slice of chocolate cake and make the moment count.</p>
+              <span class="story-card-action">Find a reason to celebrate <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+        <article class="story-card story-card-icecream">
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: Your five-minute afternoon escape">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Scoops of creamy ice cream" loading="lazy" /><span aria-hidden="true">🍨</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">A little afternoon escape · 3 min read</p>
+              <h3>Your five-minute afternoon escape</h3>
+              <p>Take a pause, pick your favorite flavor, and turn an ordinary afternoon into a cool, creamy little getaway.</p>
+              <span class="story-card-action">Choose your sweet escape <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </article>
+        <article class="story-card story-card-chocolate">
+          <a class="story-card-link" href="index.html#desserts" aria-label="Explore desserts: A chocolate moment worth sharing">
+            <div class="story-art"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Rich chocolate dessert made for sharing" loading="lazy" /><span aria-hidden="true">🍫</span></div>
+            <div class="story-card-copy">
+              <p class="story-category">For the chocolate lover · 3 min read</p>
+              <h3>A chocolate moment worth sharing</h3>
+              <p>Some days call for something rich and chocolatey. Bring home a treat, pour a cup of chai, and share the good stuff.</p>
+              <span class="story-card-action">Shop something chocolatey <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         </article>
       </div>
     </section>
@@ -107,5 +143,7 @@
 
   <footer class="moments-footer">Made with love and a little sugar · Mishti</footer>
   <script src="scripts/nav.js" defer></script>
+  <script src="scripts/loading-states.js" defer></script>
+  <script src="scripts/scroll-reveal.js" defer></script>
 </body>
 </html>
