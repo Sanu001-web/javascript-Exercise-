@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fcf8f5" />
+  <title>Recipe Studio | Mishti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/loading.css" />
+  <link rel="stylesheet" href="styles/recipe-studio.css" />
+  <link rel="stylesheet" href="styles/scroll-reveal.css" />
+</head>
+<body class="recipe-page">
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="left-nav">
+      <a class="home-link" href="index.html"><header class="heard-card"><h2>Mishti</h2></header></a>
+    </div>
+    <div class="nav-links middle-nav" id="main-navigation-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#desserts">Desserts</a>
+      <a href="index.html#trandingFood">Trending</a>
+      <a class="nav-brand" href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a href="recipe-studio.html" aria-current="page">Recipe studio</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25"/><path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2"/><path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0"/><path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2"/></svg>
+    </button>
+  </nav>
+
+  <main class="recipe-main">
+    <section class="recipe-hero">
+      <div class="recipe-hero-copy">
+        <span class="recipe-kicker">YOUR CRAVINGS, YOUR CREATION</span>
+        <h1>A little idea<br />becomes <em>delicious.</em></h1>
+        <p>Tell us what’s in your kitchen, choose what you’re craving, and get a handful of inspiring recipes to make your own.</p>
+        <a class="recipe-primary-link" href="#recipe-maker">Find my recipe <span aria-hidden="true">↓</span></a>
+        <div class="recipe-trust"><span aria-hidden="true">✦</span> Simple ideas · Flexible ingredients · Made for you</div>
+      </div>
+      <div class="recipe-hero-art" role="img" aria-label="A colorful table of waffles, fruit, and sweet treats">
+        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Beautiful brunch with toast, fruit, and fresh ingredients" />
+        <span class="floating-recipe-note note-one">Made with a little love ♡</span>
+        <span class="floating-recipe-note note-two">What will you make?</span>
+      </div>
+      <span class="recipe-deco deco-one" aria-hidden="true">✿</span>
+      <span class="recipe-deco deco-two" aria-hidden="true">✧</span>
+    </section>
+
+    <section class="recipe-maker" id="recipe-maker" aria-labelledby="maker-title">
+      <div class="maker-heading">
+        <span class="recipe-kicker">THE MISHTI RECIPE HELPER</span>
+        <h2 id="maker-title">What sounds good today?</h2>
+        <p>Start with what you have. We’ll suggest flexible ideas with clear steps.</p>
+      </div>
+      <form class="recipe-form" id="recipe-form">
+        <label class="ingredient-label" for="recipe-ingredients">Ingredients you have <span>(optional)</span></label>
+        <textarea id="recipe-ingredients" name="ingredients" rows="2" maxlength="240" placeholder="e.g. banana, oats, chocolate, milk"></textarea>
+        <div class="recipe-form-row">
+          <label for="recipe-type">I feel like making
+            <select id="recipe-type" name="type">
+              <option value="any">Surprise me</option>
+              <option value="dessert">Dessert or sweet</option>
+              <option value="meal">A meal or snack</option>
+              <option value="drink">A drink</option>
+            </select>
+          </label>
+          <label for="recipe-time">Time I have
+            <select id="recipe-time" name="time">
+              <option value="any">Any amount</option>
+              <option value="quick">15 minutes or less</option>
+              <option value="easy">About 30 minutes</option>
+            </select>
+          </label>
+        </div>
+        <button class="recipe-generate" type="submit"><span aria-hidden="true">✦</span> Get recipe ideas</button>
+        <p class="recipe-helper-note">A helpful recipe guide—not a live AI service. Ideas are generated right here, and you can adapt them to your taste.</p>
+      </form>
+    </section>
+
+    <section class="recipe-results" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div><span class="recipe-kicker">A PINCH OF INSPIRATION</span><h2 id="results-title">Ideas made for your mood</h2></div>
+        <p class="results-status" id="recipe-status" aria-live="polite">Choose your ingredients and get inspired.</p>
+      </div>
+      <div class="recipe-results-grid" id="recipe-results" aria-live="polite"></div>
+    </section>
+
+    <aside class="recipe-shop-banner">
+      <div><span aria-hidden="true">♡</span><h2>Rather leave the cooking to us?</h2><p>Find a ready-made favorite from the Mishti kitchen.</p></div>
+      <a href="index.html#desserts">Explore the menu <span aria-hidden="true">→</span></a>
+    </aside>
+  </main>
+  <footer class="recipe-footer">Made with love and a little sugar · Mishti</footer>
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/loading-states.js" defer></script>
+  <script src="scripts/scroll-reveal.js" defer></script>
+  <script src="scripts/recipe-studio.js" defer></script>
+</body>
+</html>
