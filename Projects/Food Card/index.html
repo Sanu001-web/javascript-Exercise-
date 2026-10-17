@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="styles/popupQuantity.css" type="text/css" media="all" />
   <link rel="stylesheet" href="styles/frqOrderFood.css" />
   <link rel="stylesheet" href="styles/nav.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="styles/loading.css" />
+  <link rel="stylesheet" href="styles/scroll-reveal.css" />
 </head>
 
 <body>
@@ -29,27 +31,21 @@
       </a>
     </div>
     <div class="nav-links middle-nav" id="main-navigation-links">
-      <a href="#home">Home</a>
-      <a href="#desserts">Desserts</a>
-      <a href="#trandingFood">Tranding</a>
-      <a class="nav-brand" href="sweet-moments.html">
-        <span>Sweet.Bliss</span>
-        <img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="sweet-movements" />
-      </a>
+      <a href="index.html#home" aria-current="page">Home</a>
+      <a href="index.html#desserts">Desserts</a>
+      <a href="index.html#trandingFood">Trending</a>
+      <a class="nav-brand"
+        href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a href="recipe-studio.html">Recipe studio</a>
       <a href="checkout.html">Checkout</a>
     </div>
-    <div class="srch-container right-nav">
-      <input class="srch-box js-srch-box" type="text" name="search"  placeholder="Search by dessert or category" />
-      <button class="srch-btn" type="submit">Search</button>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25" />
-        <path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2" />
-        <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
-        <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
-      </svg>
-    </button>
+    <div class="srch-container">
+      <input class="srch-box js-srch-box" type="search" name="search" placeholder="Search food" aria-label="Search by dessert or category" />
+      <button class="srch-btn" type="button">Search</button>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#913a24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25"/><path d="M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2"/><path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0"/><path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2"/></svg>
+    </button>
   </nav>
 
   <main class="dessert-area">
@@ -73,7 +69,7 @@
           </svg>
         </span>
 
-        
+
         <div class="find-items-container">
           <select name="sort" id="sort" class="sort-btn js-sort-btn">
             <option class="ft-options">sort</option>
@@ -94,46 +90,23 @@
             <option class="ft-options">Soups</option>
             <option class="ft-options">Dal</option>
           </select>
+
         </div>
       </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
-      <div class="dessert-card">
-
-      </div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
+      <div class="dessert-card"></div>
     </section>
-    
+
 
 
     <!-- popup qantity -->
@@ -290,7 +263,7 @@
 
     <section class="food-menu-section soups-container-sec" id="soups">
       <span class="section-tag">Soups</span>
-     
+
     </section>
     <!-- checkout page -->
     <!-- <section class="checkOut js-checkOut" id="checkout">
@@ -306,6 +279,8 @@
   </main>
 
   <script src="scripts/nav.js" defer></script>
+  <script src="scripts/loading-states.js" defer></script>
+  <script src="scripts/scroll-reveal.js" defer></script>
   <script src="FoodData/dessert-card.js" type="module"></script>
   <script src="FoodData/frqOrderFood.js" type="module"></script>
   <script src="scripts/script.js" type="module"></script>
