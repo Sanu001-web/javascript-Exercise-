@@ -1,14 +1,9 @@
-import { card } from '../FoodData/dessert-card.js';
-
-
-
 const itemContainer = document.querySelector('.ja-price-food-container');
 const couponButtons = document.querySelectorAll('.coupon-option');
 const couponMessage = document.querySelector('.coupon-message');
 const placeOrderButton = document.querySelector('.place-order-button');
 const orderMessage = document.querySelector('.order-message');
 const currency = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' });
-const defaultItem = card[0];
 let checkoutItem;
 let activeCoupon = '';
 
@@ -20,17 +15,15 @@ try {
   checkoutItem = null;
 }
 
-if (!checkoutItem || !checkoutItem.name || !Number.isFinite(Number(checkoutItem.price))) {
-  checkoutItem = {
-    name: defaultItem.dessertName,
-    image: defaultItem.dessertImg,
-    price: Number(defaultItem.dessertPrice),
-    servingSize: 'M',
-    quantity: 1
-  };
+if (!checkoutItem || typeof checkoutItem.name !== 'string' || !checkoutItem.name.trim() ||
+  !Number.isFinite(Number(checkoutItem.price)) || Number(checkoutItem.price) < 0) {
+  checkoutItem = null;
 }
-checkoutItem.price = Number(checkoutItem.price);
-checkoutItem.quantity = Math.max(1, Number(checkoutItem.quantity) || 1);
+if (checkoutItem) {
+  checkoutItem.price = Number(checkoutItem.price);
+  const quantity = Number(checkoutItem.quantity);
+  checkoutItem.quantity = Number.isFinite(quantity) ? Math.max(1, Math.floor(quantity)) : 1;
+}
 
 function renderItem() {
   if (!checkoutItem) {
