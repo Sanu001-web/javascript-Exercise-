@@ -46,7 +46,7 @@ const milkColors = {
   oat: '#d7b88b',
   soy: '#f3df9c',
   almond: '#c99b69'
-  
+
 };
 
 const sizeHeights = {
@@ -92,8 +92,9 @@ function renderSummary() {
     itemPrice.textContent = price === 0 ? '—' : `+$${price.toFixed(2)}`;
     row.append(itemLabel, itemPrice);
     summaryItems.append(row);
-  });
 
+
+  });
   summaryPrice.textContent = `$${total.toFixed(2)}`;
   const milkColor = milkColors[milk];
   cupFill.style.backgroundColor = drink === 'chai' && milk === 'no milk'
@@ -106,6 +107,13 @@ function renderSummary() {
 
 document.querySelectorAll('.panel input').forEach((input) => {
   input.addEventListener('change', renderSummary);
+});
+
+const orderBtn = document.querySelector('.js-order-btn');
+
+orderBtn.addEventListener('click', () => {
+  const drink = selectedValue('drink');
+  console.log(labels[drink], prices[drink]);
 });
 
 renderSummary();
