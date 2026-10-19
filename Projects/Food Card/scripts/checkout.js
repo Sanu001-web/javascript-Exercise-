@@ -2,7 +2,6 @@ const itemContainer = document.querySelector('.ja-price-food-container');
 const couponButtons = document.querySelectorAll('.coupon-option');
 const couponMessage = document.querySelector('.coupon-message');
 const placeOrderButton = document.querySelector('.place-order-button');
-const orderMessage = document.querySelector('.order-message');
 const currency = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' });
 let checkoutItem;
 let activeCoupon = '';
@@ -25,6 +24,16 @@ if (checkoutItem) {
   checkoutItem.quantity = Number.isFinite(quantity) ? Math.max(1, Math.floor(quantity)) : 1;
 }
 
+function escapeAttribute(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
 function renderItem() {
   if (!checkoutItem) {
     itemContainer.innerHTML = '<p class="empty-order">Your checkout is empty. Explore the menu to choose a treat.</p>';
@@ -32,7 +41,7 @@ function renderItem() {
   }
 
   itemContainer.innerHTML = `
-    <div class="foodimg-container"><img class="food-img" src="${checkoutItem.image}" alt="${checkoutItem.name}" /></div>
+    <div class="foodimg-container"><img class="food-img" src="${escapeAttribute(checkoutItem.image)}" alt="${escapeAttribute(checkoutItem.name)}" /></div>
     <div class="food-info-container">
       <p class="ck-food-name"></p>
       <span class="serving-detail"></span>
@@ -86,7 +95,8 @@ function updateCheckout() {
   document.querySelector('[data-total="discount"]').textContent = `−${currency.format(discount)}`;
   document.querySelector('.discount-row').hidden = !discount;
   document.querySelector('[data-total="grand"]').textContent = currency.format(total);
-  placeOrderButton.disabled = !checkoutItem;
+  // This static demo has no server or payment provider, so it must never accept an order.
+  placeOrderButton.disabled = true;
   if (checkoutItem) {
     localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
   } else {
@@ -116,19 +126,6 @@ couponButtons.forEach((button) => {
     couponMessage.textContent = activeCoupon ? `${activeCoupon} applied to your order.` : 'Coupon removed. Choose an offer to apply it.';
     updateCheckout();
   });
-});
-
-placeOrderButton.addEventListener('click', () => {
-  if (!checkoutItem) return;
-  orderMessage.textContent = 'Thank you! Your order has been placed.';
-  localStorage.removeItem('mishtiCheckoutItem');
-  checkoutItem = null;
-  activeCoupon = '';
-  couponButtons.forEach((button) => {
-    button.classList.remove('is-selected');
-    button.setAttribute('aria-pressed', 'false');
-  });
-  updateCheckout();
 });
 
 document.querySelectorAll('.promo-close').forEach((button) => {
