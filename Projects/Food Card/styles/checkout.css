@@ -335,8 +335,9 @@ body {
 
 .order-message {
   margin: 10px 0 0;
-  color: #477c25;
+  color: var(--checkout-muted);
   font-size: 13px;
+  line-height: 1.5;
   text-align: center;
 }
 
