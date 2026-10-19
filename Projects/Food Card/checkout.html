@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fcf8f5" />
   <title>Checkout | Mishti</title>
+  <meta name="description"
+    content="Review a sample Mishti dessert order. This checkout is a demo and does not process payments or submit orders." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -20,13 +22,19 @@
 <body>
   <nav class="main-nav" aria-label="Main navigation">
     <div class="left-nav">
-      <a class="home-link" href="index.html"><header class="heard-card"><h2>Mishti</h2></header></a>
+      <a class="home-link" href="index.html">
+        <header class="heard-card">
+          <h2>
+            Mishri</h2>
+        </header>
+      </a>
     </div>
     <div class="nav-links middle-nav" id="main-navigation-links">
       <a href="index.html#home">Home</a>
       <a href="index.html#desserts">Desserts</a>
       <a href="index.html#trandingFood">Trending</a>
-      <a class="nav-brand" href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
+      <a class="nav-brand"
+        href="sweet-moments.html"><span>Sweet moments</span><img class="sweet-movements-icon" src="https://cdn-icons-png.flaticon.com/128/8059/8059060.png" alt="" /></a>
       <a href="recipe-studio.html">Recipe studio</a>
       <a href="checkout.html" aria-current="page">Checkout</a>
     </div>
@@ -58,8 +66,8 @@
             </span>
         </div>
         <div class="address-detail-info">
-          <p>Indore,  20015</p>
-          <p>Sector 34, Mangal Nagar Near Rajeev Circle Saket Hotel Building No 04 Second Floor 04 Room No 103</p>
+          <p>Demo delivery address</p>
+          <p>No delivery address is collected or submitted in this preview.</p>
         </div>
       </header>
 
@@ -95,8 +103,9 @@
         <div class="bill-row discount-row" hidden><span>Coupon savings</span><span data-total="discount">−₹0.00</span>
         </div>
         <div class="bill-row total-row"><strong>Total payable</strong><strong data-total="grand">₹0.00</strong></div>
-        <button class="place-order-button js-place-order-button" type="button">Place your order</button>
-        <p class="order-message" aria-live="polite"></p>
+        <button class="place-order-button js-place-order-button" type="button" disabled>Ordering unavailable in this demo</button>
+        <p class="order-message" role="status">Demo preview only: your cart, prices, and coupons are stored in this
+          browser. No order is submitted, and no payment is processed.</p>
       </section>
     </div>
 
