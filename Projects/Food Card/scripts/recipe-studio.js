@@ -86,7 +86,6 @@ function renderRecipe(recipe, userIngredients, index) {
   image.src = recipe.image;
   image.alt = recipe.name;
   image.loading = 'lazy';
-  image.onerror = () => { image.hidden = true; };
   visual.append(image, makeElement('span', '', recipe.emoji));
 
   const body = makeElement('div', 'recipe-card-body');
