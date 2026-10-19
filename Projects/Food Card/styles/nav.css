@@ -38,9 +38,9 @@
   border: 1px solid #eadfd7;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(60, 39, 27, 0.06);
-  overflow: hidden;
   height: 60px;
   z-index: 200;
+  overflow: hidden;
 }
 
 
