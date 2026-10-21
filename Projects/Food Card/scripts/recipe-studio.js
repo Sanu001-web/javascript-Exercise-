@@ -18,7 +18,7 @@ const recipes = [
     image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=900&q=80',
     description: 'Cozy savory oats with warming spices and fresh, colorful toppings.',
     ingredients: ['1 cup rolled oats', '2 cups water or milk', '½ teaspoon cumin', '½ cup chopped vegetables', 'Salt and pepper to taste'],
-    steps: ['Warm cumin in a saucepan for 30 seconds, then add the vegetables and stir until tender.', 'Add oats, liquid, salt, and pepper. Simmer gently for 5–7 minutes, stirring.', 'Taste, adjust seasoning, and serve warm with herbs or yogurt.'], link: 'index.html#desserts', linkText: 'Explore the Mishti menu'
+    steps: ['Warm cumin in a saucepan for 30 seconds, then add the vegetables and stir until tender.', 'Add oats, liquid, salt, and pepper. Simmer gently for 5–7 minutes, stirring.', 'Taste, adjust seasoning, and serve warm with herbs or yogurt.'], link: 'index.html#desserts', linkText: 'Explore the Mishri menu'
   },
   {
     name: 'Mango Lassi Cooler', type: 'drink', minutes: 5, serves: 2, emoji: '🥭',
