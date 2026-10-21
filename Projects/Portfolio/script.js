@@ -11,13 +11,30 @@
 
   const pageLoader = document.querySelector(".page-loader");
   const heroIntro = document.querySelector(".hero-intro");
+  const header = document.querySelector(".site-header");
   const startHeroIntro = () => heroIntro?.classList.add("animate__fadeInUp");
+  const startHeaderNav = () => {
+    const nav = header?.querySelector(".site-nav");
+    if (reduceMotion || !nav || !window.matchMedia("(min-width: 641px)").matches) return;
+
+    nav.querySelectorAll(":scope > a").forEach((link, index) => {
+      link.style.setProperty("--nav-entry-delay", `${index * 100}ms`);
+      link.classList.add("nav-enter");
+      link.addEventListener("animationend", () => {
+        link.classList.remove("nav-enter");
+        link.style.removeProperty("--nav-entry-delay");
+      }, { once: true });
+    });
+  };
   if (pageLoader) {
     if (reduceMotion) {
       pageLoader.remove();
     } else {
       pageLoader.addEventListener("animationstart", event => {
-        if (event.target === pageLoader) startHeroIntro();
+        if (event.target === pageLoader) {
+          startHeroIntro();
+          startHeaderNav();
+        }
       });
       pageLoader.addEventListener("animationend", event => {
         if (event.target === pageLoader) pageLoader.remove();
@@ -25,6 +42,7 @@
     }
   } else {
     startHeroIntro();
+    startHeaderNav();
   }
 
   // Animated hero word: motion stays in one place and changes only a short phrase.
@@ -45,7 +63,6 @@
   }
 
   // Hide the sticky header while scrolling down; reveal it while scrolling up.
-  const header = document.querySelector(".site-header");
   let previousScrollY = window.scrollY;
   if (header) {
     window.addEventListener("scroll", () => {
