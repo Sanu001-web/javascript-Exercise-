@@ -1,15 +1,30 @@
 (() => {
+  const navigationEntry = performance.getEntriesByType("navigation")[0];
+  if (navigationEntry?.type === "reload") {
+    history.scrollRestoration = "manual";
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => document.documentElement.style.removeProperty("scroll-behavior"));
+  }
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const pageLoader = document.querySelector(".page-loader");
+  const heroIntro = document.querySelector(".hero-intro");
+  const startHeroIntro = () => heroIntro?.classList.add("animate__fadeInUp");
   if (pageLoader) {
     if (reduceMotion) {
       pageLoader.remove();
     } else {
+      pageLoader.addEventListener("animationstart", event => {
+        if (event.target === pageLoader) startHeroIntro();
+      });
       pageLoader.addEventListener("animationend", event => {
         if (event.target === pageLoader) pageLoader.remove();
       });
     }
+  } else {
+    startHeroIntro();
   }
 
   // Animated hero word: motion stays in one place and changes only a short phrase.
@@ -106,7 +121,7 @@
   }
 
   // Small section reveals; content remains visible if IntersectionObserver is unavailable.
-  const revealTargets = document.querySelectorAll(".section-heading, .project-card, .about-copy, .band-item, .skill-group, .education-entry, .contact-panel");
+  const revealTargets = document.querySelectorAll(".section-heading, .project-card, .about-copy, .band-item, .skill-group, .education-entry, .contact-panel, .info-card, .page-callout, .about-story");
   if (!reduceMotion && "IntersectionObserver" in window) {
     revealTargets.forEach(el => el.classList.add("reveal"));
     const observer = new IntersectionObserver(entries => {
