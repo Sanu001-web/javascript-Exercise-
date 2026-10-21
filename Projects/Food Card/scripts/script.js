@@ -112,7 +112,7 @@ if (quantityPopup) {
       servingSize: selectedSize.textContent.trim(),
       quantity: 1
     };
-    localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
+    localStorage.setItem('MishriCheckoutItem', JSON.stringify(checkoutItem));
     placeOrderButton.disabled = true;
     placeOrderButton.textContent = 'Order Confirmed!';
 
