@@ -9,7 +9,7 @@ let activeCoupon = '';
 
 
 try {
-  checkoutItem = JSON.parse(localStorage.getItem('mishtiCheckoutItem'));
+  checkoutItem = JSON.parse(localStorage.getItem('MishriCheckoutItem'));
 } catch {
   checkoutItem = null;
 }
@@ -66,7 +66,7 @@ function renderItem() {
   });
   itemContainer.querySelector('.remove-item').addEventListener('click', () => {
     checkoutItem = null;
-    localStorage.removeItem('mishtiCheckoutItem');
+    localStorage.removeItem('MishriCheckoutItem');
     updateCheckout();
   });
 }
@@ -76,7 +76,7 @@ function updateCheckout() {
   const foodTotal = checkoutItem ? checkoutItem.price * checkoutItem.quantity : 0;
   const discount = activeCoupon === 'SWEET10'
     ? foodTotal * 0.1
-    : activeCoupon === 'MISHTI50' && foodTotal >= 300
+    : activeCoupon === 'Mishri50' && foodTotal >= 300
       ? 50
       : 0;
   const deliveryFee = checkoutItem && activeCoupon !== 'FREESHIP' ? 25 : 0;
@@ -98,22 +98,22 @@ function updateCheckout() {
   // This static demo has no server or payment provider, so it must never accept an order.
   placeOrderButton.disabled = true;
   if (checkoutItem) {
-    localStorage.setItem('mishtiCheckoutItem', JSON.stringify(checkoutItem));
+    localStorage.setItem('MishriCheckoutItem', JSON.stringify(checkoutItem));
   } else {
-    localStorage.removeItem('mishtiCheckoutItem');
+    localStorage.removeItem('MishriCheckoutItem');
   }
 }
 
 couponButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const coupon = button.dataset.coupon;
-    if (coupon === 'MISHTI50' && (!checkoutItem || checkoutItem.price * checkoutItem.quantity < 300)) {
+    if (coupon === 'Mishri50' && (!checkoutItem || checkoutItem.price * checkoutItem.quantity < 300)) {
       activeCoupon = '';
       couponButtons.forEach((option) => {
         option.classList.remove('is-selected');
         option.setAttribute('aria-pressed', 'false');
       });
-      couponMessage.textContent = 'MISHTI50 applies to food totals of ₹300 or more.';
+      couponMessage.textContent = 'Mishri50 applies to food totals of ₹300 or more.';
       updateCheckout();
       return;
     }
