@@ -162,7 +162,7 @@
 }
 
 .project-heading {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 0 20px;
   color: var(--acid);
   font: 700 clamp(1.8rem, 3.3vw, 3rem)/1.08 var(--display);
