@@ -10,7 +10,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const pageLoader = document.querySelector(".page-loader");
-  const heroIntro = document.querySelector(".hero-intro");
+  const heroIntro = document.querySelector(".hero:not(.project-hero) .hero-intro");
   const header = document.querySelector(".site-header");
   const startHeroIntro = () => heroIntro?.classList.add("animate__fadeInUp");
   const startHeaderNav = () => {
@@ -138,7 +138,7 @@
   }
 
   // Small section reveals; content remains visible if IntersectionObserver is unavailable.
-  const revealTargets = document.querySelectorAll(".section-heading, .project-card, .about-copy, .band-item, .skill-group, .education-entry, .contact-panel, .info-card, .page-callout, .about-story");
+  const revealTargets = document.querySelectorAll(".section-heading, .project-card, .showcase-card, .about-copy, .band-item, .skill-group, .education-entry, .contact-panel, .info-card, .page-callout, .about-story");
   if (!reduceMotion && "IntersectionObserver" in window) {
     revealTargets.forEach(el => el.classList.add("reveal"));
     const observer = new IntersectionObserver(entries => {
