@@ -272,7 +272,7 @@
   padding: 2px;
   display: grid;
   width: 38px;
-  height: 30px;
+  height: 100%;
   flex: 0 0 auto;
   place-items: center;
   border-radius: 20px;
