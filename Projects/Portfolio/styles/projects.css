@@ -168,6 +168,7 @@
   color: var(--acid);
   font: 700 clamp(1.8rem, 3.3vw, 3rem)/1.08 var(--display);
   letter-spacing: -.045em;
+  margin-top: 20px;
 }
 
 .tex-content {
@@ -382,6 +383,16 @@
   }
 }
 
+
+
+/*
+this for 
+
+.showcase-copy this secltion should be frist or up then ,
+.showcase-cover this should be down because this a image and imgae should be down and text should be above
+
+
+*/
 @media (max-width: 640px) {
 
   .project-hero {
