@@ -98,6 +98,7 @@
   border: 1px solid rgba(255, 255, 255, .65);
   box-shadow: 22px 25px 0 rgba(3, 21, 43, .18), 0 25px 65px rgba(3, 21, 43, .3);
   animation: project-art-float 6s ease-in-out 1s infinite;
+  cursor: pointer;
 }
 
 .hero-art-image::after {
@@ -195,7 +196,7 @@
 .showcase-card {
   display: grid;
   grid-template-columns: minmax(220px, .72fr) minmax(0, 1.55fr);
-  align-items: flex-start;
+  /* align-items: flex-start; */
   gap: clamp(30px, 7vw, 100px);
   min-width: 0;
 }
@@ -219,7 +220,7 @@
   letter-spacing: -.045em;
 }
 
-.showcase-copy > p:not(.project-type) {
+.showcase-copy>p:not(.project-type) {
   max-width: 340px;
   margin: 12px 0 17px;
   color: #b7c9df;
@@ -272,7 +273,7 @@
   padding: 2px;
   display: grid;
   width: 38px;
-  height: 100%;
+  height: 32px;
   flex: 0 0 auto;
   place-items: center;
   border-radius: 20px;
@@ -321,7 +322,7 @@
   background: #073d70;
 }
 
-.projects-page > .work-note {
+.projects-page>.work-note {
   max-width: 760px;
   margin: 38px 0 0;
   color: #9bb9d9;
@@ -330,20 +331,34 @@
 }
 
 @keyframes project-art-arrive {
-  from { opacity: 0; transform: translateY(24px) rotate(2deg); }
-  to { opacity: 1; transform: translateY(0) rotate(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(2deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
 }
 
 @keyframes project-art-float {
-  50% { transform: translateY(-12px) rotate(5deg); }
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
 }
 
 @keyframes spark-turn {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spark-pulse {
-  50% { opacity: .45; transform: scale(.8); }
+  50% {
+    opacity: .45;
+    transform: scale(.8);
+  }
 }
 
 @media (max-width: 900px) {
@@ -368,6 +383,7 @@
 }
 
 @media (max-width: 640px) {
+
   .project-hero {
     min-height: 0;
     padding: 60px 20px 45px;
@@ -399,8 +415,12 @@
     gap: 22px;
   }
 
-  .showcase-card .showcase-cover {
-    grid-row: 1;
+  .showcase-copy {
+    order: 1;
+  }
+
+  .showcase-cover {
+    order: 2;
   }
 
   .showcase-copy h2 {
@@ -409,6 +429,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .project-hero-art,
   .hero-art-image,
   .hero-art-spark-one,
