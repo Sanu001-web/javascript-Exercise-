@@ -2002,7 +2002,7 @@ html {
 
 .inner-hero h1 {
   margin: 0;
-  font: 500 clamp(3.1rem, 7.5vw, 7rem)/.9 var(--display);
+  font: 450 clamp(2.1rem, 4.5vw, 4rem) / .9 var(--display);
   letter-spacing: -.095em;
 }
 
@@ -2101,7 +2101,7 @@ html {
 .page-callout h2,
 .about-story h2 {
   margin: 0;
-  font: 500 clamp(2.4rem, 5vw, 4.8rem)/.96 var(--display);
+  font: 450 clamp(2.4rem, 5vw, 4.8rem)/.96 var(--display);
   letter-spacing: -.08em;
 }
 
@@ -2123,7 +2123,7 @@ html {
 }
 
 .about-story h2 {
-  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-size: clamp(2.2rem, 4.1vw, 4rem);
 }
 
 .story-copy {
@@ -2249,16 +2249,16 @@ html {
   font-size: 1.25rem;
 }
 
-.footer-intro > p,
-.footer-column > p:not(.footer-label),
-.footer-bottom > p {
+.footer-intro>p,
+.footer-column>p:not(.footer-label),
+.footer-bottom>p {
   margin: 0;
   color: #a9bfd8;
   font-size: .78rem;
   line-height: 1.75;
 }
 
-.footer-intro > p {
+.footer-intro>p {
   color: #f4f8ff;
   font: 500 1rem/1.6 var(--display);
 }
@@ -2296,7 +2296,7 @@ html {
   letter-spacing: -.04em;
 }
 
-.footer-column > p:not(.footer-label) span {
+.footer-column>p:not(.footer-label) span {
   padding-inline: 4px;
   color: var(--acid);
 }
@@ -2374,7 +2374,7 @@ html {
   font-size: .67rem;
 }
 
-.footer-bottom > p {
+.footer-bottom>p {
   text-align: center;
   font-size: .68rem;
 }
@@ -2418,7 +2418,7 @@ html {
     padding-block: 18px;
   }
 
-  .footer-bottom > p {
+  .footer-bottom>p {
     grid-column: 1 / -1;
     grid-row: 2;
     text-align: left;
@@ -2449,6 +2449,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .footer-email,
   .footer-email span,
   .footer-socials a,
