@@ -166,6 +166,7 @@ button {
 .wordmark {
   font: 700 1.4rem var(--display);
   letter-spacing: -.1em;
+  color: #fff;
 }
 
 .wordmark span {
@@ -407,6 +408,7 @@ button {
 .button-dark {
   background: var(--ink);
   color: var(--paper);
+  margin-top: 20px;
 }
 
 .button-dark:hover {
@@ -446,6 +448,7 @@ button {
   flex-wrap: wrap;
   gap: 9px 22px;
   margin-top: 48px;
+  margin-bottom: 10px;
   color: var(--muted);
   font-size: .68rem;
 }
@@ -2456,5 +2459,275 @@ html {
   .footer-socials a span,
   .footer-bottom .back-top span {
     transition: none;
+  }
+}
+
+.button-resume {
+  margin-top: 20px;
+  background: var(--acid);
+  border-color: var(--acid);
+  color: #061a33;
+  box-shadow: 0 6px 20px rgba(75, 224, 255, .18);
+}
+
+.button-resume:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #061a33;
+  box-shadow: 0 8px 26px rgba(75, 224, 255, .32);
+}
+
+/* Light palette across shared pages and sections. */
+:root {
+  color-scheme: light;
+  --paper: #f6f8fc;
+  --ink: #14243b;
+  --muted: #64748b;
+  --line: rgba(20, 36, 59, .17);
+  --acid: #18a8c7;
+  --orange: #176bc7;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.page-loader {
+  background: #f6f8fc;
+  color: var(--ink);
+}
+
+.loader-caption {
+  color: #64748b;
+}
+
+.loader-track {
+  background: rgba(20, 36, 59, .2);
+}
+
+.site-header {
+  background: #fff;
+  border-color: var(--line);
+}
+
+.wordmark {
+  color: var(--paper);
+}
+
+.site-nav {
+  color: var(--ink);
+}
+
+.nav-cta:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.hero {
+  background: linear-gradient(120deg, #edf5ff, #f5f9ff 70%, #e6f5fb);
+  color: var(--ink);
+}
+
+.hero .eyebrow,
+.hero-intro,
+.hero-meta,
+.visual-caption,
+.visual-index,
+.scroll-cue {
+  color: #52657d;
+}
+
+.hero-intro,
+.section-description,
+.project-details>p,
+.education-entry p:last-child,
+.inner-intro,
+.info-card p,
+.story-copy p,
+.page-callout>p:not(.eyebrow) {
+  color: #52657d;
+}
+
+.hero .text-link {
+  border-color: var(--line);
+}
+
+.hero .button-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.hero .button-dark:hover {
+  background: var(--acid);
+  border-color: var(--acid);
+  color: var(--ink);
+}
+
+.about {
+  background: #eaf2fb;
+  color: var(--ink);
+}
+
+.about .eyebrow,
+.about-copy p:not(.about-lead),
+.band-label,
+.band-item>span,
+.band-item p {
+  color: #52657d;
+}
+
+.about-copy .about-lead {
+  color: var(--ink);
+}
+
+.about-copy .text-link {
+  border-color: rgba(20, 36, 59, .35);
+}
+
+.about-band {
+  border-color: var(--line);
+}
+
+.education-entry:hover {
+  background: rgba(20, 36, 59, .045);
+}
+
+.tag-list span,
+.skill-chips span {
+  color: #34465e;
+}
+
+.info-card {
+  background: #fff;
+}
+
+.page-callout {
+  background: #eaf2fb;
+}
+
+.contact-panel {
+  background: linear-gradient(120deg, #dceeff, #edf7ff);
+  color: var(--ink);
+  border-color: rgba(20, 36, 59, .2);
+}
+
+.contact-panel .eyebrow,
+.contact-panel>p:not(.eyebrow):not(.contact-hint),
+.social-label,
+.social-links a small {
+  color: #52657d;
+}
+
+.contact-panel h2 span {
+  color: var(--orange);
+}
+
+.contact-panel::after {
+  border-color: rgba(20, 36, 59, .25);
+  box-shadow: 0 0 0 35px rgba(20, 36, 59, .04), 0 0 0 70px rgba(20, 36, 59, .025);
+}
+
+.button-light {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.button-light:hover {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.social-links,
+.social-links a {
+  border-color: rgba(20, 36, 59, .2);
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  background: var(--ink);
+  color: #fff;
+}
+
+.social-links a:hover small,
+.social-links a:focus-visible small {
+  color: rgba(255, 255, 255, .78);
+}
+
+.site-footer {
+  background: #eaf2fb;
+  color: var(--ink);
+}
+
+.footer-intro .wordmark {
+  background: #d7e9fb;
+  color: var(--ink);
+}
+
+.footer-intro>p,
+.footer-column h2 {
+  color: var(--ink);
+}
+
+.footer-intro>p,
+.footer-column>p:not(.footer-label),
+.footer-bottom>p,
+.footer-availability {
+  color: #52657d;
+}
+
+.footer-label,
+.footer-bottom small {
+  color: #64748b;
+}
+
+.footer-email {
+  color: #1164ad;
+}
+
+.footer-email:hover {
+  color: var(--ink);
+}
+
+.footer-socials a {
+  border-color: rgba(20, 36, 59, .2);
+  color: #34465e;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
+  background: #fff;
+  color: var(--ink);
+}
+
+.footer-bottom {
+  border-color: var(--line);
+}
+
+.footer-bottom .back-top {
+  color: #34465e;
+}
+
+.button-resume {
+  background: var(--acid);
+  border-color: var(--acid);
+  color: #08253a;
+  box-shadow: 0 6px 20px rgba(24, 168, 199, .16);
+}
+
+.button-resume:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #08253a;
+  box-shadow: 0 8px 26px rgba(24, 168, 199, .25);
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    background: #fff;
+    color: var(--ink);
   }
 }
