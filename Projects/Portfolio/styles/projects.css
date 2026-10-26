@@ -448,3 +448,74 @@ this for
     animation: none;
   }
 }
+
+/* Light styling for the project showcase page. */
+.project-hero {
+  background: linear-gradient(120deg, #e7f2ff, #f4f8fc 70%, #e4f6fb);
+}
+
+.project-hero h1 {
+  color: #14243b;
+}
+
+.project-hero .eyebrow {
+  color: #52657d;
+}
+
+.project-hero .projects-intro-copy {
+  color: #52657d;
+}
+
+.project-hero .projects-intro-link {
+  border-color: rgba(20, 36, 59, .35);
+  color: #14243b;
+}
+
+.project-hero-art::before {
+  background: rgba(24, 168, 199, .16);
+}
+
+.hero-art-image {
+  border-color: rgba(20, 36, 59, .25);
+  box-shadow: 18px 20px 0 rgba(20, 36, 59, .1), 0 25px 65px rgba(20, 36, 59, .15);
+}
+
+.hero-art-orbit {
+  border-color: rgba(20, 36, 59, .24);
+}
+
+.hero-art-orbit-two {
+  border-color: rgba(24, 168, 199, .6);
+}
+
+.project-heading {
+  color: #176bc7;
+}
+
+.tex-content p,
+.showcase-copy>p:not(.project-type) {
+  color: #52657d;
+}
+
+.showcase-copy .project-type {
+  color: #64748b;
+}
+
+.showcase-copy h2 {
+  color: #14243b;
+}
+
+.showcase-cover,
+.showcase-concept .showcase-cover {
+  background: #e3edf8;
+  box-shadow: 0 18px 45px rgba(20, 36, 59, .12);
+}
+
+.showcase-cover .image-platform {
+  background: #d7e4f1;
+  box-shadow: 0 0 15px rgba(20, 36, 59, .2);
+}
+
+.projects-page>.work-note {
+  color: #64748b;
+}
