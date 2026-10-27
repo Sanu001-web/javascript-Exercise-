@@ -2007,6 +2007,7 @@ html {
   margin: 0;
   font: 450 clamp(2.1rem, 4.5vw, 4rem) / .9 var(--display);
   letter-spacing: -.095em;
+  font-size: 52px;
 }
 
 .inner-hero h1 span,
@@ -2135,7 +2136,7 @@ html {
 
 .story-copy p:first-child {
   margin-top: 0;
-  color: #f4f8ff;
+  color: #5d7087;
   font: 500 clamp(1.15rem, 2vw, 1.55rem)/1.45 var(--display);
   letter-spacing: -.03em;
 }
@@ -2189,9 +2190,6 @@ html {
     padding-bottom: 54px;
   }
 
-  .inner-hero h1 {
-    font-size: clamp(3rem, 12vw, 4.7rem);
-  }
 
   .inner-content.section-space,
   .projects-page.section-space {
@@ -2729,5 +2727,59 @@ body {
   .site-nav {
     background: #fff;
     color: var(--ink);
+  }
+}
+
+.skills-evidence {
+  margin-top: clamp(70px, 9vw, 110px);
+}
+
+.skills-evidence .section-heading {
+  margin-bottom: 30px;
+}
+
+.skills-evidence-list {
+  border-top: 1px solid var(--line);
+}
+
+.skill-evidence {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-evidence h3 {
+  margin: 0 0 6px;
+  font: 600 1rem var(--display);
+}
+
+.skill-evidence p {
+  max-width: 660px;
+  margin: 0;
+  color: #52657d;
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+.skill-status {
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  color: #52657d;
+  font-size: .62rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .skill-evidence {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .skill-status {
+    grid-column: 2;
+    justify-self: start;
   }
 }
