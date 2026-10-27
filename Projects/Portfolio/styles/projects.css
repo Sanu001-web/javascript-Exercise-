@@ -716,6 +716,7 @@ this for
   border-radius: 999px;
   background: #090d14;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .35);
+ 
 }
 
 .mobile-preview::after {
@@ -730,6 +731,7 @@ this for
   border-radius: 999px;
   background: #111827;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .22);
+ 
 }
 
 .mobile-preview iframe {
@@ -767,5 +769,106 @@ this for
 
   .github-project-link {
     margin-left: 8px;
+  }
+}
+
+/* Keep project content and dual-device previews usable at every viewport. */
+.showcase-card,
+.showcase-copy,
+.project-preview {
+  min-width: 0;
+}
+
+.project-facts dd,
+.showcase-copy > p,
+.github-project-link {
+  overflow-wrap: anywhere;
+}
+
+.project-preview {
+  min-height: clamp(320px, 42vw, 390px);
+}
+
+@media (max-width: 760px) {
+  .showcase-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .showcase-copy,
+  .showcase-cover {
+    order: initial;
+  }
+
+  .project-preview {
+    min-height: clamp(340px, 58vw, 390px);
+  }
+
+  .project-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-facts > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-hero {
+    padding-inline: 20px;
+  }
+
+  .project-hero h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .project-hero-art {
+    width: min(76%, 280px);
+  }
+
+  .showcase-copy > .case-study-link,
+  .showcase-copy > .github-project-link {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin: 8px 0 0;
+  }
+
+  .project-preview {
+    min-height: 380px;
+    aspect-ratio: auto;
+  }
+
+  .project-preview .desktop-preview {
+    inset: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
+
+  .project-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .project-preview {
+    min-height: 350px;
+  }
+
+  .mobile-preview {
+    width: 148px;
+    height: 320px;
+  }
+
+  .mobile-preview iframe {
+    transform: scale(.31);
+  }
+
+  .preview-caption {
+    right: 160px;
+    bottom: 8px;
+    font-size: .58rem;
   }
 }
