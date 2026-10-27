@@ -519,3 +519,125 @@ this for
 .projects-page>.work-note {
   color: #64748b;
 }
+
+.project-facts {
+  display: grid;
+  gap: 14px;
+  margin: 25px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.project-facts>div {
+  display: grid;
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.project-facts dt {
+  color: var(--orange);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.project-facts dd {
+  margin: 0;
+  color: #52657d;
+  font-size: .78rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .project-facts>div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* Clear spacing and layouts for project cards across screen sizes. */
+.projects-page {
+  padding-top: clamp(52px, 7vw, 88px);
+  padding-bottom: clamp(64px, 9vw, 112px);
+}
+
+.project-heading {
+  margin-top: 0;
+}
+
+.showcase-card {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.project-facts>div {
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.showcase-cover {
+  align-self: start;
+  aspect-ratio: 1.58 / 1;
+}
+
+.showcase-cover .image-platform {
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 760px) {
+  .projects-page {
+    padding-top: 48px;
+  }
+
+  .showcase-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .showcase-copy {
+    order: 1;
+  }
+
+  .showcase-cover {
+    order: 2;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .project-facts>div {
+    align-content: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-page {
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+
+  .showcase-list {
+    gap: 42px;
+  }
+
+  .project-facts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .project-facts dd {
+    font-size: .82rem;
+  }
+
+  .showcase-cover {
+    padding: 10px;
+  }
+}
