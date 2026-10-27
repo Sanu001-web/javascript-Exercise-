@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SkillSetu brings learning resources, employment opportunities, local services, and small businesses together in one place.">
+  <meta name="theme-color" content="#176b50">
+  <title>SkillSetu — Learn. Work. Grow.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="SkillSetu home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Skill<span class="brand-accent">Setu</span><small>Learn. Work. Grow.</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="learn.html" data-i18n="navLearn">Learn Skills</a>
+        <a href="work.html" data-i18n="navWork">Find Work</a>
+        <a href="services.html" data-i18n="navServices">Find Services</a>
+        <a href="business.html" data-i18n="navBusiness">For Businesses</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-toggle" type="button" aria-label="Switch language"><span class="language-label">हिंदी</span><span class="language-divider">/</span><span class="language-current">EN</span></button>
+        <a class="button button-small button-dark" href="#get-started" data-i18n="getStarted">Get started
+          <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-space">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span><span data-i18n="eyebrow">A bridge to your next opportunity</span>
+          </div>
+          <h1>
+            <span data-i18n="heroLineOne">Your next step</span><br><span class="headline-highlight"><span data-i18n="heroLineTwo">starts right here.</span><span class="headline-spark" aria-hidden="true">✳</span></span>
+          </h1>
+          <p class="hero-description" data-i18n="heroDescription">Build practical skills, discover meaningful work, and
+            find trusted local services — all in one place.</p>
+          <form class="hero-search" id="hero-search" role="search">
+            <label class="visually-hidden" for="search-query" data-i18n="searchLabel">What are you looking for?</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-query" name="q" type="search" placeholder="Try “web design” or “electrician”" data-i18n-placeholder="searchPlaceholder" autocomplete="off">
+            <label class="visually-hidden" for="search-category" data-i18n="categoryLabel">Search category</label>
+            <select id="search-category" name="category" aria-label="Search category">
+              <option value="all" data-i18n="allCategories">Everything</option>
+              <option value="learning" data-i18n="learnOption">Learning</option>
+              <option value="work" data-i18n="workOption">Work</option>
+              <option value="services" data-i18n="servicesOption">Services</option>
+            </select>
+            <button class="search-submit" type="submit" aria-label="Search"><span aria-hidden="true">→</span></button>
+          </form>
+          <div class="hero-meta">
+            <div class="avatar-stack" aria-hidden="true"><span>अ</span><span>SK</span><span>✦</span></div>
+            <p data-i18n="heroMeta"><strong>One platform.</strong> More ways to move forward.</p>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay" aria-label="Illustration of learning and work opportunities">
+          <div class="visual-backdrop"></div>
+          <div class="visual-top-label">
+            <span class="live-dot"></span><span data-i18n="visualLabel">Your growth, in motion</span>
+          </div>
+          <div class="visual-main-card">
+            <div class="visual-card-header">
+              <span class="mini-icon icon-green">↗</span><span class="tiny-label" data-i18n="pathLabel">YOUR LEARNING PATH</span><span class="more-dots">•••</span>
+            </div>
+            <div class="visual-title" data-i18n="visualTitle">Small steps.<br>Real progress.</div>
+            <div class="progress-row"><span data-i18n="progressLabel">Web development basics</span><strong>3/5</strong>
+            </div>
+            <div class="progress-track"><span></span></div>
+            <div class="visual-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+          <div class="floating-note note-opportunity">
+            <span class="note-icon">✦</span><span><strong data-i18n="noteOneTitle">New possibilities</strong><small data-i18n="noteOneSub">Skills open doors</small></span><span class="note-arrow">↗</span>
+          </div>
+          <div class="floating-note note-community">
+            <span class="community-avatars"><i>र</i><i>MK</i><i>+</i></span><span><strong data-i18n="noteTwoTitle">Local talent</strong><small data-i18n="noteTwoSub">Skills in every community</small></span>
+          </div>
+          <div class="visual-sun" aria-hidden="true">✳</div>
+          <div class="visual-caption">
+            <span>01</span><span class="caption-line"></span><span data-i18n="visualCaption">Made for the next generation</span>
+          </div>
+        </div>
+      </div>
+      <div class="container hero-bottom">
+        <span data-i18n="heroBottomLabel">THREE WAYS TO MOVE FORWARD</span>
+        <span class="hero-bottom-line"></span>
+        <span class="hero-bottom-note" data-i18n="heroBottomNote">Find your path, at your pace.</span>
+      </div>
+    </section>
+
+    <section class="journeys section-space" id="get-started">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker" data-i18n="journeyKicker">YOUR JOURNEY</span>
+            <h2 data-i18n="journeyTitle">Where would you like to begin?</h2>
+          </div>
+          <p data-i18n="journeyDescription">Whatever your starting point, there’s a next step you can take today.</p>
+        </div>
+        <div class="journey-grid">
+          <a class="journey-card journey-learn reveal" href="learn.html">
+            <div class="journey-card-top">
+              <span class="card-number">01 / LEARN</span><span class="round-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="journey-illustration learning-illustration" aria-hidden="true">
+              <span class="book-shape">▤</span><span class="sparkle sparkle-a">✳</span><span class="sparkle sparkle-b">✦</span><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span>
+            </div>
+            <h3 data-i18n="journeyLearnTitle">Learn skills that matter.</h3>
+            <p data-i18n="journeyLearnText">Explore practical learning paths and free resources built around real-life
+              goals.</p>
+            <span class="text-link" data-i18n="exploreLearning">Explore learning <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="journey-card journey-work reveal reveal-delay" href="work.html">
+            <div class="journey-card-top">
+              <span class="card-number">02 / WORK</span><span class="round-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="journey-illustration work-illustration" aria-hidden="true">
+              <span class="briefcase">▰</span><span class="work-star">✳</span><span class="work-circle"></span><span class="work-line"></span>
+            </div>
+            <h3 data-i18n="journeyWorkTitle">Find your next opportunity.</h3>
+            <p data-i18n="journeyWorkText">Discover jobs, internships, apprenticeships, and ways to gain experience.</p>
+            <span class="text-link" data-i18n="exploreWork">Explore opportunities <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="journey-card journey-services reveal reveal-delay-two" href="services.html">
+            <div class="journey-card-top">
+              <span class="card-number">03 / GROW</span><span class="round-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="journey-illustration service-illustration" aria-hidden="true">
+              <span class="service-house">⌂</span><span class="service-spark">✦</span><span class="service-circle"></span>
+            </div>
+            <h3 data-i18n="journeyServicesTitle">Put skills to work locally.</h3>
+            <p data-i18n="journeyServicesText">Explore local services or help your skills reach people who need them.
+            </p>
+            <span class="text-link" data-i18n="exploreServices">Explore services <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-section section-space" id="learn">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker" data-i18n="learnKicker">LEARN SOMETHING USEFUL</span>
+            <h2 data-i18n="learnTitle">Build skills, one step at a time.</h2>
+          </div>
+          <a class="text-link heading-link" href="learn.html" data-i18n="viewAllLearning">Explore learning paths
+            <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="learning-layout">
+          <article class="learning-feature reveal">
+            <div class="feature-topline">
+              <span class="feature-badge" data-i18n="featuredPath">START HERE</span><span class="feature-duration" data-i18n="selfPaced">Self-paced</span>
+            </div>
+            <div class="feature-art" aria-hidden="true">
+              <div class="art-window">
+                <div class="art-window-bar"><i></i><i></i><i></i></div>
+                <div class="art-code">
+                  <span>&lt;hello</span><b> world</b><span>&gt;</span><br><em>Build something useful.</em><br><span class="code-green">const</span>
+                  <strong>future</strong> = <span class="code-yellow">"yours"</span>;
+                </div>
+              </div><span class="art-sun">✳</span><span class="art-pill">01 — 05</span>
+            </div>
+            <div class="feature-content"><span class="course-category" data-i18n="digitalSkills">DIGITAL SKILLS</span>
+              <h3 data-i18n="webPathTitle">Your first steps into web development</h3>
+              <p data-i18n="webPathText">Understand how websites are structured, styled, and made interactive.</p>
+              <div class="course-meta">
+                <span>◷ <span data-i18n="durationFourWeeks">4-week suggested plan</span></span><span>↗ <span data-i18n="beginnerFriendly">Beginner-friendly</span></span>
+              </div><a href="learn.html" class="button button-dark feature-button" data-i18n="startExploring">Start
+                exploring <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <div class="learning-side">
+            <article class="learning-list-card reveal">
+              <div class="list-icon list-icon-yellow" aria-hidden="true">Aa</div>
+              <div class="list-card-content">
+                <span class="course-category" data-i18n="communication">COMMUNICATION</span>
+                <h3 data-i18n="englishPath">Everyday English & confidence</h3>
+                <p data-i18n="englishPathText">Practice introductions, conversations, and workplace basics.</p>
+                <div class="mini-meta" data-i18n="shortPractice">Short daily practice · Beginner</div>
+              </div><span class="list-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="learning-list-card reveal reveal-delay">
+              <div class="list-icon list-icon-lilac" aria-hidden="true">◎</div>
+              <div class="list-card-content">
+                <span class="course-category" data-i18n="creativeSkills">CREATIVE SKILLS</span>
+                <h3 data-i18n="photoPath">Photography & visual storytelling</h3>
+                <p data-i18n="photoPathText">Learn composition, light, and simple editing techniques.</p>
+                <div class="mini-meta" data-i18n="learnByDoing">Learn by doing · Beginner</div>
+              </div><span class="list-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="learning-list-card reveal reveal-delay-two">
+              <div class="list-icon list-icon-blue" aria-hidden="true">↗</div>
+              <div class="list-card-content"><span class="course-category" data-i18n="careerReady">CAREER READY</span>
+                <h3 data-i18n="interviewPath">Get ready for your first interview</h3>
+                <p data-i18n="interviewPathText">Prepare your introduction, resume, and interview answers.</p>
+                <div class="mini-meta" data-i18n="practicalExercises">Practical exercises · All levels</div>
+              </div><span class="list-arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+        <p class="demo-note"><span aria-hidden="true">ⓘ</span>
+          <span data-i18n="learningDemoNote">These are example learning paths for the prototype. Full lessons and saved progress will be added in later phases.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="opportunities-section section-space" id="opportunities">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker" data-i18n="workKicker">OPPORTUNITIES AHEAD</span>
+            <h2 data-i18n="workTitle">A place to take your next step.</h2>
+          </div>
+          <p data-i18n="workDescription">Explore different ways to learn on the job, build experience, and move forward.
+          </p>
+        </div>
+        <div class="opportunity-panel reveal">
+          <div class="opportunity-panel-heading">
+            <div><span class="tiny-overline" data-i18n="curatedPreview">A QUICK PREVIEW</span>
+              <h3 data-i18n="opportunityPreviewTitle">Opportunities to explore</h3>
+            </div><span class="demo-status" data-i18n="demoOnly">DEMO PREVIEW</span>
+          </div>
+          <div class="opportunity-row">
+            <div class="company-mark mark-amber">W</div>
+            <div class="opportunity-info">
+              <h4 data-i18n="jobOneTitle">Junior Web Design Intern</h4>
+              <p data-i18n="jobOneMeta">Design practice · Remote-friendly example</p>
+              <div class="opportunity-tags">
+                <span data-i18n="internship">Internship</span><span data-i18n="beginner">Beginner</span>
+              </div>
+            </div>
+            <span class="opportunity-date" data-i18n="exampleListing">Example listing</span><span class="opportunity-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="opportunity-row">
+            <div class="company-mark mark-blue">S</div>
+            <div class="opportunity-info">
+              <h4 data-i18n="jobTwoTitle">Digital Skills Apprentice</h4>
+              <p data-i18n="jobTwoMeta">Learning by doing · Sample opportunity</p>
+              <div class="opportunity-tags">
+                <span data-i18n="apprenticeship">Apprenticeship</span><span data-i18n="entryLevel">Entry level</span>
+              </div>
+            </div>
+            <span class="opportunity-date" data-i18n="exampleListing">Example listing</span><span class="opportunity-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="opportunity-row">
+            <div class="company-mark mark-lilac">C</div>
+            <div class="opportunity-info">
+              <h4 data-i18n="jobThreeTitle">Content & Photography Assistant</h4>
+              <p data-i18n="jobThreeMeta">Creative work · Sample opportunity</p>
+              <div class="opportunity-tags">
+                <span data-i18n="partTime">Part-time</span><span data-i18n="creative">Creative</span>
+              </div>
+            </div>
+            <span class="opportunity-date" data-i18n="exampleListing">Example listing</span><span class="opportunity-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="opportunity-footer">
+            <p data-i18n="opportunityDisclaimer">Fictional examples only — these are not live job openings.</p><a
+              href="work.html" class="text-link" data-i18n="exploreOpportunities">Explore opportunities
+              <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section section-space" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker" data-i18n="servicesKicker">SKILLS IN YOUR COMMUNITY</span>
+            <h2 data-i18n="servicesTitle">Good work deserves to be found.</h2>
+          </div>
+          <p data-i18n="servicesDescription">From everyday help to digital expertise, discover the many ways people put
+            their skills to work.</p>
+        </div>
+        <div class="services-grid">
+
+          <a class="service-card service-card-large reveal" href="services.html">
+            <div class="service-visual service-visual-home">
+
+
+
+              <span class="service-emoji" aria-hidden="true">
+                ⌂</span><span class="visual-number">01</span>
+              <div class="visual-decoration"></div>
+            </div>
+            <div class="service-card-copy">
+              <div>
+                <h3 data-i18n="homeServices">Home repairs & maintenance</h3>
+                <p data-i18n="homeServicesText">Practical help for everyday spaces.</p>
+              </div><span class="service-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="service-card reveal reveal-delay" href="services.html">
+            <div class="service-visual service-visual-digital">
+              <span class="service-emoji" aria-hidden="true">⌘</span><span class="visual-number">02</span>
+              <div class="digital-window"><span></span><span></span><span></span></div>
+            </div>
+            <div class="service-card-copy">
+              <div>
+                <h3 data-i18n="digitalServices">Digital & website services</h3>
+                <p data-i18n="digitalServicesText">Websites, design, and online support.</p>
+              </div><span class="service-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="service-card reveal" href="services.html">
+            <div class="service-visual service-visual-creative">
+              <span class="service-emoji" aria-hidden="true">✳</span><span class="visual-number">03</span>
+              <div class="creative-frame"></div>
+            </div>
+            <div class="service-card-copy">
+              <div>
+                <h3 data-i18n="creativeServices">Photography & video</h3>
+                <p data-i18n="creativeServicesText">Capture moments and tell stories.</p>
+              </div><span class="service-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a class="service-card reveal reveal-delay" href="services.html">
+            <div class="service-visual service-visual-daily">
+              <span class="service-emoji" aria-hidden="true">✦</span><span class="visual-number">04</span>
+              <div class="daily-shapes"><i></i><i></i><i></i></div>
+            </div>
+            <div class="service-card-copy">
+              <div>
+                <h3 data-i18n="everydayServices">Everyday local services</h3>
+                <p data-i18n="everydayServicesText">Cleaning, cooking, driving, and more.</p>
+              </div><span class="service-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+        <div class="service-bottom-note"><span class="note-check" aria-hidden="true">✓</span>
+          <p data-i18n="serviceDemoNote">Provider discovery is a planned feature. No real providers or bookings are
+            available in this prototype.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-section section-space" id="business">
+      <div class="container business-banner reveal">
+        <div class="business-copy">
+          <span class="section-kicker section-kicker-light" data-i18n="businessKicker">FOR SMALL BUSINESSES</span>
+          <h2 data-i18n="businessTitle">Great people make<br>businesses grow.</h2>
+          <p data-i18n="businessDescription">Find talent, share opportunities, and connect with people who are ready to
+            contribute — from local shops to growing teams.</p><a class="button button-light" href="business.html"
+            data-i18n="businessCta">Explore business tools <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="business-art" aria-hidden="true">
+          <div class="business-art-circle circle-back"></div>
+          <div class="business-art-circle circle-front"></div>
+          <div class="business-card-float">
+            <span class="business-card-symbol">↗</span><span class="business-card-lines"><i></i><i></i><i></i></span><span class="business-card-label">IDEAS → IMPACT</span>
+          </div>
+          <div class="business-art-star">✳</div>
+          <div class="business-art-cross">+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section section-space" id="safety">
+      <div class="container trust-layout">
+        <div class="trust-intro reveal"><span class="section-kicker" data-i18n="trustKicker">BUILT ON TRUST</span>
+          <h2 data-i18n="trustTitle">Opportunity should feel open — and responsible.</h2>
+          <p data-i18n="trustDescription">A useful platform starts with clear information, respect for privacy, and
+            honest expectations.</p><a href="#footer" class="text-link" data-i18n="trustLink">Our trust principles
+            <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="trust-points">
+          <article class="trust-point reveal"><span class="trust-icon trust-icon-green" aria-hidden="true">✓</span>
+            <div>
+              <h3 data-i18n="trustOneTitle">Clear information</h3>
+              <p data-i18n="trustOneText">Listings should explain what is offered, what is required, and how to respond.
+              </p>
+            </div>
+          </article>
+          <article class="trust-point reveal reveal-delay">
+            <span class="trust-icon trust-icon-yellow" aria-hidden="true">⌑</span>
+            <div>
+              <h3 data-i18n="trustTwoTitle">Privacy matters</h3>
+              <p data-i18n="trustTwoText">Personal information should be limited to what is needed and protected
+                appropriately.</p>
+            </div>
+          </article>
+          <article class="trust-point reveal reveal-delay-two">
+            <span class="trust-icon trust-icon-lilac" aria-hidden="true">⚑</span>
+            <div>
+              <h3 data-i18n="trustThreeTitle">Honest status labels</h3>
+              <p data-i18n="trustThreeText">Demo content is labeled. Verification will only be claimed after a real
+                process.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="container trust-footnote"><span aria-hidden="true">ⓘ</span>
+        <p data-i18n="trustFootnote">SkillSetu is a work in progress. Safety policies, moderation, and verification
+          workflows need to be implemented before a public service launch.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand-block"><a class="brand brand-footer"
+            href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Skill<span class="brand-accent">Setu</span><small>Learn. Work. Grow.</small></span></a>
+          <p data-i18n="footerDescription">A bridge between what you can do today and what you can do next.</p>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="footerExplore">Explore</h3><a href="learn.html" data-i18n="navLearn">Learn Skills</a><a
+            href="work.html" data-i18n="navWork">Find Work</a><a href="services.html" data-i18n="navServices">Find
+            Services</a>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="footerForEveryone">For everyone</h3><a href="business.html" data-i18n="navBusiness">For
+            Businesses</a><a href="#safety" data-i18n="footerSafety">Trust & Safety</a><a
+            href="mailto:hello@skillsetu.example" data-i18n="footerContact">Contact (demo)</a>
+        </div>
+        <div class="footer-cta"><span class="section-kicker" data-i18n="footerNextStep">YOUR NEXT STEP</span>
+          <h3 data-i18n="footerCtaTitle">Start where you are.</h3><a class="footer-circle-link" href="#main-content"
+            aria-label="Back to top">↑</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="current-year">2026</span>
+        SkillSetu</span><span data-i18n="footerDisclaimer">Prototype project · Demo content only</span><a
+          href="#main-content" data-i18n="backToTop">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <div class="search-feedback" id="search-feedback" role="status" aria-live="polite" hidden></div>
+  <noscript>
+    <p class="noscript-message">SkillSetu’s language switch and search interactions require JavaScript. The main content
+      remains available.</p>
+  </noscript>
+
+
+  <script src="js/i18.js" defer></script>
+  <script src="js/demo-data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+
+</html>
