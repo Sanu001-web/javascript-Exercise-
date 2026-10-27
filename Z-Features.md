@@ -1,3 +1,8 @@
+
+learn https://www.youtube.com/watch?v=R7b3OlEyqug&t=16s
+
+
+-------------------------------------------------------------------------------------------------
 DESKTOP-2I89GSQ 3480
 
 first of get all the propmt in 
