@@ -2035,14 +2035,19 @@ html {
 }
 
 .info-card {
+  position: relative;
   min-height: 220px;
   padding: clamp(22px, 3vw, 34px);
+  overflow: hidden;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, .025);
-  cursor: pointer;
   transition: border-color .3s ease, transform .35s cubic-bezier(.2, .8, .2, 1);
 }
 
+.info-card > :not(.work-image) {
+  position: relative;
+  z-index: 1;
+}
 
 .work-image {
   position: absolute;
