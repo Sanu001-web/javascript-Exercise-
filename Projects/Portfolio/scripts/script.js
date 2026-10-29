@@ -152,6 +152,46 @@
     revealTargets.forEach(el => observer.observe(el));
   }
 
+  document.querySelectorAll("[data-copy-email]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const email = button.dataset.copyEmail;
+      const status = button.parentElement?.querySelector(".copy-status");
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const temporaryInput = document.createElement("textarea");
+          temporaryInput.value = email;
+          temporaryInput.setAttribute("readonly", "");
+          temporaryInput.style.position = "fixed";
+          temporaryInput.style.opacity = "0";
+          document.body.append(temporaryInput);
+          temporaryInput.select();
+          const copied = document.execCommand("copy");
+          temporaryInput.remove();
+          if (!copied) throw new Error("Clipboard unavailable");
+        }
+        if (status) status.textContent = "Email copied.";
+      } catch {
+        if (status) status.textContent = `Copy unavailable — email me at ${email}.`;
+      }
+    });
+  });
+
+  const contactForm = document.querySelector("[data-contact-form]");
+  contactForm?.addEventListener("submit", event => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const subject = `Portfolio enquiry from ${name}`;
+    const body = `Hi Shanu,\n\n${message}\n\n— ${name}\n${email}`;
+    const status = contactForm.querySelector(".form-status");
+    if (status) status.textContent = "Opening your email app with your message…";
+    window.location.href = `mailto:sanukayda@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
