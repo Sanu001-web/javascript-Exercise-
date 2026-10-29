@@ -86,6 +86,8 @@
 
   const renderProject = (project, index) => {
     const projectName = escapeHTML(project.name);
+    const projectId = `project-${project.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+    const category = project.concept ? "concept" : "website";
     const actionLinks = project.concept
       ? `<a class="case-study-link" href="join-us.html" aria-label="Discuss the ${projectName} concept"><span class="case-study-arrow">${arrowIcon}</span><span class="case-study-label">Discuss the idea</span></a>`
       : `<a class="case-study-link" href="${escapeHTML(project.site)}" target="_blank" rel="noopener noreferrer" aria-label="Visit the ${projectName} website"><span class="case-study-arrow">${arrowIcon}</span><span class="case-study-label">Visit live website</span></a>
@@ -95,7 +97,7 @@
       : renderLivePreview(project);
 
     return `
-      <article class="showcase-card${project.concept ? " showcase-concept" : ""}">
+      <article class="showcase-card${project.concept ? " showcase-concept" : ""}" id="${projectId}" data-project-category="${category}">
         <div class="showcase-copy">
           <p class="project-type">${String(index + 1).padStart(2, "0")} — ${escapeHTML(project.type)}</p>
           <h2>${projectName}</h2>
@@ -109,6 +111,31 @@
 
   const list = document.querySelector("#showcase-list");
   if (list) list.innerHTML = projects.map(renderProject).join("");
+
+  const filterButtons = document.querySelectorAll(".project-filter");
+  const filterStatus = document.querySelector(".filter-status");
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
+      let visibleCount = 0;
+      list?.querySelectorAll(".showcase-card").forEach(card => {
+        const isVisible = selectedFilter === "all" || card.dataset.projectCategory === selectedFilter;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+      filterButtons.forEach(filterButton => {
+        const isActive = filterButton === button;
+        filterButton.classList.toggle("is-active", isActive);
+        filterButton.setAttribute("aria-pressed", String(isActive));
+      });
+      if (filterStatus) {
+        const label = selectedFilter === "all"
+          ? `all ${visibleCount} projects`
+          : `${visibleCount} ${selectedFilter === "website" ? "websites" : visibleCount === 1 ? "concept" : "concepts"}`;
+        filterStatus.textContent = `Showing ${label}`;
+      }
+    });
+  });
 
   const intro = document.querySelector(".project-hero .projects-intro-copy.hero-intro");
   if (!intro || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
