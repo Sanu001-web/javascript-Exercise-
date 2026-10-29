@@ -31,4 +31,9 @@
         <a href="#top" class="back-top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>`;
+
+  document.querySelector(".back-top")?.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
