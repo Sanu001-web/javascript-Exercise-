@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/projects.css">
+  <link rel="stylesheet" href="styles/features.css">
 </head>
 
 <body>
@@ -60,6 +61,12 @@
       <div class="tex-content">
         <p>Explore four live websites with desktop and iPhone-style previews, plus StudyFlow, an early-stage concept. Open a live link if a site blocks its preview.</p>
       </div>
+      <div class="project-filters" role="group" aria-label="Filter projects">
+        <button type="button" class="project-filter is-active" data-filter="all" aria-pressed="true">All projects</button>
+        <button type="button" class="project-filter" data-filter="website" aria-pressed="false">Websites</button>
+        <button type="button" class="project-filter" data-filter="concept" aria-pressed="false">Concepts</button>
+      </div>
+      <p class="filter-status sr-only" aria-live="polite">Showing all projects</p>
       <hr>
       <div class="showcase-list" id="showcase-list" aria-live="polite">
         <p class="projects-loading">Loading project details…</p>
