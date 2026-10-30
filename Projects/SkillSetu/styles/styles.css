@@ -1,6 +1,4 @@
-/* ==========================
-   SkillSetu — Design Tokens
-   ========================== */
+/* SkillSetu — Design Tokens*/
 :root {
   color-scheme: light;
   --color-primary: #176b50;
@@ -301,9 +299,7 @@ svg {
   display: none;
 }
 
-/* ==========================
-   Hero
-   ========================== */
+/* Hero*/
 .hero {
   position: relative;
   overflow: hidden;
@@ -821,9 +817,7 @@ svg {
   letter-spacing: 0;
 }
 
-/* ==========================
-   Section headings and journey cards
-   ========================== */
+/* Section headings and journey cards*/
 .journeys {
   background: #fff;
 }
