@@ -156,12 +156,14 @@
     const { action, id } = button.dataset;
     if (action === "save") {
       const saved = readSaved("skillsetu-saved");
-      if (saved.includes(id)) {
-        saveToBrowser("skillsetu-saved", saved.filter((item) => item !== id));
-        showToast("Removed from your saved items.");
-      } else {
-        saveToBrowser("skillsetu-saved", [...saved, id]);
-        showToast("Saved in this browser. You can come back to it later.");
+      const wasSaved = saved.includes(id);
+      const stored = saveToBrowser("skillsetu-saved", wasSaved
+        ? saved.filter((item) => item !== id)
+        : [...saved, id]);
+      if (stored) {
+        showToast(wasSaved
+          ? "Removed from your saved items."
+          : "Saved in this browser. You can come back to it later.");
       }
       renderResults();
       return;
@@ -169,7 +171,8 @@
     const key = actionStorageKeys[action];
     if (!key) return;
     const existing = readSaved(key);
-    if (!existing.includes(id)) saveToBrowser(key, [...existing, id]);
+    const stored = existing.includes(id) || saveToBrowser(key, [...existing, id]);
+    if (!stored) return;
     button.disabled = true;
     button.textContent = ({ plan: "Added to learning plan ✓", interest: "Interest noted ✓", contact: "Request noted ✓", "save-talent": "Profile saved ✓" })[action];
     const messages = { plan: "Added to your learning plan on this device.", interest: "Your interest was saved locally. This demo does not send an application.", contact: "Request noted locally. This demo does not contact the provider.", "save-talent": "Candidate profile saved locally." };
@@ -179,17 +182,19 @@
   const roleForm = root.querySelector("#role-form");
   if (roleForm) {
     const drafts = readSaved("skillsetu-role-drafts");
-    drafts.forEach((draft) => items.unshift(draft));
+    items = [...drafts, ...items];
     roleForm.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!roleForm.reportValidity()) return;
       const formData = new FormData(roleForm);
       const draft = { id: `draft-${Date.now()}`, title: formData.get("title"), category: formData.get("category"), organization: "Your business · Local draft", location: formData.get("location"), pay: formData.get("pay") || "Pay details to be confirmed", description: formData.get("description"), tags: ["Draft", "Not published"], action: "draft", icon: "＋", saved: true };
       items.unshift(draft);
-      saveToBrowser("skillsetu-role-drafts", [draft, ...drafts]);
+      const stored = saveToBrowser("skillsetu-role-drafts", [draft, ...drafts]);
       renderResults();
       roleForm.reset();
-      showToast("Draft saved in this browser. It has not been published.");
+      showToast(stored
+        ? "Draft saved in this browser. It has not been published."
+        : "Draft added for this session only; browser storage is unavailable, so it will not be saved after you leave.");
       root.querySelector(".directory-section").scrollIntoView({ behavior: motionPreference.matches ? "auto" : "smooth", block: "start" });
     });
   }
