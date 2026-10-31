@@ -2820,6 +2820,57 @@ svg {
   }
 }
 
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .header-inner {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 18px;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+  }
+
+  .header-actions .account-login-link {
+    padding-inline: 9px;
+    font-size: 9px;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand small {
+    font-size: 7px;
+    letter-spacing: .6px;
+  }
+
+  .header-inner {
+    gap: 6px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .header-actions .account-login-link {
+    min-height: 36px;
+    padding-inline: 7px;
+    font-size: 8px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
