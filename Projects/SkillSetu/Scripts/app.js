@@ -5,7 +5,7 @@
   "use strict";
 
   const translations = window.SkillSetuTranslations || { en: {}, hi: {} };
-  const demoData = window.SkillSetuDemoData || {};
+  const searchData = window.SkillSetuSearchData || {};
   const languageToggle = document.querySelector(".language-toggle");
   const menuToggle = document.querySelector(".menu-toggle");
   const primaryNav = document.querySelector(".primary-nav");
@@ -80,12 +80,12 @@
 
   function findSearchMatches(query, category) {
     const selectedCategory = category === "learn" ? "learning" : category;
-    const categories = selectedCategory === "all" ? Object.keys(demoData) : [selectedCategory];
+    const categories = selectedCategory === "all" ? Object.keys(searchData) : [selectedCategory];
     const normalizedQuery = query.toLocaleLowerCase().trim();
     const matches = [];
 
     categories.forEach((categoryName) => {
-      const items = Array.isArray(demoData[categoryName]) ? demoData[categoryName] : [];
+      const items = Array.isArray(searchData[categoryName]) ? searchData[categoryName] : [];
       items.forEach((item) => {
         const searchableText = [item.title, ...(item.terms || [])].join(" ").toLocaleLowerCase();
         if (searchableText.includes(normalizedQuery)) {
