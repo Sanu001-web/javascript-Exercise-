@@ -1,0 +1,18 @@
+window.SkillSetuPageData = window.SkillSetuPageData || {};
+window.SkillSetuPageData.work = {
+  number: "02",
+  eyebrow: "WORK THAT HELPS YOU MOVE FORWARD",
+  title: "Explore roles for your next step.",
+  intro: "Explore common entry-level roles, the skills they call for, and what to consider when comparing work opportunities.",
+  note: "Role descriptions are career guidance, not vacancy announcements. Confirm current openings, pay, and application requirements with each employer.",
+  filterLabel: "Role type",
+  options: ["All role types", "Full-time", "Part-time", "Internship", "Apprenticeship", "Contract"],
+  items: [
+    { id: "job-web-intern", title: "Junior Web Design Intern", category: "Internship", organization: "Role guide · Digital & creative teams", location: "Work arrangements vary by employer", pay: "Compensation set by employer", description: "Support the design team with page layouts, simple website updates, image preparation, and quality checks. Look for roles that include mentoring and a clear weekly learning plan.", tags: ["Figma basics", "HTML/CSS helpful", "0–6 months experience"], action: "interest", icon: "N" },
+    { id: "job-retail-assistant", title: "Customer & Store Assistant", category: "Part-time", organization: "Role guide · Retail & customer support", location: "Usually customer-facing and on-site", pay: "Hours and compensation vary", description: "Help customers, maintain product displays, record daily stock, and support digital orders. Friendly communication matters more than prior retail experience.", tags: ["Customer service", "Basic smartphone use", "Hindi + local language"], action: "interest", icon: "M" },
+    { id: "job-data-trainee", title: "Data & Office Support Trainee", category: "Apprenticeship", organization: "Role guide · Administration & operations", location: "Office, hybrid, or on-site", pay: "Training and compensation vary", description: "Learn to maintain spreadsheets, organize digital records, and help prepare weekly reports with a supervisor. Open to applicants starting their first office role.", tags: ["Spreadsheets", "Attention to detail", "Training provided"], action: "interest", icon: "S" },
+    { id: "job-content-assistant", title: "Content & Photography Assistant", category: "Contract", organization: "Role guide · Content & marketing", location: "Project-based or in-house", pay: "Rates agreed per role or project", description: "Photograph menu items and help prepare short captions for social channels. A phone camera and a few portfolio examples are enough to get started.", tags: ["Phone photography", "Writing", "Project-based"], action: "interest", icon: "B" },
+    { id: "job-delivery-parttime", title: "Community Delivery Partner", category: "Part-time", organization: "Role guide · Local logistics", location: "Neighborhood routes; arrangements vary", pay: "Rates and expenses vary by employer", description: "Deliver pre-packed grocery orders within nearby neighborhoods and confirm completion with customers. Route and safety details should be agreed before starting.", tags: ["Local area knowledge", "Two-wheeler helpful", "Flexible shifts"], action: "interest", icon: "P" },
+    { id: "job-support-assistant", title: "Customer Support Associate", category: "Full-time", organization: "Role guide · Customer operations", location: "Office, hybrid, or remote by employer", pay: "Compensation and shifts vary", description: "Respond to customer questions by phone, email, or chat; record each interaction; and route complex issues to the right team. Look for roles that provide product training and clear escalation steps.", tags: ["Written communication", "Problem solving", "CRM familiarity"], action: "interest", icon: "?" }
+  ]
+};
