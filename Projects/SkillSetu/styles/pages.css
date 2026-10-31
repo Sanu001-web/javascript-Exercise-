@@ -563,6 +563,50 @@
   }
 }
 
+@media (max-width: 600px) {
+  .page-stats > div {
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .page-stats strong {
+    font-size: 20px;
+  }
+
+  .directory-card-top,
+  .directory-actions {
+    min-width: 0;
+  }
+
+  .directory-actions .button {
+    max-width: 100%;
+  }
+
+  .page-footer-inner nav {
+    gap: 10px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-hero {
+    padding: 18px;
+  }
+
+  .directory-card {
+    padding: 15px;
+  }
+
+  .directory-actions {
+    align-items: stretch;
+  }
+
+  .directory-actions .button,
+  .directory-actions .save-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .directory-card {
     transition: none;
