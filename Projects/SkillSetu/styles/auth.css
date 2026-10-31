@@ -313,6 +313,20 @@ body.auth-page {
   }
 }
 
+@media (max-width: 380px) {
+  .auth-main {
+    padding-inline: 12px;
+  }
+
+  .auth-content {
+    padding: 26px 20px;
+  }
+
+  .auth-card {
+    border-radius: 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .auth-art-star,
   .auth-art-mark {
