@@ -1,0 +1,21 @@
+/* Learn Skills page theme */
+body[data-page="learn"] {
+  --color-primary: #477545;
+  --color-primary-soft: #edf4e8;
+}
+
+body[data-page="learn"] .page-hero {
+  border-color: #dce8d6;
+  background: linear-gradient(125deg, #edf5e8, #f9f5e7 84%);
+}
+
+body[data-page="learn"] .page-feature-label {
+  border-color: #cbdcbd;
+  background: #f5faef;
+  color: #477545;
+}
+
+body[data-page="learn"] .directory-badge {
+  background: #eff5e9;
+  color: #52704b;
+}
