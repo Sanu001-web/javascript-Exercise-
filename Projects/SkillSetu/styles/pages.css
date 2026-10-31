@@ -1,4 +1,4 @@
-/* Multi-page directory, learning, and employer experiences */
+/* Shared layout and components for the directory pages */
 .page-content {
   min-height: 65vh;
   padding-top: clamp(38px, 6vw, 76px);
@@ -130,8 +130,7 @@
   margin-bottom: 10px;
 }
 
-.directory-heading h2,
-.employer-copy h2 {
+.directory-heading h2 {
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(27px, 3.2vw, 38px);
@@ -375,105 +374,6 @@
   color: var(--color-primary);
 }
 
-.employer-tools {
-  display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-  gap: clamp(25px, 5vw, 60px);
-  margin-top: 72px;
-  padding: clamp(24px, 4vw, 44px);
-  border-radius: 22px;
-  background: #edf4eb;
-}
-
-.employer-copy {
-  align-self: start;
-}
-
-.employer-copy .section-kicker {
-  margin-bottom: 11px;
-}
-
-.employer-copy>p {
-  max-width: 390px;
-  color: var(--color-muted);
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.employer-copy ul {
-  display: grid;
-  gap: 11px;
-  padding-left: 18px;
-  color: #43574b;
-  font-size: 11px;
-  line-height: 1.65;
-}
-
-.employer-copy li::marker {
-  color: var(--color-primary);
-}
-
-.role-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px;
-  padding: 23px;
-  border: 1px solid #dfe9df;
-  border-radius: 16px;
-  background: #fff;
-}
-
-.role-form label {
-  display: grid;
-  gap: 6px;
-  color: #46584e;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.role-form input,
-.role-form select,
-.role-form textarea {
-  width: 100%;
-  min-width: 0;
-  padding: 11px 12px;
-  border: 1px solid #dfe6df;
-  border-radius: 8px;
-  outline: 0;
-  background: #fff;
-  color: var(--color-text);
-  font: inherit;
-  font-size: 11px;
-}
-
-.role-form input:focus,
-.role-form select:focus,
-.role-form textarea:focus {
-  border-color: var(--color-primary);
-}
-
-.role-form textarea {
-  resize: vertical;
-}
-
-.role-form .form-wide {
-  grid-column: 1 / -1;
-}
-
-.role-form .button {
-  justify-self: start;
-  min-height: 44px;
-  cursor: pointer;
-}
-
-.form-hint {
-  align-self: center;
-  margin: 0;
-  color: #79867e;
-  font-size: 9px;
-  line-height: 1.6;
-}
-
 .page-footer {
   padding-top: 35px;
 }
@@ -547,9 +447,6 @@
     padding: 19px;
   }
 
-  .employer-tools {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 780px) {
@@ -652,24 +549,6 @@
 
   .directory-card h2 {
     font-size: 16px;
-  }
-
-  .employer-tools {
-    margin-top: 50px;
-    padding: 18px;
-  }
-
-  .role-form {
-    grid-template-columns: 1fr;
-    padding: 16px;
-  }
-
-  .role-form .form-wide {
-    grid-column: auto;
-  }
-
-  .form-hint {
-    grid-row: auto;
   }
 
   .page-footer-inner {
