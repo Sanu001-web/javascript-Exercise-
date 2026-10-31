@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b50">
+  <title>Login or Sign up | SkillSetu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/auth.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="SkillSetu home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Skill<span class="brand-accent">Setu</span><small>Learn. Work. Grow.</small></span>
+      </a>
+      <a class="auth-home-link" href="index.html">Back to home <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="auth-main">
+    <section class="auth-card" aria-labelledby="auth-title">
+      <div class="auth-art" aria-hidden="true"><span class="auth-art-star">✳</span><span class="auth-art-mark">↗</span><span class="auth-art-caption">YOUR NEXT STEP</span></div>
+      <div class="auth-content">
+        <span class="section-kicker">WELCOME TO SKILLSETU</span>
+        <h1 id="auth-title">Login to your account</h1>
+        <p class="auth-intro" id="auth-intro">Continue exploring skills, work, and local services.</p>
+        <form id="auth-form" novalidate>
+          <div class="auth-field" id="name-field" hidden>
+            <label for="auth-name">Your name</label>
+            <input id="auth-name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="e.g. Asha Kumar">
+          </div>
+          <div class="auth-field">
+            <label for="auth-email">Email address</label>
+            <input id="auth-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
+          </div>
+          <div class="auth-field">
+            <label for="auth-password">Password</label>
+            <input id="auth-password" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="At least 8 characters">
+          </div>
+          <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+          <button class="button button-dark auth-submit" id="auth-submit" type="submit">Login <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-switch" id="auth-switch">New to SkillSetu? <button id="switch-mode" type="button">Create an account</button></p>
+        <div class="auth-note">This demo stores account details only in this browser. It is not secure authentication; do not use a password you use elsewhere.</div>
+        <div class="auth-success" id="auth-success" hidden>
+          <span class="auth-success-icon" aria-hidden="true">✓</span>
+          <h2 id="success-title">You’re signed in</h2>
+          <p id="success-copy"></p>
+          <a class="button button-dark" href="index.html">Continue exploring <span aria-hidden="true">→</span></a>
+          <button class="auth-signout" id="signout" type="button">Sign out</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
