@@ -41,7 +41,7 @@
   line-height: 1.8;
 }
 
-.prototype-label {
+.page-feature-label {
   display: inline-flex;
   padding: 7px 10px;
   border: 1px solid #e3d5aa;
@@ -362,7 +362,7 @@
   font-size: 12px;
 }
 
-.prototype-note {
+.directory-note {
   display: flex;
   gap: 9px;
   margin: 18px 0 0;
@@ -371,7 +371,7 @@
   line-height: 1.7;
 }
 
-.prototype-note:first-letter {
+.directory-note:first-letter {
   color: var(--color-primary);
 }
 
