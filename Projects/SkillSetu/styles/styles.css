@@ -1374,7 +1374,7 @@ svg {
   font-size: 16px;
 }
 
-.demo-note {
+.learning-note {
   display: flex;
   align-items: flex-start;
   gap: 9px;
@@ -1383,7 +1383,7 @@ svg {
   font-size: 10px;
 }
 
-.demo-note span {
+.learning-note span {
   color: var(--color-primary);
 }
 
@@ -1423,7 +1423,7 @@ svg {
   letter-spacing: -.8px;
 }
 
-.demo-status {
+.listing-label {
   padding: 7px 10px;
   border: 1px solid #e9d7a7;
   border-radius: 6px;
@@ -2634,7 +2634,7 @@ svg {
     font-size: 18px;
   }
 
-  .demo-status {
+  .listing-label {
     padding: 6px;
     font-size: 7px;
   }
