@@ -1,0 +1,21 @@
+/* Find Services page theme */
+body[data-page="services"] {
+  --color-primary: #a45f3b;
+  --color-primary-soft: #fbefe7;
+}
+
+body[data-page="services"] .page-hero {
+  border-color: #efded1;
+  background: linear-gradient(125deg, #fbefe5, #fff8eb 84%);
+}
+
+body[data-page="services"] .page-feature-label {
+  border-color: #e8cdb9;
+  background: #fff7ed;
+  color: #9a5736;
+}
+
+body[data-page="services"] .directory-badge {
+  background: #fbf0e7;
+  color: #875738;
+}
