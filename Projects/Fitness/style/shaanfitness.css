@@ -525,6 +525,31 @@ ol li:not(:has(> i)):hover::before {
   box-shadow: 0 0 0 3px rgba(135, 206, 250, 0.18);
 }
 
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap input {
+  padding-right: 4.5rem;
+}
+
+.js-toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  padding: 0.25rem;
+  color: #87CEFA;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(-50%);
+}
+
+.js-toggle-password:focus-visible {
+  outline: 2px solid #87CEFA;
+  outline-offset: 2px;
+  border-radius: 0.2rem;
+}
+
 .bmi-result {
   min-height: 2.75rem;
   margin-top: 1.25rem;
