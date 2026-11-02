@@ -9,7 +9,7 @@
   <script src="script.js" type="text/javascript" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <title>Document</title>
+  <title>Shaan Fitness</title>
 </head>
 
 <body>
@@ -45,6 +45,8 @@
       <button data-page="dashboard">Dashboard</button>
       <button data-page="diet">Diet Planner</button>
       <button data-page="contact">Contact</button>
+      <button data-page="login">Login / Sign In</button>
+      <button data-page="signup">Sign Up</button>
     </div>
   </nav>
 
@@ -884,15 +886,15 @@
             <h2 class="text-2xl font-semibold mb-6">Get In Touch</h2>
             <form>
               <div class="mb-4">
-                <label class="block mb-2">Name</label>
+                <label class="block mb-2 user-name">Name</label>
                 <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Your Name">
               </div>
               <div class="mb-4">
-                <label class="block mb-2">Email</label>
+                <label class="block mb-2 user-mail">Email</label>
                 <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
               </div>
               <div class="mb-4">
-                <label class="block mb-2">Subject</label>
+                <label class="block mb-2 user-subject">Subject</label>
                 <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Subject">
               </div>
               <div class="mb-6">
@@ -946,26 +948,27 @@
     <div class="max-w-md mx-auto">
       <div class="glass-card p-8 hover-glow">
         <h1 class="text-3xl font-bold text-center mb-8 sky-blue">Member Login</h1>
-        <form>
+        <form id="login-form">
           <div class="mb-6">
-            <label class="block mb-2">Email Address</label>
-            <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
+            <label class="block mb-2" for="login-email">Email Address</label>
+            <input id="login-email" name="email" type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com" required>
           </div>
           <div class="mb-6">
-            <label class="block mb-2">Password</label>
-            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+            <label class="block mb-2" for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••" required>
           </div>
           <div class="flex justify-between items-center mb-6">
             <label class="flex items-center hover:text-sky-blue transition-colors duration-300">
-            <input type="checkbox" class="mr-2">
+            <input type="checkbox" name="rememberMe" class="mr-2">
             <span>Remember Me</span>
           </label>
-            <button class="sky-blue hover:underline">Forgot Password?</button>
+            <button type="button" class="sky-blue hover:underline">Forgot Password?</button>
           </div>
           <button type="submit" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg mb-6 btn-hover hover-glow">Login</button>
           <p class="text-center">Don't have an account?
-            <button data-page="signup" class="sky-blue hover:underline">Sign Up</button>
+            <button type="button" data-page="signup" class="sky-blue hover:underline">Sign Up</button>
           </p>
+          <p class="js-login-message" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -976,43 +979,50 @@
     <div class="max-w-md mx-auto">
       <div class="glass-card p-8 hover-glow">
         <h1 class="text-3xl font-bold text-center mb-8 sky-blue">Create Account</h1>
-        <form>
+        <form class="js-form">
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
-              <label class="block mb-2">First Name</label>
-              <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="First Name">
+              <label class="block mb-2 js-first-name" for="signup-first-name">First Name</label>
+              <input id="signup-first-name" name="firstName" type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="First Name" required>
             </div>
             <div>
-              <label class="block mb-2">Last Name</label>
-              <input type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Last Name">
+              <label class="block mb-2 js-last-name" for="signup-last-name">Last Name</label>
+              <input id="signup-last-name" name="lastName" type="text" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="Last Name" required>
             </div>
           </div>
           <div class="mb-4">
-            <label class="block mb-2">Email Address</label>
-            <input type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com">
+            <label class="block mb-2 js-email" for="signup-email">Email Address</label>
+            <input id="signup-email" name="email" type="email" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="your@email.com" required>
           </div>
           <div class="mb-4">
-            <label class="block mb-2">Phone Number</label>
-            <input type="tel" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="+91">
+            <label class="block mb-2 js-phoneNo" for="signup-phone">Phone Number</label>
+            <input id="signup-phone" name="phone" type="tel" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="+91" required>
           </div>
           <div class="mb-4">
-            <label class="block mb-2">Password</label>
-            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+            <label class="block mb-2 js-password" for="signup-password">Password</label>
+            <div class="password-input-wrap">
+              <input id="signup-password" name="password" type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••" required>
+              <button type="button" class="js-toggle-password" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
           </div>
           <div class="mb-6">
-            <label class="block mb-2">Confirm Password</label>
-            <input type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••">
+            <label class="block mb-2 js-confirm-password" for="signup-confirm-password">Confirm Password</label>
+            <div class="password-input-wrap">
+              <input id="signup-confirm-password" name="confirmPassword" type="password" class="w-full p-3 bg-gray-800 rounded-lg hover:border-sky-blue transition-colors duration-300" placeholder="••••••••" required>
+              <button type="button" class="js-toggle-password" aria-label="Show confirm password" aria-pressed="false">Show</button>
+            </div>
           </div>
           <div class="mb-6">
             <label class="flex items-center hover:text-sky-blue transition-colors duration-300">
-            <input type="checkbox" class="mr-2">
-            <span>I agree to the <button class="sky-blue hover:underline">Terms & Conditions</button></span>
+            <input type="checkbox" name="terms" class="mr-2" required>
+            <span>I agree to the <button type="button" class="sky-blue hover:underline">Terms & Conditions</button></span>
           </label>
           </div>
-          <button type="submit" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg mb-6 btn-hover hover-glow">Create Account</button>
+          <button type="submit" class="w-full py-3 bg-sky-blue text-black font-bold rounded-lg mb-6 btn-hover hover-glow create-account">Create Account</button>
           <p class="text-center">Already have an account?
-            <button data-page="login" class="sky-blue hover:underline">Login</button>
+            <button data-page="login" class="sky-blue hover:underline js-login">Login</button>
           </p>
+          <p class="js-message" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
