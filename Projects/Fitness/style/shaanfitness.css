@@ -1032,3 +1032,26 @@ ol li:not(:has(> i)):hover::before {
     text-align: center;
   }
 }
+
+/* ShaanFitness nutrition features — additive styles, retaining the existing black/sky-blue theme. */
+.sf-feature-hero{padding:1.5rem 0 2rem}.sf-feature-hero h1{letter-spacing:-.04em}
+.sf-recipe-controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.8rem;margin-top:1.5rem}
+.sf-recipe-controls input,.sf-recipe-controls select,#sf-food-form input,#sf-food-form select,#sf-tracker-day{width:100%;padding:.85rem 1rem;color:#fff;background:#1f2937;border:1px solid rgba(135,206,250,.25);border-radius:.65rem}
+.sf-recipe-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.sf-recipe-card{padding:1.25rem;background:rgba(255,255,255,.055);border:1px solid rgba(135,206,250,.2);border-radius:1rem;transition:.25s}
+.sf-recipe-card:hover{transform:translateY(-4px);border-color:#87CEFA;box-shadow:0 0 18px rgba(135,206,250,.15)}
+.sf-recipe-card h3{font-size:1.2rem;font-weight:700;margin:.55rem 0}.sf-recipe-card p{color:#cbd5e1;font-size:.9rem}
+.sf-recipe-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin:.8rem 0}.sf-recipe-meta span{font-size:.75rem;color:#dbeafe;background:rgba(135,206,250,.12);border:1px solid rgba(135,206,250,.2);padding:.25rem .55rem;border-radius:99px}
+.sf-primary-btn,.sf-secondary-btn,.sf-recipe-open{padding:.7rem 1rem;border-radius:.6rem;font-weight:700;cursor:pointer}
+.sf-primary-btn{background:#87CEFA;color:#000}.sf-secondary-btn,.sf-recipe-open{border:1px solid #87CEFA;color:#87CEFA;background:transparent}
+.sf-detail{margin-top:1.5rem}.sf-detail[hidden],#sf-tracker-app[hidden]{display:none}
+.sf-detail h2{font-size:1.7rem;font-weight:700}.sf-detail h3{font-size:1.1rem;font-weight:700;color:#87CEFA;margin:1.2rem 0 .5rem}
+.sf-detail li{margin:.35rem 0;color:#d1d5db}.sf-disclaimer{color:#9ca3af;font-size:.8rem;margin-top:1.5rem}
+.sf-tracker-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}.sf-macro-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.sf-macro-grid article{margin-top:0;display:flex;flex-direction:column;gap:.35rem}.sf-macro-grid article>span,.sf-macro-grid small{color:#9ca3af;font-size:.8rem}.sf-macro-grid strong{font-size:1.8rem;color:#87CEFA}
+.sf-progress{height:7px;background:#374151;border-radius:99px;overflow:hidden;margin-top:.35rem}.sf-progress span{display:block;height:100%;width:0;background:#87CEFA;transition:width .25s}
+#sf-food-form label{display:grid;gap:.4rem;margin:.9rem 0;color:#d1d5db;font-size:.9rem}
+.sf-food-entry{display:flex;justify-content:space-between;gap:.75rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.1)}.sf-food-entry strong{display:block}.sf-food-entry small{color:#9ca3af}
+.sf-empty{padding:2rem;text-align:center;color:#9ca3af;background:rgba(255,255,255,.03);border-radius:.8rem}
+@media(max-width:850px){.sf-recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sf-macro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.sf-recipe-controls{grid-template-columns:1fr}.sf-recipe-grid{grid-template-columns:1fr}.sf-tracker-top{align-items:flex-start;flex-direction:column}.sf-macro-grid{gap:.65rem}.sf-macro-grid article{padding:1rem}.sf-macro-grid strong{font-size:1.5rem}}
