@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="style/shaanfitness.css" type="text/css" media="all" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script/supabase-config.js"></script>
+  <script src="script/shaanfitness.js" defer></script>
+  <script src="script/food-features.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <title>Shaan Fitness</title>
@@ -18,7 +21,7 @@
 
   <!-- Navigation -->
   <nav class="fixed w-full bg-black z-50 shadow-md py-4 px-6 flex justify-between items-center">
-    <a href="index.html">
+    <a href="shaanfitness.html">
     <div class="text-2xl font-bold sky-blue">ShaanFitness</div>
     </a>
     <div class="hidden md:flex space-x-8 desktop-nav">
@@ -28,6 +31,8 @@
       <button data-page="gallery" class="nav-link hover-glow px-3 py-1 rounded">Gallery</button>
       <button data-page="dashboard" class="nav-link hover-glow px-3 py-1 rounded">Dashboard</button>
       <button data-page="diet" class="nav-link hover-glow px-3 py-1 rounded">Diet Planner</button>
+      <button data-page="kitchen" class="nav-link hover-glow px-3 py-1 rounded">Student Kitchen</button>
+      <button data-page="tracker" class="nav-link hover-glow px-3 py-1 rounded">Food Tracker</button>
       <button data-page="contact" class="nav-link hover-glow px-3 py-1 rounded">Contact</button>
     </div>
     <div class="flex space-x-4 login-container">
@@ -44,6 +49,8 @@
       <button data-page="gallery">Gallery</button>
       <button data-page="dashboard">Dashboard</button>
       <button data-page="diet">Diet Planner</button>
+      <button data-page="kitchen">Student Kitchen</button>
+      <button data-page="tracker">Food Tracker</button>
       <button data-page="contact">Contact</button>
       <button data-page="login">Login / Sign In</button>
       <button data-page="signup">Sign Up</button>
@@ -937,6 +944,71 @@
               <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-twitter"></i></button>
               <button class="sky-blue hover:text-white text-2xl btn-hover hover-glow iconi"><i class="fab fa-youtube"></i></button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Student Kitchen: public recipe library -->
+  <section id="kitchen-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="sf-feature-hero">
+        <p class="eyebrow sky-blue">Affordable everyday nutrition</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Student <span class="sky-blue">Kitchen</span></h1>
+        <p class="text-gray-300 max-w-2xl">Simple Indian meals, practical ingredients and student-friendly budgets. Browse freely — no account needed.</p>
+      </div>
+      <div class="sf-recipe-controls glass-card p-5">
+        <input id="sf-recipe-search" type="search" placeholder="Search recipes or ingredients..." aria-label="Search recipes">
+        <select id="sf-recipe-category" aria-label="Filter by meal"><option value="all">All meals</option><option value="Breakfast">Breakfast</option><option value="Lunch">Lunch</option><option value="Dinner">Dinner</option><option value="Snack">Snack</option></select>
+        <select id="sf-recipe-budget" aria-label="Filter by budget"><option value="all">Any budget</option><option value="50">Under ₹50</option><option value="80">Under ₹80</option><option value="100">Under ₹100</option></select>
+      </div>
+      <p id="sf-recipe-count" class="text-gray-400 my-4" aria-live="polite"></p>
+      <div id="sf-recipe-grid" class="sf-recipe-grid"></div>
+      <div id="sf-recipe-detail" class="sf-detail glass-card p-6" hidden></div>
+      <p class="sf-disclaimer">Nutrition and prices are estimates. Actual values vary by ingredient brand, portion size and local market.</p>
+    </div>
+  </section>
+
+  <!-- Food Tracker: private member feature -->
+  <section id="tracker-page" class="page pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="sf-feature-hero">
+        <p class="eyebrow sky-blue">Your daily nutrition</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Food <span class="sky-blue">Tracker</span></h1>
+        <p class="text-gray-300 max-w-2xl">Log meals, understand your macros and build consistent habits.</p>
+      </div>
+      <div id="sf-tracker-locked" class="glass-card p-8 text-center">
+        <i class="fas fa-lock sky-blue text-3xl mb-4"></i>
+        <h2 class="text-2xl font-bold mb-3">Member sign-in required</h2>
+        <p class="text-gray-300 mb-5">Your food diary is private. Sign in to track and review your meals.</p>
+        <button data-page="login" class="sf-primary-btn">Login to your account</button>
+        <p id="sf-backend-status" class="text-sm text-gray-400 mt-4" role="status"></p>
+      </div>
+      <div id="sf-tracker-app" hidden>
+        <div class="sf-tracker-top glass-card p-5">
+          <div><p class="text-gray-400 text-sm">Today's nutrition</p><h2 class="text-2xl font-bold" id="sf-tracker-date"></h2></div>
+          <input id="sf-tracker-day" type="date" aria-label="Choose diary date">
+        </div>
+        <div class="sf-macro-grid">
+          <article class="glass-card p-5"><span>Calories</span><strong id="sf-total-calories">0</strong><small>kcal</small><div class="sf-progress"><span id="sf-calorie-progress"></span></div><small id="sf-calorie-target">Target: 2,000 kcal</small></article>
+          <article class="glass-card p-5"><span>Protein</span><strong id="sf-total-protein">0 g</strong><small>daily total</small></article>
+          <article class="glass-card p-5"><span>Carbs</span><strong id="sf-total-carbs">0 g</strong><small>daily total</small></article>
+          <article class="glass-card p-5"><span>Fat</span><strong id="sf-total-fat">0 g</strong><small>daily total</small></article>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <form id="sf-food-form" class="glass-card p-6">
+            <h2 class="text-xl font-bold mb-4">Add food</h2>
+            <label>Food or recipe<select id="sf-food-select" required></select></label>
+            <label>Meal category<select id="sf-meal-type"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option></select></label>
+            <label>Servings<input id="sf-food-quantity" type="number" min="0.25" max="20" step="0.25" value="1" required></label>
+            <button class="sf-primary-btn mt-4" type="submit">Add to diary</button>
+            <p id="sf-food-message" class="text-sm mt-3" role="status"></p>
+          </form>
+          <div class="glass-card p-6">
+            <div class="flex justify-between items-center gap-3 mb-4"><h2 class="text-xl font-bold">Today's meals</h2><button id="sf-signout" class="sf-secondary-btn" type="button">Sign out</button></div>
+            <div id="sf-food-entries"><p class="text-gray-400">No meals logged yet.</p></div>
           </div>
         </div>
       </div>
