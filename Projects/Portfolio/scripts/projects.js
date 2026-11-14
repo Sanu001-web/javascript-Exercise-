@@ -3,21 +3,33 @@
     {
       name: "Mishri",
       type: "Live website",
-      description: "A warm, brand-led website that makes exploring Mishri’s offerings feel clear and inviting.",
-      role: "Built the website to present Mishri’s brand and offerings.",
+      role: "Built the responsive site and set a warm visual direction to present Mishri’s offerings.",
       tech: "HTML, CSS, JavaScript; responsive design.",
-      challenge: "Make the offerings easy to explore with a clear, warm visual direction.",
-      next: "Test the browsing flow and improve mobile content from user feedback.",
+      challenge: "Present the offerings in a way that feels warm and easy to browse.",
+      next: "Test the browsing flow on mobile and refine it using visitor feedback.",
       site: "https://mishri.oneapp.dev/",
+      screenshots: [
+        {
+          src: "https://raw.githubusercontent.com/Sanu001-web/javascript-Exercise-/main/Projects/Portfolio/Screenshot%202026-11-14%20142958.png",
+          alt: "Mishri website screenshot showing its navbar"
+        },
+        {
+          src: "https://raw.githubusercontent.com/Sanu001-web/javascript-Exercise-/main/Projects/Portfolio/Screenshot%202026-11-14%20143012.png",
+          alt: "Another page from the Mishri website"
+        },
+        {
+          src: "https://raw.githubusercontent.com/Sanu001-web/javascript-Exercise-/main/Projects/Portfolio/Screenshot%202026-11-14%20143043.png",
+          alt: "Mishri website homepage"
+        }
+      ],
       github: "https://github.com/Sanu001-web/javascript-Exercise-/tree/main/Projects/Food%20Card"
     },
     {
       name: "Chai & Coffee",
       type: "Live website",
-      description: "A cozy café experience bringing chai and coffee together in a welcoming, easy-to-browse space.",
-      role: "Built a café website bringing the chai and coffee offerings together.",
+      role: "Built a responsive café site bringing the chai and coffee offerings together.",
       tech: "HTML, CSS, JavaScript; responsive design.",
-      challenge: "Balance a cozy feel with an easy-to-browse menu.",
+      challenge: "Balance a cozy visual style with an easy-to-browse menu.",
       next: "Test more screen sizes and refine the menu using visitor feedback.",
       site: "https://chai-coffee18.oneapp.dev/",
       github: "https://github.com/Sanu001-web/javascript-Exercise-/tree/main/Projects/chai-coffee"
@@ -25,10 +37,9 @@
     {
       name: "Shaan Lab",
       type: "Live website",
-      description: "An energetic fitness website presenting training and wellness services with focus and clarity.",
-      role: "Built a website for Shaan Lab’s training and wellness services.",
+      role: "Built Shaan Lab’s responsive service website with a focused, energetic visual direction.",
       tech: "HTML, CSS, JavaScript; responsive design.",
-      challenge: "Present services clearly with a focused, energetic visual direction.",
+      challenge: "Make the training and wellness services easy to understand and explore.",
       next: "Review accessibility and mobile usability, then improve service discovery.",
       site: "https://shaanfitness.oneapp.dev/index.html",
       github: "https://github.com/Sanu001-web/javascript-Exercise-/tree/main/Projects/Fitness"
@@ -36,7 +47,6 @@
     {
       name: "StudyFlow",
       type: "AI-assisted concept",
-      description: "A study planner that suggests learning steps while keeping learners in control of their time and progress.",
       role: "Early-stage study planner concept; no product has been built.",
       tech: "AI-assisted ideation; no build stack yet.",
       challenge: "Offer useful guidance without taking control from learners.",
@@ -47,8 +57,7 @@
     {
       name: "SkillSetu",
       type: "Live website",
-      description: "A peer-learning platform connecting people who want to learn with people ready to teach.",
-      role: "Built and launched a peer-learning platform for learners and teachers.",
+      role: "Built and launched SkillSetu, a live peer-learning platform connecting learners and teachers.",
       tech: "See the linked source code for implementation details.",
       challenge: "Make it easy for learners and teachers to find each other.",
       next: "Refine onboarding and matching based on user feedback.",
@@ -69,11 +78,33 @@
 
   const renderFacts = project => `
     <dl class="project-facts">
-      <div><dt>Role &amp; build</dt><dd>${escapeHTML(project.role)}</dd></div>
+      <div><dt>Contribution</dt><dd>${escapeHTML(project.role)}</dd></div>
       <div><dt>${project.concept ? "Tools" : "Tech"}</dt><dd>${escapeHTML(project.tech)}</dd></div>
       <div><dt>Challenge</dt><dd>${escapeHTML(project.challenge)}</dd></div>
       <div><dt>Next</dt><dd>${escapeHTML(project.next)}</dd></div>
     </dl>`;
+
+  const renderScreenshotPreview = project => `
+    <div class="project-screenshot-preview" role="group" aria-label="${escapeHTML(`${project.name} website screenshots`)}">
+      <div class="screenshot-browser-bar">
+        <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>${escapeHTML(project.name)} · selected screens</span>
+        <a href="${escapeHTML(project.site)}" target="_blank" rel="noopener noreferrer" aria-label="Open the ${escapeHTML(project.name)} website">↗</a>
+      </div>
+      <div class="screenshot-stage">
+        ${project.screenshots.slice(0, 1).map(screenshot => `
+          <a class="project-shot project-shot-primary" href="${escapeHTML(screenshot.src)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: ${escapeHTML(screenshot.alt)}">
+            <img src="${escapeHTML(screenshot.src)}" alt="${escapeHTML(screenshot.alt)}" loading="lazy" decoding="async">
+          </a>`).join("")}
+        <div class="screenshot-thumbnails" role="group" aria-label="More screenshots">
+          ${project.screenshots.slice(1).map(screenshot => `
+            <a class="project-shot project-shot-thumbnail" href="${escapeHTML(screenshot.src)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: ${escapeHTML(screenshot.alt)}">
+              <img src="${escapeHTML(screenshot.src)}" alt="${escapeHTML(screenshot.alt)}" loading="lazy" decoding="async">
+            </a>`).join("")}
+        </div>
+      </div>
+      <p class="preview-caption">Select a screenshot to open it full size · Visit the live site ↗</p>
+    </div>`;
 
   const renderLivePreview = project => `
     <div class="project-preview" role="group" aria-label="${escapeHTML(`${project.name} live site preview`)}">
@@ -94,14 +125,13 @@
          <a class="github-project-link" href="${escapeHTML(project.github)}" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>`;
     const visual = project.concept
       ? `<div class="showcase-cover concept-cover study-cover" role="img" aria-label="A calm study desk with books and a laptop"><img class="image-platform" src="${escapeHTML(project.image)}" alt="" loading="lazy"></div>`
-      : renderLivePreview(project);
+      : project.screenshots ? renderScreenshotPreview(project) : renderLivePreview(project);
 
     return `
       <article class="showcase-card${project.concept ? " showcase-concept" : ""}" id="${projectId}" data-project-category="${category}">
         <div class="showcase-copy">
           <p class="project-type">${String(index + 1).padStart(2, "0")} — ${escapeHTML(project.type)}</p>
           <h2>${projectName}</h2>
-          <p>${escapeHTML(project.description)}</p>
           ${actionLinks}
           ${renderFacts(project)}
         </div>
