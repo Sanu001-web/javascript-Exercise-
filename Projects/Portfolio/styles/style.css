@@ -2150,11 +2150,6 @@ html {
   margin-top: 8px;
 }
 
-.about-facts {
-  padding-top: 26px;
-  border-top: 1px solid var(--line);
-}
-
 .projects-page .project-details h2 {
   margin: 0;
   font: 500 clamp(1.2rem, 2vw, 1.6rem) var(--display);
