@@ -21,7 +21,6 @@
           <div class="footer-socials" aria-label="Social profiles">
             <a href="https://github.com/sanu001-web" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
             <a href="https://linkedin.com/in/sanu001-web" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="https://instagram.com/s_shanu08" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
