@@ -2,26 +2,104 @@ const itemContainer = document.querySelector('.ja-price-food-container');
 const couponButtons = document.querySelectorAll('.coupon-option');
 const couponMessage = document.querySelector('.coupon-message');
 const placeOrderButton = document.querySelector('.place-order-button');
+const addressEditButton = document.querySelector('.js-address-edit');
+const addressForm = document.querySelector('.js-address-form');
+const addressDisplayName = document.querySelector('.js-address-name');
+const addressDisplayLines = document.querySelector('.js-address-lines');
+const addressFormMessage = document.querySelector('.address-form-message');
+const orderMessage = document.querySelector('.order-message');
+const orderTrackingCard = document.querySelector('.order-tracking-card');
 const currency = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' });
-let checkoutItem;
+const orderStorageKey = 'MishriOrders';
+let checkoutItems = [];
 let activeCoupon = '';
-
-
+let checkoutTotal = 0;
+let previousOrders = [];
 
 try {
-  checkoutItem = JSON.parse(localStorage.getItem('MishriCheckoutItem'));
+  const storedOrders = JSON.parse(localStorage.getItem(orderStorageKey));
+  previousOrders = Array.isArray(storedOrders)
+    ? storedOrders.filter((order) => order && typeof order.id === 'string' && typeof order.itemName === 'string' &&
+      Number.isFinite(order.total) && order.address && typeof order.address.city === 'string' && typeof order.address.region === 'string')
+    : [];
 } catch {
-  checkoutItem = null;
+  previousOrders = [];
 }
 
-if (!checkoutItem || typeof checkoutItem.name !== 'string' || !checkoutItem.name.trim() ||
-  !Number.isFinite(Number(checkoutItem.price)) || Number(checkoutItem.price) < 0) {
-  checkoutItem = null;
+function renderAddress(address) {
+  if (!address) {
+    addressDisplayName.textContent = 'No address saved yet';
+    addressDisplayLines.textContent = 'Add a delivery address for your convenience.';
+    return;
+  }
+  addressDisplayName.textContent = `${address.name} · ${address.phone}`;
+  addressDisplayLines.textContent = [address.street, `${address.city}, ${address.region} ${address.postal}`].join(' · ');
 }
-if (checkoutItem) {
-  checkoutItem.price = Number(checkoutItem.price);
-  const quantity = Number(checkoutItem.quantity);
-  checkoutItem.quantity = Number.isFinite(quantity) ? Math.max(1, Math.floor(quantity)) : 1;
+
+let savedAddress = null;
+try {
+  savedAddress = JSON.parse(localStorage.getItem('MishriDeliveryAddress'));
+} catch {
+  savedAddress = null;
+}
+if (!savedAddress || !['name', 'phone', 'street', 'city', 'region', 'postal'].every((key) => typeof savedAddress[key] === 'string')) {
+  savedAddress = null;
+}
+renderAddress(savedAddress);
+
+addressEditButton.addEventListener('click', () => {
+  addressForm.hidden = !addressForm.hidden;
+  addressEditButton.setAttribute('aria-expanded', String(!addressForm.hidden));
+  addressEditButton.querySelector('span').textContent = addressForm.hidden ? 'Edit address' : 'Close form';
+  addressFormMessage.textContent = '';
+  if (!addressForm.hidden) {
+    ['name', 'phone', 'street', 'city', 'region', 'postal'].forEach((key) => {
+      addressForm.elements[key].value = savedAddress?.[key] || '';
+    });
+    addressForm.elements.name.focus();
+  }
+});
+
+addressForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(addressForm);
+  const address = Object.fromEntries(['name', 'phone', 'street', 'city', 'region', 'postal'].map((key) => [key, String(formData.get(key) || '').trim()]));
+  try {
+    localStorage.setItem('MishriDeliveryAddress', JSON.stringify(address));
+    savedAddress = address;
+    renderAddress(savedAddress);
+    addressForm.hidden = true;
+    addressEditButton.setAttribute('aria-expanded', 'false');
+    addressEditButton.querySelector('span').textContent = 'Edit address';
+    addressFormMessage.textContent = '';
+  } catch {
+    addressFormMessage.textContent = 'Could not save this address in browser storage. Check your browser settings and try again.';
+  }
+});
+
+document.querySelector('.js-address-cancel').addEventListener('click', () => {
+  addressForm.hidden = true;
+  addressEditButton.setAttribute('aria-expanded', 'false');
+  addressEditButton.querySelector('span').textContent = 'Edit address';
+  addressFormMessage.textContent = '';
+});
+
+try {
+  const storedCart = JSON.parse(localStorage.getItem('MishriCheckoutItem'));
+  const items = Array.isArray(storedCart) ? storedCart : storedCart ? [storedCart] : [];
+  checkoutItems = items
+    .filter((item) => item && typeof item.name === 'string' && item.name.trim() &&
+      Number.isFinite(Number(item.price)) && Number(item.price) >= 0)
+    .map((item) => {
+      const quantity = Number(item.quantity);
+      return {
+        ...item,
+        price: Number(item.price),
+        quantity: Number.isFinite(quantity) ? Math.max(1, Math.floor(quantity)) : 1
+      };
+    });
+} catch {
+  checkoutItems = [];
 }
 
 function escapeAttribute(value) {
@@ -34,57 +112,131 @@ function escapeAttribute(value) {
   })[character]);
 }
 
+const trackingStages = [
+  { title: 'Order confirmed', after: 0, detail: 'Your order was saved in this browser.' },
+  { title: 'Preparing', after: 60_000, detail: 'The kitchen is preparing your order (simulated).' },
+  { title: 'On the way', after: 180_000, detail: 'Your order is marked as on the way (simulated).' },
+  { title: 'Delivered', after: 360_000, detail: 'The demo timeline marked this order delivered.' }
+];
+
+function getTrackingStage(order) {
+  const createdAt = Date.parse(order.createdAt);
+  const elapsed = Number.isFinite(createdAt) ? Math.max(0, Date.now() - createdAt) : 0;
+  let stageIndex = trackingStages.length - 1;
+  for (let index = 0; index < trackingStages.length; index += 1) {
+    if (elapsed < trackingStages[index].after) {
+      stageIndex = Math.max(0, index - 1);
+      break;
+    }
+  }
+  return { stageIndex, elapsed };
+}
+
+function renderOrderTracking(order) {
+  if (!order) return;
+
+  orderTrackingCard.hidden = false;
+  orderTrackingCard.querySelector('.tracking-order-id').textContent = `Order ID: ${order.id}`;
+  const orderItems = Array.isArray(order.items) ? order.items : null;
+  const itemSummary = orderItems?.length
+    ? orderItems.map((item) => `${item.quantity} × ${item.name}`).join(', ')
+    : `${order.quantity} × ${order.itemName}`;
+  orderTrackingCard.querySelector('.tracking-summary').textContent =
+    `${itemSummary} · ${currency.format(order.total)} · ${order.address.city}, ${order.address.region}`;
+
+  const { stageIndex, elapsed } = getTrackingStage(order);
+  const stage = trackingStages[stageIndex];
+  orderTrackingCard.querySelector('#tracking-title').textContent = stage.title;
+  const savedOrder = previousOrders.find((saved) => saved.id === order.id);
+  const statusChanged = (savedOrder?.status ?? order.status) !== stage.title;
+  order.status = stage.title;
+  if (savedOrder && statusChanged) {
+    savedOrder.status = stage.title;
+    console.info('Mishri order tracking update:', {
+      id: order.id,
+      status: stage.title,
+      updatedAt: new Date().toISOString(),
+      deliveryArea: `${order.address.city}, ${order.address.region}`
+    });
+    try {
+      localStorage.setItem(orderStorageKey, JSON.stringify(previousOrders));
+    } catch {
+      // Keep showing the calculated status even if browser storage is unavailable.
+    }
+  }
+
+  const steps = orderTrackingCard.querySelectorAll('.tracking-timeline li');
+  steps.forEach((step, index) => {
+    step.classList.toggle('is-complete', index < stageIndex);
+    step.classList.toggle('is-current', index === stageIndex);
+    if (index === stageIndex) {
+      step.setAttribute('aria-current', 'step');
+    } else {
+      step.removeAttribute('aria-current');
+    }
+    step.querySelector('.tracking-step-detail').textContent = trackingStages[index].detail;
+  });
+
+  const statusMessage = stageIndex === trackingStages.length - 1
+    ? 'Demo timeline complete.'
+    : `Next simulated update in about ${Math.max(1, Math.ceil((trackingStages[stageIndex + 1].after - elapsed) / 60_000))} min.`;
+  orderTrackingCard.querySelector('.tracking-status').textContent = `${stage.title} · ${statusMessage}`;
+}
+
 function renderItem() {
-  if (!checkoutItem) {
+  if (!checkoutItems.length) {
     itemContainer.innerHTML = '<p class="empty-order">Your checkout is empty. Explore the menu to choose a treat.</p>';
     return;
   }
 
-  itemContainer.innerHTML = `
-    <div class="foodimg-container"><img class="food-img" src="${escapeAttribute(checkoutItem.image)}" alt="${escapeAttribute(checkoutItem.name)}" /></div>
-    <div class="food-info-container">
-      <p class="ck-food-name"></p>
-      <span class="serving-detail"></span>
-      <div class="quantity-control" aria-label="Item quantity">
-        <button class="quantity-button quantity-decrease" type="button" aria-label="Decrease quantity">−</button>
-        <output class="quantity-value">${checkoutItem.quantity}</output>
-        <button class="quantity-button quantity-increase" type="button" aria-label="Increase quantity">+</button>
+  itemContainer.innerHTML = checkoutItems.map((item, index) => `
+    <article class="checkout-item-row" data-item-index="${index}">
+      <div class="foodimg-container"><img class="food-img" src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.name)}" /></div>
+      <div class="food-info-container">
+        <p class="ck-food-name">${escapeAttribute(item.name)}</p>
+        <span class="serving-detail">Serving size: ${escapeAttribute(item.servingSize || 'M')}</span>
+        <div class="quantity-control" aria-label="${escapeAttribute(item.name)} quantity">
+          <button class="quantity-button quantity-decrease" type="button" aria-label="Decrease quantity">−</button>
+          <output class="quantity-value">${item.quantity}</output>
+          <button class="quantity-button quantity-increase" type="button" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="remove-item" type="button">Remove item</button>
+        <div class="price-tag-container"><span class="price">${currency.format(item.price * item.quantity)}</span></div>
       </div>
-      <button class="remove-item" type="button">Remove item</button>
-      <div class="price-tag-container"><span class="price"></span></div>
-    </div>`;
-  itemContainer.querySelector('.ck-food-name').textContent = checkoutItem.name;
-  itemContainer.querySelector('.serving-detail').textContent = `Serving size: ${checkoutItem.servingSize || 'M'}`;
-  itemContainer.querySelector('.price').textContent = currency.format(checkoutItem.price * checkoutItem.quantity);
-  itemContainer.querySelector('.quantity-decrease').addEventListener('click', () => {
-    checkoutItem.quantity = Math.max(1, checkoutItem.quantity - 1);
-    updateCheckout();
-  });
-  itemContainer.querySelector('.quantity-increase').addEventListener('click', () => {
-    checkoutItem.quantity += 1;
-    updateCheckout();
-  });
-  itemContainer.querySelector('.remove-item').addEventListener('click', () => {
-    checkoutItem = null;
-    localStorage.removeItem('MishriCheckoutItem');
-    updateCheckout();
+    </article>`).join('');
+
+  itemContainer.querySelectorAll('.checkout-item-row').forEach((row) => {
+    const index = Number(row.dataset.itemIndex);
+    row.querySelector('.quantity-decrease').addEventListener('click', () => {
+      checkoutItems[index].quantity = Math.max(1, checkoutItems[index].quantity - 1);
+      updateCheckout();
+    });
+    row.querySelector('.quantity-increase').addEventListener('click', () => {
+      checkoutItems[index].quantity += 1;
+      updateCheckout();
+    });
+    row.querySelector('.remove-item').addEventListener('click', () => {
+      checkoutItems.splice(index, 1);
+      updateCheckout();
+    });
   });
 }
 
 function updateCheckout() {
   renderItem();
-  const foodTotal = checkoutItem ? checkoutItem.price * checkoutItem.quantity : 0;
+  const foodTotal = checkoutItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const discount = activeCoupon === 'SWEET10'
     ? foodTotal * 0.1
     : activeCoupon === 'Mishri50' && foodTotal >= 300
       ? 50
       : 0;
-  const deliveryFee = checkoutItem && activeCoupon !== 'FREESHIP' ? 25 : 0;
+  const deliveryFee = checkoutItems.length && activeCoupon !== 'FREESHIP' ? 25 : 0;
   const foodTax = foodTotal * 0.05;
-  const platformFee = checkoutItem ? 10 : 0;
+  const platformFee = checkoutItems.length ? 10 : 0;
   const platformTax = platformFee * 0.18;
   const deliveryTax = deliveryFee * 0.18;
   const total = Math.max(0, foodTotal - discount) + foodTax + platformFee + platformTax + deliveryFee + deliveryTax;
+  checkoutTotal = total;
 
   document.querySelector('[data-total="food"]').textContent = currency.format(foodTotal);
   document.querySelector('[data-total="food-tax"]').textContent = currency.format(foodTax);
@@ -95,10 +247,10 @@ function updateCheckout() {
   document.querySelector('[data-total="discount"]').textContent = `−${currency.format(discount)}`;
   document.querySelector('.discount-row').hidden = !discount;
   document.querySelector('[data-total="grand"]').textContent = currency.format(total);
-  // This static demo has no server or payment provider, so it must never accept an order.
-  placeOrderButton.disabled = true;
-  if (checkoutItem) {
-    localStorage.setItem('MishriCheckoutItem', JSON.stringify(checkoutItem));
+  // An order can only be placed when the cart contains at least one item.
+  placeOrderButton.disabled = !checkoutItems.length;
+  if (checkoutItems.length) {
+    localStorage.setItem('MishriCheckoutItem', JSON.stringify(checkoutItems));
   } else {
     localStorage.removeItem('MishriCheckoutItem');
   }
@@ -107,7 +259,8 @@ function updateCheckout() {
 couponButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const coupon = button.dataset.coupon;
-    if (coupon === 'Mishri50' && (!checkoutItem || checkoutItem.price * checkoutItem.quantity < 300)) {
+    const foodTotal = checkoutItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    if (coupon === 'Mishri50' && foodTotal < 300) {
       activeCoupon = '';
       couponButtons.forEach((option) => {
         option.classList.remove('is-selected');
@@ -128,8 +281,62 @@ couponButtons.forEach((button) => {
   });
 });
 
+placeOrderButton.addEventListener('click', () => {
+  if (!checkoutItems.length) return;
+  if (!savedAddress) {
+    orderMessage.textContent = 'Please add and save your delivery address before placing the order.';
+    addressForm.hidden = false;
+    addressEditButton.setAttribute('aria-expanded', 'true');
+    addressEditButton.querySelector('span').textContent = 'Close form';
+    addressForm.elements.name.focus();
+    return;
+  }
+
+  const order = {
+    id: `M-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`,
+    createdAt: new Date().toISOString(),
+    status: 'Order confirmed',
+    items: checkoutItems.map((item) => ({ ...item })),
+    itemName: checkoutItems.map((item) => item.name).join(', '),
+    quantity: checkoutItems.reduce((sum, item) => sum + item.quantity, 0),
+    total: checkoutTotal,
+    coupon: activeCoupon || null,
+    address: { ...savedAddress }
+  };
+
+  try {
+    previousOrders = [order, ...previousOrders].slice(0, 50);
+    localStorage.setItem(orderStorageKey, JSON.stringify(previousOrders));
+    localStorage.removeItem('MishriCheckoutItem');
+  } catch {
+    orderMessage.textContent = 'Could not save the order in this browser. Check storage settings and try again.';
+    return;
+  }
+
+  console.info('Mishri order saved for tracking:', {
+    id: order.id,
+    createdAt: order.createdAt,
+    status: order.status,
+    items: order.items,
+    quantity: order.quantity,
+    total: order.total,
+    deliveryArea: `${order.address.city}, ${order.address.region}`
+  });
+  orderMessage.textContent = 'Order saved in this browser. Restaurant and courier updates are not connected.';
+  renderOrderTracking(order);
+  checkoutItems = [];
+  updateCheckout();
+  orderTrackingCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
 document.querySelectorAll('.promo-close').forEach((button) => {
   button.addEventListener('click', () => button.closest('.promo-banner').remove());
 });
 
+if (previousOrders.length) {
+  renderOrderTracking(previousOrders[0]);
+}
+window.setInterval(() => {
+  if (previousOrders.length) renderOrderTracking(previousOrders[0]);
+}, 15_000);
 updateCheckout();
