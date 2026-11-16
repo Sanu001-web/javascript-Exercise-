@@ -112,7 +112,21 @@ if (quantityPopup) {
       servingSize: selectedSize.textContent.trim(),
       quantity: 1
     };
-    localStorage.setItem('MishriCheckoutItem', JSON.stringify(checkoutItem));
+    try {
+      const storedCart = JSON.parse(localStorage.getItem('MishriCheckoutItem'));
+      const cart = Array.isArray(storedCart) ? storedCart : storedCart ? [storedCart] : [];
+      const existingItem = cart.find((item) => item.name === checkoutItem.name &&
+        item.servingSize === checkoutItem.servingSize && item.price === checkoutItem.price);
+      if (existingItem) {
+        existingItem.quantity = Math.max(1, Number(existingItem.quantity) || 1) + 1;
+      } else {
+        cart.push(checkoutItem);
+      }
+      localStorage.setItem('MishriCheckoutItem', JSON.stringify(cart));
+    } catch {
+      popupFoodInfo.textContent = 'Could not save this item to your cart. Check your browser storage settings.';
+      return;
+    }
     placeOrderButton.disabled = true;
     placeOrderButton.textContent = 'Order Confirmed!';
 
@@ -240,3 +254,8 @@ filterButn?.addEventListener("change", function () {
     this.style.width = this.scrollWidth + "px";
   }
 });
+
+
+
+
+
