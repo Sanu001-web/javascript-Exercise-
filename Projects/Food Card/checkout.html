@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fcf8f5" />
-  <title>Checkout | Mishti</title>
+  <title>Checkout | Mishri</title>
   <meta name="description"
-    content="Review a sample Mishti dessert order. This checkout is a demo and does not process payments or submit orders." />
+    content="Review your Mishri dessert order, save your delivery address, and view your order status." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -45,31 +45,35 @@
 
   <main class="checkout-layout">
     <div class="checkout-main">
-      <header class="checkout-heading">
-        <div class="address-tag-container">
-          <p class="checkout-eyebrow">Address</p>
-          <span class="address-edit-icon-container">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg"
-              width="15" 
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#9b6e5b"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round" 
-              class="lucide lucide-pencil preview-icon address-edit-icon">
-              <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
-              <path d="m15 5 4 4"/>
-            </svg>
-            </span>
+      <section class="checkout-heading" aria-labelledby="address-title">
+        <div class="address-heading-row">
+          <p class="checkout-eyebrow" id="address-title">Delivery address</p>
+          <button class="address-edit-button js-address-edit" type="button" aria-expanded="false" aria-controls="address-form">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            <span>Edit address</span>
+          </button>
         </div>
-        <div class="address-detail-info">
-          <p>Demo delivery address</p>
-          <p>No delivery address is collected or submitted in this preview.</p>
+        <div class="address-detail-info js-address-display" aria-live="polite">
+          <p class="js-address-name">No address saved yet</p>
+          <p class="js-address-lines">Add a delivery address for your convenience.</p>
         </div>
-      </header>
+        <form class="address-form js-address-form" id="address-form" hidden>
+          <label>Full name<input name="name" autocomplete="name" required maxlength="80" /></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" required maxlength="25" /></label>
+          <label>Street address<input name="street" autocomplete="street-address" required maxlength="160" /></label>
+          <div class="address-form-row">
+            <label>City<input name="city" autocomplete="address-level2" required maxlength="80" /></label>
+            <label>State / region<input name="region" autocomplete="address-level1" required maxlength="80" /></label>
+          </div>
+          <label>Postal code<input name="postal" autocomplete="postal-code" required maxlength="20" /></label>
+          <div class="address-form-actions">
+            <button class="address-save-button" type="submit">Save address</button>
+            <button class="address-cancel-button js-address-cancel" type="button">Cancel</button>
+          </div>
+          <p class="address-storage-note">Saved only in this browser on this device. This demo does not send your address anywhere.</p>
+          <p class="address-form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
 
       <section class="checkout-card" aria-labelledby="order-title">
         <div class="checkout-section-heading">
@@ -86,7 +90,7 @@
         </div>
         <div class="coupon-options" role="group" aria-label="Available coupons">
           <button class="coupon-option" type="button" data-coupon="SWEET10" aria-pressed="false"><strong>SWEET10</strong><span>10% off your food</span></button>
-          <button class="coupon-option" type="button" data-coupon="MISHTI50" aria-pressed="false"><strong>MISHTI50</strong><span>₹50 off orders over ₹300</span></button>
+          <button class="coupon-option" type="button" data-coupon="Mishri50" aria-pressed="false"><strong>Mishri50</strong><span>₹50 off orders over ₹300</span></button>
           <button class="coupon-option" type="button" data-coupon="FREESHIP" aria-pressed="false"><strong>FREESHIP</strong><span>Free delivery</span></button>
         </div>
         <p class="coupon-message" aria-live="polite">Select a coupon to see your savings.</p>
@@ -103,19 +107,33 @@
         <div class="bill-row discount-row" hidden><span>Coupon savings</span><span data-total="discount">−₹0.00</span>
         </div>
         <div class="bill-row total-row"><strong>Total payable</strong><strong data-total="grand">₹0.00</strong></div>
-        <button class="place-order-button js-place-order-button" type="button" disabled>Ordering unavailable in this demo</button>
-        <p class="order-message" role="status">Demo preview only: your cart, prices, and coupons are stored in this
-          browser. No order is submitted, and no payment is processed.</p>
+        <button class="place-order-button js-place-order-button" type="button">Place order</button>
+        <p class="order-message" role="status" aria-live="polite">Orders are saved in this browser only. This preview does not send orders to a restaurant or process payment.</p>
+      </section>
+
+      <section class="order-tracking-card" aria-labelledby="tracking-title" hidden>
+        <p class="checkout-eyebrow">Order update</p>
+        <h2 id="tracking-title">Order confirmed</h2>
+        <p class="tracking-order-id"></p>
+        <p class="tracking-summary"></p>
+        <p class="tracking-status" role="status" aria-live="polite"></p>
+        <ol class="tracking-timeline" aria-label="Order progress">
+          <li class="is-current"><span class="tracking-step-title">Order confirmed</span><span class="tracking-step-detail">Your order was saved in this browser.</span></li>
+          <li><span class="tracking-step-title">Preparing</span><span class="tracking-step-detail">The kitchen is preparing your order (simulated).</span></li>
+          <li><span class="tracking-step-title">On the way</span><span class="tracking-step-detail">Your order is marked as on the way (simulated).</span></li>
+          <li><span class="tracking-step-title">Delivered</span><span class="tracking-step-detail">The demo timeline marked this order delivered.</span></li>
+        </ol>
+        <p class="tracking-note">Progress is simulated from the time this order was saved in this browser, so it will continue after a refresh. It is not a real restaurant or courier update; live tracking requires a secure server and delivery-service integration.</p>
       </section>
     </div>
 
-    <aside class="checkout-aside" aria-label="Mishti offers">
+    <aside class="checkout-aside" aria-label="Mishri offers">
       <article class="promo-banner promo-berries">
         <img src="https://tinyurl.com/bdz84xwt" alt="promo-banner" />
         <button class="promo-close" type="button" aria-label="Dismiss offer">×</button>
         <span class="promo-label">A berry good idea</span>
         <h2>Warm up your day, one sip at a time.</h2>
-        <p>Explore waffles, macarons, and more from the Mishti dessert counter.</p>
+        <p>Explore waffles, macarons, and more from the Mishri dessert counter.</p>
         <a href="index.html#desserts">Explore desserts <span aria-hidden="true">→</span></a>
       </article>
       <article class="promo-banner promo-sharing">
