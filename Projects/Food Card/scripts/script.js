@@ -158,6 +158,9 @@ const sortItemsBtn = document.querySelector('.js-sort-btn');
 const filterableCards = [...dessertCards, ...frqntlyOrderFoods, ...drinkCards, ...soupCards]
   .filter((foodCard) => foodCard.querySelector('.price-tag'));
 const originalCardOrder = new Map(filterableCards.map((foodCard, index) => [foodCard, index]));
+const productSections = document.querySelectorAll(
+  '.dessert-container-sec, .frqntly-order-food-container-sec, .drinks-container-sec, .soups-container-sec'
+);
 
 function updateVisibleCards() {
   filterableCards.forEach((foodCard) => {
@@ -168,6 +171,12 @@ function updateVisibleCards() {
       (selectedCategory === 'Waffles' && category === 'Waffle');
 
     foodCard.hidden = !matchesSearch || !matchesCategory;
+  });
+
+  productSections.forEach((section) => {
+    const hasVisibleProduct = [...section.querySelectorAll('.dessert-card, .frqntly-order-food-card')]
+      .some((foodCard) => !foodCard.hidden);
+    section.hidden = !hasVisibleProduct;
   });
 
   const cardsByContainer = new Map();
