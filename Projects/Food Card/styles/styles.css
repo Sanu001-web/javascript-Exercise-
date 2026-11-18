@@ -270,11 +270,11 @@ body {
   to { background-position-x: -220%; }
 }
 
-.dessert-card[hidden] {
-  display: none;
-}
-
-.frqntly-order-food-card[hidden] {
+.dessert-card[hidden],
+.frqntly-order-food-card[hidden],
+.dessert-container-sec[hidden],
+.frqntly-order-food-container-sec[hidden],
+.food-menu-section[hidden] {
   display: none;
 }
 
